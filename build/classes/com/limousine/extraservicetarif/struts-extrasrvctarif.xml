@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="extraservicetarif" extends="struts-default">
+			<action name="saveExtraSrvcTarif" class="com.limousine.extraservicetarif.ClsExtraSrvcTarifAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >extraSrvcTarif.jsp</result>
+				<result name="fail">extraSrvcTarif.jsp</result>
+			</action>
+		</package>	
+</struts>

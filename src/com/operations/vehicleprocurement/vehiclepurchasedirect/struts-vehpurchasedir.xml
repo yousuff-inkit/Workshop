@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="purchasedir" extends="struts-default">
+			<action name="savePurchaseDir" class="com.operations.vehicleprocurement.vehiclepurchasedirect.ClspurchaseDirectAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >purchasedir.jsp</result>
+				<result name="fail">purchasedir.jsp</result>
+			</action>
+				<action name="printPurchaseDir" class="com.operations.vehicleprocurement.vehiclepurchasedirect.ClspurchaseDirectAction" method="printAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">purchasedirprint.jsp</result>
+			</action> 
+			
+		</package>	
+</struts>

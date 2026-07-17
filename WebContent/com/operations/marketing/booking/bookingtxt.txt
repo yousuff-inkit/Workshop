@@ -1,0 +1,29 @@
+[{
+"no": "1",
+"assetid": "112",
+"description": "test",
+"rate": "100"
+
+},
+{
+"no": "2",
+"assetid": "112",
+"description": "test",
+"rate": "100"
+
+},
+{
+"no": "3",
+"assetid": "112",
+"description": "test",
+"rate": "100"
+
+
+},
+{
+"no": "4",
+"assetid": "112",
+"description": "test",
+"rate": "100"
+
+}]

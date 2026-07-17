@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="leasepricerequestalfahim" extends="struts-default">
+			<action name="saveLeasePriceRequest" class="com.operations.marketing.leasepricerequestalfahim.ClsLeasePriceRequestAlfahimAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >leasepricerequest.jsp</result>
+				<result name="fail">leasepricerequest.jsp</result>
+			</action>
+			<action name="printLeasepricereq" class="com.operations.marketing.leasepricerequestalfahim.ClsLeasePriceRequestAlfahimAction" method="printAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">leaseprint.jsp</result>
+			</action>
+		</package>	
+</struts>

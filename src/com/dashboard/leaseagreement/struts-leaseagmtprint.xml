@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	 <constant name="struts.custom.i18n.resources" value="printLeaseAgmtAlFahim" />
+
+	<package name="lease_agmt_alfahim" extends="struts-default">
+			<!-- <action name="saveLeaseAgmtAlFahim" class="com.operations.agreement.leaseagmt_alfahim.ClsLeaseAgmtAlFahimAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >leaseAgmt.jsp</result>
+				<result name="fail">leaseAgmt.jsp</result>
+			</action>${url} -->
+			
+				<action name="Leasemainprints" class="com.dashboard.leaseagreement.ClsleaseagreementAction" method="printActions">
+			    <interceptor-ref name="params"/>
+			    <result name="print">/com/dashboard/Leaseagreement/alfahimlistofdetails/leaseprintAlFahim.jsp</result>
+			</action>
+			
+				<!--  <action name="LeasemasterPrint1" class="com.operations.agreement.leaseagmt_alfahim.ClsLeaseAgmtAlFahimAction" method="printActions">
+			    <interceptor-ref name="params"/>
+			    <result name="print">${url2}</result>
+			</action>-->
+			<!-- <action name="printLAGClosingSummary1" class="com.operations.agreement.leaseagmt_alfahim.ClsLeaseAgmtAlFahimAction" method="printClosingSummaryAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">closingSummaryPrint.jsp</result>
+			</action> -->
+			<!-- <action name="leasePytPrint" class="com.operations.agreement.leaseagmt_alfahim.ClsLeaseAgmtAlFahimAction" method="leasePytPrintAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">leasePytPrint.jsp</result>
+			</action> -->
+			<!-- <action name="leaseAgrementDetails1" class="com.operations.agreement.leaseagmt_alfahim.ClsLeaseAgmtAlFahimAction" method="saveAction">
+			    <interceptor-ref name="params"/>
+			    <result name="success" >../../../../com/operations/agreement/leaseagreement/leaseAgmt.jsp</result>
+			    <result name="fail">../../../../com/operations/agreement/leaseagreement/leaseAgmt.jsp</result>
+   			</action> -->
+		</package>	
+</struts>

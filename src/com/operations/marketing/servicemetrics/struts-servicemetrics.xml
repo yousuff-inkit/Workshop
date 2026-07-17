@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="servicemetrics" extends="struts-default">
+			<action name="saveActionServiceMetrics" class="com.operations.marketing.servicemetrics.ClsServiceMetricsAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >servicemetrics.jsp</result>
+				<result name="fail">servicemetrics.jsp</result>
+			</action>
+					</package>	
+</struts>

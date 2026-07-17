@@ -1,0 +1,3590 @@
+<Assessment xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+<AssessmentNumber>MSH00071</AssessmentNumber>
+<CreationDate>2019-04-27T08:08:20</CreationDate>
+<CreatorSiteId>AUTOFITG</CreatorSiteId>
+<CustomerNumber>907740</CustomerNumber>
+<LastUpdatedBy>Mohammad Shahid</LastUpdatedBy>
+<LastUpdatedDate>2019-04-27T12:05:15</LastUpdatedDate>
+<Originator>AUTOFITG</Originator>
+<State>Received</State>
+<UnRead>false</UnRead>
+<WorkstationVersion>AUTOFITG/2</WorkstationVersion>
+<AssessmentTag>
+<AssessorUserName>Mohammad Shahid</AssessorUserName>
+<EstimatingUserName>Mohammad Shahid</EstimatingUserName>
+<AssessorUser xsi:type="AeeBusRoleType">
+<AeeBusRoleStatus>Active</AeeBusRoleStatus>
+<AeeBusRoleType>User</AeeBusRoleType>
+<Description>Mohammad Shahid</Description>
+<Email>shahid@autofitcenter.com</Email>
+<Firstname>Mohammad</Firstname>
+<IncorrectLoginCount>0</IncorrectLoginCount>
+<IsCoAdministrator>false</IsCoAdministrator>
+<Lastname>Shahid</Lastname>
+<Login_Name>mshahid</Login_Name>
+<MUAMaxWorkload>0</MUAMaxWorkload>
+<Password>D068CB91D8548381BA</Password>
+<PasswordExpiry>2019-05-17T09:27:30</PasswordExpiry>
+</AssessorUser>
+<InsurerSite xsi:type="MasterList_SiteIdType">
+<AKAName>Autofit</AKAName>
+<CompanyName>Autofit</CompanyName>
+<DateAdded>2012-01-29T09:55:36</DateAdded>
+<IsCustomer>false</IsCustomer>
+<SiteId>1138</SiteId>
+<SiteIdStatus>Unknown</SiteIdStatus>
+</InsurerSite>
+<RepairerSite xsi:type="MasterList_SiteIdType">
+<AKAName>Autofit</AKAName>
+<CompanyName>Autofit</CompanyName>
+<DateAdded>2012-01-29T09:55:36</DateAdded>
+<IsCustomer>false</IsCustomer>
+<SiteId>1138</SiteId>
+<SiteIdStatus>Unknown</SiteIdStatus>
+</RepairerSite>
+<RepairerUser xsi:type="AeeBusRoleType">
+<AeeBusRoleStatus>Active</AeeBusRoleStatus>
+<AeeBusRoleType>User</AeeBusRoleType>
+<Description>Mohammad Shahid</Description>
+<Email>shahid@autofitcenter.com</Email>
+<Firstname>Mohammad</Firstname>
+<IncorrectLoginCount>0</IncorrectLoginCount>
+<IsCoAdministrator>false</IsCoAdministrator>
+<Lastname>Shahid</Lastname>
+<Login_Name>mshahid</Login_Name>
+<MUAMaxWorkload>0</MUAMaxWorkload>
+<Password>D068CB91D8548381BA</Password>
+<PasswordExpiry>2019-05-17T09:27:30</PasswordExpiry>
+</RepairerUser>
+</AssessmentTag>
+<Authorisation>
+<AuthorisationStatus>Interim</AuthorisationStatus>
+<RepairsAuthorised>TBA</RepairsAuthorised>
+</Authorisation>
+<Claim>
+<DateOfIncidentTBA>false</DateOfIncidentTBA>
+<DateOfInspection>2019-04-27T08:08:20</DateOfInspection>
+<InspectionRequest>false</InspectionRequest>
+<InspectionSiteVehPresent>false</InspectionSiteVehPresent>
+<IOTReference>Uninitialised</IOTReference>
+<OtherReference>1426</OtherReference>
+<RepairerTBA>false</RepairerTBA>
+<RepairEstCostTBA>false</RepairEstCostTBA>
+</Claim>
+<CountryState>
+<Code>0</Code>
+<IsDefault>true</IsDefault>
+<ISOCode>AE-DU</ISOCode>
+<Name>Dubai</Name>
+<CurrencyDefinition>
+<Code>AED</Code>
+<DecimalDigits>2</DecimalDigits>
+<DecimalSeparator>.</DecimalSeparator>
+<GroupSeparator>,</GroupSeparator>
+<GroupSizes>3</GroupSizes>
+<NegativePattern>0</NegativePattern>
+<PositivePattern>0</PositivePattern>
+<Symbol>AED</Symbol>
+</CurrencyDefinition>
+</CountryState>
+<CourtesyCar>
+</CourtesyCar>
+<CurrencyDefinition>
+<Code>AED</Code>
+<DecimalDigits>2</DecimalDigits>
+<DecimalSeparator>.</DecimalSeparator>
+<GroupSeparator>,</GroupSeparator>
+<GroupSizes>3</GroupSizes>
+<NegativePattern>0</NegativePattern>
+<PositivePattern>0</PositivePattern>
+<Symbol>AED</Symbol>
+</CurrencyDefinition>
+<DamageEstimate>
+<CalculationList>
+<Calculation>
+<CalculationDate>2019-04-27T11:59:00</CalculationDate>
+<CalculationType>Normal</CalculationType>
+<ClassRelease>170</ClassRelease>
+<CorrProtection01WU>0</CorrProtection01WU>
+<CorrProtection02WU>0</CorrProtection02WU>
+<EngineTypeText>PREPARE OFF VEHICLE</EngineTypeText>
+<ErrorCode>0</ErrorCode>
+<GrandTotalAfterExcessAmt currency="GB">0.00</GrandTotalAfterExcessAmt>
+<GrandTotalExcludingVAT currency="GB">1700.75</GrandTotalExcludingVAT>
+<GrandTotalIncludingVAT currency="GB">1785.79</GrandTotalIncludingVAT>
+<LabourClass1WU currency="GB">129</LabourClass1WU>
+<LabourClass2WU currency="GB">0</LabourClass2WU>
+<LabourClass3WU currency="GB">0</LabourClass3WU>
+<LabourClass4WU currency="GB">0</LabourClass4WU>
+<LabourClass5WU currency="GB">0</LabourClass5WU>
+<ManufacturerText currency="GB">TOYOTA</ManufacturerText>
+<NonPaintTimeBasis currency="GB">10</NonPaintTimeBasis>
+<PaintTimeBasis currency="GB">10</PaintTimeBasis>
+<PartPriceDate currency="GB">2019-01-14T00:00:00</PartPriceDate>
+<SubModelText currency="GB">PRADO EXR</SubModelText>
+<SubTotalLabourAmt currency="GB">1935.00</SubTotalLabourAmt>
+<VATAmt currency="GB">85.04</VATAmt>
+<VATPcnt currency="GB">5</VATPcnt>
+<VisualAlignmentWU currency="GB">0</VisualAlignmentWU>
+<CalculationItemList>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>REAR PANEL          NEW PART PAINTING</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">2711</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">NewPartPaint_LE</RepairMethod>
+<WUCount currency="GB">16</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>REAR BUMPER         NEW PART PAINT K1R</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">2581</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">NewPartPaint_LE1</RepairMethod>
+<WUCount currency="GB">16</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>L/R MUDFLAP         NEW PART PAINT K1R</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">3683</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">NewPartPaint_LE1</RepairMethod>
+<WUCount currency="GB">3</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>R/R MUDFLAP         NEW PART PAINT K1R</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">3684</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">NewPartPaint_LE1</RepairMethod>
+<WUCount currency="GB">3</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">811041</CodeText>
+<DescriptionText currency="GB">RENEW L/TAILLAMP BULB</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">811041</CodeText>
+<DescriptionText currency="GB">RENEW R/TAILLAMP BULB</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R L/R VENTILATION HOUSING</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R R/R VENTILATION HOUSING</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R L/R SIDE PANEL BADGE</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R R/R SIDE PANEL BADGE</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R L/R WHEELARCH PROTECTIVE MOULDING</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R R/R WHEELARCH PROTECTIVE MOULDING</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">495.00</Amount>
+<CodeText currency="GB">B290</CodeText>
+<DescriptionText currency="GB">RENEW REAR PANEL</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Repair_N</RepairMethod>
+<WUCount currency="GB">33</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">195.00</Amount>
+<CodeText currency="GB">B380</CodeText>
+<DescriptionText currency="GB">R + R TAILGATE</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Repair_N</RepairMethod>
+<WUCount currency="GB">13</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">15.00</Amount>
+<CodeText currency="GB">811201)</CodeText>
+<DescriptionText currency="GB">R + R CPL NO-PLATE LAMP</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">1</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R TAILGATE LOCK CYLINDER</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">15.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R TAILGATE LIFT</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">1</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">60.00</Amount>
+<CodeText currency="GB">642371</CodeText>
+<DescriptionText currency="GB">R + R TAILGATE STRIKER PIN</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">4</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">45.00</Amount>
+<CodeText currency="GB">642361)</CodeText>
+<DescriptionText currency="GB">R + R TAILGATE LOCK (LOWER TRIM REMOVED)</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">3</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">345.00</Amount>
+<CodeText currency="GB">G040</CodeText>
+<DescriptionText currency="GB">R + R REAR SCREEN</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">23</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R TAILGATE WIRING</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">15.00</Amount>
+<CodeText currency="GB">B400</CodeText>
+<DescriptionText currency="GB">R + R UPPER TAILGATE HINGE</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">1</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">15.00</Amount>
+<CodeText currency="GB">B400</CodeText>
+<DescriptionText currency="GB">R + R LOWER TAILGATE HINGE</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">1</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">750211</CodeText>
+<DescriptionText currency="GB">RENEW TAILGATE BADGE</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">750211</CodeText>
+<DescriptionText currency="GB">RENEW BADGE "LAND CRUISER"</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">45.00</Amount>
+<CodeText currency="GB">811571)</CodeText>
+<DescriptionText currency="GB">R + R ADDITIONAL BRAKE LAMP</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">3</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">750211</CodeText>
+<DescriptionText currency="GB">RENEW TAILGATE BADGE "VERSION"</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">120.00</Amount>
+<CodeText currency="GB">B410</CodeText>
+<DescriptionText currency="GB">R + R REAR BUMPER</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">8</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">120.00</Amount>
+<CodeText currency="GB">B420)</CodeText>
+<DescriptionText currency="GB">RENEW REAR BUMPER</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">8</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R REAR BUMPER REINFORCEMENT</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">2</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">15.00</Amount>
+<CodeText currency="GB">B407</CodeText>
+<DescriptionText currency="GB">R + R LEFT TAIL LAMP</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">1</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">15.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R SPARE WHEEL COVER</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">1</WUCount>
+</CalculationItem>
+</CalculationItemList>
+<GeneralCosts>
+<BettermentDedPartsAmt currency="GB">0.00</BettermentDedPartsAmt>
+<BodyFillerAmt currency="GB">0.00</BodyFillerAmt>
+<CorrProtection01Amt currency="GB">0.00</CorrProtection01Amt>
+<CorrProtection02Amt currency="GB">0.00</CorrProtection02Amt>
+<DeductionAdditionalAmt currency="GB">0.00</DeductionAdditionalAmt>
+<DeductionReusePartsAmt currency="GB">0.00</DeductionReusePartsAmt>
+<FixedLabourPanMechAmt currency="GB">0.00</FixedLabourPanMechAmt>
+<FixedNonStdItemsAmt currency="GB">0.00</FixedNonStdItemsAmt>
+<IntermediateRepairCostsExVat currency="GB">1700.75</IntermediateRepairCostsExVat>
+<LabourAmt2 currency="GB">0.00</LabourAmt2>
+<LabourAmt3 currency="GB">0.00</LabourAmt3>
+<LabourAmt4 currency="GB">0.00</LabourAmt4>
+<LabourAmt5 currency="GB">0.00</LabourAmt5>
+<LabourPanelMechAmt currency="GB">1935.00</LabourPanelMechAmt>
+<LbrAmtDecrease currency="GB">-1838.25</LbrAmtDecrease>
+<LbrAmtIncrease currency="GB">0.00</LbrAmtIncrease>
+<OverAllDiscountAmt currency="GB">0.00</OverAllDiscountAmt>
+<PartsAmt currency="GB">354.00</PartsAmt>
+<PartsSaving currency="GB">19664.00</PartsSaving>
+<RepairCostAmt currency="GB">1700.75</RepairCostAmt>
+<RepairCostIncVatBefDed currency="GB">1785.79</RepairCostIncVatBefDed>
+<SubjectToCheckAmt currency="GB">0.00</SubjectToCheckAmt>
+<SundryPartsAmt currency="GB">0.00</SundryPartsAmt>
+<SundryPartsPcnt currency="GB">0</SundryPartsPcnt>
+<SupplementaryWorkAmt currency="GB">0.00</SupplementaryWorkAmt>
+<TotalAdditionalAmt currency="GB">0.00</TotalAdditionalAmt>
+<TotalDeductionAmt currency="GB">0.00</TotalDeductionAmt>
+<TotalExtrasAmt currency="GB">0.00</TotalExtrasAmt>
+<TotalLabourAmt currency="GB">96.75</TotalLabourAmt>
+<TotalPaintMaterialAmt currency="GB">200.00</TotalPaintMaterialAmt>
+<TotalPartsAmt currency="GB">354.00</TotalPartsAmt>
+<VatAmtBefDed currency="GB">85.04</VatAmtBefDed>
+<VisualAlignmentAmt currency="GB">0.00</VisualAlignmentAmt>
+<RepairTypeTotalsList>
+<RepairTypeTotals>
+<PartType>SecondHand</PartType>
+<TotalCost currency="GB">354.00</TotalCost>
+</RepairTypeTotals>
+</RepairTypeTotalsList>
+</GeneralCosts>
+<IDBlockCodeList>
+<IDBlockCode>
+<BlockCode>28</BlockCode>
+<IsActive>true</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>33</BlockCode>
+<IsActive>true</IsActive>
+<Value>95</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>42</BlockCode>
+<IsActive>true</IsActive>
+<Value>200</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>51</BlockCode>
+<IsActive>true</IsActive>
+<Value>100</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>70</BlockCode>
+<IsActive>true</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>71</BlockCode>
+<IsActive>false</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+</IDBlockCodeList>
+<ModelOptionList>
+<ModelOption>
+<Code>A1</Code>
+<Text>FROM 06/2015</Text>
+</ModelOption>
+<ModelOption>
+<Code>W5</Code>
+<Text>5-DOOR</Text>
+</ModelOption>
+<ModelOption>
+<Code>Y7</Code>
+<Text>PREPARE OFF VEHICLE</Text>
+</ModelOption>
+<ModelOption>
+<Code>Z7</Code>
+<Text>TWO COAT PEARL/MICA</Text>
+</ModelOption>
+</ModelOptionList>
+<PaintCosts>
+<BettermentDedPaintAmt currency="GB">0.00</BettermentDedPaintAmt>
+<CalcLabourPcnt currency="GB">0</CalcLabourPcnt>
+<FixedLabourPaintAmt currency="GB">0.00</FixedLabourPaintAmt>
+<FixedPaintMaterialAmt currency="GB">200.00</FixedPaintMaterialAmt>
+<IndexChangeAmt currency="GB">0.00</IndexChangeAmt>
+<LabourPaintAmt currency="GB">1050.00</LabourPaintAmt>
+<NewPartAmt currency="GB">0.00</NewPartAmt>
+<NewPartAreaCount currency="GB">0</NewPartAreaCount>
+<NewPartUnitCount currency="GB">0</NewPartUnitCount>
+<PaintMaterialAmt currency="GB">0.00</PaintMaterialAmt>
+<PaintWU currency="GB">38</PaintWU>
+<PearlescentPaintAmt currency="GB">0.00</PearlescentPaintAmt>
+<PreparePaintSundryAmt currency="GB">0.00</PreparePaintSundryAmt>
+<PreparePartsWU currency="GB">0</PreparePartsWU>
+<PrepInCaseofPrepaint currency="GB">27.00</PrepInCaseofPrepaint>
+<PrepPanelsOffCar currency="GB">0</PrepPanelsOffCar>
+<PrepSinglePanelOffCar currency="GB">32</PrepSinglePanelOffCar>
+<PrepWorkMetalWU currency="GB">0</PrepWorkMetalWU>
+<PrepWorkMultilayerWU currency="GB">0.00</PrepWorkMultilayerWU>
+<PrepWorkPlasticWU currency="GB">5</PrepWorkPlasticWU>
+<Repair1Amt currency="GB">0.00</Repair1Amt>
+<Repair1AreaCount currency="GB">0</Repair1AreaCount>
+<Repair1UnitCount currency="GB">0</Repair1UnitCount>
+<RepairAmt currency="GB">0.00</RepairAmt>
+<RepairAreaCount currency="GB">0</RepairAreaCount>
+<RepairUnitCount currency="GB">0</RepairUnitCount>
+<SundryCostsAmt currency="GB">0.00</SundryCostsAmt>
+<SurfaceAmt currency="GB">0.00</SurfaceAmt>
+<SurfaceAreaCount currency="GB">0</SurfaceAreaCount>
+<SurfaceUnitCount currency="GB">0</SurfaceUnitCount>
+<TotalLabourPaintAmt currency="GB">1050.00</TotalLabourPaintAmt>
+<TotalPaintWU currency="GB">70</TotalPaintWU>
+<TotalUnits currency="GB">0</TotalUnits>
+</PaintCosts>
+<PartList>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR BUMPER</DescriptionText>
+<GuideNumber currency="GB">2581</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">1090.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52159 60970</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R CTR BUMPER BRKT</DescriptionText>
+<GuideNumber currency="GB">2619</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">46.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52185 60100</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R CTR BUMPER BRKT</DescriptionText>
+<GuideNumber currency="GB">2620</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">46.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52185 60100</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R INN BUMPER BRKT</DescriptionText>
+<GuideNumber currency="GB">2621</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">46.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52174 60110</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R INN BUMPER BRKT</DescriptionText>
+<GuideNumber currency="GB">2622</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">74.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52173 60110</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R BUMPER PROTECTOR</DescriptionText>
+<GuideNumber currency="GB">2623</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">140.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">58724 60020</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R BUMPER PROTECTOR</DescriptionText>
+<GuideNumber currency="GB">2624</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">140.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">58723 60020</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR BUMPER DAMPER</DescriptionText>
+<GuideNumber currency="GB">2625</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">125.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52615 60050</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR HD BUMPER COVER</DescriptionText>
+<GuideNumber currency="GB">2640</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">325.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52179 60080</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R BUMPER BRACKET</DescriptionText>
+<GuideNumber currency="GB">2641</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">140.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52156 60080</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R BUMPER BRACKET</DescriptionText>
+<GuideNumber currency="GB">2642</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">140.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52155 60080</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR BUMPER COVER</DescriptionText>
+<GuideNumber currency="GB">2643</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">695.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52162 60090</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR BUMPER SCREW</DescriptionText>
+<GuideNumber currency="GB">2651</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">25.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">90109 06371</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">5</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR BUMPER SCREW</DescriptionText>
+<GuideNumber currency="GB">2652</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">15.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52161 16010</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">2</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR PANEL</DescriptionText>
+<GuideNumber currency="GB">2711</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">1180.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">58307 60280</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">BOOT/TAILGATE SEAL</DescriptionText>
+<GuideNumber currency="GB">2944</GuideNumber>
+<MaterialType currency="GB">Textile</MaterialType>
+<OemAmt currency="GB">690.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">67881 60141</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">TAILGATE BRKT RUBBER</DescriptionText>
+<GuideNumber currency="GB">2949</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">15.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">67282 46010</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">SCREW</DescriptionText>
+<GuideNumber currency="GB">2952</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">28.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">90105 08448</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">8</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR UPPER HINGE</DescriptionText>
+<GuideNumber currency="GB">2953</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">200.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">68801 60052</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR LOWER HINGE</DescriptionText>
+<GuideNumber currency="GB">2954</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OemAmt currency="GB">200.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">68801 60052</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">TAILGATE DAMPER</DescriptionText>
+<GuideNumber currency="GB">2957</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">815.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">68650 0W050</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">TAILGATE PILOT PIN</DescriptionText>
+<GuideNumber currency="GB">2973</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">73.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">69410 60020</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">BOOT/TAILGATE LOCK</DescriptionText>
+<GuideNumber currency="GB">2975</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">805.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">69110 60233</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">OUT REAR DOOR HANDLE</DescriptionText>
+<GuideNumber currency="GB">2979</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">370.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">69190 60012</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">TAILGATE LOCK CYL</DescriptionText>
+<GuideNumber currency="GB">2990</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">170.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">69059 60250</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">BADGE</DescriptionText>
+<GuideNumber currency="GB">3015</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">110.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75446 60010</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">BADGE MODEL</DescriptionText>
+<GuideNumber currency="GB">3017</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">145.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75435 60160</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R QTR PANEL BADGE</DescriptionText>
+<GuideNumber currency="GB">3019</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">130.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75389 60020</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R QTR PANEL BADGE</DescriptionText>
+<GuideNumber currency="GB">3020</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">130.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75389 60020</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<GuideNumber currency="GB">3021</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">85.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75441 60540</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<GuideNumber currency="GB">3022</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">85.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75441 60600</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<GuideNumber currency="GB">3023</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">94.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75441 60610</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">94.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<GuideNumber currency="GB">3024</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">94.00</OemAmt>
+<OpinionAmt currency="GB">94.00</OpinionAmt>
+<PartNumber currency="GB">75441 60620</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR SCREEN</DescriptionText>
+<GuideNumber currency="GB">3151</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">1790.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">68105 60200</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR SCREEN BOND KIT</DescriptionText>
+<GuideNumber currency="GB">3160</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">PZ49I 00C1131</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">THIRD BRAKE LIGHT</DescriptionText>
+<GuideNumber currency="GB">3191</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">505.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81570 60110</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/TAILLAMP BULB HOLD</DescriptionText>
+<GuideNumber currency="GB">3271</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">94.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81555 60B50</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/TAILLAMP BULB HOLD</DescriptionText>
+<GuideNumber currency="GB">3272</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">94.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81555 60B50</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R INDICATOR BULB</DescriptionText>
+<GuideNumber currency="GB">3277</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">15.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">90981 15021</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R INDICATOR BULB</DescriptionText>
+<GuideNumber currency="GB">3278</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">15.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">90981 15021</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R BUMPER REFLECTOR</DescriptionText>
+<GuideNumber currency="GB">3281</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">320.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81590 60280</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R BUMPER REFLECTOR</DescriptionText>
+<GuideNumber currency="GB">3282</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">320.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81580 60250</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R LAMP</DescriptionText>
+<GuideNumber currency="GB">3297</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">1220.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81561 60B32</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R LAMP</DescriptionText>
+<GuideNumber currency="GB">3298</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">1220.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81551 60B51</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">110.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R LAMP BRACKET</DescriptionText>
+<GuideNumber currency="GB">3299</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">110.00</OemAmt>
+<OpinionAmt currency="GB">110.00</OpinionAmt>
+<PartNumber currency="GB">52563 60060</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R LAMP BRACKET</DescriptionText>
+<GuideNumber currency="GB">3300</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">110.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">52562 60060</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/REVERSE BULB</DescriptionText>
+<GuideNumber currency="GB">3301</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">99132 YZZBK</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/REVERSE BULB</DescriptionText>
+<GuideNumber currency="GB">3302</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">99132 YZZBK</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">NO PLATE LAMP BASE</DescriptionText>
+<GuideNumber currency="GB">3360</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">205.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75132 60150</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/NO PLATE LAMP LENS</DescriptionText>
+<GuideNumber currency="GB">3373</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">19.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81271 24010</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/NO PLATE LAMP LENS</DescriptionText>
+<GuideNumber currency="GB">3374</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">19.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">81271 24010</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R W-ARCH PROT FOIL</DescriptionText>
+<GuideNumber currency="GB">3487</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">74.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75874 60030</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R W-ARCH PROT FOIL</DescriptionText>
+<GuideNumber currency="GB">3488</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">74.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">75873 60030</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">150.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/R MUDFLAP</DescriptionText>
+<GuideNumber currency="GB">3683</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">150.00</OemAmt>
+<OpinionAmt currency="GB">150.00</OpinionAmt>
+<PartNumber currency="GB">76626 60330</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/R MUDFLAP</DescriptionText>
+<GuideNumber currency="GB">3684</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">150.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">76625 60330</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/AIR DUCT</DescriptionText>
+<GuideNumber currency="GB">3785</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">125.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">62903 60102</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/AIR DUCT</DescriptionText>
+<GuideNumber currency="GB">3786</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">125.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">62903 60102</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/S WINDOW BOND KIT</DescriptionText>
+<GuideNumber currency="GB">3863</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">PZ49I 00C1131</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">R/S WINDOW BOND KIT</DescriptionText>
+<GuideNumber currency="GB">3864</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">PZ49I 00C1131</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">INNER TAILGATE LID</DescriptionText>
+<GuideNumber currency="GB">4904</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">73.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">67847 60100</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">LOWER TAILGATE TRIM</DescriptionText>
+<GuideNumber currency="GB">4907</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">925.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">64780 60350C0</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/TAILGATE TRIM</DescriptionText>
+<GuideNumber currency="GB">4909</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">175.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">67938 60131C0</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">REAR TAILGATE TRIM</DescriptionText>
+<GuideNumber currency="GB">4910</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">205.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">67937 60181C0</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">CTR UPP T-GATE TRIM</DescriptionText>
+<GuideNumber currency="GB">4913</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">265.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">67939 60121A1</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">T-GATE WIRING HARNES</DescriptionText>
+<GuideNumber currency="GB">9615</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OemAmt currency="GB">925.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">82184 60350</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">0.00</Amount>
+<AmountIndicator currency="GB">h</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">SPARE WHEEL COVER</DescriptionText>
+<GuideNumber currency="GB">9697</GuideNumber>
+<MaterialType currency="GB">Plastic</MaterialType>
+<OemAmt currency="GB">2230.00</OemAmt>
+<OpinionAmt currency="GB">0.00</OpinionAmt>
+<PartNumber currency="GB">64771 60360A0</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2581</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2619</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2620</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2621</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2622</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2623</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2624</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2625</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2640</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2641</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2642</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2643</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2651</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2652</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2711</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2944</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2949</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2952</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2953</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2954</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2957</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2973</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2975</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2979</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>2990</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3015</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3017</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3019</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3020</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3021</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3022</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3023</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3024</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3151</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LA</ErrorCode>
+<GuideNumber>3151</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>X</ErrorCode>
+<GuideNumber>3160</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3160</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>3165</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>3166</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>3167</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>3175</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>3176</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>3177</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>3178</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3191</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3271</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3272</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3277</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3278</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3281</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3282</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3297</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3298</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3299</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3300</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3301</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3302</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3360</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3373</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3374</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3487</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3488</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3683</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3684</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3785</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3786</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3863</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>3864</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>4904</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>4907</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>4909</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>4910</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>4913</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>4919</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>4920</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>EL</ErrorCode>
+<GuideNumber>4921</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>9615</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>IT</ErrorCode>
+<GuideNumber>9697</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LA</ErrorCode>
+<GuideNumber>3785</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>Z</ErrorCode>
+<GuideNumber>2581</GuideNumber>
+<RepairMethod>Repair_N</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LA</ErrorCode>
+<GuideNumber>3785</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LO</ErrorCode>
+<GuideNumber>2581</GuideNumber>
+<RepairMethod>Repair_N</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LA</ErrorCode>
+<GuideNumber>2953</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>Z</ErrorCode>
+<GuideNumber>2931</GuideNumber>
+<RepairMethod>Repair_N</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LA</ErrorCode>
+<GuideNumber>2953</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LO</ErrorCode>
+<GuideNumber>2931</GuideNumber>
+<RepairMethod>Repair_N</RepairMethod>
+</Part>
+</PartList>
+</Calculation>
+</CalculationList>
+<Headers>
+<Line01>Auto Fit Centre</Line01>
+<Line02>Al Quoz</Line02>
+<Line03>P. O. Box 3664</Line03>
+<Line04>Dubai, UAE</Line04>
+</Headers>
+<Model xsi:type="FullModelType">
+<AZTAddScratchResist>false</AZTAddScratchResist>
+<AZTPrepColours>false</AZTPrepColours>
+<AZTPrepColoursWU>0</AZTPrepColoursWU>
+<AZTPrepDegrease>false</AZTPrepDegrease>
+<AZTPrepDegreaseWU>0</AZTPrepDegreaseWU>
+<AZTPrepIDManuf>false</AZTPrepIDManuf>
+<AZTPrepIDManufWU>0</AZTPrepIDManufWU>
+<AZTPrepMaskGlass>false</AZTPrepMaskGlass>
+<AZTPrepMaskGlassWU>0</AZTPrepMaskGlassWU>
+<AZTPrepMasking>false</AZTPrepMasking>
+<AZTPrepMaskingWU>0</AZTPrepMaskingWU>
+<AZTPrepMixing>false</AZTPrepMixing>
+<AZTPrepMixingWU>0</AZTPrepMixingWU>
+<AZTPrepSample>false</AZTPrepSample>
+<AZTPrepSampleWU>0</AZTPrepSampleWU>
+<BMSBodyType>SUV</BMSBodyType>
+<ManufacturerName>TOYOTA</ManufacturerName>
+<ManufDatCode>Y2L</ManufDatCode>
+<ModelName>Prado 150</ModelName>
+<ModelOptions>Z7A1Y7W5</ModelOptions>
+<SModelCode>53</SModelCode>
+<VehicleType>AXFullCar</VehicleType>
+</Model>
+<Rate>
+<CorrosionProtection currency="GB">0.00</CorrosionProtection>
+<FixedPricePaintAndMaterials currency="GB">200.00</FixedPricePaintAndMaterials>
+<LabourRate currency="GB">150.00</LabourRate>
+<LabourRate4 currency="GB">150.00</LabourRate4>
+<LabourRate5 currency="GB">150.00</LabourRate5>
+<PaintIndex currency="GB">100</PaintIndex>
+<PaintRate currency="GB">150.00</PaintRate>
+<SundryPartsPcnt currency="GB">0</SundryPartsPcnt>
+<IDBlockCodeList>
+<IDBlockCode>
+<BlockCode>51</BlockCode>
+<Value>100</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>28</BlockCode>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>42</BlockCode>
+<Value>200</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>33</BlockCode>
+<Value>95</Value>
+</IDBlockCode>
+</IDBlockCodeList>
+</Rate>
+<RepairList>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>9697</GuideNumber>
+<GXCoordinates>9697040117</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">SPARE WHEEL COVER</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">9697</GuideNumber>
+<OEMAmount currency="GB">2230.00</OEMAmount>
+<OEMPartNumber currency="GB">64771 60360A0</OEMPartNumber>
+<PartNumber currency="GB">64771 60360A0</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">2230.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4907</GuideNumber>
+<GXCoordinates>4907040000</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">LOWER TAILGATE TRIM</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">4907</GuideNumber>
+<OEMAmount currency="GB">925.00</OEMAmount>
+<OEMPartNumber currency="GB">64780 60350C0</OEMPartNumber>
+<PartNumber currency="GB">64780 60350C0</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">925.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4904</GuideNumber>
+<GXCoordinates>4904040001</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">INNER TAILGATE LID</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">4904</GuideNumber>
+<OEMAmount currency="GB">73.00</OEMAmount>
+<OEMPartNumber currency="GB">67847 60100</OEMPartNumber>
+<PartNumber currency="GB">67847 60100</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">73.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2944</GuideNumber>
+<GXCoordinates>2944040002</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">BOOT/TAILGATE SEAL</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2944</GuideNumber>
+<OEMAmount currency="GB">690.00</OEMAmount>
+<OEMPartNumber currency="GB">67881 60141</OEMPartNumber>
+<PartNumber currency="GB">67881 60141</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">690.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2581</GuideNumber>
+<GXCoordinates>2581040004</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR BUMPER</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2581</GuideNumber>
+<OEMAmount currency="GB">1090.00</OEMAmount>
+<OEMPartNumber currency="GB">52159 60970</OEMPartNumber>
+<PartNumber currency="GB">52159 60970</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">1090.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4909</GuideNumber>
+<GXCoordinates>4909040006</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/TAILGATE TRIM</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">4909</GuideNumber>
+<OEMAmount currency="GB">175.00</OEMAmount>
+<OEMPartNumber currency="GB">67938 60131C0</OEMPartNumber>
+<PartNumber currency="GB">67938 60131C0</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">175.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4910</GuideNumber>
+<GXCoordinates>4910040007</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR TAILGATE TRIM</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">4910</GuideNumber>
+<OEMAmount currency="GB">205.00</OEMAmount>
+<OEMPartNumber currency="GB">67937 60181C0</OEMPartNumber>
+<PartNumber currency="GB">67937 60181C0</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">205.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4913</GuideNumber>
+<GXCoordinates>4913040008</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">CTR UPP T-GATE TRIM</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">4913</GuideNumber>
+<OEMAmount currency="GB">265.00</OEMAmount>
+<OEMPartNumber currency="GB">67939 60121A1</OEMPartNumber>
+<PartNumber currency="GB">67939 60121A1</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">265.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2640</GuideNumber>
+<GXCoordinates>2640040012</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR HD BUMPER COVER</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2640</GuideNumber>
+<OEMAmount currency="GB">325.00</OEMAmount>
+<OEMPartNumber currency="GB">52179 60080</OEMPartNumber>
+<PartNumber currency="GB">52179 60080</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">325.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2625</GuideNumber>
+<GXCoordinates>2625040013</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR BUMPER DAMPER</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2625</GuideNumber>
+<OEMAmount currency="GB">125.00</OEMAmount>
+<OEMPartNumber currency="GB">52615 60050</OEMPartNumber>
+<PartNumber currency="GB">52615 60050</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">125.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2643</GuideNumber>
+<GXCoordinates>2643040014</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR BUMPER COVER</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2643</GuideNumber>
+<OEMAmount currency="GB">695.00</OEMAmount>
+<OEMPartNumber currency="GB">52162 60090</OEMPartNumber>
+<PartNumber currency="GB">52162 60090</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">695.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2641</GuideNumber>
+<GXCoordinates>2641040015</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R BUMPER BRACKET</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2641</GuideNumber>
+<OEMAmount currency="GB">140.00</OEMAmount>
+<OEMPartNumber currency="GB">52156 60080</OEMPartNumber>
+<PartNumber currency="GB">52156 60080</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">140.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2642</GuideNumber>
+<GXCoordinates>2642040016</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R BUMPER BRACKET</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2642</GuideNumber>
+<OEMAmount currency="GB">140.00</OEMAmount>
+<OEMPartNumber currency="GB">52155 60080</OEMPartNumber>
+<PartNumber currency="GB">52155 60080</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">140.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2975</GuideNumber>
+<GXCoordinates>2975040023</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">BOOT/TAILGATE LOCK</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2975</GuideNumber>
+<OEMAmount currency="GB">805.00</OEMAmount>
+<OEMPartNumber currency="GB">69110 60233</OEMPartNumber>
+<PartNumber currency="GB">69110 60233</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">805.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2973</GuideNumber>
+<GXCoordinates>2973040024</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">TAILGATE PILOT PIN</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2973</GuideNumber>
+<OEMAmount currency="GB">73.00</OEMAmount>
+<OEMPartNumber currency="GB">69410 60020</OEMPartNumber>
+<PartNumber currency="GB">69410 60020</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">73.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2621</GuideNumber>
+<GXCoordinates>2621040026</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R INN BUMPER BRKT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2621</GuideNumber>
+<OEMAmount currency="GB">46.00</OEMAmount>
+<OEMPartNumber currency="GB">52174 60110</OEMPartNumber>
+<PartNumber currency="GB">52174 60110</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">46.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2622</GuideNumber>
+<GXCoordinates>2622040027</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R INN BUMPER BRKT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2622</GuideNumber>
+<OEMAmount currency="GB">74.00</OEMAmount>
+<OEMPartNumber currency="GB">52173 60110</OEMPartNumber>
+<PartNumber currency="GB">52173 60110</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">74.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2711</GuideNumber>
+<GXCoordinates>2711040028</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR PANEL</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2711</GuideNumber>
+<OEMAmount currency="GB">1180.00</OEMAmount>
+<OEMPartNumber currency="GB">58307 60280</OEMPartNumber>
+<PartNumber currency="GB">58307 60280</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">1180.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>9615</GuideNumber>
+<GXCoordinates>9615040031</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">T-GATE WIRING HARNES</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">9615</GuideNumber>
+<OEMAmount currency="GB">925.00</OEMAmount>
+<OEMPartNumber currency="GB">82184 60350</OEMPartNumber>
+<PartNumber currency="GB">82184 60350</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">925.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2953</GuideNumber>
+<GXCoordinates>2953040034</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR UPPER HINGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2953</GuideNumber>
+<OEMAmount currency="GB">200.00</OEMAmount>
+<OEMPartNumber currency="GB">68801 60052</OEMPartNumber>
+<PartNumber currency="GB">68801 60052</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">200.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2954</GuideNumber>
+<GXCoordinates>2954040035</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR LOWER HINGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2954</GuideNumber>
+<OEMAmount currency="GB">200.00</OEMAmount>
+<OEMPartNumber currency="GB">68801 60052</OEMPartNumber>
+<PartNumber currency="GB">68801 60052</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">200.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3373</GuideNumber>
+<GXCoordinates>3373040043</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/NO PLATE LAMP LENS</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3373</GuideNumber>
+<OEMAmount currency="GB">19.00</OEMAmount>
+<OEMPartNumber currency="GB">81271 24010</OEMPartNumber>
+<PartNumber currency="GB">81271 24010</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">19.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3374</GuideNumber>
+<GXCoordinates>3374040044</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/NO PLATE LAMP LENS</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3374</GuideNumber>
+<OEMAmount currency="GB">19.00</OEMAmount>
+<OEMPartNumber currency="GB">81271 24010</OEMPartNumber>
+<PartNumber currency="GB">81271 24010</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">19.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3360</GuideNumber>
+<GXCoordinates>3360040045</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">NO PLATE LAMP BASE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3360</GuideNumber>
+<OEMAmount currency="GB">205.00</OEMAmount>
+<OEMPartNumber currency="GB">75132 60150</OEMPartNumber>
+<PartNumber currency="GB">75132 60150</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">205.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2979</GuideNumber>
+<GXCoordinates>2979040046</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">OUT REAR DOOR HANDLE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2979</GuideNumber>
+<OEMAmount currency="GB">370.00</OEMAmount>
+<OEMPartNumber currency="GB">69190 60012</OEMPartNumber>
+<PartNumber currency="GB">69190 60012</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">370.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3683</GuideNumber>
+<GXCoordinates>3683040047</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">150.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R MUDFLAP</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3683</GuideNumber>
+<OEMAmount currency="GB">150.00</OEMAmount>
+<OEMPartNumber currency="GB">76626 60330</OEMPartNumber>
+<PartNumber currency="GB">76626 60330</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3684</GuideNumber>
+<GXCoordinates>3684040048</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R MUDFLAP</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3684</GuideNumber>
+<OEMAmount currency="GB">150.00</OEMAmount>
+<OEMPartNumber currency="GB">76625 60330</OEMPartNumber>
+<PartNumber currency="GB">76625 60330</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">150.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3785</GuideNumber>
+<GXCoordinates>3785040049</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/AIR DUCT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3785</GuideNumber>
+<OEMAmount currency="GB">125.00</OEMAmount>
+<OEMPartNumber currency="GB">62903 60102</OEMPartNumber>
+<PartNumber currency="GB">62903 60102</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">125.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3786</GuideNumber>
+<GXCoordinates>3786040050</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/AIR DUCT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3786</GuideNumber>
+<OEMAmount currency="GB">125.00</OEMAmount>
+<OEMPartNumber currency="GB">62903 60102</OEMPartNumber>
+<PartNumber currency="GB">62903 60102</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">125.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4919</GuideNumber>
+<GXCoordinates>4919040054</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4920</GuideNumber>
+<GXCoordinates>4920040055</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>4921</GuideNumber>
+<GXCoordinates>4921040056</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3271</GuideNumber>
+<GXCoordinates>3271040057</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/TAILLAMP BULB HOLD</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3271</GuideNumber>
+<OEMAmount currency="GB">94.00</OEMAmount>
+<OEMPartNumber currency="GB">81555 60B50</OEMPartNumber>
+<PartNumber currency="GB">81555 60B50</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">94.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3272</GuideNumber>
+<GXCoordinates>3272040058</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/TAILLAMP BULB HOLD</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3272</GuideNumber>
+<OEMAmount currency="GB">94.00</OEMAmount>
+<OEMPartNumber currency="GB">81555 60B50</OEMPartNumber>
+<PartNumber currency="GB">81555 60B50</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">94.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3277</GuideNumber>
+<GXCoordinates>3277040059</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R INDICATOR BULB</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3277</GuideNumber>
+<OEMAmount currency="GB">15.00</OEMAmount>
+<OEMPartNumber currency="GB">90981 15021</OEMPartNumber>
+<PartNumber currency="GB">90981 15021</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">15.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3278</GuideNumber>
+<GXCoordinates>3278040060</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R INDICATOR BULB</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3278</GuideNumber>
+<OEMAmount currency="GB">15.00</OEMAmount>
+<OEMPartNumber currency="GB">90981 15021</OEMPartNumber>
+<PartNumber currency="GB">90981 15021</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">15.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3301</GuideNumber>
+<GXCoordinates>3301040061</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/REVERSE BULB</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3301</GuideNumber>
+<OEMPartNumber currency="GB">99132 YZZBK</OEMPartNumber>
+<PartNumber currency="GB">99132 YZZBK</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3302</GuideNumber>
+<GXCoordinates>3302040062</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/REVERSE BULB</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3302</GuideNumber>
+<OEMPartNumber currency="GB">99132 YZZBK</OEMPartNumber>
+<PartNumber currency="GB">99132 YZZBK</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2957</GuideNumber>
+<GXCoordinates>2957040064</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">TAILGATE DAMPER</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2957</GuideNumber>
+<OEMAmount currency="GB">815.00</OEMAmount>
+<OEMPartNumber currency="GB">68650 0W050</OEMPartNumber>
+<PartNumber currency="GB">68650 0W050</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">815.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3151</GuideNumber>
+<GXCoordinates>3151040076</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR SCREEN</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3151</GuideNumber>
+<OEMAmount currency="GB">1790.00</OEMAmount>
+<OEMPartNumber currency="GB">68105 60200</OEMPartNumber>
+<PartNumber currency="GB">68105 60200</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">1790.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2623</GuideNumber>
+<GXCoordinates>2623040082</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R BUMPER PROTECTOR</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2623</GuideNumber>
+<OEMAmount currency="GB">140.00</OEMAmount>
+<OEMPartNumber currency="GB">58724 60020</OEMPartNumber>
+<PartNumber currency="GB">58724 60020</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">140.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2624</GuideNumber>
+<GXCoordinates>2624040083</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R BUMPER PROTECTOR</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2624</GuideNumber>
+<OEMAmount currency="GB">140.00</OEMAmount>
+<OEMPartNumber currency="GB">58723 60020</OEMPartNumber>
+<PartNumber currency="GB">58723 60020</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">140.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2619</GuideNumber>
+<GXCoordinates>2619040084</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R CTR BUMPER BRKT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2619</GuideNumber>
+<OEMAmount currency="GB">46.00</OEMAmount>
+<OEMPartNumber currency="GB">52185 60100</OEMPartNumber>
+<PartNumber currency="GB">52185 60100</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">46.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2620</GuideNumber>
+<GXCoordinates>2620040085</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R CTR BUMPER BRKT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2620</GuideNumber>
+<OEMAmount currency="GB">46.00</OEMAmount>
+<OEMPartNumber currency="GB">52185 60100</OEMPartNumber>
+<PartNumber currency="GB">52185 60100</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">46.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3281</GuideNumber>
+<GXCoordinates>3281040086</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R BUMPER REFLECTOR</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3281</GuideNumber>
+<OEMAmount currency="GB">320.00</OEMAmount>
+<OEMPartNumber currency="GB">81590 60280</OEMPartNumber>
+<PartNumber currency="GB">81590 60280</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">320.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3282</GuideNumber>
+<GXCoordinates>3282040087</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R BUMPER REFLECTOR</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3282</GuideNumber>
+<OEMAmount currency="GB">320.00</OEMAmount>
+<OEMPartNumber currency="GB">81580 60250</OEMPartNumber>
+<PartNumber currency="GB">81580 60250</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">320.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3191</GuideNumber>
+<GXCoordinates>3191040088</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">THIRD BRAKE LIGHT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3191</GuideNumber>
+<OEMAmount currency="GB">505.00</OEMAmount>
+<OEMPartNumber currency="GB">81570 60110</OEMPartNumber>
+<PartNumber currency="GB">81570 60110</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">505.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3177</GuideNumber>
+<GXCoordinates>3177040090</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3178</GuideNumber>
+<GXCoordinates>3178040091</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3175</GuideNumber>
+<GXCoordinates>3175040092</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3176</GuideNumber>
+<GXCoordinates>3176040093</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2990</GuideNumber>
+<GXCoordinates>2990040099</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">TAILGATE LOCK CYL</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2990</GuideNumber>
+<OEMAmount currency="GB">170.00</OEMAmount>
+<OEMPartNumber currency="GB">69059 60250</OEMPartNumber>
+<PartNumber currency="GB">69059 60250</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">170.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3160</GuideNumber>
+<GXCoordinates>3160040110</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR SCREEN BOND KIT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3160</GuideNumber>
+<OEMPartNumber currency="GB">PZ49I 00C1131</OEMPartNumber>
+<PartNumber currency="GB">PZ49I 00C1131</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3165</GuideNumber>
+<GXCoordinates>3165040111</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3166</GuideNumber>
+<GXCoordinates>3166040112</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3167</GuideNumber>
+<GXCoordinates>3167040113</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3019</GuideNumber>
+<GXCoordinates>3019040119</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R QTR PANEL BADGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3019</GuideNumber>
+<OEMAmount currency="GB">130.00</OEMAmount>
+<OEMPartNumber currency="GB">75389 60020</OEMPartNumber>
+<PartNumber currency="GB">75389 60020</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">130.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3020</GuideNumber>
+<GXCoordinates>3020040120</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R QTR PANEL BADGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3020</GuideNumber>
+<OEMAmount currency="GB">130.00</OEMAmount>
+<OEMPartNumber currency="GB">75389 60020</OEMPartNumber>
+<PartNumber currency="GB">75389 60020</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">130.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3487</GuideNumber>
+<GXCoordinates>3487040121</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R W-ARCH PROT FOIL</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3487</GuideNumber>
+<OEMAmount currency="GB">74.00</OEMAmount>
+<OEMPartNumber currency="GB">75874 60030</OEMPartNumber>
+<PartNumber currency="GB">75874 60030</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">74.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3488</GuideNumber>
+<GXCoordinates>3488040122</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R W-ARCH PROT FOIL</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3488</GuideNumber>
+<OEMAmount currency="GB">74.00</OEMAmount>
+<OEMPartNumber currency="GB">75873 60030</OEMPartNumber>
+<PartNumber currency="GB">75873 60030</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">74.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3297</GuideNumber>
+<GXCoordinates>3297040123</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R LAMP</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3297</GuideNumber>
+<OEMAmount currency="GB">1220.00</OEMAmount>
+<OEMPartNumber currency="GB">81561 60B32</OEMPartNumber>
+<PartNumber currency="GB">81561 60B32</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">1220.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3298</GuideNumber>
+<GXCoordinates>3298040124</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R LAMP</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3298</GuideNumber>
+<OEMAmount currency="GB">1220.00</OEMAmount>
+<OEMPartNumber currency="GB">81551 60B51</OEMPartNumber>
+<PartNumber currency="GB">81551 60B51</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">1220.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3015</GuideNumber>
+<GXCoordinates>3015040129</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">BADGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3015</GuideNumber>
+<OEMAmount currency="GB">110.00</OEMAmount>
+<OEMPartNumber currency="GB">75446 60010</OEMPartNumber>
+<PartNumber currency="GB">75446 60010</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">110.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3017</GuideNumber>
+<GXCoordinates>3017040130</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">BADGE MODEL</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3017</GuideNumber>
+<OEMAmount currency="GB">145.00</OEMAmount>
+<OEMPartNumber currency="GB">75435 60160</OEMPartNumber>
+<PartNumber currency="GB">75435 60160</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">145.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3021</GuideNumber>
+<GXCoordinates>3021040131</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3021</GuideNumber>
+<OEMAmount currency="GB">85.00</OEMAmount>
+<OEMPartNumber currency="GB">75441 60540</OEMPartNumber>
+<PartNumber currency="GB">75441 60540</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">85.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3022</GuideNumber>
+<GXCoordinates>3022040132</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3022</GuideNumber>
+<OEMAmount currency="GB">85.00</OEMAmount>
+<OEMPartNumber currency="GB">75441 60600</OEMPartNumber>
+<PartNumber currency="GB">75441 60600</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">85.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3023</GuideNumber>
+<GXCoordinates>3023040133</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3023</GuideNumber>
+<OEMAmount currency="GB">94.00</OEMAmount>
+<OEMPartNumber currency="GB">75441 60610</OEMPartNumber>
+<PartNumber currency="GB">75441 60610</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">94.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3024</GuideNumber>
+<GXCoordinates>3024040134</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">94.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">EQUIPMENT BADGE</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3024</GuideNumber>
+<OEMAmount currency="GB">94.00</OEMAmount>
+<OEMPartNumber currency="GB">75441 60620</OEMPartNumber>
+<PartNumber currency="GB">75441 60620</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3863</GuideNumber>
+<GXCoordinates>3863040135</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/S WINDOW BOND KIT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3863</GuideNumber>
+<OEMPartNumber currency="GB">PZ49I 00C1131</OEMPartNumber>
+<PartNumber currency="GB">PZ49I 00C1131</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3864</GuideNumber>
+<GXCoordinates>3864040136</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/S WINDOW BOND KIT</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3864</GuideNumber>
+<OEMPartNumber currency="GB">PZ49I 00C1131</OEMPartNumber>
+<PartNumber currency="GB">PZ49I 00C1131</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2952</GuideNumber>
+<GXCoordinates>2952040137</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">SCREW</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2952</GuideNumber>
+<OEMAmount currency="GB">28.00</OEMAmount>
+<OEMPartNumber currency="GB">90105 08448</OEMPartNumber>
+<PartNumber currency="GB">90105 08448</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">28.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2949</GuideNumber>
+<GXCoordinates>2949040138</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">TAILGATE BRKT RUBBER</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2949</GuideNumber>
+<OEMAmount currency="GB">15.00</OEMAmount>
+<OEMPartNumber currency="GB">67282 46010</OEMPartNumber>
+<PartNumber currency="GB">67282 46010</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">15.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3299</GuideNumber>
+<GXCoordinates>3299040139</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">110.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">L/R LAMP BRACKET</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3299</GuideNumber>
+<OEMAmount currency="GB">110.00</OEMAmount>
+<OEMPartNumber currency="GB">52563 60060</OEMPartNumber>
+<PartNumber currency="GB">52563 60060</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">0.00</Saving>
+<SavingPC currency="GB">0.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3300</GuideNumber>
+<GXCoordinates>3300040140</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">R/R LAMP BRACKET</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">3300</GuideNumber>
+<OEMAmount currency="GB">110.00</OEMAmount>
+<OEMPartNumber currency="GB">52562 60060</OEMPartNumber>
+<PartNumber currency="GB">52562 60060</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">110.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2651</GuideNumber>
+<GXCoordinates>2651040141</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR BUMPER SCREW</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2651</GuideNumber>
+<OEMAmount currency="GB">25.00</OEMAmount>
+<OEMPartNumber currency="GB">90109 06371</OEMPartNumber>
+<PartNumber currency="GB">90109 06371</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">25.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2652</GuideNumber>
+<GXCoordinates>2652040142</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Renew_E</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+<SalvagePartList>
+<SalvagePart>
+<Amount currency="GB">0.00</Amount>
+<ApplyMarkUp currency="GB">true</ApplyMarkUp>
+<DescriptionText currency="GB">REAR BUMPER SCREW</DescriptionText>
+<DiscountPC currency="GB">0.00</DiscountPC>
+<GuideNumber currency="GB">2652</GuideNumber>
+<OEMAmount currency="GB">15.00</OEMAmount>
+<OEMPartNumber currency="GB">52161 16010</OEMPartNumber>
+<PartNumber currency="GB">52161 16010</PartNumber>
+<ReplacementType currency="GB">SecondHand</ReplacementType>
+<Saving currency="GB">15.00</Saving>
+<SavingPC currency="GB">100.00</SavingPC>
+</SalvagePart>
+</SalvagePartList>
+</Repair>
+</RepairList>
+</DamageEstimate>
+<POCList>
+<POC xsi:type="RepairerContactType">
+<AbleToAuthorise>TBA</AbleToAuthorise>
+<ContactType>Repairer</ContactType>
+<VATRegisteredStatus>Yes</VATRegisteredStatus>
+</POC>
+<POC>
+<ContactType>Assessor</ContactType>
+<ContactDetail>
+<Name>SHAHID</Name>
+</ContactDetail>
+</POC>
+</POCList>
+<Policy>
+<ExcessTBA>true</ExcessTBA>
+<VATStatus>TBA</VATStatus>
+</Policy>
+<TextList>
+<Text>
+<TextType>Assessment</TextType>
+</Text>
+</TextList>
+<Vehicle>
+<BodyColour>White</BodyColour>
+<GearBox>Manual</GearBox>
+<isMiles>false</isMiles>
+<Odometer>121186</Odometer>
+<OdometerTBA>false</OdometerTBA>
+<Registration>10607-C</Registration>
+<VIN>JTEJU3FJ3EK072535</VIN>
+<VINTBA>true</VINTBA>
+<ImpactAreaList>
+<ImpactArea>
+<Area>D_RHRear</Area>
+</ImpactArea>
+<ImpactArea>
+<Area>E_CentreRear</Area>
+</ImpactArea>
+<ImpactArea>
+<Area>F_LHRear</Area>
+</ImpactArea>
+</ImpactAreaList>
+<ImpactDirectionList>
+<ImpactDirection>
+<Destination>E_CentreRear</Destination>
+<Source>A_CentreFront</Source>
+</ImpactDirection>
+</ImpactDirectionList>
+<Salvage>
+<CashInLieuFlag>false</CashInLieuFlag>
+<DailyStorageTBA>false</DailyStorageTBA>
+<MayMoveSalvage>false</MayMoveSalvage>
+<NetworkToSalvageAgent>false</NetworkToSalvageAgent>
+<OwnerRetainsSalvageFlag>false</OwnerRetainsSalvageFlag>
+<TotalStorageTBA>false</TotalStorageTBA>
+<ValueAgreedFlag>false</ValueAgreedFlag>
+</Salvage>
+</Vehicle>
+<WorkProvider>
+<Code>7</Code>
+<Description>Oman Insurance</Description>
+</WorkProvider>
+</Assessment>

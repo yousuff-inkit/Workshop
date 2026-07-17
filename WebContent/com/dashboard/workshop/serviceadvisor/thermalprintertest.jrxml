@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2017-08-02T17:20:38 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="thermalprintertest" pageWidth="226" pageHeight="586" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fe4f8e0b-c1b6-4a3b-ae86-ed4c41253b1a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="aits"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<queryString>
+		<![CDATA[select 'name']]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="545" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="70" height="18" uuid="50a43ab3-be8e-4832-a955-27482a2444b5"/>
+				<text><![CDATA[VEHICLE NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="70" height="18" uuid="b4a7f0b0-f91e-4010-8542-312daceeccca"/>
+				<text><![CDATA[JOB TO BE CARRIED OUT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="66" width="90" height="18" uuid="2fec99c8-0d03-4d8d-8270-b2605a1dab66"/>
+				<text><![CDATA[Testing the thermal print]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="66" width="70" height="18" uuid="5c598ee1-18f8-4f2b-8000-8efa07fb930d"/>
+				<text><![CDATA[BAY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="43" width="90" height="18" uuid="6b0e3a84-27c4-41f7-8a7f-8e8837027b57"/>
+				<text><![CDATA[Testing the thermal print ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="70" height="18" uuid="9f31c5ef-585d-4475-ba2c-9126850f52e4"/>
+				<text><![CDATA[TECHINICIAN ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="25" width="90" height="18" uuid="81c8ba46-22a0-45cf-9e8f-5d543a0bc2a5"/>
+				<text><![CDATA[123/205888852223]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="88" width="90" height="18" uuid="40a9a144-43d1-4114-9c6f-6bcc7f1c9a62"/>
+				<text><![CDATA[vehicle parts purchase]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="3" width="70" height="18" uuid="24295f48-500a-4809-9a4a-9b37fc3eaee3"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="92" y="3" width="90" height="18" uuid="720d96b9-c806-4633-a12f-a2b872a67e20"/>
+				<text><![CDATA[02/08/2017   04:51]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="112" width="70" height="18" uuid="990302e1-4b29-49db-b10f-f97f27108de1"/>
+				<text><![CDATA[PARTS REQUIRED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="140" width="178" height="404" uuid="8f05679d-d86e-4cc8-8113-99b4352b99c1"/>
+				<text><![CDATA[	A car rental, hire car, or car hire agency is a company that rents automobiles for short periods of time, generally ranging from a few hours to a few weeks. It is often organized with numerous local branches (which allow a user to return a vehicle to a different location), and primarily located near airports or busy city areas and often complemented by a website allowing online reservations.
+
+	Car rental agencies primarily serve people who require a temporary vehicle, for example those who do not own their own car, travelers who are out of town, or owners of damaged or destroyed vehicles who are awaiting repair or insurance compensation. Car rental agencies may also serve the self-moving industry needs, by renting vans or trucks, and in certain markets other types of vehicles such as motorcycles or scooters may also be offered.
+
+	Alongside the basic rental of a vehicle, car rental agencies typically also offer extra products such as insurance, global positioning system (GPS) navigation systems, entertainment systems, mobile phones, portable WiFi and child safety seats.]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

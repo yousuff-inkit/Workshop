@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Customer Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+<jsp:include page="../floorMgmtIncludes.jsp"></jsp:include>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<link href="css/util.css" rel="stylesheet" />
+<style>
+	@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+	@import url(https://fonts.googleapis.com/css?family=Teko:700);
+	@font-face {
+		font-family: Poppins-Regular;
+	  	src: url('fonts/poppins/Poppins-Regular.ttf'); 
+	}
+	
+	@font-face {
+	  	font-family: Poppins-Medium;
+	  	src: url('fonts/poppins/Poppins-Medium.ttf'); 
+	}
+	
+	@font-face {
+	  	font-family: Montserrat-Medium;
+	  	src: url('fonts/montserrat/Montserrat-Medium.ttf'); 
+	}
+	
+	@font-face {
+	  	font-family: Montserrat-SemiBold;
+	  	src: url('fonts/montserrat/Montserrat-SemiBold.ttf'); 
+	}
+	* {
+		margin: 0px; 
+		padding: 0px; 
+		box-sizing: border-box;
+	}
+	html,body{
+		width:100%;
+		height:100%;
+		background-color:#E9E9E9;
+		font-family: Poppins-Regular, sans-serif;
+	}
+
+	.card-container{
+		width: 100%;
+		background-color: #fff;
+		box-shadow: 0 9px 16px 0 rgba(153,153,153,.25);
+		padding-top: 10px;
+	}
+	.card-container .card-icon-wrapper{
+		width: 30%;
+		display: inline-block;
+		clear: both;
+		float: left;
+		padding-left: 10px;
+		padding-right: 10px;
+		
+	}
+	.card-container .card-detail-wrapper{
+		width: 70%;
+		display: inline-block;
+		padding-left: 10px;
+	}
+	.card-container .card-detail-wrapper p:nth-child(1){
+		margin-top: 5px;
+		margin-bottom: 2px;
+	}
+</style>
+</head>
+<body>
+	<div class="page-loader">
+		<button type="button" class="btn btn-brand"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Loading</button>
+	</div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span> 
+      			</button>
+      			<a class="navbar-brand" href="#">CRM Dashboard</a>
+    		</div>
+    		<div class="collapse navbar-collapse" id="myNavbar">
+      			<ul class="nav navbar-nav navbar-right">
+        			<li><a href="#"><span class="fa fa-bell-o"></span></a></li>
+        			<li class="dropdown">
+        				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-user"></span> John Doe
+        					<span class="caret"></span>
+        				</a>
+        				<ul class="dropdown-menu">
+          					<li><a href="#">Sign Out</a></li>
+          					<li><a href="#">Change Password</a></li>
+        				</ul>
+      				</li>
+      			</ul>
+    		</div>
+  		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="panel panel-default m-t-30">
+	  		<div class="panel-body">
+	    		<strong>Hi Dave</strong>,Your Analytics are all set
+	  		</div>
+		</div>	
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+				<div class="card-container img-rounded">
+					<div class="card-icon-wrapper">
+						<img src="https://img.icons8.com/ultraviolet/40/000000/active-directory.png">
+					</div>
+					<div class="card-detail-wrapper">
+						<p>PDC In Hand</p>
+						<p><strong>AED 15245.56</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+				<div class="card-container img-rounded">
+					<div class="card-icon-wrapper">
+						<img src="https://img.icons8.com/cotton/40/000000/cash-receipt.png">
+					</div>
+					<div class="card-detail-wrapper">
+						<p>Sub. Reciept</p>
+						<p><strong>AED 15245.56</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+				<div class="card-container img-rounded">
+					<div class="card-icon-wrapper">
+						<img src="https://img.icons8.com/officel/40/000000/money.png">
+					</div>
+					<div class="card-detail-wrapper">
+						<p>Advance</p>
+						<p><strong>AED 15245.56</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+				<div class="card-container img-rounded">
+					<div class="card-icon-wrapper">
+						<img src="https://img.icons8.com/cotton/40/000000/invoice-1.png">
+					</div>
+					<div class="card-detail-wrapper">
+						<p>Balance</p>
+						<p><strong>AED 15245.56</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+				<div class="card-container img-rounded">
+					<div class="card-icon-wrapper">
+						<img src="https://img.icons8.com/cotton/40/000000/file-delete.png">
+					</div>
+					<div class="card-detail-wrapper">
+						<p>Un Applied</p>
+						<p><strong>AED 15245.56</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+				<div class="card-container img-rounded">
+					<div class="card-icon-wrapper">
+						<img src="https://img.icons8.com/color/48/000000/total-sales-1.png">
+					</div>
+					<div class="card-detail-wrapper">
+						<p>Total</p>
+						<p><strong>AED 15245.56</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

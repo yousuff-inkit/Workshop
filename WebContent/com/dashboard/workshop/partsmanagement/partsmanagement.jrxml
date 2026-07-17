@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2019-01-21T16:00:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="partsmanagement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3df72221-b69d-4532-bf7c-ac0de0168ae9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="partsmanagement"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="6bd499f7-6a02-4c56-a3ee-57ec690493c3">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (6)"/>
+		<parameter name="docno0" class="java.lang.String"/>
+		<parameter name="docno1" class="java.lang.String"/>
+		<parameter name="docno2" class="java.lang.String"/>
+		<parameter name="docno3" class="java.lang.String"/>
+		<parameter name="docno4" class="java.lang.String"/>
+		<parameter name="docno5" class="java.lang.String"/>
+		<parameter name="docno6" class="java.lang.String"/>
+		<parameter name="docno7" class="java.lang.String"/>
+		<parameter name="docno8" class="java.lang.String"/>
+		<parameter name="docno9" class="java.lang.String"/>
+		<parameter name="docno10" class="java.lang.String"/>
+		<parameter name="docno11" class="java.lang.String"/>
+		<parameter name="docno12" class="java.lang.String"/>
+		<parameter name="docno13" class="java.lang.String"/>
+		<parameter name="docno14" class="java.lang.String"/>
+		<parameter name="docno15" class="java.lang.String"/>
+		<parameter name="docno16" class="java.lang.String"/>
+		<parameter name="docno17" class="java.lang.String"/>
+		<parameter name="docno18" class="java.lang.String"/>
+		<parameter name="docno19" class="java.lang.String"/>
+		<parameter name="docno20" class="java.lang.String"/>
+		<parameter name="docno21" class="java.lang.String"/>
+		<parameter name="docno22" class="java.lang.String"/>
+		<parameter name="docno23" class="java.lang.String"/>
+		<parameter name="docno24" class="java.lang.String"/>
+		<parameter name="docno25" class="java.lang.String"/>
+		<parameter name="docno26" class="java.lang.String"/>
+		<parameter name="docno27" class="java.lang.String"/>
+		<parameter name="docno28" class="java.lang.String"/>
+		<parameter name="docno29" class="java.lang.String"/>
+		<parameter name="docno30" class="java.lang.String"/>
+		<parameter name="docno31" class="java.lang.String"/>
+		<parameter name="docno32" class="java.lang.String"/>
+		<parameter name="docno33" class="java.lang.String"/>
+		<parameter name="docno34" class="java.lang.String"/>
+		<parameter name="docno35" class="java.lang.String"/>
+		<parameter name="docno36" class="java.lang.String"/>
+		<parameter name="docno37" class="java.lang.String"/>
+		<parameter name="docno38" class="java.lang.String"/>
+		<parameter name="docno39" class="java.lang.String"/>
+		<parameter name="docno40" class="java.lang.String"/>
+		<parameter name="docno41" class="java.lang.String"/>
+		<parameter name="docno42" class="java.lang.String"/>
+		<parameter name="docno43" class="java.lang.String"/>
+		<parameter name="docno44" class="java.lang.String"/>
+		<parameter name="docno45" class="java.lang.String"/>
+		<parameter name="docno46" class="java.lang.String"/>
+		<parameter name="docno47" class="java.lang.String"/>
+		<parameter name="docno48" class="java.lang.String"/>
+		<parameter name="docno49" class="java.lang.String"/>
+		<parameter name="docno50" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select coalesce(description,'') description,coalesce(remarks,'') remarks,round(coalesce(qty,0),2) 'rqstqty',round(coalesce(qty,0),2) 'estqty' from ws_estspare where rowno in ($P{docno0},$P{docno1},$P{docno2},$P{docno3},$P{docno4},$P{docno5},$P{docno6},$P{docno7},$P{docno8},$P{docno9},$P{docno10},$P{docno11},$P{docno12},$P{docno13},$P{docno14},$P{docno15},$P{docno16},$P{docno17},$P{docno18},$P{docno19},$P{docno20},$P{docno21},$P{docno22},$P{docno23},$P{docno24},$P{docno25},$P{docno26},$P{docno27},$P{docno28},$P{docno29},$P{docno30},$P{docno31},$P{docno32},$P{docno33},$P{docno34},$P{docno35},$P{docno36},$P{docno37},$P{docno38},$P{docno39},$P{docno40},$P{docno41},$P{docno42},$P{docno43},$P{docno44},$P{docno45},$P{docno46},$P{docno47},$P{docno48},$P{docno49},$P{docno50});]]>
+		</queryString>
+		<field name="description" class="java.lang.String"/>
+		<field name="rqstqty" class="java.math.BigDecimal"/>
+		<field name="estqty" class="java.math.BigDecimal"/>
+		<field name="remarks" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="comname" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="trno" class="java.lang.String"/>
+	<parameter name="ref" class="java.lang.String"/>
+	<parameter name="date" class="java.sql.Date"/>
+	<parameter name="jobdetails" class="java.lang.String"/>
+	<parameter name="by" class="java.lang.String"/>
+	<parameter name="on" class="java.sql.Date"/>
+	<parameter name="at" class="java.sql.Time"/>
+	<parameter name="ndocno" class="java.lang.String"/>
+	<parameter name="docno0" class="java.lang.String"/>
+	<parameter name="docno1" class="java.lang.String"/>
+	<parameter name="docno2" class="java.lang.String"/>
+	<parameter name="docno3" class="java.lang.String"/>
+	<parameter name="docno4" class="java.lang.String"/>
+	<parameter name="docno5" class="java.lang.String"/>
+	<parameter name="docno6" class="java.lang.String"/>
+	<parameter name="docno7" class="java.lang.String"/>
+	<parameter name="docno8" class="java.lang.String"/>
+	<parameter name="docno9" class="java.lang.String"/>
+	<parameter name="docno10" class="java.lang.String"/>
+	<parameter name="docno11" class="java.lang.String"/>
+	<parameter name="docno12" class="java.lang.String"/>
+	<parameter name="docno13" class="java.lang.String"/>
+	<parameter name="docno14" class="java.lang.String"/>
+	<parameter name="docno15" class="java.lang.String"/>
+	<parameter name="docno16" class="java.lang.String"/>
+	<parameter name="docno17" class="java.lang.String"/>
+	<parameter name="docno18" class="java.lang.String"/>
+	<parameter name="docno19" class="java.lang.String"/>
+	<parameter name="docno20" class="java.lang.String"/>
+	<parameter name="docno21" class="java.lang.String"/>
+	<parameter name="docno22" class="java.lang.String"/>
+	<parameter name="docno23" class="java.lang.String"/>
+	<parameter name="docno24" class="java.lang.String"/>
+	<parameter name="docno25" class="java.lang.String"/>
+	<parameter name="docno26" class="java.lang.String"/>
+	<parameter name="docno27" class="java.lang.String"/>
+	<parameter name="docno28" class="java.lang.String"/>
+	<parameter name="docno29" class="java.lang.String"/>
+	<parameter name="docno30" class="java.lang.String"/>
+	<parameter name="docno31" class="java.lang.String"/>
+	<parameter name="docno32" class="java.lang.String"/>
+	<parameter name="docno33" class="java.lang.String"/>
+	<parameter name="docno34" class="java.lang.String"/>
+	<parameter name="docno35" class="java.lang.String"/>
+	<parameter name="docno36" class="java.lang.String"/>
+	<parameter name="docno37" class="java.lang.String"/>
+	<parameter name="docno38" class="java.lang.String"/>
+	<parameter name="docno39" class="java.lang.String"/>
+	<parameter name="docno40" class="java.lang.String"/>
+	<parameter name="docno41" class="java.lang.String"/>
+	<parameter name="docno42" class="java.lang.String"/>
+	<parameter name="docno43" class="java.lang.String"/>
+	<parameter name="docno44" class="java.lang.String"/>
+	<parameter name="docno45" class="java.lang.String"/>
+	<parameter name="docno46" class="java.lang.String"/>
+	<parameter name="docno47" class="java.lang.String"/>
+	<parameter name="docno48" class="java.lang.String"/>
+	<parameter name="docno49" class="java.lang.String"/>
+	<parameter name="docno50" class="java.lang.String"/>
+	<parameter name="regno" class="java.lang.String"/>
+	<parameter name="brand" class="java.lang.String"/>
+	<parameter name="model" class="java.lang.String"/>
+	<parameter name="yom" class="java.lang.String"/>
+	<parameter name="color" class="java.lang.String"/>
+	<parameter name="chasis" class="java.lang.String"/>
+	<parameter name="printby" class="java.lang.String"/>
+	<parameter name="backjob" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 'name' as name;]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="112" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="6" y="2" width="174" height="102" uuid="2adb89cc-67cd-4e61-8953-df22f4fa2bf1"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="433" y="10" width="112" height="20" uuid="e2a86eb0-82b9-4c67-a641-43886f6e0f33"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{comname}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="456" y="30" width="89" height="20" uuid="c2f19045-af8b-43aa-b874-7d0f2c371580"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{trno}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="107" width="550" height="1" uuid="a1205f3c-8ba3-4c5c-bebd-029194b2be17"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="190" y="48" width="190" height="20" uuid="b8a81f88-ef08-4c75-8ccb-939fa84eeb04"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" isUnderline="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SPARE PARTS REQUEST"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="31" width="20" height="18" uuid="0a885196-3193-4988-9d43-a3a275fcff7e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TRN"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="218" splitType="Stretch">
+			<frame>
+				<reportElement x="1" y="10" width="544" height="30" uuid="eb5534d5-bfc9-4bf2-a8f2-fef15f42fae5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField>
+					<reportElement x="9" y="5" width="21" height="20" uuid="6c7d76f1-a3d5-40f2-b4e6-83056622293c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Doc#         :"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="31" y="5" width="90" height="20" uuid="10ccac8e-e286-4700-b12b-10077c23bd47"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{ndocno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="417" y="5" width="22" height="20" uuid="23273e95-34be-4820-aa51-2b991b655624"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="MMMM d, yyyy" isBlankWhenNull="true">
+					<reportElement x="440" y="5" width="90" height="20" uuid="636d4ef1-2d73-47be-909f-13ed410ced27"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="170" y="5" width="43" height="20" uuid="42a8fbc1-375f-433c-8c86-6ae86e2ebeaa"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Back Job    :"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="214" y="5" width="90" height="20" uuid="c64451df-d56f-41e5-aa38-e31cc911b120"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{backjob}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="1" y="50" width="100" height="20" uuid="808b4a51-5b6b-4cde-b746-0d65c50c92bd"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["VehicleDetails"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="70" width="50" height="20" uuid="55a7ebd1-5dfc-479c-9b14-23007d14fd98"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Regno    :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="90" width="51" height="20" uuid="fd4ed5f9-f02e-4f61-aaaa-d7e5313979da"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Brand     : "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="110" width="50" height="20" uuid="3e214521-6103-4954-8572-dd13a976f567"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Model    :"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="49" y="70" width="151" height="20" uuid="d843cba6-0b57-427e-93d6-768c2014b939"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{regno}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="50" y="90" width="150" height="20" uuid="b0b808c3-d1f3-469d-93a8-8077ce57adbb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{brand}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="49" y="110" width="151" height="20" uuid="0a819c69-5821-4fcc-8c7e-882df2c43b29"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="70" width="55" height="20" uuid="68f0e605-d458-4bf4-a1f8-5f36dba87b3d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Yom          :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="90" width="55" height="20" uuid="d1074b94-2869-4ce1-8f69-e40669b39fbe"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Color        :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="110" width="55" height="20" uuid="3963c957-7c4d-437c-a8cb-f88b8260761e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Chasis     :"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="335" y="70" width="210" height="20" uuid="8b07c6c1-c6d8-46e0-b2d6-21a92e1fc18c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{yom}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="335" y="90" width="209" height="20" uuid="71e67f77-3519-4a5b-a50a-e4bbc83c95f5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{color}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="335" y="110" width="209" height="20" uuid="e265efa1-e9f7-473c-9aec-796e561f1a0b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{chasis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="144" width="100" height="26" uuid="c6569029-57db-44a0-9c76-27c7623d23b3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Requisition Details"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="1" y="170" width="550" height="40" uuid="a5fbedc3-2a74-4f9b-ac8d-f0f009ff05e4">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 3_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 3_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 3_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="31eb9a68-61a1-4c40-be04-da71ddfe6661">
+						<datasetParameter name="docno0">
+							<datasetParameterExpression><![CDATA[$P{docno0}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno1">
+							<datasetParameterExpression><![CDATA[$P{docno1}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno2">
+							<datasetParameterExpression><![CDATA[$P{docno2}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno3">
+							<datasetParameterExpression><![CDATA[$P{docno3}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno4">
+							<datasetParameterExpression><![CDATA[$P{docno4}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno5">
+							<datasetParameterExpression><![CDATA[$P{docno5}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno6">
+							<datasetParameterExpression><![CDATA[$P{docno6}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno7">
+							<datasetParameterExpression><![CDATA[$P{docno7}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno8">
+							<datasetParameterExpression><![CDATA[$P{docno8}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno9">
+							<datasetParameterExpression><![CDATA[$P{docno9}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno10">
+							<datasetParameterExpression><![CDATA[$P{docno10}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno11">
+							<datasetParameterExpression><![CDATA[$P{docno11}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno12">
+							<datasetParameterExpression><![CDATA[$P{docno12}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno13">
+							<datasetParameterExpression><![CDATA[$P{docno13}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno14">
+							<datasetParameterExpression><![CDATA[$P{docno14}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno15">
+							<datasetParameterExpression><![CDATA[$P{docno15}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno16">
+							<datasetParameterExpression><![CDATA[$P{docno16}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno17">
+							<datasetParameterExpression><![CDATA[$P{docno17}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno18">
+							<datasetParameterExpression><![CDATA[$P{docno18}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno19">
+							<datasetParameterExpression><![CDATA[$P{docno19}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno20">
+							<datasetParameterExpression><![CDATA[$P{docno20}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno21">
+							<datasetParameterExpression><![CDATA[$P{docno21}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno22">
+							<datasetParameterExpression><![CDATA[$P{docno22}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno23">
+							<datasetParameterExpression><![CDATA[$P{docno23}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno24">
+							<datasetParameterExpression><![CDATA[$P{docno24}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno25">
+							<datasetParameterExpression><![CDATA[$P{docno25}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno26">
+							<datasetParameterExpression><![CDATA[$P{docno26}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno27">
+							<datasetParameterExpression><![CDATA[$P{docno27}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno28">
+							<datasetParameterExpression><![CDATA[$P{docno28}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno29">
+							<datasetParameterExpression><![CDATA[$P{docno29}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno30">
+							<datasetParameterExpression><![CDATA[$P{docno30}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno31">
+							<datasetParameterExpression><![CDATA[$P{docno31}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno32">
+							<datasetParameterExpression><![CDATA[$P{docno32}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno33">
+							<datasetParameterExpression><![CDATA[$P{docno33}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno34">
+							<datasetParameterExpression><![CDATA[$P{docno34}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno35">
+							<datasetParameterExpression><![CDATA[$P{docno35}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno36">
+							<datasetParameterExpression><![CDATA[$P{docno36}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno37">
+							<datasetParameterExpression><![CDATA[$P{docno37}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno38">
+							<datasetParameterExpression><![CDATA[$P{docno38}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno39">
+							<datasetParameterExpression><![CDATA[$P{docno39}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno40">
+							<datasetParameterExpression><![CDATA[$P{docno40}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno41">
+							<datasetParameterExpression><![CDATA[$P{docno41}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno42">
+							<datasetParameterExpression><![CDATA[$P{docno42}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno43">
+							<datasetParameterExpression><![CDATA[$P{docno43}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno44">
+							<datasetParameterExpression><![CDATA[$P{docno44}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno45">
+							<datasetParameterExpression><![CDATA[$P{docno45}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno46">
+							<datasetParameterExpression><![CDATA[$P{docno46}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno47">
+							<datasetParameterExpression><![CDATA[$P{docno47}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno48">
+							<datasetParameterExpression><![CDATA[$P{docno48}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno49">
+							<datasetParameterExpression><![CDATA[$P{docno49}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="docno50">
+							<datasetParameterExpression><![CDATA[$P{docno50}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="273" uuid="fbdf55b3-4727-4199-9e46-dbd4075dd9a4">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table 3_TH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="273" height="20" uuid="79781f6a-fb81-4ad9-9479-4d8597f5dff2"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Description]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table 3_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="273" height="20" uuid="a3983570-d6bb-4f81-ab1a-4d12d9894c1c"/>
+								<textElement verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph leftIndent="3"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="37" uuid="30da5387-aad4-4c99-b812-fb88dc328c2c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table 3_TH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="37" height="20" uuid="e1aa705d-d6db-4c63-bda1-d6dc2a5b6071"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Est. Qty]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table 3_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="37" height="20" uuid="db630a19-34c2-4778-a2e7-761c93225e5c"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="3"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{rqstqty}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="24d1ba0a-84e1-4474-b3e4-6289fe64b8b7">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader style="Table 3_TH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="20" uuid="7939a2f7-bdde-424b-a87b-c2aa27c4e7cb"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Req. Qty]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table 3_TD" height="20">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="40" height="20" uuid="42ffeb24-c079-4b92-b00b-b9e6f15d2236"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="3"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{estqty}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="200" uuid="43b8e08b-eeb4-4826-8391-827800ced343">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:tableHeader style="Table 3_TH" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="200" height="20" uuid="a584996c-6882-4d38-8677-aab262453b5b"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Remarks]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table 3_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="200" height="20" uuid="7ded9bb9-12f1-4e43-b532-c037107ee5a9"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph leftIndent="3"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{remarks}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="8" width="80" height="20" uuid="d0b85092-f813-468e-8f32-4cab9dd555a2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Printed by"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="9" width="100" height="18" uuid="b206f3f0-5fce-4d69-8b35-5e3d3ed4e75e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{printby}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

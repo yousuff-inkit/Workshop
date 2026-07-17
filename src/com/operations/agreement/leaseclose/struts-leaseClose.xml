@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="leaseclose" extends="struts-default">
+			<action name="saveLeaseClose" class="com.operations.agreement.leaseclose.ClsLeaseCloseAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success">leaseClose.jsp</result>
+				<result name="fail">leaseClose.jsp</result>
+				
+			</action>
+			<action name="printLeaseClose" class="com.operations.agreement.leaseagreement.ClsLeaseAgreementAction" method="printActions">
+			
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>
+			</action>
+			<action name="printKmDetailsLease" class="com.operations.agreement.leaseagreement.ClsLeaseAgreementAction" method="printKm">
+			    <interceptor-ref name="params"/>
+			    <result name="print">kmPrint.jsp</result>
+   			</action>
+		</package>	
+</struts>

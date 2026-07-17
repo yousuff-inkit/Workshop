@@ -1,0 +1,95 @@
+.card-list-container{
+	width:100%;
+	padding:8px 8px 8px 0px;
+	border-radius:5px;
+	
+}
+.card-list-container .card-item{
+	padding:6px;
+	border-radius:5px;
+	background-color:#eceeef;
+	/* background-color:#D6D5D4; */
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-bottom:3px;
+}
+.card-list-container .card-item .card-item-img{
+	padding:5px;
+	border:1px solid #BAB9B7;
+	border-radius:3px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.card-list-container .card-item .card-item-img:nth-child(0){
+	padding-right:16px;
+}
+.card-list-container .card-item .card-item-img:nth-child(3){
+	padding-right:9px;
+	padding-left:9px;
+}
+.card-list-container .card-item .card-item-text{
+	margin-left:5px;
+}
+.apex-chart-panel .list-inline{
+	margin-bottom:0px;
+}
+.apex-chart-panel .list-inline li span{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--theme-deafult);
+    display:inline-block;
+    margin-right:5px;
+}
+
+.media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.earning-card.card .card-body .media .media-left {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--theme-deafult);
+    margin-right: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+.media .media-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* .apex-chart-panel .list-inline li:nth-child(2) span{
+	background-color: var(--theme-secondary);
+} */
+.apex-chart-panel .list-inline li:nth-child(1) span{
+	background-color: #f72585;
+}
+.apex-chart-panel .list-inline li:nth-child(2) span{
+	background-color: #b5179e;
+}
+.apex-chart-panel .list-inline li:nth-child(3) span{
+	background-color: #7209b7;
+}
+.apex-chart-panel .list-inline li:nth-child(4) span{
+	background-color: #3a0ca3;
+}
+.apex-chart-panel .list-inline li:nth-child(5) span{
+	background-color: #4361ee;
+}

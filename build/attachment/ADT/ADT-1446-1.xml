@@ -1,0 +1,461 @@
+<Assessment xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+<AssessmentNumber>MSH00106</AssessmentNumber>
+<CreationDate>2019-05-02T07:13:08</CreationDate>
+<CreatorSiteId>AUTOFITG</CreatorSiteId>
+<CustomerNumber>907740</CustomerNumber>
+<LastUpdatedBy>Mohammad Shahid</LastUpdatedBy>
+<LastUpdatedDate>2019-05-02T07:22:59</LastUpdatedDate>
+<Originator>AUTOFITG</Originator>
+<State>Received</State>
+<UnRead>false</UnRead>
+<WorkstationVersion>AUTOFITG/1</WorkstationVersion>
+<AssessmentTag>
+<AssessorUserName>Mohammad Shahid</AssessorUserName>
+<EstimatingUserName>Mohammad Shahid</EstimatingUserName>
+<AssessorUser xsi:type="AeeBusRoleType">
+<AeeBusRoleStatus>Active</AeeBusRoleStatus>
+<AeeBusRoleType>User</AeeBusRoleType>
+<Description>Mohammad Shahid</Description>
+<Email>shahid@autofitcenter.com</Email>
+<Firstname>Mohammad</Firstname>
+<IncorrectLoginCount>0</IncorrectLoginCount>
+<IsCoAdministrator>false</IsCoAdministrator>
+<Lastname>Shahid</Lastname>
+<Login_Name>mshahid</Login_Name>
+<MUAMaxWorkload>0</MUAMaxWorkload>
+<Password>D068CB91D8548381BA</Password>
+<PasswordExpiry>2019-05-17T09:27:30</PasswordExpiry>
+</AssessorUser>
+<InsurerSite xsi:type="MasterList_SiteIdType">
+<AKAName>Autofit</AKAName>
+<CompanyName>Autofit</CompanyName>
+<DateAdded>2012-01-29T09:55:36</DateAdded>
+<IsCustomer>false</IsCustomer>
+<SiteId>1138</SiteId>
+<SiteIdStatus>Unknown</SiteIdStatus>
+</InsurerSite>
+<RepairerSite xsi:type="MasterList_SiteIdType">
+<AKAName>Autofit</AKAName>
+<CompanyName>Autofit</CompanyName>
+<DateAdded>2012-01-29T09:55:36</DateAdded>
+<IsCustomer>false</IsCustomer>
+<SiteId>1138</SiteId>
+<SiteIdStatus>Unknown</SiteIdStatus>
+</RepairerSite>
+<RepairerUser xsi:type="AeeBusRoleType">
+<AeeBusRoleStatus>Active</AeeBusRoleStatus>
+<AeeBusRoleType>User</AeeBusRoleType>
+<Description>Mohammad Shahid</Description>
+<Email>shahid@autofitcenter.com</Email>
+<Firstname>Mohammad</Firstname>
+<IncorrectLoginCount>0</IncorrectLoginCount>
+<IsCoAdministrator>false</IsCoAdministrator>
+<Lastname>Shahid</Lastname>
+<Login_Name>mshahid</Login_Name>
+<MUAMaxWorkload>0</MUAMaxWorkload>
+<Password>D068CB91D8548381BA</Password>
+<PasswordExpiry>2019-05-17T09:27:30</PasswordExpiry>
+</RepairerUser>
+</AssessmentTag>
+<Authorisation>
+<AuthorisationStatus>Interim</AuthorisationStatus>
+<RepairsAuthorised>TBA</RepairsAuthorised>
+</Authorisation>
+<Claim>
+<DateOfIncidentTBA>false</DateOfIncidentTBA>
+<DateOfInspection>2019-05-02T07:10:19</DateOfInspection>
+<InspectionRequest>false</InspectionRequest>
+<InspectionSiteVehPresent>false</InspectionSiteVehPresent>
+<IOTReference>Uninitialised</IOTReference>
+<OtherReference>1483</OtherReference>
+<RepairerTBA>false</RepairerTBA>
+<RepairEstCostTBA>false</RepairEstCostTBA>
+</Claim>
+<CountryState>
+<Code>0</Code>
+<IsDefault>true</IsDefault>
+<ISOCode>AE-DU</ISOCode>
+<Name>Dubai</Name>
+<CurrencyDefinition>
+<Code>AED</Code>
+<DecimalDigits>2</DecimalDigits>
+<DecimalSeparator>.</DecimalSeparator>
+<GroupSeparator>,</GroupSeparator>
+<GroupSizes>3</GroupSizes>
+<NegativePattern>0</NegativePattern>
+<PositivePattern>0</PositivePattern>
+<Symbol>AED</Symbol>
+</CurrencyDefinition>
+</CountryState>
+<CourtesyCar>
+</CourtesyCar>
+<CurrencyDefinition>
+<Code>AED</Code>
+<DecimalDigits>2</DecimalDigits>
+<DecimalSeparator>.</DecimalSeparator>
+<GroupSeparator>,</GroupSeparator>
+<GroupSizes>3</GroupSizes>
+<NegativePattern>0</NegativePattern>
+<PositivePattern>0</PositivePattern>
+<Symbol>AED</Symbol>
+</CurrencyDefinition>
+<DamageEstimate>
+<CalculationList>
+<Calculation>
+<CalculationDate>2019-05-02T07:22:00</CalculationDate>
+<CalculationType>Normal</CalculationType>
+<ClassRelease>170</ClassRelease>
+<CorrProtection01WU>0</CorrProtection01WU>
+<CorrProtection02WU>0</CorrProtection02WU>
+<EngineTypeText>PREPARE OFF VEHICLE</EngineTypeText>
+<ErrorCode>0</ErrorCode>
+<GrandTotalAfterExcessAmt currency="GB">0.00</GrandTotalAfterExcessAmt>
+<GrandTotalExcludingVAT currency="GB">1190.25</GrandTotalExcludingVAT>
+<GrandTotalIncludingVAT currency="GB">1249.76</GrandTotalIncludingVAT>
+<LabourClass1WU currency="GB">5</LabourClass1WU>
+<LabourClass2WU currency="GB">0</LabourClass2WU>
+<LabourClass3WU currency="GB">0</LabourClass3WU>
+<LabourClass4WU currency="GB">0</LabourClass4WU>
+<LabourClass5WU currency="GB">0</LabourClass5WU>
+<ManufacturerText currency="GB">CHEVROLET</ManufacturerText>
+<NonPaintTimeBasis currency="GB">10</NonPaintTimeBasis>
+<PaintTimeBasis currency="GB">10</PaintTimeBasis>
+<PartPriceDate currency="GB">2004-10-28T00:00:00</PartPriceDate>
+<SubModelText currency="GB">BASE MODEL</SubModelText>
+<SubTotalLabourAmt currency="GB">75.00</SubTotalLabourAmt>
+<VATAmt currency="GB">59.51</VATAmt>
+<VATPcnt currency="GB">5</VATPcnt>
+<VisualAlignmentWU currency="GB">0</VisualAlignmentWU>
+<CalculationItemList>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>L/R SIDE PANEL      REPAIR PAINTING &lt;50%</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">3481</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">RepairPaint_LI</RepairMethod>
+<WUCount currency="GB">15</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>L/R DOOR            SURFACE-/BLEND PAINT</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">1781</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">SurfacePaint_L</RepairMethod>
+<WUCount currency="GB">8</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>REAR BUMPER         SURFACE PAINT PLAST.</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">2582</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">SurfacePaint_L</RepairMethod>
+<WUCount currency="GB">13</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>MACHINE POLISH      .</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">1000</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">SurfacePaint_L</RepairMethod>
+<WUCount currency="GB">0</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">75.00</Amount>
+<CodeText currency="GB">3481</CodeText>
+<DescriptionText currency="GB">REPAIR L/R SIDE PANEL</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Repair_I</RepairMethod>
+<WUCount currency="GB">5</WUCount>
+<WUIndicator currency="GB">*</WUIndicator>
+</CalculationItem>
+</CalculationItemList>
+<GeneralCosts>
+<BettermentDedPartsAmt currency="GB">0.00</BettermentDedPartsAmt>
+<BodyFillerAmt currency="GB">0.00</BodyFillerAmt>
+<CorrProtection01Amt currency="GB">0.00</CorrProtection01Amt>
+<CorrProtection02Amt currency="GB">0.00</CorrProtection02Amt>
+<DeductionAdditionalAmt currency="GB">0.00</DeductionAdditionalAmt>
+<DeductionReusePartsAmt currency="GB">0.00</DeductionReusePartsAmt>
+<FixedLabourPanMechAmt currency="GB">0.00</FixedLabourPanMechAmt>
+<FixedNonStdItemsAmt currency="GB">0.00</FixedNonStdItemsAmt>
+<IntermediateRepairCostsExVat currency="GB">1190.25</IntermediateRepairCostsExVat>
+<LabourAmt2 currency="GB">0.00</LabourAmt2>
+<LabourAmt3 currency="GB">0.00</LabourAmt3>
+<LabourAmt4 currency="GB">0.00</LabourAmt4>
+<LabourAmt5 currency="GB">0.00</LabourAmt5>
+<LabourPanelMechAmt currency="GB">75.00</LabourPanelMechAmt>
+<LbrAmtDecrease currency="GB">-3.75</LbrAmtDecrease>
+<LbrAmtIncrease currency="GB">0.00</LbrAmtIncrease>
+<OverAllDiscountAmt currency="GB">0.00</OverAllDiscountAmt>
+<PartsAmt currency="GB">0.00</PartsAmt>
+<PartsSaving currency="GB">0.00</PartsSaving>
+<RepairCostAmt currency="GB">1190.25</RepairCostAmt>
+<RepairCostIncVatBefDed currency="GB">1249.76</RepairCostIncVatBefDed>
+<SubjectToCheckAmt currency="GB">0.00</SubjectToCheckAmt>
+<SundryPartsAmt currency="GB">0.00</SundryPartsAmt>
+<SundryPartsPcnt currency="GB">0</SundryPartsPcnt>
+<SupplementaryWorkAmt currency="GB">0.00</SupplementaryWorkAmt>
+<TotalAdditionalAmt currency="GB">0.00</TotalAdditionalAmt>
+<TotalDeductionAmt currency="GB">0.00</TotalDeductionAmt>
+<TotalExtrasAmt currency="GB">0.00</TotalExtrasAmt>
+<TotalLabourAmt currency="GB">71.25</TotalLabourAmt>
+<TotalPaintMaterialAmt currency="GB">150.00</TotalPaintMaterialAmt>
+<TotalPartsAmt currency="GB">0.00</TotalPartsAmt>
+<VatAmtBefDed currency="GB">59.51</VatAmtBefDed>
+<VisualAlignmentAmt currency="GB">0.00</VisualAlignmentAmt>
+</GeneralCosts>
+<IDBlockCodeList>
+<IDBlockCode>
+<BlockCode>28</BlockCode>
+<IsActive>true</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>33</BlockCode>
+<IsActive>true</IsActive>
+<Value>5</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>42</BlockCode>
+<IsActive>true</IsActive>
+<Value>150</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>51</BlockCode>
+<IsActive>true</IsActive>
+<Value>100</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>59</BlockCode>
+<IsActive>true</IsActive>
+<Value>5</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>70</BlockCode>
+<IsActive>true</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>71</BlockCode>
+<IsActive>false</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+</IDBlockCodeList>
+<ModelOptionList>
+<ModelOption>
+<Code>A1</Code>
+<Text>FROM MODEL 2007</Text>
+</ModelOption>
+<ModelOption>
+<Code>Y4</Code>
+<Text>TWO COAT METALLIC</Text>
+</ModelOption>
+<ModelOption>
+<Code>Y7</Code>
+<Text>PREPARE OFF VEHICLE</Text>
+</ModelOption>
+</ModelOptionList>
+<PaintCosts>
+<BettermentDedPaintAmt currency="GB">0.00</BettermentDedPaintAmt>
+<CalcLabourPcnt currency="GB">0</CalcLabourPcnt>
+<FixedLabourPaintAmt currency="GB">0.00</FixedLabourPaintAmt>
+<FixedPaintMaterialAmt currency="GB">150.00</FixedPaintMaterialAmt>
+<IndexChangeAmt currency="GB">0.00</IndexChangeAmt>
+<LabourPaintAmt currency="GB">1020.00</LabourPaintAmt>
+<NewPartAmt currency="GB">0.00</NewPartAmt>
+<NewPartAreaCount currency="GB">0</NewPartAreaCount>
+<NewPartUnitCount currency="GB">0</NewPartUnitCount>
+<PaintDiscountAmount currency="GB">-51.00</PaintDiscountAmount>
+<PaintMaterialAmt currency="GB">0.00</PaintMaterialAmt>
+<PaintWU currency="GB">36</PaintWU>
+<PearlescentPaintAmt currency="GB">0.00</PearlescentPaintAmt>
+<PreparePaintSundryAmt currency="GB">0.00</PreparePaintSundryAmt>
+<PreparePartsWU currency="GB">0</PreparePartsWU>
+<PrepInCaseofPrepaint currency="GB">27.00</PrepInCaseofPrepaint>
+<PrepPanelsOffCar currency="GB">0</PrepPanelsOffCar>
+<PrepSinglePanelOffCar currency="GB">32</PrepSinglePanelOffCar>
+<PrepWorkMetalWU currency="GB">0</PrepWorkMetalWU>
+<PrepWorkMultilayerWU currency="GB">0.00</PrepWorkMultilayerWU>
+<PrepWorkPlasticWU currency="GB">5</PrepWorkPlasticWU>
+<Repair1Amt currency="GB">0.00</Repair1Amt>
+<Repair1AreaCount currency="GB">0</Repair1AreaCount>
+<Repair1UnitCount currency="GB">0</Repair1UnitCount>
+<RepairAmt currency="GB">0.00</RepairAmt>
+<RepairAreaCount currency="GB">0</RepairAreaCount>
+<RepairUnitCount currency="GB">0</RepairUnitCount>
+<SundryCostsAmt currency="GB">0.00</SundryCostsAmt>
+<SurfaceAmt currency="GB">0.00</SurfaceAmt>
+<SurfaceAreaCount currency="GB">0</SurfaceAreaCount>
+<SurfaceUnitCount currency="GB">0</SurfaceUnitCount>
+<TotalLabourPaintAmt currency="GB">1020.00</TotalLabourPaintAmt>
+<TotalPaintWU currency="GB">68</TotalPaintWU>
+<TotalUnits currency="GB">0</TotalUnits>
+</PaintCosts>
+</Calculation>
+</CalculationList>
+<Headers>
+<Line01>Auto Fit Centre</Line01>
+<Line02>Al Quoz</Line02>
+<Line03>P. O. Box 3664</Line03>
+<Line04>Dubai, UAE</Line04>
+</Headers>
+<Model xsi:type="FullModelType">
+<AZTAddScratchResist>false</AZTAddScratchResist>
+<AZTPrepColours>false</AZTPrepColours>
+<AZTPrepColoursWU>0</AZTPrepColoursWU>
+<AZTPrepDegrease>false</AZTPrepDegrease>
+<AZTPrepDegreaseWU>0</AZTPrepDegreaseWU>
+<AZTPrepIDManuf>false</AZTPrepIDManuf>
+<AZTPrepIDManufWU>0</AZTPrepIDManufWU>
+<AZTPrepMaskGlass>false</AZTPrepMaskGlass>
+<AZTPrepMaskGlassWU>0</AZTPrepMaskGlassWU>
+<AZTPrepMasking>false</AZTPrepMasking>
+<AZTPrepMaskingWU>0</AZTPrepMaskingWU>
+<AZTPrepMixing>false</AZTPrepMixing>
+<AZTPrepMixingWU>0</AZTPrepMixingWU>
+<AZTPrepSample>false</AZTPrepSample>
+<AZTPrepSampleWU>0</AZTPrepSampleWU>
+<BMSBodyType>SUV</BMSBodyType>
+<ManufacturerName>CHEVROLET USA</ManufacturerName>
+<ManufDatCode>3871</ManufDatCode>
+<ModelName>Tahoe</ModelName>
+<ModelOptions>A1Y4Y7</ModelOptions>
+<SModelCode>01</SModelCode>
+<VehicleType>AXFullCar</VehicleType>
+</Model>
+<Rate>
+<CorrosionProtection currency="GB">0.00</CorrosionProtection>
+<FixedPricePaintAndMaterials currency="GB">150.00</FixedPricePaintAndMaterials>
+<LabourRate currency="GB">150.00</LabourRate>
+<LabourRate4 currency="GB">150.00</LabourRate4>
+<LabourRate5 currency="GB">150.00</LabourRate5>
+<PaintIndex currency="GB">100</PaintIndex>
+<PaintRate currency="GB">150.00</PaintRate>
+<SundryPartsPcnt currency="GB">0</SundryPartsPcnt>
+<IDBlockCodeList>
+<IDBlockCode>
+<BlockCode>51</BlockCode>
+<Value>100</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>28</BlockCode>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>42</BlockCode>
+<Value>150</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>33</BlockCode>
+<Value>5</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>59</BlockCode>
+<Value>5</Value>
+</IDBlockCode>
+</IDBlockCodeList>
+</Rate>
+<RepairList>
+<Repair>
+<Description>MACHINE POLISH</Description>
+<GuideNumber>1000</GuideNumber>
+<OperationType>72</OperationType>
+<RepairMethod>SurfacePaint_L</RepairMethod>
+<WorkText>.</WorkText>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>2582</GuideNumber>
+<GXCoordinates>2582040006</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>SurfacePaint_L</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>3481</GuideNumber>
+<GXCoordinates>3481040009</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Repair_I</RepairMethod>
+<WorkUnits>5</WorkUnits>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>1781</GuideNumber>
+<GXCoordinates>1781090016</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>SurfacePaint_L</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+</RepairList>
+</DamageEstimate>
+<POCList>
+<POC xsi:type="RepairerContactType">
+<AbleToAuthorise>TBA</AbleToAuthorise>
+<ContactType>Repairer</ContactType>
+<VATRegisteredStatus>Yes</VATRegisteredStatus>
+</POC>
+<POC>
+<ContactType>Assessor</ContactType>
+<ContactDetail>
+<Name>shahid</Name>
+</ContactDetail>
+</POC>
+</POCList>
+<Policy>
+<ExcessTBA>true</ExcessTBA>
+<VATStatus>TBA</VATStatus>
+</Policy>
+<TextList>
+<Text>
+<TextType>Assessment</TextType>
+</Text>
+</TextList>
+<Vehicle>
+<BodyColour>Silver</BodyColour>
+<GearBox>Manual</GearBox>
+<isMiles>false</isMiles>
+<Odometer>255167</Odometer>
+<OdometerTBA>false</OdometerTBA>
+<Registration>49203-G</Registration>
+<VIN>1GNFK13J47R403135</VIN>
+<VINTBA>true</VINTBA>
+<ImpactAreaList>
+<ImpactArea>
+<Area>F_LHRear</Area>
+</ImpactArea>
+<ImpactArea>
+<Area>G_LHSide</Area>
+</ImpactArea>
+</ImpactAreaList>
+<ImpactDirectionList>
+<ImpactDirection>
+<Destination>H_LHFront</Destination>
+<Source>F_LHRear</Source>
+</ImpactDirection>
+</ImpactDirectionList>
+<Salvage>
+<CashInLieuFlag>false</CashInLieuFlag>
+<DailyStorageTBA>false</DailyStorageTBA>
+<MayMoveSalvage>false</MayMoveSalvage>
+<NetworkToSalvageAgent>false</NetworkToSalvageAgent>
+<OwnerRetainsSalvageFlag>false</OwnerRetainsSalvageFlag>
+<TotalStorageTBA>false</TotalStorageTBA>
+<ValueAgreedFlag>false</ValueAgreedFlag>
+</Salvage>
+</Vehicle>
+<WorkProvider>
+<Code>7</Code>
+<Description>Oman Insurance</Description>
+</WorkProvider>
+</Assessment>

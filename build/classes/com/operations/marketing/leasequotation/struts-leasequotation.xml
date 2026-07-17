@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="leaseQuotation" extends="struts-default">
+			<action name="saveLeaseQuotation" class="com.operations.marketing.leasequotation.ClsLeaseQuotationAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success">leaseQuotation.jsp</result>
+				<result name="fail">leaseQuotation.jsp</result>
+			</action>
+			
+			<action name="printLeaseQuotation" class="com.operations.marketing.leasequotation.ClsLeaseQuotationAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>
+			</action>
+			
+		</package>	
+</struts>

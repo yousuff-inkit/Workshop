@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="trafficfine" extends="struts-default">
+			
+			<action name="printTrafficToBeInvoiced" class="com.dashboard.trafficfine.ClsTrafficfineAction" method="printTobeInvoicedAction">
+				<interceptor-ref name="params"/>
+				<result name="print">trafficToBeInvoicedPrint.jsp</result>
+			</action>
+
+			<action name="printTrafficInvoice" class="com.dashboard.trafficfine.ClsTrafficfineAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print">trafficInvoicePrint.jsp</result>
+			</action>	
+			
+			
+			<action name="saveNotInvoicedTraffic" class="com.dashboard.trafficfine.ClsTrafficfineAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >notInvoiced.jsp</result>
+				<result name="fail">notInvoiced.jsp</result>
+				
+			</action>		
+		</package>	
+</struts>

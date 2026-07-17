@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="wsestimationpal" extends="struts-default">
+			<action name="saveWSEstimationPal" class="com.workshop.wsestimationpal.ClsWSEstimationPalAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >estimation.jsp</result>
+				<result name="fail">estimation.jsp</result>
+			</action>
+			
+	 <action name="estimationPalView" class="com.workshop.wsestimationpal.ClsWSEstimationPalAction" method="saveAction">
+       <interceptor-ref name="params"/>
+       <result name="success" >../../../com/workshop/estimationpal/estimation.jsp</result>
+       <result name="fail">../../../com/workshop/estimationpal/estimation.jsp</result>
+	</action>
+	
+    <action name="estimiviw" class="com.workshop.wsestimationpal.ClsWSEstimationPalAction" method="saveAction">
+            <interceptor-ref name="params"/>
+            <result name="success" >../../../com/workshop/estimationpal/estimation.jsp</result>
+            <result name="fail">../../../com/workshop/estimationpal/estimation.jsp</result>
+     </action> 
+	
+	<action name="printEstimation1" class="com.workshop.wsestimationpal.ClsWSEstimationPalAction" method="printAction">      
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>
+	</action>
+			
+	</package>
+</struts>

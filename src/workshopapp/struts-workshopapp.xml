@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="workshopapp" extends="struts-default">
+			<action name="saveAppLogin" class="workshopapp.ClsWorkshopAppAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >gateInPass.jsp</result>
+				<result name="fail">index.jsp</result>
+			</action>
+			<action name="saveFloorLogin" class="workshopapp.ClsWorkshopAppAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >floorMgmt.jsp</result>
+				<result name="fail">index.jsp</result>
+			</action>
+			<action name="workshopAppGIPPrint" class="workshopapp.ClsWorkshopAppAction" method="printAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">gateinpass_Fancy.jrxml</result>
+			</action>
+			<!-- <action name="printPropertyInspLogin" class="propertyinsplogin.ClsPropertyInspLoginAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print" >property222.jrxml</result>
+			</action> -->
+		</package>	
+</struts>

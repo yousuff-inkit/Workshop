@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="vehpuchaseorder" extends="struts-default">
+			<action name="savePurchaseorder" class="com.operations.vehicleprocurement.purchaseorder.ClsvehpurchaseorderAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >purchaseOrder.jsp</result>
+				<result name="fail">purchaseOrder.jsp</result>
+			</action>
+			
+				
+			<action name="printPurchorder" class="com.operations.vehicleprocurement.purchaseorder.ClsvehpurchaseorderAction" method="printAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">purchaseorderprint.jsp</result>
+			</action>
+			
+			
+			
+		</package>	
+		
+		
+		
+</struts>

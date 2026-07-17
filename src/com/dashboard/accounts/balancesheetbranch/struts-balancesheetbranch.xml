@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="balancesheetbranch" extends="struts-default">
+			
+			<action name="printTFormbranch" class="com.dashboard.accounts.balancesheetbranch.ClsBalanceSheetAction" method="printTFormAction">
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>  
+			</action>
+			
+			<action name="balancesheetlistbranch" class="com.dashboard.accounts.balancesheetbranch.ClsBalanceSheetAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>  
+			</action>
+			
+			<action name="balancesheetlist2branch" class="com.dashboard.accounts.balancesheetbranch.ClsBalanceSheetAction" method="print2Action">
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>
+			</action>	
+		</package>	
+</struts>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	 <constant name="struts.custom.i18n.resources" value="processSATdownload" />
+
+	<package name="satdownload" extends="struts-default">
+			<action name="processSATdownload" class="com.SATdownload.SATdownloadAction" method="process">
+				<interceptor-ref name="params"/>
+				<result name="success" >SATDownload.jsp</result>
+				<result name="fail">SATDownload.jsp</result>
+			</action>
+			
+			<action name="getFile" class="com.SATdownload.SATdownloadDAO" method="sat_tfilesearch">
+				<interceptor-ref name="params"/>
+				<result name="success" >satfilenameSearch.jsp</result>
+				<result name="fail">satfilenameSearch.jsp</result>
+			</action>
+			
+			
+		</package>	
+</struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="rental" extends="struts-default">
+			<action name="saveDashboardRentalInvoice" class="com.dashboard.invoices.rental.ClsRentalInvoiceAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >rentalInvoice.jsp</result>
+				<result name="fail">rentalInvoice.jsp</result>
+				
+			</action>
+
+		</package>	
+</struts>

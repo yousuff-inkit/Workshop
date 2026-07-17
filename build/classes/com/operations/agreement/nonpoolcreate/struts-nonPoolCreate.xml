@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="nonpoolcreate" extends="struts-default">
+			<action name="saveNonPoolCreate" class="com.operations.agreement.nonpoolcreate.ClsNonPoolCreateAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success">nonPoolCreate.jsp</result>
+				<result name="fail">nonPoolCreate.jsp</result>
+				
+			</action>
+			<!-- <action name="printRentalClose" class="com.operations.agreement.rentalagreement.ClsRentalAgreementAction" method="printAction">
+			
+				<interceptor-ref name="params"/>
+				<result name="print">epicraprint.jsp</result>
+			</action>
+ -->		</package>	
+</struts>

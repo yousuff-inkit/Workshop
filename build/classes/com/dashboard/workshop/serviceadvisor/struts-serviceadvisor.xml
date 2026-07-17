@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="serviceadvisor" extends="struts-default">
+			<action name="saveServiceAdvisor" class="com.dashboard.workshop.serviceadvisor.ClsServiceAdvisorAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >serviceAdvisor.jsp</result>
+				<result name="fail">serviceAdvisor.jsp</result>
+				
+			</action>
+
+<action name="printserviceadvisordetails" class="com.dashboard.workshop.serviceadvisor.ClsServiceAdvisorAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print" >${url}</result>
+				
+			</action>
+
+		</package>	
+</struts>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	 <constant name="struts.custom.i18n.resources" value="saveRentalAgreement" />
+
+	<package name="rentalagmtsayara" extends="struts-default">
+			<action name="saveRentalAgmtSayara" class="com.operations.agreement.rentalagmtsayara.ClsRentalAgmtSayaraAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >rentalAgreement.jsp</result>
+				<result name="fail">rentalAgreement.jsp</result>
+			</action>
+			
+			<action name="printRASayara" class="com.operations.agreement.rentalagmtsayara.ClsRentalAgmtSayaraAction" method="printAction"> <!--  printAction nooriprintAction-->
+			    <interceptor-ref name="params"/>
+			   <!--  <result name="print">epicraprint.jsp</result>  -->
+			      <result name="print">${url}</result> 
+			</action>
+			<action name="printRAClosingSummary" class="com.operations.agreement.rentalagmtsayara.ClsRentalAgmtSayaraAction" method="printClosingSummaryAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">closingSummaryPrint.jsp</result>
+			</action>
+			<action name="rentalAgrementDetails" class="com.operations.agreement.rentalagmtsayara.ClsRentalAgmtSayaraAction" method="saveAction">
+			    <interceptor-ref name="params"/>
+			    <result name="success" >../../../../com/operations/agreement/rentalagmtsayara/rentalAgreement.jsp</result>
+			    <result name="fail">../../../../com/operations/agreement/rentalagmtsayara/rentalAgreement.jsp</result>
+   			</action>
+	</package>
+		
+</struts>

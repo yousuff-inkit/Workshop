@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="jobcardcompletenewfancy" extends="struts-default">
+			<action name="saveWSJobCardCompleteNewFancy" class="com.dashboard.workshop.jobcardcompletenewfancy.ClsJobCardCompleteNewFancyAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >jobcardComplete.jsp</result>
+				<result name="fail">jobcardComplete.jsp</result>
+			</action>
+			<action name="printWSJobCardCompleteNewFancy" class="com.dashboard.workshop.jobcardcompletenewfancy.ClsJobCardCompleteNewFancyAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print">proformaPrintfancy.jsp</result>
+			</action>
+	</package>
+</struts>

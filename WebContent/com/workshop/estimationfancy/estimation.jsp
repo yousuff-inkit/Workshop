@@ -1,0 +1,612 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<% String contextPath=request.getContextPath();%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GatewayERP(i)</title>
+
+<jsp:include page="../../../includes.jsp"></jsp:include>
+<%-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script> --%>
+<style>
+.hidden-scrollbar {
+  /* // overflow: auto; */
+  height: 530px;
+    overflow-x: hidden;
+    
+} 
+.headClass
+{
+    background-color: #FFEBC2;
+}
+.redClass
+{
+    background-color: #FFEBEB;
+}
+.violetClass
+{
+    background-color: #EBD6FF;
+}
+.yellowClass
+{
+    background-color: #FFFFD1;
+}
+.whiteClass
+{
+   background-color: #FFF;
+}
+.greenClass
+{
+   background-color: #CEFFCE;
+}
+        
+</style>
+<%String id=request.getParameter("id")==null?"":request.getParameter("id");
+String gipno=request.getParameter("gipno")==null?"":request.getParameter("gipno");
+%>
+<script type="text/javascript">
+$(document).ready(function() {
+if($('#servicestotal').val()==''){
+	$('#servicestotal').val(0);
+}
+if($('#servicesdiscount').val()==''){
+	$('#servicesdiscount').val(0);
+}
+if($('#netservices').val()==''){
+	$('#netservices').val(0);
+}
+if($('#sparediscount').val()==''){
+	$('#sparediscount').val(0);
+}
+if($('#sparenettotal').val()==''){
+	$('#sparenettotal').val(0);
+}
+if($('#genuinetotal').val()==''){
+	$('#genuinetotal').val(0);
+}
+if($('#usedtotal').val()==''){
+	$('#usedtotal').val(0);
+}
+if($('#markettotal').val()==''){
+	$('#markettotal').val(0);
+}
+if($('#approvedtotal').val()==''){
+	$('#approvedtotal').val(0);
+}
+if($('#sparetotal').val()==''){
+	$('#sparetotal').val(0);
+}
+
+$("#date").jqxDateTimeInput({  width:'125px',height : '15px', formatString : "dd.MM.yyyy" });
+//$("#policedate").jqxDateTimeInput({  width:'125px',height : '15px', formatString : "dd.MM.yyyy" });
+//$("#intime").jqxDateTimeInput({  width:'55px',height : '15px', formatString : "HH:mm",showCalendarButton:false,value:new Date() });
+$("body").prepend('<div id="overlay" class="ui-widget-overlay" style="z-index: 1001; display: none;"></div>');
+$("body").prepend("<div id='PleaseWait' style='display: none;position:absolute; z-index: 1;margin-left:50%;margin-right:50%;margin-top:15%;top:200;right:600;'><img src='../../../icons/31load.gif'/></div>");    
+//$('#intime').jqxDateTimeInput('setDate', new Date());
+$('#searchwindow').jqxWindow({ width: '50%', height: '55%',  maxHeight: '55%' ,maxWidth: '50%' , title: 'Gate In Pass Search' ,position: { x: 250, y: 60 }, keyboardCloseKey: 27});
+$('#searchwindow').jqxWindow('close');
+$('#partssearchwindow').jqxWindow({ width: '50%', height: '55%',  maxHeight: '55%' ,maxWidth: '50%' , title: 'Product Search' ,position: { x: 250, y: 60 }, keyboardCloseKey: 27});
+$('#partssearchwindow').jqxWindow('close');
+$('#laboursearchwindow').jqxWindow({ width: '50%', height: '55%',  maxHeight: '55%' ,maxWidth: '50%' , title: 'Service Type Search' ,position: { x: 250, y: 60 }, keyboardCloseKey: 27});
+$('#laboursearchwindow').jqxWindow('close');
+//document.getElementById("chklumsum").disabled=false;
+getDocDateConfig();
+$( "#gatevocno" ).dblclick(function() {
+	if(document.getElementById("mode").value=="view"){
+		return false;
+	}
+	$('#searchwindow').jqxWindow('open');
+	$('#searchwindow').jqxWindow('focus');
+	SearchContent('gateInPassSearch.jsp','searchwindow');
+});
+$('#btnEdit').mousedown(function(){
+	var editstatus=$('#editstatus').val();
+	if(editstatus==0){
+		$.messager.alert('Warning','Job Card Issued!!Cannot Edit');
+		return false;
+	}
+});
+/* $( "#sparepartstotal,#labourtotal,#discount" ).change(function() {
+	  var parts=parseFloat($('#sparepartstotal').val());
+	  var labour=parseFloat($('#labourtotal').val());
+	  var discount=parseFloat($('#discount').val());
+	  var total=(parts+labour)-discount;
+	  $('#esttotal').val(total);
+}); */
+$( "#servicestotal,#servicesdiscount" ).change(function() {
+	  var services=parseFloat($('#servicestotal').val());
+	  var discount=parseFloat($('#servicesdiscount').val());
+	  var total=services-discount;
+	  $('#netservices').val(total);
+});
+$( "#sparetotal,#sparediscount" ).change(function() {
+	  var spare=parseFloat($('#sparetotal').val());
+	  var discount=parseFloat($('#sparediscount').val());
+	  var total=spare-discount;
+	  $('#sparenettotal').val(total.toFixed(2));
+});
+$('#btnCalculate').click(function(){
+	$('#sparePartsAmountGrid').jqxGrid('clear');
+	var sparemarkup=$('#sparemarkup').val();
+	var servicetotal=$('#netservices').val();
+	var genuinetotal=parseFloat($('#genuinetotal').val())-parseFloat($('#sparediscount').val());
+	var markettotal=parseFloat($('#markettotal').val())-parseFloat($('#sparediscount').val());
+	var usedtotal=parseFloat($('#usedtotal').val())-parseFloat($('#sparediscount').val());
+	var approvedtotal=parseFloat($('#approvedtotal').val())-parseFloat($('#sparediscount').val());
+	var date=$('#date').jqxDateTimeInput('val');
+	var docno=$('#docno').val();
+	var gatedocno=$('#gatedocno').val();
+	var lumsumamount=$('#lumsumamount').val();
+	var chklumsum=0;
+	//genuinetotal=$('#sparenettotal').val();
+	if(document.getElementById("chklumsum").checked==true){
+		chklumsum=1;
+	}
+	else{
+		chklumsum=0;
+	}
+	if(lumsumamount!="" && lumsumamount!=null && lumsumamount!="undefined" && typeof(lumsumamount)!="undefined" && Number.isNaN(lumsumamount)==false){
+		lumsumamount=(parseFloat(parseFloat(lumsumamount)+(parseFloat(lumsumamount)*sparemarkup)))-parseFloat($('#sparediscount').val());
+	}
+	
+	insertSparePartsAmount(servicetotal,genuinetotal,markettotal,usedtotal,approvedtotal,date,docno,gatedocno,lumsumamount,chklumsum);
+});
+
+
+var gipno='<%=gipno%>';
+if(gipno!="" && gipno!="undefined" && gipno!=null && typeof(gipno)!="undefined"){
+	getRefData(gipno);
+}
+
+});
+function getRefData(gipno){
+	var x = new XMLHttpRequest();
+	x.onreadystatechange = function() {
+		if (x.readyState == 4 && x.status == 200) {
+			var items = x.responseText.trim().split("::");
+			$('#gatedocno').val(items[0]);
+		    $('#gatevocno').val(items[1]);
+		    $('#gateuserdetails').val(items[2]);
+		    $('#gatevehicledetails').val(items[3]);
+		    $('#sparemarkup').val(items[4]);
+		    $('#labdiscount').val(items[5]);
+		    $('#complaintdiv').load('complaintGrid.jsp?docno='+$('#gatedocno').val()+'&id=1');		
+		}
+		else{
+			}
+		}
+	
+	x.open("GET", "getGateDataAJAX.jsp?gipno="+gipno, true);
+	x.send();
+}
+function insertSparePartsAmount(servicetotal,genuinetotal,markettotal,usedtotal,approvedtotal,date,docno,gatedocno,lumsumamount,chklumsum){
+	var x = new XMLHttpRequest();
+	x.onreadystatechange = function() {
+		if (x.readyState == 4 && x.status == 200) {
+			var items = x.responseText.trim();
+			$('#sparepartsamountdiv').load('sparePartsAmountGrid.jsp?gatedocno='+items+'&id=1');
+		}
+	}
+	x.open("GET", "insertSparePartsAmount.jsp?servicetotal="+servicetotal+"&genuinetotal="+genuinetotal+"&markettotal="+markettotal+"&usedtotal="+usedtotal+"&approvedtotal="+approvedtotal+"&date="+date+"&docno="+docno+"&gatedocno="+gatedocno+"&lumsumamount="+lumsumamount+"&chklumsum="+chklumsum, true);
+	x.send();
+}
+function getGateInPass(event){
+	if(document.getElementById("mode").value=="view"){
+		return false;
+	}
+	var x= event.keyCode;
+    if(x==114){
+    	$('#searchwindow').jqxWindow('open');
+    	$('#searchwindow').jqxWindow('focus');
+    	SearchContent('gateInPassSearch.jsp');
+      }
+}
+
+function SearchContent(url,id) {
+    $.get(url).done(function (data) {
+  $('#'+id).jqxWindow('setContent', data);
+}); 
+}
+
+function funSearchLoad(){
+	changeContent('masterSearch.jsp', $('#window'));
+ }
+function funReadOnly() {
+	$('#frmWSEstimationFancy input').attr('readonly',true);
+var id='<%=id%>';
+	 if(id=="3"){
+	  funCreateBtn();
+	 }
+}
+function funRemoveReadOnly() {
+	$('#frmWSEstimationFancy input').attr('readonly',false);
+	$('#docno').attr('readonly',true);
+	if($('#mode').val()=='A'){
+		$('#sparePartsNewGrid,#labourcostGrid,#sparePartsAmountGrid,#complaintGrid').jqxGrid('clear');
+		$('#sparePartsNewGrid,#labourcostGrid,#sparePartsAmountGrid').jqxGrid({disabled:false});
+		$("#sparePartsNewGrid,#labourcostGrid").jqxGrid("addrow", null, {});
+		var id='<%=id%>';
+		if(id!="3"){
+			$("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"description","Consumables");	
+			$("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"genuinerate",0.0);	
+			$("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"usedrate",0.0);	
+			$("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"marketrate",0.0);	
+			$("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"genuinetotal",0.0);	
+			$("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"usedtotal",0.0);	
+			$("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"markettotal",0.0);	
+		}
+		
+		/* $("#sparePartsNewGrid").jqxGrid("setcellvalue",0,"description","Consumables"); */
+		/* if($('#discount').val()==""){
+			$('#discount').val(0);
+		}
+		if($('#sparepartstotal').val()==""){
+			$('#sparepartstotal').val(0);
+		}
+		if($('#labourtotal').val()==""){
+			$('#labourtotal').val(0);
+		}
+		$('#esttotal').val(0); */
+		$('#servicestotal,#servicesdiscount,#netservices,#sparediscount,#sparenettotal,#genuinetotal,#usedtotal,#markettotal,#approvedtotal,#sparetotal').val(0);
+		
+	}
+	else if($('#mode').val()=='E' || $('#mode').val()=='D'){
+		$('#sparePartsNewGrid,#labourcostGrid').jqxGrid({disabled:false});
+		$("#sparePartsNewGrid,#labourcostGrid").jqxGrid("addrow", null, {});
+	}
+	getDocDateConfig();
+	
+}
+
+function setValues() {
+	// document.getElementById("formdetail").value="Gate In-Pass";
+    //  document.getElementById("formdetailcode").value="GIP";
+	document.getElementById("formdet").innerText=$('#formdetail').val()+" ("+$('#formdetailcode').val().trim()+")";
+	funSetlabel();
+	 if($('#msg').val()!=""){
+		   $.messager.alert('Message',$('#msg').val());
+	 }
+	var a=$('#gatedocno').val();
+	var b=$('#docno').val();
+	
+	if($('#docno').val()!=''){
+		var b=$('#docno').val();
+		$('#complaintdiv').load('../../../com/workshop/estimationfancy/complaintGrid.jsp?docno='+$('#gatedocno').val()+'&branch='+$('#brchName').val()+'&id=1');	
+		CheckEditStatus($('#docno').val());
+	}
+	if($('#docno').val()!=''){
+		$('#sparepartsdiv').load('../../../com/workshop/estimationfancy/sparePartsNewGrid.jsp?docno='+$('#docno').val()+'&id=1');
+	}
+	if($('#docno').val()!=''){
+		$('#labourcostdiv').load('../../../com/workshop/estimationfancy/labourcostGrid.jsp?docno='+$('#docno').val()+'&id=1');		
+	}
+	if($('#gatedocno').val()!=''){
+		$('#sparepartsamountdiv').load('../../../com/workshop/estimationfancy/sparePartsAmountGrid.jsp?gatedocno='+$('#gatedocno').val()+'&id=1');		
+	}
+	if(document.getElementById("hidchklumsum").value=='1'){
+		document.getElementById("chklumsum").checked=true;
+	}
+	else{
+		document.getElementById("chklumsum").checked=false;
+	}
+	setLumSum();
+}
+
+ function funFocus()
+    {
+    	document.getElementById("gatevocno").focus(); 
+    }
+    
+     
+ function funNotify(){
+ 	var dateval=funDateInPeriod($('#date').jqxDateTimeInput('getDate'));
+	 if(dateval==0){
+		$('#date').jqxDateTimeInput('focus');
+		return false;
+	 }
+	 var docdateconfig=$('#docdateconfig').val();
+	if(docdateconfig=="1"){
+		var currentdate=new Date();
+		currentdate.setHours(0,0,0,0);
+		var docdate=new Date($('#date').jqxDateTimeInput('getDate'));
+		docdate.setHours(0,0,0,0);
+		if(currentdate.getTime()!=docdate.getTime()){
+			$.messager.alert('Warning','Document Date should be Current Date');
+			$('#date').jqxDateTimeInput('focus');
+			return 0;
+		}
+		else{
+			
+		}
+	}
+	if($('#gatedocno').val()==""){
+		document.getElementById("errormsg").innerText="";
+		document.getElementById("errormsg").innerText="Gate In Pass is Mandatory";
+		return 0;
+	} 
+	var amountrows=$("#sparePartsAmountGrid").jqxGrid('getrows');
+	if(amountrows.length==0){
+		document.getElementById("errormsg").innerText="";
+		document.getElementById("errormsg").innerText="Please Calculate Amount";
+		return 0;
+	}
+	var labourrows = $("#labourcostGrid").jqxGrid('getrows');
+	var labourgridlength=0;
+	for(var i=0;i<labourrows.length;i++){
+		if(labourrows[i].jobid!="" && labourrows[i].jobid!=null && labourrows[i].jobid!="undefined" && typeof(labourrows[i].jobid)!="undefined"){
+			labourgridlength++;
+			newTextBox = $(document.createElement("input"))
+			.attr("type", "dil")
+			.attr("id", "labourcostarray"+i)
+			.attr("name", "labourcostarray"+i)
+			.attr("hidden",true);
+				
+			newTextBox.val(labourrows[i].jobid+" :: "+labourrows[i].hrs+" :: "+labourrows[i].rate+" :: "+labourrows[i].markuppercent+" :: "+labourrows[i].total+" :: "+labourrows[i].remarks+" :: "+labourrows[i].chkexcess);
+			
+			newTextBox.appendTo('form');
+			
+		}
+	}
+	$('#labourcostgridlength').val(labourgridlength);
+	
+	var partrows = $("#sparePartsNewGrid").jqxGrid('getrows');
+	var partgridlength=0;
+	for(var i=0;i<partrows.length;i++){
+		if(partrows[i].description!="" && partrows[i].description!=null && partrows[i].description!="undefined" && typeof(partrows[i].description)!="undefined"){
+			partgridlength++;
+			newTextBox = $(document.createElement("input"))
+			.attr("type", "dil")
+			.attr("id", "sparepartsarray"+i)
+			.attr("name", "sparepartsarray"+i)
+			.attr("hidden",true);
+			//alert(partrows[i].chkexcess);
+			newTextBox.val(partrows[i].description+" :: "+partrows[i].qty+" :: "+partrows[i].genuinerate+" :: "+partrows[i].marketrate+" :: "+partrows[i].usedrate+" :: "+partrows[i].genuinetotal+" :: "+partrows[i].markettotal+" :: "+partrows[i].usedtotal+" :: "+partrows[i].approval+" :: "+partrows[i].approvedvalue+" :: "+partrows[i].chkexcess);
+			newTextBox.appendTo('form');
+		}
+	}
+	if(partgridlength==0 && labourgridlength==0){
+		document.getElementById("errormsg").innerText="";
+		document.getElementById("errormsg").innerText="Cannot Save Empty Estimation";
+		return 0;
+	}
+	if(partgridlength==0){
+		//document.getElementById("errormsg").innerText="";
+//		document.getElementById("errormsg").innerText="Atleast 1 row of Spare Parts is mandatory";
+//		return 0;
+	}
+	$('#sparePartsNewGridlength').val(partgridlength);
+	
+	if(document.getElementById("chklumsum").checked==true){
+ 		document.getElementById("hidchklumsum").value="1";
+	}
+	else{
+		document.getElementById("hidchklumsum").value="0";
+	}
+	return 1;
+ } 
+
+ function isNumber(evt,id) {
+	//Function to restrict characters and enter number only
+  	var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+    {
+    	$.messager.alert('Warning','Enter Numbers Only');
+       	$("#"+id+"").focus();
+        return false;
+    }
+    return true;
+}
+ 
+ function CheckEditStatus(docno){
+	var x = new XMLHttpRequest();
+	x.onreadystatechange = function() {
+		if (x.readyState == 4 && x.status == 200) {
+			var items = x.responseText;
+			$('#editstatus').val(items.trim());
+			} else {
+			}
+		}
+	x.open("GET", "checkEditStatus.jsp?docno="+docno, true);
+	x.send();
+ }
+ 
+ function setLumSum(){
+	 
+ 	if(document.getElementById("chklumsum").checked==true){
+ 		document.getElementById("lumsumamount").disabled=false;
+ 		document.getElementById("hidchklumsum").value="1";
+	}
+	else{
+		document.getElementById("lumsumamount").disabled=true;
+		document.getElementById("hidchklumsum").value="0";
+	}
+ }
+ function funPrintBtn(){
+	 if($('#docno').val()!='' && $('#docno').val()!='0'){
+		var url=document.URL;
+		var reurl=url.split("com");
+		var docno=$('#docno').val();
+		var gatedoc=$('#gatedocno').val();
+		//alert(docno);
+		/* var path= "com/dashboard/workshop/quotationapproval/printQuotationAproval.action?estDocno="+estdocno; */
+		var path= "com/dashboard/workshop/quotationapproval/printQuotationAproval.action?estDocno="+$('#vocno').val()+"&docno="+docno+"&gatedocno="+gatedoc;
+		var win= window.open(reurl[0]+path,"_blank","top=250,left=310,Width=700,Height=600,location=no,scrollbars=yes,toolbar=yes");		
+		win.focus();			
+	 }
+ }
+ 
+ function getDocDateConfig(){
+	var x = new XMLHttpRequest();
+	x.onreadystatechange = function() {
+		if (x.readyState == 4 && x.status == 200) {
+			items = x.responseText.trim();
+			$('#docdateconfig').val(items);
+		} else {
+		}
+	}
+	x.open("GET", "getDocDateConfig.jsp", true);
+	x.send();
+}
+ 
+function funAddMarkup(){
+	var sparetotal=0.0;
+	if($('#sparetotal').val()!="" && $('#sparetotal').val()!="undefined" && $('#sparetotal').val()!=null && typeof($('#sparetotal').val())!="undefined"){
+		sparetotal=parseFloat($('#sparetotal').val());	 
+	}
+	var sparemarkup=0.0;
+	if($('#sparemarkup').val()!="" && $('#sparemarkup').val()!="undefined" && $('#sparemarkup').val()!=null && typeof($('#sparemarkup').val())!="undefined"){
+		sparemarkup=parseFloat($('#sparemarkup').val())/100;
+		sparetotal=sparetotal+(sparetotal*sparemarkup);
+	}
+	var sparediscount=0.0;
+	if($('#sparediscount').val()!="" && $('#sparediscount').val()!="undefined" && $('#sparediscount').val()!=null && typeof($('#sparediscount').val())!="undefined"){
+		sparediscount=parseFloat($('#sparediscount').val());
+	}
+	var nettotal=sparetotal-sparediscount;
+	$('#sparenettotal').val(nettotal);
+	$('#btnCalculate').trigger('click');
+ }
+</script>
+<style>
+	
+</style>
+</head>	
+<body onLoad="setValues();">
+	<div id="mainBG" class="homeContent" data-type="background"> 
+		<form id="frmWSEstimationFancy" action="saveWSEstimationFancy" method="post" autocomplete="off" class="form-inline">
+			<jsp:include page="../../../header.jsp" />
+            <br>
+            <div class='hidden-scrollbar'>
+   			<table width="100%" border="0">
+   			  <tr>
+   			    <td width="9%" align="right">Date</td>
+   			    <td width="31%"><div id="date" name="date" value='<s:property value="date"/>'></div></td>
+   			    <td width="20%">&nbsp;</td>
+   			    <td width="20%" align="right">Doc No</td>
+   			    <td width="20%"><input type="text" name="vocno" id="vocno" readonly tabindex="-1" value='<s:property value="vocno"/>'>
+                <input type="hidden" name="docno" id="docno" readonly tabindex="-1" value='<s:property value="docno"/>'>
+                <input type="hidden" name="editstatus" id="editstatus" readonly tabindex="-1" value='<s:property value="editstatus"/>'></td>
+		      </tr>
+		  </table>
+          <fieldset class="headClass"><legend>Gate In Pass Details</legend>
+          <table width="100%" border="0">
+  <tr>
+    <td width="12%" align="right">Gate In Pass Doc No</td>
+    <td width="12%"><input type="text" name="gatevocno" id="gatevocno" readonly placeholder="Press F3 to Search" value='<s:property value="gatevocno"/>' onkeydown="getGateInPass(event);"></td>
+    <td width="10%"  align="right">User Details</td>
+    <td width="66%"><input type="text" name="gateuserdetails" id="gateuserdetails" readonly value='<s:property value="gateuserdetails"/>' style="width:99%;"></td>
+  </tr>
+  <input type="hidden" name="gatedocno" id="gatedocno" readonly tabindex="-1" value='<s:property value="gatedocno"/>'>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td  align="right">Vehicle Details</td>
+    <td><input type="text" name="gatevehicledetails" id="gatevehicledetails" readonly value='<s:property value="gatevehicledetails"/>' style="width:99%;"></td>
+  </tr>
+</table>
+</fieldset>
+<table width="100%" border="0">
+  <tr>
+    <td colspan="8"><fieldset class="greenClass"><legend>Complaints</legend>
+    	<div id="complaintdiv"><jsp:include page="complaintGrid.jsp"></jsp:include></div>
+        </fieldset>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="8"><fieldset class="yellowClass"><legend>Services</legend>
+    	<div id="labourcostdiv"><jsp:include page="labourcostGrid.jsp"></jsp:include></div>
+        </fieldset></td>
+    </tr>
+    <tr>
+    	<td align="right">Total</td>
+    	<td><input type="text" name="servicestotal" id="servicestotal"  value='<s:property value="servicestotal"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+    	<td align="right">Discount</td>
+    	<td><input type="text" name="servicesdiscount" id="servicesdiscount"  value='<s:property value="servicesdiscount"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+    	<td align="right">Net Services Total</td>
+    	<td><input type="text" name="netservices" id="netservices"  value='<s:property value="netservices"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+    </tr>
+  <tr>
+    <td colspan="8"><fieldset class="redClass"><legend>Spare Parts</legend>
+    	<div id="sparepartsdiv"><jsp:include page="sparePartsNewGrid.jsp"></jsp:include></div>
+        </fieldset></td>
+    </tr>
+  <tr>
+  	<td colspan="8" align="center">
+  		<table width="100%">
+  			<tr>
+				<td><input type="checkbox" id="chklumsum" name="chklumsum" onChange="setLumSum();">&nbsp;&nbsp Lump sum &nbsp;&nbsp;<input type="text" id="lumsumamount" name="lumsumamount" value='<s:property value="lumsumamount"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+				<td align="right">Total</td>
+				<td><input type="text" name="sparetotal" id="sparetotal" value='<s:property value="sparetotal"/>' readonly  style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"/></td>
+				<td align="right">Mark Up %</td>
+				<td><input type="text" name="sparemarkup" id="sparemarkup" value='<s:property value="sparemarkup"/>' readonly  style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);" onchange="funAddMarkup();"/></td>
+				<td align="right">Discount</td>
+				<td><input type="text" name="sparediscount" id="sparediscount" value='<s:property value="sparediscount"/>' readonly  style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);" onchange="funAddMarkup();"/></td>
+				<td align="right">Net Total</td>
+				<td><input type="text" name="sparenettotal" id="sparenettotal" value='<s:property value="sparenettotal"/>' readonly  style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"/></td>
+				<td><button type="button" class="myButton" id="btnCalculate">Calculate Amount</button></td>
+			</tr>
+		</table>
+<input type="hidden" name="hidchklumsum" id="hidchklumsum" value='<s:property value="hidchklumsum"/>'>	
+  </td>
+  <%-- <input type="checkbox" id="chklumsum" name="chklumsum" onChange="setLumSum();">&nbsp;&nbsp Lump sum &nbsp;&nbsp;<input type="text" id="lumsumamount" name="lumsumamount" value='<s:property value="lumsumamount"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+  <input type="hidden" name="hidchklumsum" id="hidchklumsum" value='<s:property value="hidchklumsum"/>'>
+  <td align="center">Markup Percent</td>
+    <td align="center"><input type="text" name="sparemarkup" id="sparemarkup" value='<s:property value="sparemarkup"/>' readonly/></td>
+    <td colspan="2" align="center"><button type="button" class="myButton" id="btnCalculate">Calculate Amount</button></td>
+    
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+   --%>
+   
+   </tr>
+  <tr>
+    <td colspan="8">
+    	<fieldset class=""><legend>Spare Parts Amount</legend>
+    		<div id="sparepartsamountdiv"><jsp:include page="sparePartsAmountGrid.jsp"></jsp:include></div>
+        </fieldset>
+    </td>
+ </tr>
+<%--   <tr>
+    <td  align="right">Spare Parts Total</td>
+    <td><input type="text" name="sparepartstotal" id="sparepartstotal"  value='<s:property value="sparepartstotal"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+    <td align="right">Labour Total</td>
+    <td><input type="text" name="labourtotal" id="labourtotal"  value='<s:property value="labourtotal"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+    <td  align="right">Discount </td>
+    <td><input type="text" name="discount" id="discount"  value='<s:property value="discount"/>' style="text-align:right;" onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+    <td  align="right">Estimation Total</td>
+    <td><input type="text" name="esttotal" id="esttotal"  value='<s:property value="esttotal"/>' style="text-align:right;" readonly onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
+  </tr> --%>
+</table>
+
+    	<input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>'/>
+		<input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
+      	<input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>'/>
+      	<input type="hidden" name="sparePartsNewGridlength" id="sparePartsNewGridlength" value='<s:property value="sparePartsNewGridlength"/>'/>
+      	<input type="hidden" name="labourcostgridlength" id="labourcostgridlength" value='<s:property value="labourcostgridlength"/>'/>
+      	<input type="hidden" name="genuinetotal" id="genuinetotal" value='<s:property value="genuinetotal"/>'/>
+      	<input type="hidden" name="markettotal" id="markettotal" value='<s:property value="markettotal"/>'/>
+      	<input type="hidden" name="usedtotal" id="usedtotal" value='<s:property value="usedtotal"/>'/>
+      	<input type="hidden" name="approvedtotal" id="approvedtotal" value='<s:property value="approvedtotal"/>'/>
+      	<input type="hidden" name="docdateconfig" id="docdateconfig" value='<s:property value="docdateconfig"/>'/>
+      	
+      	<input type="hidden" name="labdiscount" id="labdiscount" value='<s:property value="labdiscount"/>'/>
+            </div>
+      </form>
+    </div>
+    <div id="searchwindow">
+   		<div><img id="loadingImage" src="../../../icons/31load.gif" style="position: absolute;vertical-align:middle;text-align:center;margin-right:50%;margin-left:60%;margin-top:25%;" /></div>
+	</div>
+	<div id="partssearchwindow">
+   		<div><img id="loadingImage" src="../../../icons/31load.gif" style="position: absolute;vertical-align:middle;text-align:center;margin-right:50%;margin-left:60%;margin-top:25%;" /></div>
+	</div>
+	<div id="laboursearchwindow">
+   		<div><img id="loadingImage" src="../../../icons/31load.gif" style="position: absolute;vertical-align:middle;text-align:center;margin-right:50%;margin-left:60%;margin-top:25%;" /></div>
+	</div>
+	<div id="clientwindow">
+   		<div><img id="loadingImage" src="../../../icons/31load.gif" style="position: absolute;vertical-align:middle;text-align:center;margin-right:50%;margin-left:60%;margin-top:25%;" /></div>
+	</div>
+</body>
+</html>

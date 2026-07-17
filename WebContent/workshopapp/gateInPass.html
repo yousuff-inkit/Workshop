@@ -1,0 +1,354 @@
+<!-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/jqx.base.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="css/wizard.css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<title>Gateway ERP</title>
+</head>
+<body>
+	
+	<div class="main">
+	    <div class="container">
+	        <h2>GATE IN PASS</h2>
+	        <form method="POST" id="frmappgateinpass" class="signup-form">
+	            <h3>
+	                <span class="title_text">Master Info</span>
+	            </h3>
+	            <fieldset>
+	                <div class="fieldset-content">
+	                	<div class="row">
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-md-4">
+	                			<div class="form-group form-group-w">
+			                        <label for="docno" class="form-label">Doc No</label>
+			                        <input type="text" name="docno" id="docno" placeholder="Doc No" />
+			                    </div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-md-4">
+	                			<div class="form-select form-group-w">
+	                        		<label for="cmbbranch" class="form-label">Branch</label>
+	                        		<select name="cmbbranch" id="cmbbranch">
+	                            		<option value="">Country</option>
+	                            		<option value="Australia">Australia</option>
+	                            		<option value="USA">America</option>
+	                        		</select>
+	                    		</div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-md-4">
+	                			<div class="form-radio m-t-15">
+	                        		<label for="gender" class="form-label"></label>
+	                        		<div class="form-radio-item">
+	                            		<input type="radio" name="chkmasterdocstatus" value="new" id="chkmasterdocnew" checked="checked" />
+	                            		<label for="chkmasterdocnew">New</label>
+	                            		<input type="radio" name="chkmasterdocstatus" value="new" id="chkmasterdocold" />
+	                            		<label for="chkmasterdocold">Old</label>
+	                        		</div>
+	                    		</div>
+	                		</div>
+	                	</div>
+	                    <div class="row">
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+		                		<div class="form-group form-group-w">
+		                        	<label for="regno" class="form-label">Reg No</label>
+		                        	<input type="text" name="regno" id="regno" placeholder="Reg No" />
+		                        	<div class="searchlist-container">
+		                        		<ul id="regnosearchlist" class="searchlist list-group">
+	  										
+										</ul>
+		                        	</div>
+		                        	
+		                    	</div>	
+		                	</div>
+		                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+		                    	<div class="form-group form-group-w">
+			                        <label for="platecode" class="form-label">Plate Code</label>
+			                        <input type="text" name="platecode" id="platecode" placeholder="Plate Code" />
+			                        <div class="searchlist-container">
+		                        		<ul id="platecodesearchlist" class="searchlist list-group">
+	  										
+										</ul>
+		                        	</div>
+			                    </div>	
+		                    </div>
+		                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+		                    	<div class="form-group form-group-w">
+			                        <label for="authority" class="form-label">Authority</label>
+			                        <input type="text" name="authority" id="authority" placeholder="Authority" />
+			                        <div class="searchlist-container">
+		                        		<ul id="authoritysearchlist" class="searchlist list-group">
+	  										
+										</ul>
+		                        	</div>
+			                    </div>
+		                    </div>
+	                	</div>
+	                	<div class="row">
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+	                			<div class="form-group form-group-w">
+			                        <label for="brand" class="form-label">Brand</label>
+			                        <input type="text" name="brand" id="brand" placeholder="Brand" />
+			                        <div class="searchlist-container">
+		                        		<ul id="brandsearchlist" class="searchlist list-group">
+	  										
+										</ul>
+		                        	</div>
+			                    </div>		
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+	                			<div class="form-group form-group-w">
+			                        <label for="model" class="form-label">Model</label>
+			                        <input type="text" name="model" id="model" placeholder="Model" />
+			                        <div class="searchlist-container">
+		                        		<ul id="modelsearchlist" class="searchlist list-group">
+	  										
+										</ul>
+		                        	</div>
+			                    </div>		
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+	                			<div class="form-group form-group-w">
+			                        <label for="chassisno" class="form-label">Chassis No</label>
+			                        <input type="text" name="chassisno" id="chassisno" placeholder="Chassis No" />
+			                    </div>
+	                		</div>
+	                	</div>
+	                    <div class="row">
+	                    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                    		<div class="form-group form-group-w">
+			                        <label for="clientdetails" class="form-label">Client Details</label>
+			                        <input type="text" name="clientdetails" id="clientdetails" placeholder="Client Details" />
+			                    </div>		
+	                    	</div>
+	                    </div>
+	                    <div class="row">
+	                    	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	                    		<div class="form-group">
+			                        <label for="recievedfromname" class="form-label">Recieved From Name</label>
+			                        <input type="text" name="recievedfromname" id="recievedfromname" placeholder="Customer Name" />
+			                    </div>
+	                    	</div>
+	                    	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	                    		<div class="form-group">
+			                        <label for="recievedfrommobile" class="form-label">Mobile</label>
+			                        <input type="text" name="recievedfrommobile" id="recievedfrommobile" placeholder="Customer Mobile" />
+			                    </div>
+	                    	</div>
+	                    </div>
+	                    
+	                    
+	                    
+	                    
+	                    <!-- 
+	                    <div class="form-group form-password">
+	                        <label for="password" class="form-label">Password</label>
+	                        <input type="password" name="password" id="password" data-indicator="pwindicator" />
+	                        <div id="pwindicator">
+	                            <div class="bar-strength">
+	                                <div class="bar-process">
+	                                    <div class="bar"></div>
+	                                </div>
+	                            </div>
+	                            <div class="label"></div>
+	                        </div>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="your_avatar" class="form-label">Select avatar</label>
+	                        <div class="form-file">
+	                            <input type="file" name="your_avatar" id="your_avatar" class="custom-file-input" />
+	                            <span id="val"></span>
+	                            <span id="button">Select File</span>
+	                        </div>
+	                    </div> -->
+	                </div>
+	                <div class="fieldset-footer">
+	                    <span>Step 1 of 3</span>
+	                </div>
+	            </fieldset>
+	            <h3>
+	                <span class="title_text">Vehicle Info</span>
+	            </h3>
+	            <fieldset>
+	                <div class="fieldset-content">
+	                	<div class="row">
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+	                			<div class="form-group">
+			                        <label for="checkin" class="form-label">Check In</label>
+			                        <input type="text" name="checkin" id="checkin" placeholder="Full Name" />
+			                    </div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-md-4">
+	                			<div class="form-select">
+	                        		<label for="cmbrepairtype" class="form-label">Repair Type</label>
+	                        		<select name="cmbrepairtype" id="cmbrepairtype">
+	                            		<option value="">Country</option>
+	                            		<option value="Australia">Australia</option>
+	                            		<option value="USA">America</option>
+	                        		</select>
+	                    		</div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-4 col-md-4">
+	                			<div class="form-radio m-t-15">
+	                        		<label for="gender" class="form-label"></label>
+	                        		<div class="form-radio-item">
+	                            		<input type="radio" name="chkgipstatus" value="new" id="chkgipstatusnew" checked="checked" />
+	                            		<label for="chkgipstatusnew">New</label>
+	                            		<input type="radio" name="chkgipstatus" value="backjob" id="chkgipstatusbackjob" />
+	                            		<label for="chkgipstatusbackjob">Back job</label>
+	                        		</div>
+	                    		</div>
+	                		</div>
+	                	</div>
+	                	<div class="row">
+	                		<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+	                			<div class="form-group">
+			                        <label for="date" class="form-label">Date</label>
+			                        <input type="text" name="date" id="date" placeholder="Date" />
+			                    </div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+	                			<div class="form-group">
+			                        <label for="time" class="form-label">Time</label>
+			                        <input type="text" name="time" id="time" placeholder="Time" />
+			                    </div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+	                			<div class="form-group">
+			                        <label for="km" class="form-label">Km</label>
+			                        <input type="text" name="km" id="km" placeholder="Kms" />
+			                    </div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+	                			<div class="form-select">
+	                        		<label for="cmbfuel" class="form-label">Fuel</label>
+	                        		<select name="cmbfuel" id="cmbfuel">
+	                            		<option value="">Country</option>
+	                            		<option value="Australia">Australia</option>
+	                            		<option value="USA">America</option>
+	                        		</select>
+	                    		</div>
+	                		</div>
+	                	</div>
+	                    <div class="row">
+	                    	
+	                    </div>
+	                </div>
+	                <div class="fieldset-footer">
+	                    <span>Step 2 of 3</span>
+	                </div>
+	            </fieldset>
+	            <h3>
+	                <span class="title_text">Estimate Info</span>
+	            </h3>
+	            <fieldset>
+	                <div class="fieldset-content">
+	                	<div class="row">
+	                		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	                			<div class="form-group">
+			                        <label for="estimatedate" class="form-label">Date</label>
+			                        <input type="text" name="estimatedate" id="estimatedate" placeholder="Date" />
+			                    </div>
+	                		</div>
+	                		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	                			<div class="form-group">
+			                        <label for="estimatetime" class="form-label">Time</label>
+			                        <input type="text" name="estimatetime" id="estimatetime" placeholder="Time" />
+			                    </div>
+	                		</div>
+	                	</div>
+	                	<div class="row">
+	                		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                			<div class="form-group">
+			                        <label for="remarks" class="form-label">Remarks</label>
+			                        <input type="text" name="remarks" id="remarks" placeholder="Remarks" />
+			                    </div>
+	                		</div>
+	                	</div>
+	                	<div class="row">
+	                		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	                			<div class="form-group">
+			                        <label for="remarks" class="form-label">Customer Signature</label>
+			                        
+			                    </div>
+	                		</div>
+	                	</div>
+	                </div>
+	                <div class="fieldset-footer">
+	                    <span>Step 3 of 3</span>
+	                </div>
+	            </fieldset>
+	        </form>
+	    </div>
+	</div>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="vendor/steps/jquery.steps.min.js"></script>
+	<script src="js/jqxcore.js"></script>
+	<script src="js/jqxinput.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+				var gipform=$('#frmappgateinpass');
+			    gipform.steps({
+			        headerTag: "h3",
+			        bodyTag: "fieldset",
+			        transitionEffect: "slideLeft",
+			        labels: {
+			            previous: 'Previous',
+			            next: 'Next',
+			            finish: 'Submit',
+			            current: ''
+			        },
+			        titleTemplate: '<div class="title"><span class="number">#index#</span>#title#</div>',
+			        onStepChanging: function(event, currentIndex, newIndex) {
+			            //form.validate().settings.ignore = ":disabled,:hidden";
+			            // console.log(form.steps("getCurrentIndex"));
+			            //return form.valid();
+			        	return true;
+			        },
+			        onFinishing: function(event, currentIndex) {
+			            //form.validate().settings.ignore = ":disabled";
+			            //console.log(getCurrentIndex);
+			            //return form.valid();
+			        	return true;
+			        },
+			        onFinished: function(event, currentIndex) {
+			            alert('Sumited');
+			        }
+			        // onInit : function (event, currentIndex) {
+			        //     event.append('demo');
+			        // }
+			    });
+
+		    $('.searchlist li a').click(function(){
+		    	var value=$(this).text();
+		    	$(this).closest('.form-group-w').find('input').val(value);
+		    	$(this).closest('.searchlist').toggleClass('hidden');
+		    	return false;
+		    });
+		});
+		function getInitData(){
+			var x = new XMLHttpRequest();
+	  		x.onreadystatechange = function() {
+	  			if (x.readyState == 4 && x.status == 200) {
+	  				var items = x.responseText.trim();
+	  				items=JSON.parse(items);
+	  				var htmldata='';
+	  				$.each(items.platedata,function(index,value){
+	  					htmldata+='<li class="list-group-item" data-docno="'+value.docno+'">'+value.refname+'</li>';
+	  				});
+	  				
+	  			}
+	  		}
+	  		x.open("GET", "getInitData.jsp", true);
+	  		x.send();
+		}
+	</script>
+</body>
+</html>

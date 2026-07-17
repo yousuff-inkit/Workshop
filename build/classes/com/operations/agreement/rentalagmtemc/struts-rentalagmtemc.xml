@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	 <constant name="struts.custom.i18n.resources" value="saveRentalAgreement" />
+
+	<package name="rentalagmtemc" extends="struts-default">
+			<action name="saveRentalAgmtEMC" class="com.operations.agreement.rentalagmtemc.ClsRentalAgmtEMCAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >rentalAgmt.jsp</result>
+				<result name="fail">rentalAgmt.jsp</result>
+			</action>
+			
+			<action name="printRAEMC" class="com.operations.agreement.rentalagmtemc.ClsRentalAgmtEMCAction" method="printAction"> <!--  printAction nooriprintAction-->
+			    <interceptor-ref name="params"/>
+			   <!--  <result name="print">epicraprint.jsp</result>  -->
+			      <result name="print">${url}</result> 
+			</action>
+			<!-- <action name="printRAClosingSummary" class="com.operations.agreement.rentalagreement.ClsRentalAgreementAction" method="printClosingSummaryAction">
+			    <interceptor-ref name="params"/>
+			    <result name="print">closingSummaryPrint.jsp</result>
+			</action>
+			<action name="rentalAgrementDetails" class="com.operations.agreement.rentalagreement.ClsRentalAgreementAction" method="saveAction">
+			    <interceptor-ref name="params"/>
+			    <result name="success" >../../../../com/operations/agreement/rentalagreement/rentalAgreement.jsp</result>
+			    <result name="fail">../../../../com/operations/agreement/rentalagreement/rentalAgreement.jsp</result>
+   			</action>
+			<action name="printKmDetails" class="com.operations.agreement.rentalagreement.ClsRentalAgreementAction" method="printKm">
+			    <interceptor-ref name="params"/>
+			    <result name="print">kmPrint.jsp</result>
+   			</action> -->
+	</package>
+		
+</struts>

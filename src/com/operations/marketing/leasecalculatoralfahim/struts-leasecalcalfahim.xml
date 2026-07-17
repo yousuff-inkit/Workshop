@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="leasecalculatoralfahim" extends="struts-default">
+			<action name="saveLeaseCalculatorAlFahim" class="com.operations.marketing.leasecalculatoralfahim.ClsLeaseCalcAlFahimAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >leaseCalculator.jsp</result>
+				<result name="fail">leaseCalculator.jsp</result>
+				
+			</action>
+			<action name="printLeaseCalculator" class="com.operations.marketing.leasecalculatoralfahim.ClsLeaseCalcAlFahimAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print" >${url}</result> 
+			</action> 
+		
+
+			<action name="printcalQuot" class="com.operations.marketing.leasecalculatoralfahim.ClsLeaseCalcAlFahimAction" method="printQotAction">
+			    <interceptor-ref name="params"/>
+			     <result name="print">savepdf</result>
+	 		      <result name="print">quotationprint.jsp</result>
+			</action>
+ 
+ 	<action name="JasperprintLeaseCalculator" class="com.operations.marketing.leasecalculatoralfahim.ClsLeaseCalcAlFahimAction" method="jasperPrintAction">
+				<interceptor-ref name="params"/>
+			</action> 
+			
+ 
+ 
+		</package>	
+</struts>

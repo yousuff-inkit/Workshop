@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="manualinvoice" extends="struts-default">
+			<action name="saveManualInvoice" class="com.operations.commtransactions.invoice.ClsManualInvoiceAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >invoice.jsp</result>
+				<result name="fail">invoice.jsp</result>
+				
+			</action>
+	<action name="printManualInvoice" class="com.operations.commtransactions.invoice.ClsManualInvoiceAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<!-- <result name="print">invoiceRecieptNoori.jsp</result> -->
+				<result name="print" >${url}</result> 
+			</action>
+	<action name="invjspToPdf" class="com.operations.commtransactions.invoice.ClsManualInvoiceAction" method="emailAction">
+				<interceptor-ref name="params"/>
+				<!-- <result name="print">invoiceReciept.jsp</result> -->
+			</action>
+			
+<action name="printManualInvoiceJasper" class="com.operations.commtransactions.invoice.ClsManualInvoiceAction" method="printActionJasper">
+				<interceptor-ref name="params"/>
+				
+			</action>
+			
+		</package>	
+</struts>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="userroledetails" extends="struts-default">
+			<action name="saveUserRoledetails" class="com.dashboard.audit.userroledetails.ClsUserRoleAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >userRoleDetails.jsp</result>
+				<result name="fail">userRoleDetails.jsp</result>
+			</action>
+			
+		</package>	
+</struts>
+

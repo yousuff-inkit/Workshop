@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="commercialreceipt" extends="struts-default">
+			<action name="saveCommercialReceipt" class="com.operations.commercialreceipt.ClsCommercialReceiptAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >commercialReceipt.jsp</result>
+				<result name="fail">commercialReceipt.jsp</result>
+			</action>
+			
+			<action name="printCommercialReceipt" class="com.operations.commercialreceipt.ClsCommercialReceiptAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>
+			</action>
+			<action name="rrjspToPdf" class="com.operations.commercialreceipt.ClsCommercialReceiptAction" method="emailAction">
+				<interceptor-ref name="params"/>
+			</action>
+	
+		
+		
+		</package>	
+</struts>

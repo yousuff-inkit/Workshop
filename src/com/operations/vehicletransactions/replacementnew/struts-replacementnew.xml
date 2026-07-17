@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="replacementnew" extends="struts-default">
+			<action name="saveReplacementNew" class="com.operations.vehicletransactions.replacementnew.ClsReplacementNewAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >replacement.jsp</result>
+				<result name="fail">replacement.jsp</result>
+			</action>
+	<action name="printReplacementNew" class="com.operations.vehicletransactions.replacementnew.ClsReplacementNewAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print" >replacementPrint.jsp</result>
+				
+			</action>
+		</package>	
+</struts>

@@ -1,0 +1,123 @@
+package com.workshop.wsestimation;
+
+public class ClsWSEstimationBean {
+
+	private String docno,vocno,date,gatedocno,gatevocno,gateuserdetails,gatevehicledetails,sparepartstotal,labourtotal,discount,esttotal,mode,msg,deleted,brchName,formdetailcode;
+	private int complaintgridlength,sparepartsgridlength,labourcostgridlength;
+	public String getDocno() {
+		return docno;
+	}
+	public void setDocno(String docno) {
+		this.docno = docno;
+	}
+	public String getVocno() {
+		return vocno;
+	}
+	public void setVocno(String vocno) {
+		this.vocno = vocno;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getGatedocno() {
+		return gatedocno;
+	}
+	public void setGatedocno(String gatedocno) {
+		this.gatedocno = gatedocno;
+	}
+	public String getGatevocno() {
+		return gatevocno;
+	}
+	public void setGatevocno(String gatevocno) {
+		this.gatevocno = gatevocno;
+	}
+	public String getGateuserdetails() {
+		return gateuserdetails;
+	}
+	public void setGateuserdetails(String gateuserdetails) {
+		this.gateuserdetails = gateuserdetails;
+	}
+	public String getGatevehicledetails() {
+		return gatevehicledetails;
+	}
+	public void setGatevehicledetails(String gatevehicledetails) {
+		this.gatevehicledetails = gatevehicledetails;
+	}
+	public String getSparepartstotal() {
+		return sparepartstotal;
+	}
+	public void setSparepartstotal(String sparepartstotal) {
+		this.sparepartstotal = sparepartstotal;
+	}
+	public String getLabourtotal() {
+		return labourtotal;
+	}
+	public void setLabourtotal(String labourtotal) {
+		this.labourtotal = labourtotal;
+	}
+	public String getDiscount() {
+		return discount;
+	}
+	public void setDiscount(String discount) {
+		this.discount = discount;
+	}
+	public String getEsttotal() {
+		return esttotal;
+	}
+	public void setEsttotal(String esttotal) {
+		this.esttotal = esttotal;
+	}
+	public String getMode() {
+		return mode;
+	}
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String getDeleted() {
+		return deleted;
+	}
+	public void setDeleted(String deleted) {
+		this.deleted = deleted;
+	}
+	public String getBrchName() {
+		return brchName;
+	}
+	public void setBrchName(String brchName) {
+		this.brchName = brchName;
+	}
+	public String getFormdetailcode() {
+		return formdetailcode;
+	}
+	public void setFormdetailcode(String formdetailcode) {
+		this.formdetailcode = formdetailcode;
+	}
+	public int getComplaintgridlength() {
+		return complaintgridlength;
+	}
+	public void setComplaintgridlength(int complaintgridlength) {
+		this.complaintgridlength = complaintgridlength;
+	}
+	public int getSparepartsgridlength() {
+		return sparepartsgridlength;
+	}
+	public void setSparepartsgridlength(int sparepartsgridlength) {
+		this.sparepartsgridlength = sparepartsgridlength;
+	}
+	public int getLabourcostgridlength() {
+		return labourcostgridlength;
+	}
+	public void setLabourcostgridlength(int labourcostgridlength) {
+		this.labourcostgridlength = labourcostgridlength;
+	}
+
+	
+}

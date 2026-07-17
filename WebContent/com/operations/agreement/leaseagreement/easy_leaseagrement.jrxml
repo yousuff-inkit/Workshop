@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2017-10-10T10:59:07 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b4808e81-13bc-40c9-8ab2-8e08fbb160e0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="progress_easy"/>
+	<parameter name="hedderimage" class="java.lang.String"/>
+	<parameter name="leaseimage" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 'name']]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="802" uuid="d924992b-97f3-4974-8bb6-9970bfbb22fa"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</frame>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="370" y="1" width="180" height="69" uuid="655108c3-c21c-4deb-9fa6-737f2c7e0358"/>
+				<imageExpression><![CDATA[$P{hedderimage}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="714" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="6" width="200" height="14" uuid="66a30831-76e8-4a58-acd1-363cdc28d9ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOTOR CYCLE LEASE AGREEMENT
+
+]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="25" width="550" height="205" uuid="9330621d-0cb7-4b1d-bc4e-86434c64f444"/>
+				<staticText>
+					<reportElement x="4" y="4" width="532" height="92" uuid="edce808a-1721-41f0-9d9e-0165843e3f03"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[This Motor Cycle Lease Agreement is entered into this 	      ,           by and between:
+
+                                                                                , License number                 of registered addressP.O. Box 333367, Dubai, U. A. E.  Tel : +9714 2844404 Fax : +9714 2844060 Email: [info@easylease.ae] (hereinafter referred to as “Lessor”); AND
+    -------------------------------------------- a company existing and operating in the United Arab Emirates, License number [                     ] with an address at P.O. Box  ------------------- , : Tel [+971                    ], Fax : [+971                      ], Email: [                                     ]United Arab Emirates (hereinafter referred to as                        );
+(Each a                collectively                   )
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="24" width="510" height="102" uuid="dbe8af03-57f1-4647-a4bb-ceffbdf859f4"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1. EASY LEASEMOTOR CYCLE RENTAL LLC                                [662595] 
+
+2.                                                                                                                                                                                                    
+
+                         "Lessee"
+              "Party"                     "Parties"
+
+
+
+WHEREAS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="128" width="512" height="34" uuid="647bd558-e31f-4caa-a0c0-f01df228e4b1"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[A.	Lessee is desirous of leasing the Vehicle(s)from the Lessor and engaging the Lessor to provide the Services.
+
+B.	Lessor is willing to lease the Vehicle to the Lesseeand provide the Services on the terms and conditions hereinafter contained.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="165" width="510" height="40" uuid="9ef7fb17-4ea3-4968-8427-1ee23b9fcb6c"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[IN CONSIDERATION OF MUTUAL CONVENANTS AND TERMS AND CONDITIONS HEREINAFTER CONTAINED THE PARTIES AGREE:
+
+1.	INTERPRETATION]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="10" y="242" width="255" height="462" uuid="624ae277-8251-48d4-8700-e4a1370c938b"/>
+				<staticText>
+					<reportElement x="12" y="-1" width="236" height="16" uuid="939aafd2-12ea-4265-a311-1d8ed77372de"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[1.1   .In this Agreement, the following definitions apply:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="23" y="15" width="227" height="440" uuid="6c1b1f27-3981-4041-9b28-511a1911d32d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[                                                        means (i) a copy of the Lessee's valid trade license; (ii) a copy of valid passport of the Lessee's owner/shareholders or authorised signatories; (iii) credit facility to be signed by the authorised signatory;(iv) Security Cheque; (v) purchase order; (vi) Post Dated Cheques; (vii) a copy of the Lessee's Memorandum of Association; (viii) Chamber of Commerce Certificate; (ix) a copy of the relevant power of attorney in respect of the authorised signatories; and (x) a list of all Riders and a copy of their  respective driving license, passport (including visa page);
+
+                         means this motor cycle lease agreement including any schedules or annexes referred to herein;
+
+                              a  day (other than aFriday, Saturday or a public holiday) when banks in UAE are open for retail business;
+
+                                  means the office hours of [8.00am to 5pm] on a Business Day;
+
+                                           means [                                        ];
+
+                    means the ability to direct the affairs of another whether by virtue of the ownership of shares, contract or otherwise;
+
+                      means as specified in clause ‎5.3;
+
+                means the Emirates Interbank Offered Rate;
+
+	 means the excess payable on the Lessor's then current insurance policy;
+
+                                        means the amount of [AED                ] per km over the Mileage Limit;
+
+                       means those expenses listed in clause ‎4.2;
+
+                                                            A;
+
+               means the [ AED                         ] rental fee(s)OR any other amount agreed on as per Schedule A, as maybe varied pursuant to clause 4.5;
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="125" width="42" height="12" uuid="79e4a81a-2e75-4f4f-8a97-ad781a136bb9"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Agreement]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="156" width="60" height="12" uuid="41fd5e70-9215-4410-b813-d3c3aa72299b"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Business Day ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="186" width="70" height="12" uuid="c1edbd50-7613-42e3-ba91-394d565b5bcb"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Business Hours]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="216" width="84" height="12" uuid="f188e608-8d40-4fbf-b21f-ec201d55b708"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Commencement Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="237" width="34" height="12" uuid="16624a28-508a-4d10-9842-a8a6db34dcb5"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Control]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="276" width="36" height="12" uuid="f899587d-2c81-4803-9e92-bc7bc9efa4ea"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Due Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="297" width="20" height="12" uuid="960d501e-9479-49e8-a742-5ad5cc3ce8cf">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[EIBOR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="23" y="316" width="29" height="12" uuid="4f3f20e6-1ead-4b90-95e2-4ce11a83ba4a"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Excess]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="23" y="347" width="80" height="12" uuid="078e6dc9-3abc-4ed4-bda5-aa738da8e29f"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Excess Mileage Fee	]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="377" width="38" height="12" uuid="1a0c8762-33de-42e0-a236-51720e51d924"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Expenses]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="396" width="55" height="12" uuid="cf5129b5-3010-48f5-9061-c95d3efa78a4"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Expiry Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="417" width="38" height="12" uuid="abd65a7a-cddf-4114-9615-afe8fa9dbdff"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fee]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="26" y="15" width="114" height="12" uuid="1e79d347-c1a6-4929-86f6-622fe3e5d2d7"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Account Opening Documents]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="295" y="243" width="260" height="456" uuid="442c452e-bcf1-4b63-9780-81fddd2dde38"/>
+				<staticText>
+					<reportElement x="29" y="5" width="227" height="440" uuid="617e2220-6b99-4027-bf0e-38fc07b5aa3c">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[                   means the premises indicated by the Lessor at the time of the rental, unless otherwise agreed in writing between the Parties; 
+
+              means all losses, liabilities, damages, penalties, fines, costs and expenses, including but not limited to any direct, indirect or consequential losses, loss of profit, loss of reputation (calculated on a full indemnity basis) together with any attorneys' fees and other professional expenses;
+
+                           means [               ] per Vehicle(s);
+
+                                       means [                  ] posted dated cheques each in the amount of the Fee;
+
+                    means any potential driver of the Vehicle(s) during the Term; 
+
+             means the road toll system operated in the Territory or elsewhere, as applicable;
+
+                                     means an additional cheque or cheques in the amount of [AED                  ] or such other amount as may be agreed by the Parties in writing as security against the Expenses;
+
+                    means the (i) registration and renewal of Vehicle(s) registration, (ii) maintaining insurance as per clause‎6.1‎a), (iii) providing an annual service of the Vehicle(s), (iv) providing routine maintenance and repairs to Vehicle(s) resulting from normal and fair wear and tear of the Vehicle(s) only (excluding any maintenance or remedial works necessary for breach of clause‎7.1‎i), ‎j), ‎k) and ‎m)), and (v) provide 24/7 Emergency Telephone Assistance (only);
+
+              means the period of time from the Commencement Date to the Expiry Date;
+
+                   means the motor cycle or motor cyclesleased by the Lessee as specified in Schedule A, which for the avoidance of doubt does not include the delivery boxes or accessories, which are subject to a separate sale and purchase arrangement between the Parties;
+
+
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="5" width="36" height="12" uuid="ba84d43c-37f8-4ee7-85cc-86757c7c437f"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Location]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="45" width="22" height="12" uuid="a7b70dcd-7758-4e18-afc2-e19b3cf41fbe">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Loss]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="105" width="55" height="12" uuid="67c9c63c-9c67-4262-bc39-32287d5cae5e"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mileage Limit]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="126" width="79" height="12" uuid="dbb12d50-c5a2-4836-80f7-d9b28d7f97e5"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Post Dated Cheques]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="156" width="36" height="12" uuid="26d3f84b-9827-4c56-97a7-598b20ab6108"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Rider(s)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="186" width="23" height="12" uuid="c4364b6c-a49a-4e9a-9cc9-c2d60de650f9"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Salik]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="29" y="216" width="78" height="12" uuid="121553e6-0432-45e1-aa18-929c842b6985">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Security Cheque(s)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="29" y="267" width="36" height="12" uuid="b2df956f-9813-42cb-a323-15cb6ed1a462"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Services]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="29" y="357" width="25" height="12" uuid="60a98cd2-7f49-4642-9644-186d1df3300b"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Term]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="387" width="44" height="12" uuid="7424d0e5-c1e1-4e2b-a8c0-9659290964ac"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vehicle(s)]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="731" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="3" width="267" height="707" uuid="114dbca9-367a-4287-80c3-bfaa798b2048"/>
+				<staticText>
+					<reportElement x="33" y="2" width="226" height="58" uuid="3fa5adaa-901a-4d65-9341-35c13429b54e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[                                        means the vehicle check report that must be completed in respect of eachVehicle(s)prior to release from and return to the Location, as specified in Schedule B;
+
+                  means the United Arab Emirates.
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="2" width="90" height="12" uuid="a3d6fe9e-9440-4e59-ae48-7fc7333b0d6c"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vehicle Check Report]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="34" y="42" width="37" height="12" uuid="0bb2e356-d083-484d-beb0-58f701647827"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Territory]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="64" width="243" height="643" uuid="3777399f-ae21-4b37-9d74-242c4a44ba4e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[1.2.	references to clauses and schedules are to the clauses of and schedules to this Agreement;
+
+1.3.	Headings are for convenience only and shall be ignored in interpreting this Agreement;
+
+1.4.	Words in the singular shall include the plural and vice versa;
+
+1.5.	Unless the context otherwise requires, a reference to one gender shall include a reference to the other genders; 
+
+1.6.	A reference to any Party shall include that Party's personal representatives, successors or permitted assigns;
+
+
+
+
+
+2.1.	The lease of Vehicle(s)shall be pursuant to the terms and conditions of this Agreement only. These terms and conditions shall apply to the exclusion of any other terms that the Lessee seeks to impose or incorporate, or which are implied by trade, custom, practice or course of dealing, including the Lessee's standard terms and conditions of hire (if applicable), unless expressly agreed to in writing by Lessor.
+
+2.2.	This Agreement is conditional in all respects upon the Lessee having provided the Lessor with the Account Opening Documents prior to the Commencement Date, unless otherwise agreed by the Lessor in writing.
+
+2.3.	This Agreement constitutes the entire agreement between the Parties in respect of the lease of the relevant Vehicle(s). The Lessee acknowledges that it has not relied on any statement, promise or representation made or given by or on behalf of Lessor which is not set out hereunder. This Agreement shall supersede any previous agreement or arrangement between the Parties relating to the relevantVehicle(s)and it is expressly agreed that no variations to this Agreement shall be effective unless made in writing and signed by the duly authorised representatives of both the Lessor and Lessee.
+
+2.4.	The Vehicle(s) is leased on an "as is" basis as detailed in the relevant section of the Vehicle Check Report.
+
+2.5.	The Lessor does not confirm the exact model of vehicle available but does confirm that a similar vehicle of the same group will be available on the Commencement Date. 
+
+
+
+
+3.1.	Lessee shall collect theVehicle(s) from the Location on the Commencement Dateat the agreed time, during Business Hours.
+
+3.2.	Prior to the Vehicle(s) being released to the Lessee, the Parties shall complete the Vehicle Check Report.  The Lessee shall inspect the Vehicle(s) upon collection and shall notify Lessor of any visible damages, which shall be recorded in the Vehicle Check Report. Without such notification the Vehicle(s)shall be deemed as accepted undamaged. Any times indicated for collection by the Lessor are approximate only and are not of the essence. 
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="220" width="103" height="12" uuid="b6665a50-5cc4-458f-b19d-f99cd51b1265"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[2.        BASIS OF HIRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="27" y="580" width="193" height="12" uuid="8eabc935-53e2-4167-ba6d-bbf026dc2fbe"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[3.          COLLECTION AND RETURN OF VEHICLE]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="287" y="0" width="267" height="718" uuid="7139146d-2fc3-419f-b6ba-ca7854c900c9"/>
+				<staticText>
+					<reportElement x="34" y="5" width="227" height="706" uuid="a6211ef3-6592-4775-9116-80f529aeae1d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[Thereforefailure to observe them shall not give rise to any penalty, payments or damagesagainst theLessor.
+
+3.3.	If the Lessee fails to collect the Vehicle(s) on the Commencement Date then, without prejudice to any  other right or remedy available to Lessor, Lessor may, in its sole discretion, either:
+
+a)	store the Vehicle(s) for a period of [one week] calendar dayson behalf of the Lessee and charge the Lessee the relevant Fee and Expenses. In the event that the Lessee fails to collect the vehicle within the above specified period then the Lessor may terminate this Agreement, without need for a court order or any further notice, and invoice the Lessee for any and all Loss suffered; or 
+
+b)	terminate this Agreement with immediate effect, without need for court order of further notice.
+
+3.4.	Where multipleVehicle(s)are to be collected, and only some but not allare collected by the Lessee, the Lessormay, in its sole discretion, elect to exercise its rights under clause ‎3.3, in whole or in part on anyVehicle(s) not collected on a Vehicle by Vehicle basis. 
+
+3.5.	The Lessee shall return the Vehicle to the Location on or before [12.00 midday] on the Expiry Date, unless otherwise agreed in writing by the Parties. In the event the Lessee does not return the Vehicle back to the Lessor by the stipulated deadline,the Lessee shall continue to be liable and indemnify the Lessor against the Fee and all Expenses until such time the Vehicle is physically returned to the Location and the Vehicle Check Report is completed by the Parties.
+
+3.6.	The Lessee shall return the Vehicle in the same condition as it was in when collected (fair wear and tear accepted) and with the same amount of fuel, as indicated in the Vehicle Check Report. Additionally, if the Vehicle is not in the same condition as when collected by the Lessee, to the extent that the condition of the Vehicle, as determined by the Lessor in its sole discretion, is such that it exceeds that of fair wear and tear, the Lessor shall have the right to charge the Lessee for any repairs undertaken to the Vehicle and, without prejudice to clauses ‎4.2 or ‎11, the Lessee hereby indemnifiesand shall keep the Lessor indemnified against any and all costs and associated Loss of whatever nature.
+
+
+
+
+
+4.1.	In return for the lease of the Vehicle the Lessee shall pay the Lessee the Fee. Lessee shall, at the time of executing this Agreement, provide the Lessor with the Post Dated Cheques.
+
+4.2.	In addition to the Fee and without prejudice to clause ‎3.6 or ‎11, the Lessee shall be liable for and indemnify the Lessor against:
+
+a)	all fines and traffic violations incurred on the Vehicle during the Term;
+
+b)	any Salik and fuel charges, at the then prevailing rate, in respect of the Vehicle incurred during the Term;
+
+c)	any Excess Mileage Fee (if applicable);
+
+d)	any administrative charges incurred by Lessor pursuant to clause ‎4.3; ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="491" width="193" height="12" uuid="a679681d-e130-4bec-ae45-1eb423b5e93f"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[4.	FEES AND EXPENSES]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="718" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="3" width="267" height="707" uuid="114dbca9-367a-4287-80c3-bfaa798b2048"/>
+				<staticText>
+					<reportElement x="22" y="8" width="243" height="699" uuid="3777399f-ae21-4b37-9d74-242c4a44ba4e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[e)	any and all other incidental expenses and costs that Lessor may incur in respect of the Vehicle during the Term, unless otherwise specified herein; and 
+
+f)	any Excess payable pursuant to clause 7 f).
+
+4.3.	Notwithstanding clause ‎7.1‎q) the Lessor may, in its sole discretion, pay any fines or penalties imposed on the Vehicle during the Term to avoid any additional liabilities being incurred. In such event the Lessor shall charge Lessee an administrative fee of [AED 25].In the event that a fine or penalty is imposed on the Vehicle the Lessor shall raise an immediate invoice in respect of such fine or penalty and notify the Lessee in writing. The invoice shall be payable in accordance with the provision of clause 5. Additionally, in the event that a fine or penalty imposed on the Vehicle also requires the attendance of the relevant Rider at a Police Station or governmental authority, then the Lessee shall procure the Rider’s attendance, within 24 hours of having received written notice of such requirement from the Lessor.
+
+4.4.	In addition to the Post Dated Cheques, the Lessee shall provide the Lessor with the Security Cheque(s) at the time of executing this Agreement.
+
+4.5.	The Parties agree that the Fee specified herein has been calculated in accordance with the then current costs and expenses imposed by the relevant government authorities as at the Effective Date. To the extent that the costs and expenses imposed by the relevant governmental authorities increase, then the Lessor reserves the right to make a commensurate increase to the Fee upon 30 days written notice to the Lessee.
+
+
+
+
+
+5.1.	The Lessor will invoice the Lessee the Fee and Expenses on a monthly basis.
+
+5.2.	The invoice will be raised by the Lessor and sent to the Lessee at the end of each month during the Term.
+
+5.3.	Unless otherwise agreed upon by the Parties in writing, all payments are due and payable within seven(7) daysfrom the date of the relevant invoice (                       ). If any amount is outstanding past the Due Date, then the Lessee hereby authorises the Lessor to encash the relevant Post Dated Cheque and/or aSecurity Chequeto cover the outstanding amount. In the event that the Security Cheque does not cover the total indebtedness, the Lessee shall continue to be liable for any outstanding amount and shall provide a replacement Security Cheque(s) within seven (7) days of receiving notice of the same from the Lessor.
+
+5.4.	All payments are to be made payable to
+
+5.5.	Without limiting any other right or remedy of Lessor, if the Lessee fails to make any payment due to Lessorby the Due Date, Lessor shall have the right to charge interest on the overdue amount at the rate of [10%] per month above EIBOR base rate from time to time accruing on a daily basis from the Due Date until the date of actual payment, whether before or after judgment.
+
+5.6.	All amounts payable by the Lessee hereunder are exclusive of any and all taxes, including but not limited to value added tax (VAT). All applicable taxes and dutiesshall be payable by the Lessee. Where any tax is payable hereunder, the Lessee shall pay the Lessor such additional amounts in respect of the taxes as are chargeable under this Agreement.  
+
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="340" width="193" height="12" uuid="8eabc935-53e2-4167-ba6d-bbf026dc2fbe"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[5.	PAYMENT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="551" width="193" height="12" uuid="761c1fb2-738a-4439-bd51-aed3a7d5d1a0"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ “Easy Lease Motor Cycle Rental LLC”. ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="109" y="451" width="50" height="12" uuid="c185959f-0b12-4af8-b095-395a6708861e"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA["Due Date"]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="287" y="0" width="267" height="718" uuid="7139146d-2fc3-419f-b6ba-ca7854c900c9"/>
+				<staticText>
+					<reportElement x="27" y="5" width="227" height="706" uuid="a6211ef3-6592-4775-9116-80f529aeae1d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[5.7.	The Lessee shall pay all amounts hereunder without any deduction or withholding except as required by law and the Lessee shall not be entitled to assert any credit, set-off or counterclaim against Lessor to justify withholding payment of any such amount in whole or in part. 
+
+
+
+
+
+6.1.	The Lessor agrees and undertakes to Lessee that it shall:
+
+a)	keep the Vehicle insured for (i) loss and damage (including personal accident cover for the Rider); (ii) Third Party Liability insurance in respect of death and bodily injury as may be required in the Territory,and (iii) for property damage up the limit of the then current insurance policy. This cover is in accordance with the Lessor’s current insurance policy which is available on request and which the Lessee is presumed to have accepted by signing this Agreement.However, the Lessee acknowledges that these limits and level of cover are subject to change upon renewal of the Lessor’s insurance policies and whilst the Lessor shall use commercially reasonable endeavoursto maintain such levels of cover throughout the Term, it does not make any guarantee in this regard. However, the Lessor shall ensure that all insurances required by applicable law will be maintained during the Term;
+b)	carry out the Services; and
+c)	provide a suitable replacement vehicle (although not necessarily a vehicle similar to the Vehicle) when theVehicle(s) is in the possession of the Lessor for purposes of performing the Services and on such other occasions as may be agreed to by the Lessor, in its sole discretion.
+
+
+
+
+7.1.	The Lessee agrees and undertakes to Lessor that it shall:
+
+a)	not use Vehicle(s) outside the Territory unless specifically requested and agreed by the Lessor in writing. For the avoidance of doubt this restriction applies to any replacement vehicle provided by the Lessor also. The Lessee hereby accepts that the consent of the Lessor may be conditional on an increase in the applicable Fee;
+b)	not to sub-let the Vehicle(s) or give up possession thereof to third parties;
+c)	only permit Riders to drive the Vehicle(s);
+d)	ensure that all Riders hold a valid driving license accepted in the Territory and have held such license for at least one (1) year. In the event that the Vehicle(s) is used outside the Territory, subject to clause ‎7.1‎a), the Lessee shall  ensure that the Rider holds a valid driving license in that country;
+e)	inform Lessor immediately, being no more than four (4) hours after the incident, in the event of any accident and Lessee shall obtain a police accident report so as to enable an insurance claim to be processed. In the event of any accident or damage caused to the Vehicle(s) for which a police accident report is not provided, the Lessee shall be responsible for all Loss incurred by the Lessor including, but not limited to, loss of use and loss of Vehicle(s). No replacement vehicle will be provided to the Lessor if the Lessee fails to provide a police accident report;
+f)	pay the Excess in the event of an insurance claim involving the leased Vehicle(s), if such claim arises as a result of the Lessee defaultand/or the negligence of the Rider;
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="72" width="228" height="12" uuid="a679681d-e130-4bec-ae45-1eb423b5e93f"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[6.	LESSOR OBLIGATIONS AND UNDERTAKINGS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="370" width="228" height="12" uuid="6cd6a6d4-a45f-4bcf-9fd3-6783e31279bb"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[7.	LESSEE OBLIGATIONS AND UNDERTAKINGS]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="718" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="3" width="267" height="707" uuid="114dbca9-367a-4287-80c3-bfaa798b2048"/>
+				<staticText>
+					<reportElement x="22" y="8" width="243" height="699" uuid="3777399f-ae21-4b37-9d74-242c4a44ba4e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[g)	provide at least 24 hours notice to the Lessorin the event that the Vehicle(s) require any of the Services to be carried out. The Lessee shall have due regard to Vehicle(s) warranty termsrelating to servicing intervals. Lessee shall return the Vehicle to the Location to enable the Lessor to provide the Services;
+h)	return any replacement vehicle supplied in accordance with clause ‎6.1‎c), within 24 hours of Lessor having (i) notified the Lessee that the originally leased Vehicle is ready for collection or (ii) upon written demand by Lessor. Failure to return the replacement vehicle shall result in additional charges being applied to the Lessee as if the Lessee has also leased such replacement vehicle equivalent to the Fee calculated pro rata on a daily basis (together with associated Expenses), in addition to the Fee and Expenses payable in respect of the originally leasedVehicle;
+i)	be responsible for tire punctures and for any damages caused to the Vehicle(s) as a result of Lessee or its Riders negligence;
+j)	ensure that all fluid levels (e.g. oil, water etc.) as well as tyre pressures are maintained at the correct levels. Failure to undertake such basic maintenance could result in damage to the Vehicle(s), the repair of which will be at Lessee’s sole cost and expense;
+k)	not use the Vehicle(s) for the carriage of passengers for hire or reward for towing, time trials, rallying, off roading or racing and shall not to overload or exceed the number of passengers for which the Vehicle is licensed;
+l)	return the Vehicle(s) on the Expiry Date as detailed in clause ‎3.5;
+m)	ensure that all Riders do not drive under the influence of alcohol, drugs or any other intoxicating substances and do not transporting any item which is legally prohibited;
+n)	provide the Lessor with the names of at least three (3) authorised individuals/signatories with whom the Lessor is able liaise with in all aspects of this Agreement;
+o)	maintain a service schedule (mileage tracking) noting the mileage undertaken by the Vehicle and submit a copy to the Lessoras and when requested;
+p)	not encumber the Lessor’s legal title to the Vehicle(s) in any way whatsoever or permit any lien or charge to be placed on the Vehicle(s);
+q)	ensure that any fines or impounding of the Vehicle(s) is paid and released, respectively, within 24 hours of such event occurring;
+r)	ensure that Riders have the Vehicle(s) registration card with them at all times whilst the Vehicle(s) is in use; 
+s)	offer all reasonable assistance, free of charge, as may be required by the Lessor in respect of the Lessor’s obligations hereunder; and
+t)	ensure that it is, and procure that Riders are, fully aware of any and all applicable laws and regulations, industry codes and standards of the Territory or elsewhere and shall comply, and procure the compliance by each Rider, with such during the Term.
+
+
+
+
+8.1.	Any theft of the Vehicle(s) is to be reported immediately, being no later than 4 hours after the event, to the Police and the Lessor. The Lessee shall be responsible for obtaining a police report in respect of the theft and shall provide a copy of the police report to the Lessor as soon as it is available. The Lessor shall provide a replacement vehicle for the remainder of the Term, subject to clause ‎8.2.
+
+8.2.	In the event that the Vehicle(s) is stolen as a result of the keys being left in the ignition then the Lessee acknowledges that this will invalidate the insurance policy held by the Lessor in respect of the Vehicle(s). Consequently, the Lessee shall indemnify the Lessor 
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="551" width="193" height="12" uuid="761c1fb2-738a-4439-bd51-aed3a7d5d1a0"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[8.	THEFT OF VEHICLE]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="287" y="0" width="267" height="718" uuid="7139146d-2fc3-419f-b6ba-ca7854c900c9"/>
+				<staticText>
+					<reportElement x="27" y="5" width="227" height="706" uuid="a6211ef3-6592-4775-9116-80f529aeae1d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[against any and all Loss suffered by Lessor as a result, including but not limited to, the replacement cost of the Vehicle(s) and the remainder of the Fees due for the Term. No replacement vehicle will be provided in such circumstances.
+
+8.3.	In the event that the Vehicle(s) is unlawfully taken by a Rider without permission then the Lessee shall comply with clause ‎8.1above and shall use its best endeavours to repossess the Vehicle(s). The Lessor shall be liable for all Fees and Expenses during this period. In the event that the Lessor has not repossessed the Vehicle(s) within[3 months]after first notifying the Lessor that the Vehicle(s) has been taken by the Rider then the Lessee shall be liable for, and shall indemnify the Lessor against, the full replacement costs of the Vehicle(s) together with any and all Loss suffered by the Lessor. 
+
+
+
+
+
+9.1.	The Lessee represents and warrants to Lessor that:
+
+a)	It, together with its Riders, are in compliance with all applicable laws regulations, licensing requirements, industry codes and standards of the Territory; and
+b)	it is free to enter into this Agreement and is not under any restriction or prohibition which might prevent it from performing or observing any of its obligations hereunder.
+
+
+
+
+
+10.1.	Lessee shall keep in strict confidence all technical or commercial know-how, specifications, inventions, processes or initiatives which are of a confidential nature and/or have been disclosed by Lessor, its officers, employees, agents and any other confidential information concerning the Lessor’s business, products, rates, processes or services which the Lessee may obtain under this Agreement (whether marked as confidential or not). The Lessee shall restrict disclosure of such confidential information to such of its officers, employees, agents that need to know it for the purpose of discharging the Lessee’s obligations under this Agreement, and shall ensure that such, officers, employees, agents are subject to obligations of confidentiality corresponding to those which bind the Lessee.
+
+10.2.	The obligations of confidentiality imposed under clause 10.1 shall not apply to (i) information which is public knowledge or already known to that Party at the time of disclosure or subsequently becomes public knowledge other than by breach this Agreement or (ii) any confidential information which the Lessee can prove by written record, is required (and only to the extent required) to be disclosed by the applicable law of any relevant jurisdiction, provided prompt written notice of this is given to Lessor, prior to such disclosure, so that Lessor may attempt to object to such disclosure being made.
+
+10.3.	Lessee shall not refer to its business relationship with Lessor for promotional or advertising purposes without Lessor’s prior express written consent.
+
+10.4.	This clause ‎10shall survive termination. 
+
+
+
+
+11.1.	Lessor shall under no circumstances whatever be liable to the Lessee, whether in contract, tort (including]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="182" width="228" height="12" uuid="6cd6a6d4-a45f-4bcf-9fd3-6783e31279bb"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[9.	REPRESENATION AND WARRANTY]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="29" y="312" width="228" height="12" uuid="e0864465-ff25-43c3-9789-e069bb436861"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[10.	CONFIDENTIALITY]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="31" y="666" width="228" height="12" uuid="1cb2bb70-051a-4923-b0f8-79d7d548d5f3"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[11.	LIMITATION OF LIABILITY AND INDEMNITY]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="718" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="3" width="267" height="707" uuid="114dbca9-367a-4287-80c3-bfaa798b2048"/>
+				<staticText>
+					<reportElement x="22" y="8" width="243" height="699" uuid="3777399f-ae21-4b37-9d74-242c4a44ba4e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[negligence), breach of statutory duty, or otherwise, for any loss of profit, or any indirect or consequential loss arising under or in connection with an Agreement.  Unless otherwise stated herein, all warranties, conditions and other terms implied by applicable laws, to the fullest extent permitted by law, are excluded from this Agreement.
+
+11.2.	Lessor’s total liability to the Lessee in respect of all Loss arising under or in connection with this Agreement, whether in contract, tort (including negligence), breach of statutory duty, or otherwise, shall in no circumstances exceed a sum equal to the Fee payable by Lessee to the Lessor hereunder.
+
+11.3.	Notwithstanding any other provisions noted herein, Lessee agrees to fully and effectively indemnify Lessor, and to keep Lessor indemnified, from and against all Expenses and Loss suffered or incurred by Lessor arising out of or in connection with(i) any breach of this Agreement by Lessee, (ii) any alleged death or injury to persons or loss or damage to property (whether arising out of negligence, strict liability in tort, or other theories of law) arising out of the use of the Vehicle(s), and (iii) any negligent or wilful conduct of the Riders, its officers, employees, agents and servants.
+
+11.4.	The Lessor shall not be responsible or liable for any personal items kept in or on the Vehicle(s) during the Term or after the Vehicle(s) return or when the Vehicle(s) is tendered to the Lessor pursuant to clause ‎6.1‎b).
+
+11.5.	This clause ‎11shall survive termination of this Agreement.
+
+
+
+
+
+12.1.	This Agreement shall commence on the Commencement Date and shall remain valid and binding upon the Parties during the Term unless terminated earlier in accordance with clause ‎12.3 or‎14.9.
+
+12.2.	Without limiting its other rights or remedies, Lessor may terminate this Agreement with immediate effect, and without the need for a court order, by giving written notice to the Lessee if:
+
+a)	the Lessee commits a breach of this Agreement and (if such a breach is remediable) fails to remedy that breach within seven (7) days of receipt of notice in writing of the breach; or
+
+b)	the Lessee is unable to pay its debts or suffers any event which could be reasonably considered to indicate that it is insolvent or at serious risk of becoming so in the relatively near future including, insolvent liquidation, a declaration of bankruptcy, the presentation of a bankruptcy or a winding up petition which is not withdrawn, dismissed or discharged within 28 days of its presentation or the appointment of an administrator, receiver or similar over any of its assets or undertaking; or
+
+c)	the Vehicle(s)is being used in a manner which results in undue wear and tear or if the mileage accumulated on the Vehicle(s)is excessive, as determined by the Lessor in its sole discretion (though in such event the Lessor may propose new  terms upon which the Lessor may be permitted to lease the Vehicle(s) (i.e. a hire month rate) in lieu of termination); or
+
+d)	if there is a change of Control in the Lessee; or
+
+e)	the Lessor elects to exercise its rights in accordance with clause ‎3.3
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="323" width="193" height="12" uuid="761c1fb2-738a-4439-bd51-aed3a7d5d1a0"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[12.	TERM AND TERMINATION]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="287" y="0" width="267" height="718" uuid="7139146d-2fc3-419f-b6ba-ca7854c900c9"/>
+				<staticText>
+					<reportElement x="27" y="5" width="227" height="706" uuid="a6211ef3-6592-4775-9116-80f529aeae1d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[f)	the Lessee breaches clause‎5.3;
+
+12.3.	The Lessee may, subject to the Lessor’s prior written consent, terminate this Agreement before the Expiry Date, provided that the Lessee pays the Lessor the equivalent of one month’s Fee for each year of the Term remaining as at the date of termination. The minimum charge hereunder shall be 1 months’ Fee and the maximum chargeable shall be 3 months’ Fee. The Lessee hereby consents to such charges and deems them a reasonable and proportionate amount to cover the administrative expenses and interim loss the Lessor will experience as a result of the early termination. The Lessee hereby agrees that such amount is a reasonable pre-estimate of the losses the Lessor will likely suffer as a result of Lessor’s agreement to the early termination of this Agreement. 
+
+
+
+
+13.1.	Upon the Expiry Date or the earlier termination of this Agreement the Lessee shall:
+
+a)	within two (2) calendar days, pay to Lessor all outstanding Fees and Expenses plus interest (if applicable), where after Lessor shall return any Post Dated Cheques that have not been encashed;
+
+b)	immediately return the Vehicle(s) to the Location;  and
+
+c)	cease all use of any confidential information in its possession and shall make necessary arrangements to deliver to Lessor, in accordance with such reasonable instructions as may be given by Lessor, all written, graphic, electromagnetic, computerized, digital, or other materials, whatsoever, comprising or containing any confidential information, within seven (7) calendar days of such expiry or termination. To the extent that any such Confidential Information cannot reasonably be delivered to Lessor, the Lessee agrees and undertakes to destroy any such confidential information and shall certify such destruction in writing to Lessor within seven (7) calendar days of the expiry or earlier termination of this Agreement.
+
+13.2.	The expiry or earlier termination of this Agreement shall not of itself give rise to any liability on the part of the Lessor to pay any compensation to the Lessee, including but not limited to, for loss of profits, business or goodwill.
+
+13.3.	The accrued rights and remedies of the Parties as at the Expiry Date, or earlier termination date, shall not be affected, including the right to claim damages in respect of any breach of this Agreement which existed at or before the date of expiry or earlier termination.
+
+13.4.	Clauses which expressly or by implication have effect after termination shall continue in full force and effect.
+
+
+
+
+14.1.	Lessor may at any time assign, transfer or deal in any other manner with all or any of its rights under this Agreement and may subcontract or delegate in any manner any or all of its obligations under this Agreement to any third party. The Lessee shall not, without the prior written consent of Lessor, assign, transfer, charge, subcontract or deal in any other manner with all or any of its rights or obligations under this Agreement.
+
+14.2.	Any notice or other communication required to be given to a Party under or in connection with this Agreement shall be in English and in writing and shall be delivered to the other Party personally or sent by commercial courier or sent by fax or email to the other Party, to the address as set out in this Agreement(or such other address, fax or email as either Party notifies to the other from time to time). Any notice or other communication shall be deemed to have been duly received if delivered personally, when left at such address or if delivered by commercial courier, on the date and at the time that the courier's delivery receipt is signed, or if sent by fax or email on the next Business Day after transmission. 
+
+14.3.	A waiver of any right under this Agreement is only effective if it is in writing and shall not be deemed to be a waiver of any subsequent breach or default. No failure or delay by a Party in exercising any right or remedy under this Agreement or by law shall constitute a waiver of that or any other right or remedy, nor preclude or restrict its further exercise. No single or partial exercise of such right or remedy shall preclude or restrict the further exercise of that or any other right or remedy. 
+
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="168" width="228" height="12" uuid="6cd6a6d4-a45f-4bcf-9fd3-6783e31279bb"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[13.	CONSEQUENCES OF TERMINATION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="31" y="581" width="228" height="12" uuid="1cb2bb70-051a-4923-b0f8-79d7d548d5f3"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[14.	MISCELLANEOUS ]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="549" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="3" width="267" height="330" uuid="114dbca9-367a-4287-80c3-bfaa798b2048"/>
+				<staticText>
+					<reportElement x="22" y="8" width="243" height="322" uuid="3777399f-ae21-4b37-9d74-242c4a44ba4e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[14.4.	Unless specifically provided otherwise, rights arising under this Agreement are cumulative and do not exclude rights provided by law.
+
+14.5.	If a court or any other competent authority finds that any provision of this Agreement (or part of any provision) is invalid, illegal or unenforceable, that provision or part-provision shall, to the extent required, be deemed deleted, and the validity and enforceability of the other provisions of this Agreement shall not be affected.If any invalid, unenforceable or illegal provision of this Agreement would be valid, enforceable and legal if some part of it were deleted, the provision shall apply with the minimum modification necessary to make it legal, valid and enforceable.
+
+14.6.	Nothing in this Agreement is intended to, or shall be deemed to, constitute a partnership or joint venture of any kind between any of the Parties, nor constitute any Party the agent of another Party for any purpose. No Party shall have authority to act as agent for, or to bind, the other Party in any way.  A person who is not a party to this Agreement shall not have any rights under or in connection with it.
+
+
+14.7.	This Agreement has been executed in two (2) original copies, with each Party receiving one (1) copy. 
+
+14.8.	Each Partyshall do and execute, or arrange for the doing and executing of, each necessary act, document and thing reasonably within its power and as may be reasonably requested of it to implement this Agreement.]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="287" y="0" width="267" height="333" uuid="7139146d-2fc3-419f-b6ba-ca7854c900c9"/>
+				<staticText>
+					<reportElement x="27" y="5" width="227" height="328" uuid="a6211ef3-6592-4775-9116-80f529aeae1d">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
+						<font size="8"/>
+						<paragraph lineSpacingSize="2.0"/>
+					</textElement>
+					<text><![CDATA[14.9.	Neither Party shall be in breach of this Agreement nor liable for delay in performing, or failure to perform, any of its obligations (save for in respect of an obligation to make payment) under this Agreement if such delay or failure result from events, circumstances or causes beyond its reasonable control. In such circumstances the affected Party shall be entitled to a reasonable extension of the time for performing such obligations. However, if the period of delay or non-performance continues for four (4) weeks, the Party not affected may terminate this Agreement by giving seven (7) calendar days written notice to the affected Party.
+
+
+
+
+
+15.1.	This Agreement shall be governed by and construed in accordance with the law of the Dubai International Financial Centre (“DIFC”).
+
+15.2.	Any dispute arising out of or in connection with this Agreement, including any question regarding its existence, validity or termination, shall be subject to the exclusive jurisdiction of the DIFC Courts.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="28" y="140" width="228" height="12" uuid="6cd6a6d4-a45f-4bcf-9fd3-6783e31279bb"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[15.	GOVERNING LAW ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="22" y="349" width="529" height="200" uuid="288469b7-0c55-498b-b6a1-a1fef5a6c398"/>
+				<staticText>
+					<reportElement x="5" y="0" width="255" height="190" uuid="a012316f-d104-4e1d-871b-565f44f7e198"/>
+					<text><![CDATA[By	
+
+
+
+
+ ----------------------------------------
+Name: Mr. Ahmed Al Sadah
+Title: CEO
+
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="267" y="1" width="255" height="190" uuid="ad140e8c-708b-4177-a02b-3dface3cf898"/>
+					<text><![CDATA[                               --------------------------------------
+	
+By       :  ----------------------------------------  
+Name :  ----------------------------------------
+Title     :  ----------------------------------------
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="26" y="2" width="228" height="12" uuid="9947a7b0-67bc-49c3-8985-ac7016a1d245"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ EASY LEASE MOTOR CYCLE RENTAL LLC:  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="276" y="4" width="82" height="12" uuid="0bc0c6f3-ef1c-4a24-81de-4f25398110df"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[[INSERTLESSEE]]]></text>
+				</staticText>
+			</frame>
+		</band>
+		<band height="731">
+			<image scaleImage="FillFrame">
+				<reportElement x="10" y="10" width="537" height="709" uuid="518234b3-7494-43e4-8893-71674e381a70"/>
+				<imageExpression><![CDATA[$P{leaseimage}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

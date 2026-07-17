@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="gateinvoice" extends="struts-default">
+			<action name="saveGateInvoice" class="com.dashboard.workshop.gateinvoice.ClsGateInvoiceAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >gateInvoice.jsp</result>
+				<result name="fail">gateInvoice.jsp</result>
+			</action>
+
+		</package>	
+</struts>

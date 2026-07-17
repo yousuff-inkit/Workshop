@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+
+	<package name="Quotation" extends="struts-default">
+			<action name="saveQuote" class="com.operations.marketing.quotation.ClsquotationAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >quotation.jsp</result>
+				<result name="fail">quotation.jsp</result>
+			</action>
+				<action name="printQuot" class="com.operations.marketing.quotation.ClsquotationAction" method="printAction">
+			    <interceptor-ref name="params"/>
+			 <!--     <result name="print">savepdf</result> -->
+	 		      <result name="print">${url}</result>
+			</action>
+			
+			<action name="jspToPdf" method="emailAction" class="com.operations.marketing.quotation.ClsquotationAction">
+				            <interceptor-ref name="params"/>
+				                <param name="location">quotmailprint.jsp</param>
+				                    <!--    <param name="inputName">inputStream</param> -->
+				                      <!--  <param name="contentDisposition">attachment;filename=${fileName}</param> --> 
+				                 
+				        </action>
+			
+			
+		  <!--  <action name="jspToPdf"  class="com.operations.marketing.quotation.ClsquotationAction" method="printAction">
+		 
+			 <interceptor-ref name="params"/>
+			<param name="location">/WEB-INF/pages/example.jsp</param>
+                <param name="cssPaths">css/bootstrap.min.css, css/style.css</param>
+	
+	 <param name="contentDisposition">attachment;filename=jsppdf.pdf</param>
+	 		    ///<result name="print">quotprint.jsp</result> 
+			   <result name="print">quotprint.jsp</result> 
+			 </action> -->
+	<!-- 		   <action name="jspToPdf"  class="com.operations.marketing.quotation.ClsquotationAction" method="printAction">
+            <result type="pdfstream">
+                <param name="location">/WEB-INF/pages/example.jsp</param>
+                <param name="cssPaths">css/bootstrap.min.css, css/style.css</param>
+                <param name="contentDisposition">attachment;filename=jsppdf.pdf</param>
+            </result>
+        </action> -->
+		
+		</package>	
+</struts>

@@ -1,0 +1,564 @@
+<Assessment xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+<AssessmentNumber>A1234570</AssessmentNumber>
+<CreationDate>2018-11-29T10:56:22</CreationDate>
+<CreatorSiteId>AUTOFITG</CreatorSiteId>
+<CustomerNumber>907740</CustomerNumber>
+<LastUpdatedBy>Suliman</LastUpdatedBy>
+<LastUpdatedDate>2018-11-29T10:56:22</LastUpdatedDate>
+<Originator>AUTOFITG</Originator>
+<State>Received</State>
+<UnRead>false</UnRead>
+<WorkstationVersion>AUTOFITG/1</WorkstationVersion>
+<AssessmentTag>
+<AssessorUserName>Suliman</AssessorUserName>
+<EstimatingUserName>Suliman</EstimatingUserName>
+</AssessmentTag>
+<Authorisation>
+<AuthorisationStatus>Interim</AuthorisationStatus>
+<RepairsAuthorised>TBA</RepairsAuthorised>
+</Authorisation>
+<Claim>
+<DateOfIncident>2018-11-29T00:00:00</DateOfIncident>
+<DateOfIncidentTBA>false</DateOfIncidentTBA>
+<DateOfInspection>2018-11-29T10:56:13</DateOfInspection>
+<InspectionRequest>false</InspectionRequest>
+<InspectionSiteVehPresent>false</InspectionSiteVehPresent>
+<IOTReference>Uninitialised</IOTReference>
+<ReferenceName></ReferenceName>
+<ReferenceTel></ReferenceTel>
+<RepairerTBA>false</RepairerTBA>
+<RepairEstCostTBA>false</RepairEstCostTBA>
+<RepairEstDuration>5</RepairEstDuration>
+</Claim>
+<CountryState>
+<Code>0</Code>
+<IsDefault>true</IsDefault>
+<ISOCode>AE-DU</ISOCode>
+<Name>Dubai</Name>
+<CurrencyDefinition>
+<Code>AED</Code>
+<DecimalDigits>2</DecimalDigits>
+<DecimalSeparator>.</DecimalSeparator>
+<GroupSeparator>,</GroupSeparator>
+<GroupSizes>3</GroupSizes>
+<NegativePattern>0</NegativePattern>
+<PositivePattern>0</PositivePattern>
+<Symbol>AED</Symbol>
+</CurrencyDefinition>
+</CountryState>
+<CourtesyCar>
+</CourtesyCar>
+<CurrencyDefinition>
+<Code>AED</Code>
+<DecimalDigits>2</DecimalDigits>
+<DecimalSeparator>.</DecimalSeparator>
+<GroupSeparator>,</GroupSeparator>
+<GroupSizes>3</GroupSizes>
+<NegativePattern>0</NegativePattern>
+<PositivePattern>0</PositivePattern>
+<Symbol>AED</Symbol>
+</CurrencyDefinition>
+<DamageEstimate>
+<CalculationList>
+<Calculation>
+<CalculationDate>2018-11-29T11:16:00</CalculationDate>
+<CalculationType>Normal</CalculationType>
+<ClassRelease>170</ClassRelease>
+<CorrProtection01WU>0</CorrProtection01WU>
+<CorrProtection02WU>0</CorrProtection02WU>
+<EngineTypeText>AUTO UP DOWN WINDOWS</EngineTypeText>
+<ErrorCode>0</ErrorCode>
+<GrandTotalAfterExcessAmt currency="GB">0.00</GrandTotalAfterExcessAmt>
+<GrandTotalExcludingVAT currency="GB">1422.96</GrandTotalExcludingVAT>
+<GrandTotalIncludingVAT currency="GB">1494.11</GrandTotalIncludingVAT>
+<LabourClass1WU currency="GB">34</LabourClass1WU>
+<LabourClass2WU currency="GB">0</LabourClass2WU>
+<LabourClass3WU currency="GB">0</LabourClass3WU>
+<LabourClass4WU currency="GB">0</LabourClass4WU>
+<LabourClass5WU currency="GB">0</LabourClass5WU>
+<ManufacturerText currency="GB">HYUNDAI</ManufacturerText>
+<NonPaintTimeBasis currency="GB">10</NonPaintTimeBasis>
+<PaintTimeBasis currency="GB">10</PaintTimeBasis>
+<PartPriceDate currency="GB">2005-04-04T00:00:00</PartPriceDate>
+<SubModelText currency="GB">GL</SubModelText>
+<SubTotalLabourAmt currency="GB">410.00</SubTotalLabourAmt>
+<VATAmt currency="GB">71.15</VATAmt>
+<VATPcnt currency="GB">5</VATPcnt>
+<VisualAlignmentWU currency="GB">7</VisualAlignmentWU>
+<CalculationItemList>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">70.00</Amount>
+<CodeText currency="GB">52904A00</CodeText>
+<DescriptionText currency="GB">ALIGN FRONT AND REAR (W/O ADJUSTMENTS)</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Repair_N</RepairMethod>
+<WUCount currency="GB">7</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">18600A00</CodeText>
+<DescriptionText currency="GB">ADJUST HEADLAMPS</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">3</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">86510R00)</CodeText>
+<DescriptionText currency="GB">R + R FRONT BUMPER</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">3</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">40.00</Amount>
+<CodeText currency="GB">66300R00)</CodeText>
+<DescriptionText currency="GB">R + R L/F WING</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">4</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">0.00</Amount>
+<DescriptionText currency="GB">INCLUDES: R + R HEADLAMP AND NECESSARY</DescriptionText>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">0</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">0.00</Amount>
+<DescriptionText currency="GB">ATTACHED PARTS</DescriptionText>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">0</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">0.00</Amount>
+<DescriptionText currency="GB">DOES NOT INCLUDE: R + R FRONT BUMPER,</DescriptionText>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">0</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">0.00</Amount>
+<DescriptionText currency="GB">ADJUST HEADLAMP</DescriptionText>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">0</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">30.00</Amount>
+<CodeText currency="GB">54509R00)</CodeText>
+<DescriptionText currency="GB">R + R L/F LOWER CONTROL ARM</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">3</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">10.00</Amount>
+<CodeText currency="GB">KN</CodeText>
+<DescriptionText currency="GB">R + R L/F WHEEL</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WUCount currency="GB">1</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="LabourType">
+<Amount currency="GB">200.00</Amount>
+<CodeText currency="GB">0283</CodeText>
+<DescriptionText currency="GB">REPAIR FRONT BUMPER</DescriptionText>
+<LabourClass currency="GB">1</LabourClass>
+<RepairMethod currency="GB">Repair_I</RepairMethod>
+<WUCount currency="GB">20</WUCount>
+<WUIndicator currency="GB">*</WUIndicator>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>L/F WING            NEW PART PAINTING</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">741</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">NewPartPaint_LE</RepairMethod>
+<WUCount currency="GB">9</WUCount>
+</CalculationItem>
+<CalculationItem xsi:type="PaintType">
+<AreaCount>0</AreaCount>
+<BettermentDeductionPcnt>0</BettermentDeductionPcnt>
+<DescriptionText>FRONT BUMPER        SURFACE PAINT PLAST.</DescriptionText>
+<FixedRateAmt currency="GB">0.00</FixedRateAmt>
+<GuideNumber currency="GB">283</GuideNumber>
+<MaterialUnitsCount currency="GB">0</MaterialUnitsCount>
+<RepairMethod currency="GB">SurfacePaint_L</RepairMethod>
+<WUCount currency="GB">9</WUCount>
+</CalculationItem>
+</CalculationItemList>
+<GeneralCosts>
+<BettermentDedPartsAmt currency="GB">0.00</BettermentDedPartsAmt>
+<BodyFillerAmt currency="GB">0.00</BodyFillerAmt>
+<CorrProtection01Amt currency="GB">0.00</CorrProtection01Amt>
+<CorrProtection02Amt currency="GB">0.00</CorrProtection02Amt>
+<DeductionAdditionalAmt currency="GB">0.00</DeductionAdditionalAmt>
+<DeductionReusePartsAmt currency="GB">0.00</DeductionReusePartsAmt>
+<FixedLabourPanMechAmt currency="GB">0.00</FixedLabourPanMechAmt>
+<FixedNonStdItemsAmt currency="GB">0.00</FixedNonStdItemsAmt>
+<IntermediateRepairCostsExVat currency="GB">1422.96</IntermediateRepairCostsExVat>
+<LabourAmt2 currency="GB">0.00</LabourAmt2>
+<LabourAmt3 currency="GB">0.00</LabourAmt3>
+<LabourAmt4 currency="GB">0.00</LabourAmt4>
+<LabourAmt5 currency="GB">0.00</LabourAmt5>
+<LabourPanelMechAmt currency="GB">340.00</LabourPanelMechAmt>
+<LbrAmtDecrease currency="GB">0.00</LbrAmtDecrease>
+<LbrAmtIncrease currency="GB">0.00</LbrAmtIncrease>
+<MeasuringAmt currency="GB">0.00</MeasuringAmt>
+<OverAllDiscountAmt currency="GB">0.00</OverAllDiscountAmt>
+<PartsAmt currency="GB">400.00</PartsAmt>
+<PartsSaving currency="GB">0.00</PartsSaving>
+<RepairCostAmt currency="GB">1422.96</RepairCostAmt>
+<RepairCostIncVatBefDed currency="GB">1494.11</RepairCostIncVatBefDed>
+<SubjectToCheckAmt currency="GB">0.00</SubjectToCheckAmt>
+<SundryPartsAmt currency="GB">0.00</SundryPartsAmt>
+<SundryPartsPcnt currency="GB">0</SundryPartsPcnt>
+<SupplementaryWorkAmt currency="GB">0.00</SupplementaryWorkAmt>
+<TotalAdditionalAmt currency="GB">0.00</TotalAdditionalAmt>
+<TotalDeductionAmt currency="GB">0.00</TotalDeductionAmt>
+<TotalExtrasAmt currency="GB">0.00</TotalExtrasAmt>
+<TotalLabourAmt currency="GB">340.00</TotalLabourAmt>
+<TotalPaintMaterialAmt currency="GB">289.96</TotalPaintMaterialAmt>
+<TotalPartsAmt currency="GB">400.00</TotalPartsAmt>
+<UpholsteryAmt currency="GB">0.00</UpholsteryAmt>
+<VatAmtBefDed currency="GB">71.15</VatAmtBefDed>
+<VisualAlignmentAmt currency="GB">70.00</VisualAlignmentAmt>
+</GeneralCosts>
+<IDBlockCodeList>
+<IDBlockCode>
+<BlockCode>28</BlockCode>
+<IsActive>true</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>51</BlockCode>
+<IsActive>true</IsActive>
+<Value>100</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>59</BlockCode>
+<IsActive>true</IsActive>
+<Value>5</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>70</BlockCode>
+<IsActive>true</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>71</BlockCode>
+<IsActive>false</IsActive>
+<Value>0</Value>
+</IDBlockCode>
+</IDBlockCodeList>
+<ModelOptionList>
+<ModelOption>
+<Code>A7</Code>
+<Text>FROM 01/2017</Text>
+</ModelOption>
+<ModelOption>
+<Code>G1</Code>
+<Text>AUTO UP DOWN WINDOWS</Text>
+</ModelOption>
+<ModelOption>
+<Code>I2</Code>
+<Text>FOG LAMPS</Text>
+</ModelOption>
+<ModelOption>
+<Code>N1</Code>
+<Text>1.6 LTR 94 KW</Text>
+</ModelOption>
+<ModelOption>
+<Code>Y4</Code>
+<Text>TWO COAT METALLIC</Text>
+</ModelOption>
+<ModelOption>
+<Code>Y8</Code>
+<Text>PAINTING OFF VEHICLE</Text>
+</ModelOption>
+</ModelOptionList>
+<PaintCosts>
+<BettermentDedPaintAmt currency="GB">0.00</BettermentDedPaintAmt>
+<CalcLabourPcnt currency="GB">0</CalcLabourPcnt>
+<FixedLabourPaintAmt currency="GB">0.00</FixedLabourPaintAmt>
+<FixedPaintMaterialAmt currency="GB">0.00</FixedPaintMaterialAmt>
+<FlatMaterialAmt currency="GB">0.00</FlatMaterialAmt>
+<IndexChangeAmt currency="GB">0.00</IndexChangeAmt>
+<LabourPaintAmt currency="GB">340.00</LabourPaintAmt>
+<MatConPrePnt currency="GB">0.00</MatConPrePnt>
+<MatConstMetalAmt currency="GB">72.70</MatConstMetalAmt>
+<MatConstPlasticAmt currency="GB">33.90</MatConstPlasticAmt>
+<NewPartAmt currency="GB">74.21</NewPartAmt>
+<NewPartAreaCount currency="GB">32</NewPartAreaCount>
+<NewPartMetalAmt currency="GB">74.21</NewPartMetalAmt>
+<NewPartPlasticLE1Amt currency="GB">0.00</NewPartPlasticLE1Amt>
+<NewPartPlasticLE2Amt currency="GB">0.00</NewPartPlasticLE2Amt>
+<NewPartPlasticLE3Amt currency="GB">0.00</NewPartPlasticLE3Amt>
+<NewPartPlasticLE4Amt currency="GB">0.00</NewPartPlasticLE4Amt>
+<NewPartUnitCount currency="GB">0</NewPartUnitCount>
+<PaintDiscountAmount currency="GB">-17.00</PaintDiscountAmount>
+<PaintMaterialAmt currency="GB">289.96</PaintMaterialAmt>
+<PaintWU currency="GB">18</PaintWU>
+<PearlescentPaintAmt currency="GB">0.00</PearlescentPaintAmt>
+<PreparePaintSundryAmt currency="GB">33.90</PreparePaintSundryAmt>
+<PreparePartsWU currency="GB">16</PreparePartsWU>
+<PrepInCaseofPrepaint currency="GB">0.00</PrepInCaseofPrepaint>
+<PrepPanelsOffCar currency="GB">0</PrepPanelsOffCar>
+<PrepSinglePanelOffCar currency="GB">0</PrepSinglePanelOffCar>
+<PrepWorkMetalWU currency="GB">11</PrepWorkMetalWU>
+<PrepWorkMultilayerWU currency="GB">0.00</PrepWorkMultilayerWU>
+<PrepWorkPlasticWU currency="GB">5</PrepWorkPlasticWU>
+<Repair1Amt currency="GB">0.00</Repair1Amt>
+<Repair1AreaCount currency="GB">0</Repair1AreaCount>
+<Repair1UnitCount currency="GB">0</Repair1UnitCount>
+<RepairAmt currency="GB">0.00</RepairAmt>
+<RepairAreaCount currency="GB">0</RepairAreaCount>
+<RepairPaintMetalAmt currency="GB">0.00</RepairPaintMetalAmt>
+<RepairPaintPlasticAmt currency="GB">0.00</RepairPaintPlasticAmt>
+<RepairUnitCount currency="GB">0</RepairUnitCount>
+<SundryCostsAmt currency="GB">72.70</SundryCostsAmt>
+<SurfaceAmt currency="GB">109.15</SurfaceAmt>
+<SurfaceAreaCount currency="GB">0</SurfaceAreaCount>
+<SurfacePaintMetalAmt currency="GB">0.00</SurfacePaintMetalAmt>
+<SurfacePaintPlasticAmt currency="GB">109.15</SurfacePaintPlasticAmt>
+<SurfaceUnitCount currency="GB">0</SurfaceUnitCount>
+<TotalLabourPaintAmt currency="GB">340.00</TotalLabourPaintAmt>
+<TotalPaintWU currency="GB">34</TotalPaintWU>
+<TotalUnits currency="GB">0</TotalUnits>
+</PaintCosts>
+<PartList>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">300.00</Amount>
+<AmountIndicator currency="GB">*</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/F WING</DescriptionText>
+<GuideNumber currency="GB">741</GuideNumber>
+<MaterialType currency="GB">Metal</MaterialType>
+<OpinionAmt currency="GB">300.00</OpinionAmt>
+<PartNumber currency="GB">66310F2000</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="ValidPartType">
+<Amount currency="GB">100.00</Amount>
+<AmountIndicator currency="GB">*</AmountIndicator>
+<BettermentDeductionPcnt currency="GB">0</BettermentDeductionPcnt>
+<ChangeAmount currency="GB">0.00</ChangeAmount>
+<DescriptionText currency="GB">L/F LWR CONTROL ARM</DescriptionText>
+<GuideNumber currency="GB">7053</GuideNumber>
+<MaterialType currency="GB">Unknown</MaterialType>
+<OpinionAmt currency="GB">100.00</OpinionAmt>
+<PartNumber currency="GB">54500F2AA0</PartNumber>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<RequiredQuantity currency="GB">1</RequiredQuantity>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LA</ErrorCode>
+<GuideNumber>7053</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>Z</ErrorCode>
+<GuideNumber>9906</GuideNumber>
+<RepairMethod>Alignment_V</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LA</ErrorCode>
+<GuideNumber>7053</GuideNumber>
+<RepairMethod>Renew_E</RepairMethod>
+</Part>
+<Part xsi:type="InvalidPartType">
+<ErrorCode>LO</ErrorCode>
+<GuideNumber>9906</GuideNumber>
+<RepairMethod>Alignment_V</RepairMethod>
+</Part>
+</PartList>
+</Calculation>
+</CalculationList>
+<Headers>
+<Line01>Auto Fit Centre</Line01>
+<Line02>Al Quoz</Line02>
+<Line03>P. O. Box 3664</Line03>
+<Line04>Dubai, UAE</Line04>
+</Headers>
+<Model xsi:type="FullModelType">
+<AZTAddScratchResist>false</AZTAddScratchResist>
+<AZTPrepColours>false</AZTPrepColours>
+<AZTPrepColoursWU>0</AZTPrepColoursWU>
+<AZTPrepDegrease>false</AZTPrepDegrease>
+<AZTPrepDegreaseWU>0</AZTPrepDegreaseWU>
+<AZTPrepIDManuf>false</AZTPrepIDManuf>
+<AZTPrepIDManufWU>0</AZTPrepIDManufWU>
+<AZTPrepMaskGlass>false</AZTPrepMaskGlass>
+<AZTPrepMaskGlassWU>0</AZTPrepMaskGlassWU>
+<AZTPrepMasking>false</AZTPrepMasking>
+<AZTPrepMaskingWU>0</AZTPrepMaskingWU>
+<AZTPrepMixing>false</AZTPrepMixing>
+<AZTPrepMixingWU>0</AZTPrepMixingWU>
+<AZTPrepSample>false</AZTPrepSample>
+<AZTPrepSampleWU>0</AZTPrepSampleWU>
+<BMSBodyType>Sedan</BMSBodyType>
+<ManufacturerName>HYUNDAI</ManufacturerName>
+<ManufDatCode>3092</ManufDatCode>
+<ModelName>Elantra</ModelName>
+<ModelOptions>A7I2G1N1Y4Y8</ModelOptions>
+<SModelCode>16</SModelCode>
+<SubModelName></SubModelName>
+<VehicleType>AXFullCar</VehicleType>
+</Model>
+<Rate>
+<CorrosionProtection currency="GB">0.00</CorrosionProtection>
+<LabourRate currency="GB">100.00</LabourRate>
+<LabourRate4 currency="GB">100.00</LabourRate4>
+<LabourRate5 currency="GB">100.00</LabourRate5>
+<PaintIndex currency="GB">100</PaintIndex>
+<PaintRate currency="GB">100.00</PaintRate>
+<SundryPartsPcnt currency="GB">0</SundryPartsPcnt>
+<IDBlockCodeList>
+<IDBlockCode>
+<BlockCode>51</BlockCode>
+<Value>100</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>28</BlockCode>
+<Value>0</Value>
+</IDBlockCode>
+<IDBlockCode>
+<BlockCode>59</BlockCode>
+<Value>5</Value>
+</IDBlockCode>
+</IDBlockCodeList>
+</Rate>
+<RepairList>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>741</GuideNumber>
+<GXCoordinates>0741020106</GXCoordinates>
+<MutationCode>EM</MutationCode>
+<MutationCode1>EM</MutationCode1>
+<MutationValue1>30000</MutationValue1>
+<OperationType>71</OperationType>
+<PriceAmt currency="GB">300.00</PriceAmt>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WorkUnitsAdditional currency="GB">false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>283</GuideNumber>
+<GXCoordinates>0283020118</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>SurfacePaint_L</RepairMethod>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>283</GuideNumber>
+<GXCoordinates>0283020118</GXCoordinates>
+<OperationType>71</OperationType>
+<RepairMethod>Repair_I</RepairMethod>
+<WorkUnits>20</WorkUnits>
+<WorkUnitsAdditional>false</WorkUnitsAdditional>
+</Repair>
+<Repair>
+<BettermentPcnt>0</BettermentPcnt>
+<GuideNumber>7053</GuideNumber>
+<GXCoordinates>7053200076</GXCoordinates>
+<MutationCode>EM</MutationCode>
+<MutationCode1>EM</MutationCode1>
+<MutationValue1>10000</MutationValue1>
+<OperationType>71</OperationType>
+<PriceAmt currency="GB">100.00</PriceAmt>
+<RepairMethod currency="GB">Renew_E</RepairMethod>
+<WorkUnitsAdditional currency="GB">false</WorkUnitsAdditional>
+</Repair>
+</RepairList>
+</DamageEstimate>
+<POCList>
+<POC xsi:type="RepairerContactType">
+<AbleToAuthorise>TBA</AbleToAuthorise>
+<ContactType>Repairer</ContactType>
+<VATRegisteredStatus>Yes</VATRegisteredStatus>
+<ContactDetail>
+<Line01>dubai</Line01>
+<Name>Autofit</Name>
+<TelBusiness>043388805</TelBusiness>
+</ContactDetail>
+</POC>
+<POC>
+<ContactType>Insurer</ContactType>
+<ContactDetail>
+<Line01>dubai</Line01>
+<Name>qatar general</Name>
+<TelBusiness>408050055</TelBusiness>
+</ContactDetail>
+</POC>
+<POC>
+<ContactType>Insured</ContactType>
+<ContactDetail>
+<Line01>sharjah</Line01>
+<Name>yousuff</Name>
+<TelMobile>971561189339</TelMobile>
+</ContactDetail>
+</POC>
+</POCList>
+<Policy>
+<ExcessTBA>true</ExcessTBA>
+<VATStatus>TBA</VATStatus>
+</Policy>
+<TextList>
+<Text>
+<TextType>Assessment</TextType>
+</Text>
+</TextList>
+<Vehicle>
+<BodyColour>Silver</BodyColour>
+<GearBox>Manual</GearBox>
+<isMiles>false</isMiles>
+<MonthReg>2</MonthReg>
+<Odometer>10001</Odometer>
+<OdometerStatus>Provided</OdometerStatus>
+<OdometerTBA>false</OdometerTBA>
+<Registration>35157</Registration>
+<VIN>15115CH44556</VIN>
+<VINTBA>true</VINTBA>
+<YearReg>2017</YearReg>
+<ImpactAreaList>
+<ImpactArea>
+<Area>H_LHFront</Area>
+</ImpactArea>
+</ImpactAreaList>
+<ImpactDirectionList>
+<ImpactDirection>
+<Destination>A_CentreFront</Destination>
+<Source>E_CentreRear</Source>
+</ImpactDirection>
+</ImpactDirectionList>
+<Salvage>
+<CashInLieuFlag>false</CashInLieuFlag>
+<DailyStorageTBA>false</DailyStorageTBA>
+<MayMoveSalvage>false</MayMoveSalvage>
+<NetworkToSalvageAgent>false</NetworkToSalvageAgent>
+<OwnerRetainsSalvageFlag>false</OwnerRetainsSalvageFlag>
+<TotalStorageTBA>false</TotalStorageTBA>
+<ValueAgreedFlag>false</ValueAgreedFlag>
+</Salvage>
+<VehicleCheckList>
+<VehicleCheck xsi:type="VC_StringDescType">
+<Description>Excellent</Description>
+<Name>Overall Tyre Condition</Name>
+<VCType>StdOverallTyreCondition</VCType>
+</VehicleCheck>
+<VehicleCheck xsi:type="VC_LookupType">
+<Name>Damage Condition 01</Name>
+<Value>4</Value>
+<VCType>StdDamageCondition01</VCType>
+</VehicleCheck>
+</VehicleCheckList>
+</Vehicle>
+<WorkProvider>
+<Code>177</Code>
+<Description>Qatar General Insurance</Description>
+</WorkProvider>
+</Assessment>

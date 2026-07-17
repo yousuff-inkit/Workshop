@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="jobinprogress" extends="struts-default">
+			<action name="printJobInProgress" class="com.dashboard.analysis.jobinprogress.ClsJobInProgressAction" method="printAction">
+				<interceptor-ref name="params"/>
+			</action>
+			<action name="JobInProgressmnthwise" class="com.dashboard.analysis.jobinprogress.ClsJobInProgressAction" method="printAction1">
+				<interceptor-ref name="params"/>
+			</action>
+		</package>	
+</struts>

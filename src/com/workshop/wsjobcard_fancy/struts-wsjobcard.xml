@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="wsjobcard_fancy" extends="struts-default">
+			<action name="saveWSJobCardfancy" class="com.workshop.wsjobcard_fancy.ClsWSJobCardAction" method="saveAction">
+				<interceptor-ref name="params"/>
+				<result name="success" >jobCard.jsp</result>
+				<result name="fail">jobCard.jsp</result>
+			</action>
+			
+			<action name="jobcardviw" class="com.workshop.wsjobcard_fancy.ClsWSJobCardAction" method="saveAction">
+                              <interceptor-ref name="params"/>
+                              <result name="success" >../../workshop/jobcard_fancy/jobCard.jsp</result>
+                              <result name="fail">../../workshop/jobcard_fancy/jobCard.jsp </result>
+                       </action>
+		   <action name="WSJobCardPrintFancyAction" class="com.workshop.wsjobcard_fancy.ClsWSJobCardAction" method="printAction">
+				<interceptor-ref name="params"/>
+				<result name="print">${url}</result>
+			</action>
+	</package>
+</struts>
