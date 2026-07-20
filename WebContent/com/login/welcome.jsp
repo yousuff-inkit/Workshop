@@ -2,6 +2,10 @@
 <html>
 <head>
 <% String contextPath=request.getContextPath();%>
+<%
+    response.sendRedirect("login.jsp");
+    return;
+%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="shortcut icon" href="<%=contextPath+"/"%>gatelogo.ico" > 
 <title>Gateway ERP(Integrated)</title>
