@@ -29,27 +29,211 @@
 		}
 
 	</script>
+<style>
+/*=========================================================
+                MASTER SEARCH UI
+=========================================================*/
+
+html,
+body{
+    margin:0;
+    padding:0;
+    background:#ffffff !important;
+    font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+}
+
+#search{
+    background:#ffffff;
+    padding:10px;
+}
+
+.search-panel{
+    background:#ffffff;
+    border:1px solid #d8d8d8;
+    border-radius:4px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
+.search-panel table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.search-panel td{
+    padding:5px 6px;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.lbl-right{
+    text-align:right;
+    font-size:12px;
+    font-weight:500;
+    color:#333;
+    padding-right:6px;
+}
+
+.search-input{
+    width:130px !important;
+    min-width:130px !important;
+    max-width:130px !important;
+    height:26px !important;
+    border:1px solid #cfcfcf;
+    border-radius:3px;
+    padding:2px 6px;
+    box-sizing:border-box;
+    font-size:12px;
+    background:#fff;
+}
+
+.medium-input{
+    width:180px !important;
+    min-width:180px !important;
+    max-width:180px !important;
+}
+
+.long-input{
+    width:250px !important;
+    min-width:250px !important;
+    max-width:250px !important;
+}
+
+.grid-container{
+    background:#fff;
+    border:1px solid #cccccc;
+    border-radius:4px;
+    overflow:hidden;
+}
+</style>
+
 <body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td width="6%" align="right">Date</td>
-    <td width="14%"><div id="receiptdate" name="receiptdate"  value='<s:property value="receiptdate"/>'></div>
-        <input type="hidden" name="hidreceiptdate" id="hidreceiptdate" value='<s:property value="hidreceiptdate"/>'></td>
-    <td width="21%" align="right">Doc No</td>
-    <td width="32%"><input type="text" name="txtdocno" id="txtdocno" autocomplete="off" value='<s:property value="txtdocno"/>'></td>
-    <td width="27%" align="center"><input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Search"  onclick="loadSearch();"></td>
-  </tr>
-  <tr>
-    <td align="right">Name</td>
-    <td colspan="2"><input type="text" name="txtpartyname" id="txtpartyname" style="width:100%" autocomplete="off" value='<s:property value="txtpartyname"/>'></td>
-    <td align="right">Amount</td>
-    <td><input type="text" name="txtamount" id="txtamount" autocomplete="off" value='<s:property value="txtamount"/>'></td>
-  </tr>
-  <tr>
-    <td colspan="5"><div id="refreshdiv"><jsp:include page="icrvMainSearchGrid.jsp"></jsp:include></div></td>
-  </tr>
-</table>
-  </div>
+
+<div id="search">
+
+    <div class="search-panel">
+
+        <table>
+
+            <tr>
+
+                <td class="lbl-right">
+                    Date
+                </td>
+
+                <td>
+
+                    <div id="receiptdate"
+                         name="receiptdate"
+                         value='<s:property value="receiptdate"/>'>
+                    </div>
+
+                    <input type="hidden"
+                           name="hidreceiptdate"
+                           id="hidreceiptdate"
+                           value='<s:property value="hidreceiptdate"/>'>
+
+                </td>
+
+                <td class="lbl-right">
+                    Doc No
+                </td>
+
+                <td>
+
+                    <input type="text"
+                           class="search-input medium-input"
+                           name="txtdocno"
+                           id="txtdocno"
+                           autocomplete="off"
+                           value='<s:property value="txtdocno"/>'>
+
+                </td>
+
+                <td align="center">
+
+                    <button
+                        type="button"
+                        id="btnsearch"
+                        onclick="loadSearch();"
+                        style="
+                            width:105px;
+                            height:28px;
+                            background:#205fd3;
+                            color:#ffffff;
+                            border:1px solid #205fd3;
+                            border-radius:4px;
+                            font-size:12px;
+                            font-weight:600;
+                            cursor:pointer;">
+                        Search
+                    </button>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class="lbl-right">
+                    Name
+                </td>
+
+                <td colspan="2">
+
+                    <input type="text"
+                           class="search-input long-input"
+                           name="txtpartyname"
+                           id="txtpartyname"
+                           autocomplete="off"
+                           value='<s:property value="txtpartyname"/>'>
+
+                </td>
+
+                <td>
+
+                    <table style="border-collapse:collapse;">
+                        <tr>
+
+                            <td class="lbl-right">
+                                Amount
+                            </td>
+
+                            <td>
+
+                                <input type="text"
+                                       class="search-input"
+                                       name="txtamount"
+                                       id="txtamount"
+                                       autocomplete="off"
+                                       value='<s:property value="txtamount"/>'>
+
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </td>
+
+                <td></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="grid-container">
+
+        <div id="refreshdiv">
+
+            <jsp:include page="icrvMainSearchGrid.jsp"></jsp:include>
+
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
