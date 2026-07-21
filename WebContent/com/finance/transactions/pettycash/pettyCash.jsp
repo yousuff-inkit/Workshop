@@ -292,88 +292,302 @@
 </script>
 
 <style>
-.hidden-scrollbar {
-  overflow: auto;
-  height: 530px;
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
+
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+#frmPettyCash input[type="text"],
+#frmPettyCash select,
+.textbox { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    box-shadow: none !important;
+    outline: none;
+}
+
+#frmPettyCash input[type="text"]:focus,
+#frmPettyCash select:focus,
+.textbox:focus { 
+    border-color: #007bff; 
+}
+
+#frmPettyCash input[readonly],
+#frmPettyCash input:disabled,
+#frmPettyCash select:disabled,
+.textbox[readonly] { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
+}
+
+form label.error {
+    color: red;
+    font-weight: bold;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+}
+
+.myButton, .btn {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.myButton:hover, .btn:hover { 
+    background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); 
+}
+
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+    padding-right: 5px;
+    overflow-x: hidden;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+.grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.jqx-datetimeinput-input { 
+    height: 24px !important; 
+    line-height: 24px !important; 
+    margin-top: 0px !important; 
+    padding-top: 0px !important;
+    box-sizing: border-box !important;
+    font-size: 12px !important;
+}
+.jqx-action-button {
+    height: 24px !important;
+}
+
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+    flex-shrink: 0; /* Keep labels from squishing */
+}
+
+.modern-ui .input-search-container {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+}
+.modern-ui .input-search-container input {
+    padding-right: 25px !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+.modern-ui .magnifier-icon {
+    position: absolute;
+    right: 6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b; 
+    z-index: 10;
+}
+.modern-ui .magnifier-icon:hover { color: #2563eb; }
 </style>
 
 </head>
 <body onload="setValues();">
+
+<!-- JQX input alignment fix (placed right at the top of the body for guaranteed execution) -->
+<script type="text/javascript">
+    $(document).ready(function() {
+         setTimeout(function () {
+             $("#jqxPettyCashDate, #maindate").find("input").css({
+                 "margin-top": "0px",
+                 "line-height": "24px",
+                 "font-size": "12px", 
+                 "font-family": "Arial, sans-serif", 
+                 "padding": "0 6px", 
+                 "box-sizing":"border-box"
+             });
+             $("#jqxPettyCashDate, #maindate").find(".jqx-action-button").css({
+                 "top": "0px",
+                 "height": "24px"
+             });
+         }, 0);
+         
+         // Update height logic for dynamic input instantiation
+         $("#jqxPettyCashDate").jqxDateTimeInput({ width: '100%', height: '24px', formatString:"dd.MM.yyyy"});
+         $("#maindate").jqxDateTimeInput({ width: '100%', height: '24px', formatString:"dd.MM.yyyy"});
+    });
+</script>
+
 <div id="mainBG" class="homeContent" data-type="background" >
 <form id="frmPettyCash" action="savePettyCash" method="post" autocomplete="off">
 <jsp:include page="../../../../header.jsp"></jsp:include>
 
-<div  class='hidden-scrollbar'>
-<table width="100%">
-  <tr>
-    <td width="3%" height="42" align="right">Date</td>
-    <td width="11%"><div id="jqxPettyCashDate" name="jqxPettyCashDate" onchange="datechange();" value='<s:property value="jqxPettyCashDate"/>'></div>
-    <input type="hidden" id="hidjqxPettyCashDate" name="hidjqxPettyCashDate" value='<s:property value="hidjqxPettyCashDate"/>'/></td>
-    <td width="21%" align="left">&nbsp;</td>
-    <td width="9%" align="right">Ref. No.</td>
-    <td width="29%"><input type="text" id="txtrefno" name="txtrefno" style="width:40%;" value='<s:property value="txtrefno"/>'/></td>
-    <td width="6%" align="right">Doc No.</td>
-    <td width="21%"><input type="text" id="docno" name="txtpettycashdocno" style="width:50%;" value='<s:property value="txtpettycashdocno"/>' tabindex="-1"/>
-    <button class="myButton" type="button" id="btnvaluechange" name="btnvaluechange" onclick="funwarningopen();">Value Change</button></td>
-  </tr>
-</table>
+<div class='modern-ui hidden-scrollbar'>
+    
+    <!-- General Info -->
+    <div class="middle-panel">
+        <span class="middle-panel-title">General Info</span>
+        <div class="field-row" style="margin-bottom:0;">
+            <label class="lbl-right" style="width:80px; flex-shrink:0;">Date</label>
+            <div style="width: 125px; flex-shrink:0;">
+                <div id="jqxPettyCashDate" name="jqxPettyCashDate" onchange="datechange();" value='<s:property value="jqxPettyCashDate"/>'></div>
+                <input type="hidden" id="hidjqxPettyCashDate" name="hidjqxPettyCashDate" value='<s:property value="hidjqxPettyCashDate"/>'/>
+            </div>
+            
+            <label class="lbl-right" style="width:80px; flex-shrink:0; margin-left: 15px;">Ref. No.</label>
+            <input type="text" id="txtrefno" name="txtrefno" value='<s:property value="txtrefno"/>' style="width:150px; flex-shrink:0;"/>
+            
+            <label class="lbl-right" style="width:80px; flex-shrink:0; margin-left:auto;">Doc No.</label>
+            <div style="display:flex; align-items:center; gap:8px; flex:1; min-width:0;">
+                <input type="text" id="docno" name="txtpettycashdocno" tabindex="-1" value='<s:property value="txtpettycashdocno"/>' readonly style="width:120px;" />
+                <button class="myButton" type="button" id="btnvaluechange" name="btnvaluechange" onclick="funwarningopen();" style="flex-shrink:0;">Value Change</button>
+            </div>
+        </div>
+    </div>
 
-<fieldset>
-<table width="100%">
-  <tr>
-    <td width="6%" align="right">Cash</td>
-    <td width="16%"><input type="text" id="txtaccid" name="txtaccid" style="width:70%;" placeholder="Press F3 to Search" value='<s:property value="txtaccid"/>'  onkeydown="getAcc(event);"/></td>
-    <td colspan="2"><input type="text" id="txtaccname" name="txtaccname" style="width:85%;" value='<s:property value="txtaccname"/>' tabindex="-1"/>
-    <input type="hidden" id="txtdocno" name="txtdocno" value='<s:property value="txtdocno"/>'/></td>
-    <td width="7%" align="right">Currency</td>
-    <td width="18%"><select id="cmbcurrency" name="cmbcurrency" style="width:40%;" value='<s:property value="cmbcurrency"/>' onload="getRatevalue(this.value,$('#jqxPettyCashDate').val());" onchange="getRatevalue(this.value,$('#jqxPettyCashDate').val());">
-      <option></option></select>
-      <input type="hidden" id="hidcmbcurrency" name="hidcmbcurrency" value='<s:property value="hidcmbcurrency"/>'/>
-      <input type="hidden" id="hidcurrencytype" name="hidcurrencytype" value='<s:property value="hidcurrencytype"/>'/></td>
-    <td width="4%" align="right">Rate</td>
-    <td width="20%"><input type="text" id="txtrate" name="txtrate" style="width:32%;text-align: right;" value='<s:property value="txtrate"/>' tabindex="-1"/></td>
-  </tr>
-  <tr>
-    <td align="right">Amount</td>
-    <td><input type="text" id="txtamount" name="txtamount" style="width:70%;text-align: right;" value='<s:property value="txtamount"/>' readonly onblur="funRoundAmt(this.value,this.id);" tabindex="-1"/></td>
-    <td width="15%" align="right">Base Amount</td>
-    <td width="14%"><input type="text" id="txtbaseamount" name="txtbaseamount" style="width:70%;text-align: right;" readonly value='<s:property value="txtbaseamount"/>' tabindex="-1" tabindex="-1"/></td>
-    <td align="right">Description</td>
-     <td colspan="3"><input type="text" id="txtdescription" name="txtdescription" style="width:68%;" value='<s:property value="txtdescription"/>'/></td>
-  </tr>
-</table>
-</fieldset><br/>
-<div id="jqxPettyCashGrid"><jsp:include page="pettyCashGrid.jsp"></jsp:include></div><br/>
+    <!-- Details -->
+    <div class="middle-panel">
+        <span class="middle-panel-title">Cash Details</span>
+        
+        <div class="field-row">
+            <label class="lbl-right" style="width:80px; flex-shrink:0;">Cash</label>
+            <div class="input-search-container" style="width: 150px; flex-shrink:0;">
+                <input type="text" id="txtaccid" name="txtaccid" placeholder="Press F3" value='<s:property value="txtaccid"/>' onkeydown="getAcc(event);"/>
+                <svg class="magnifier-icon" onclick="var date = $('#jqxPettyCashDate').jqxDateTimeInput('getDate'); $('#maindate').jqxDateTimeInput('val', date); accountSearchContent('<%=contextPath%>/com/finance/accountsDetailsSearch.jsp?date='+date); $('#txtforsearch').val(2);" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <input type="text" id="txtaccname" name="txtaccname" value='<s:property value="txtaccname"/>' tabindex="-1" readonly style="flex:1; min-width:0; margin-left:8px;"/>
+            <input type="hidden" id="txtdocno" name="txtdocno" value='<s:property value="txtdocno"/>'/>
+        </div>
+        
+        <div class="field-row">
+            <label class="lbl-right" style="width:80px; flex-shrink:0;">Currency</label>
+            <select id="cmbcurrency" name="cmbcurrency" style="width:150px; flex-shrink:0;" value='<s:property value="cmbcurrency"/>' onload="getRatevalue(this.value,$('#jqxPettyCashDate').val());" onchange="getRatevalue(this.value,$('#jqxPettyCashDate').val());">
+                <option></option>
+            </select>
+            <input type="hidden" id="hidcmbcurrency" name="hidcmbcurrency" value='<s:property value="hidcmbcurrency"/>'/>
+            <input type="hidden" id="hidcurrencytype" name="hidcurrencytype" value='<s:property value="hidcurrencytype"/>'/>
+            
+            <label class="lbl-right" style="width:80px; flex-shrink:0; margin-left:15px;">Rate</label>
+            <input type="text" id="txtrate" name="txtrate" value='<s:property value="txtrate"/>' tabindex="-1" readonly style="width:120px; text-align:right; flex-shrink:0;"/>
+        </div>
+        
+        <div class="field-row">
+            <label class="lbl-right" style="width:80px; flex-shrink:0;">Amount</label>
+            <input type="text" id="txtamount" name="txtamount" value='<s:property value="txtamount"/>' readonly onblur="funRoundAmt(this.value,this.id);" tabindex="-1" style="width:150px; text-align:right; flex-shrink:0;"/>
+            
+            <label class="lbl-right" style="width:80px; flex-shrink:0; margin-left:15px;">Base Amount</label>
+            <input type="text" id="txtbaseamount" name="txtbaseamount" value='<s:property value="txtbaseamount"/>' tabindex="-1" readonly style="width:120px; text-align:right; flex-shrink:0;"/>
+        </div>
+        
+        <div class="field-row" style="margin-bottom:0;">
+            <label class="lbl-right" style="width:80px; flex-shrink:0;">Description</label>
+            <input type="text" id="txtdescription" name="txtdescription" value='<s:property value="txtdescription"/>' style="flex:1; min-width:0;"/>
+        </div>
+    </div>
+    
+    <!-- Petty Cash Allocation Grid -->
+    <div class="middle-panel">
+        <span class="middle-panel-title">Petty Cash Allocation</span>
+        <div id="jqxPettyCashGrid" class="grid-container">
+            <jsp:include page="pettyCashGrid.jsp"></jsp:include>
+        </div>
+    </div>
 
-<input type="hidden" id="mode" name="mode"/>
-<input type="hidden" id="deleted" name="deleted" value='<s:property value="deleted"/>'/>
-<input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
-<input type="hidden" id="gridlength" name="gridlength"/>
-<div hidden="true" id="maindate" name="maindate" value='<s:property value="maindate"/>'></div>
-<input type="hidden" id="hidmaindate" name="hidmaindate" value='<s:property value="hidmaindate"/>'/>
-<input type="hidden" name="txtforsearch" id="txtforsearch" value='<s:property value="txtforsearch"/>'>
-<input type="hidden" id="txttrno" name="txttrno" value='<s:property value="txttrno"/>'/>
-<input type="hidden" id="txttranid" name="txttranid" value='<s:property value="txttranid"/>'/>
+    <!-- Hidden Inputs -->
+    <div style="display:none;">
+        <input type="hidden" id="mode" name="mode"/>
+        <input type="hidden" id="deleted" name="deleted" value='<s:property value="deleted"/>'/>
+        <input type="hidden" id="msg" name="msg" value='<s:property value="msg"/>'/>
+        <input type="hidden" id="gridlength" name="gridlength"/>
+        <div hidden="true" id="maindate" name="maindate" value='<s:property value="maindate"/>'></div>
+        <input type="hidden" id="hidmaindate" name="hidmaindate" value='<s:property value="hidmaindate"/>'/>
+        <input type="hidden" name="txtforsearch" id="txtforsearch" value='<s:property value="txtforsearch"/>'>
+        <input type="hidden" id="txttrno" name="txttrno" value='<s:property value="txttrno"/>'/>
+        <input type="hidden" id="txttranid" name="txttranid" value='<s:property value="txttranid"/>'/>
+    </div>
+
 </div>
 </form>
-	
-<div id="pettyCashGridWindow">
-	<div></div><div></div>
-</div>  
-				
-<div id="accountDetailsFromWindow">
-	<div></div><div></div>
-</div>  
-	 
-<div id="costTypeSearchGridWindow">
-	<div></div><div></div>
-</div> 
-
-<div id="costCodeSearchWindow">
-	<div></div><div></div>
-</div> 
-	
+    
+<div id="pettyCashGridWindow"><div></div><div></div></div>  
+<div id="accountDetailsFromWindow"><div></div><div></div></div>  
+<div id="costTypeSearchGridWindow"><div></div><div></div></div> 
+<div id="costCodeSearchWindow"><div></div><div></div></div> 
+    
 </div>
 </body>
 </html>
