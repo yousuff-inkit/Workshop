@@ -6,57 +6,212 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="<%=contextPath%>/css/body.css" media="screen" rel="stylesheet" type="text/css" />
 <title>GatewayERP(i)</title>
+<link href="<%=contextPath%>/css/body.css" media="screen" rel="stylesheet" type="text/css" />
 
-	<script type="text/javascript">
-	$(document).ready(function () {
-	 $("#debitdate").jqxDateTimeInput({ width: '110px', height: '15px',formatString:"dd.MM.yyyy",value:null});
-	}); 
+<style>
+/* =========================================================
+   SCOPED UI: Segoe UI Font & Clean White Search Panel
+========================================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff !important; /* Forced white background */
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif; 
+}
 
- 	function loadSearch() {
+.modern-ui {
+    font-size: 12px;
+    color: #333;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ffffff !important; /* Forced white background */
+}
 
- 		var docNo=document.getElementById("txtdocumentno").value;
- 		var date=document.getElementById("debitdate").value;
- 		var accId=document.getElementById("txtaccountid").value;
- 		var accName=document.getElementById("txtaccountname").value;
- 		var amounts=document.getElementById("txtamounts").value;
- 		var amount=(amounts*-1);
- 		var description=document.getElementById("txtdescriptions").value;
-	    var check = 1 ;
-	    
-		getdata(docNo,date,accId,accName,amount,description,check);
-	}
-	function getdata(docNo,date,accId,accName,amount,description,check){
-		 $("#refreshdiv").load('dnoMainSearchGrid.jsp?docNo='+docNo+'&date='+date+'&accId='+accId+'&accName='+accName.replace(/ /g, "%20")+'&amount='+amount+'&description='+description.replace(/ /g, "%20")+'&check='+check);
-		}
+/* Master Input Styles */
+.modern-ui input[type="text"],
+.modern-ui select {
+    height: 24px !important;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 12px; 
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    box-sizing: border-box;
+    background-color: #ffffff !important; /* Forced white background */
+    color: #333;
+    width: 100%;
+}
 
-	</script>
-<body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td width="9%" align="right">Doc No</td>
-    <td width="23%"><input type="text" name="txtdocumentno" id="txtdocumentno" value='<s:property value="txtdocumentno"/>'></td>
-    <td width="6%" align="right">Date</td>
-    <td width="21%"><div id="debitdate" name="debitdate"  value='<s:property value="debitdate"/>'></div>
-        <input type="hidden" name="hiddebitdate" id="hiddebitdate" value='<s:property value="hiddebitdate"/>'></td>
-    <td width="7%" align="right">A/C No.</td>
-    <td width="23%"><input type="text" name="txtaccountid" id="txtaccountid" style="width:80%" value='<s:property value="txtaccountid"/>'></td>
-    <td width="11%" align="center"><input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Search"  onclick="loadSearch();"></td>
-  </tr>
-  <tr>
-    <td align="right">A/C Name</td>
-    <td><input type="text" name="txtaccountname" id="txtaccountname" style="width:80%" value='<s:property value="txtaccountname"/>'></td>
-    <td align="right">Amount</td>
-    <td><input type="text" name="txtamounts" id="txtamounts" value='<s:property value="txtamounts"/>'></td>
-    <td align="right">Description</td>
-    <td colspan="2"><input type="text" name="txtdescriptions" id="txtdescriptions" style="width:80%" value='<s:property value="txtdescriptions"/>'></td>
-  </tr>
-  <tr>
-    <td colspan="7"><div id="refreshdiv"><jsp:include  page="dnoMainSearchGrid.jsp"></jsp:include></div></td>
-  </tr>
-</table>
-  </div>
+.modern-ui input[type="text"]:focus,
+.modern-ui select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Panel Styling - Clean White Panel */
+.modern-ui .search-panel {
+    background-color: #ffffff !important; /* Forced white background */
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Table Alignment - STRICT PERCENTAGE GRID */
+.modern-ui table {
+    border-collapse: separate;
+    border-spacing: 5px 8px; 
+    width: 100%;
+    table-layout: fixed; /* Locks columns from squishing */
+    background-color: #ffffff !important; /* Forced white background */
+}
+
+.modern-ui td {
+    vertical-align: middle;
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #222;
+    font-size: 12px; 
+    font-weight: 600;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    white-space: nowrap; 
+    padding-right: 5px;
+}
+
+/* Search Button - Standard Blue */
+.modern-ui .myButton {
+    height: 26px;
+    padding: 0 20px;
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    transition: all 0.2s;
+}
+
+.modern-ui .myButton:hover {
+    background-color: #004494;
+}
+
+/* Grid Container */
+.modern-ui .grid-container {
+    border: 1px solid #BDBDBD;
+    background-color: #ffffff !important; /* Forced white background */
+    overflow: hidden;
+    width: 100%;
+}
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        /* Standardized JQX setup to 120px/24px */
+        $("#debitdate").jqxDateTimeInput({ width: '120px', height: '24px', formatString: "dd.MM.yyyy", value: null });
+        
+        /* Force internal alignment AFTER render */
+        setTimeout(function () {
+            $(".jqx-datetimeinput").css({"margin-top": "0px", "border-color": "#BDBDBD", "border-radius": "3px", "background-color": "#ffffff"});
+            $(".jqx-datetimeinput").find("input").css({
+                "margin-top": "0px", "line-height": "24px", "font-size": "12px", 
+                "font-family": "'Segoe UI', 'Roboto', 'Arial', sans-serif", "padding": "0 6px", "box-sizing": "border-box", "background-color": "#ffffff"
+            });
+            $(".jqx-datetimeinput").find(".jqx-action-button").css({"top": "0px", "height": "24px", "background-color": "#ffffff"});
+        }, 100);
+    }); 
+
+    function loadSearch() {
+        var docNo = document.getElementById("txtdocumentno").value || "";
+        var date = $('#debitdate').jqxDateTimeInput('val') || "";
+        var accId = document.getElementById("txtaccountid").value || "";
+        var accName = document.getElementById("txtaccountname").value || "";
+        var amounts = document.getElementById("txtamounts").value || "";
+        var amount = amounts ? (amounts * -1) : "";
+        var description = document.getElementById("txtdescriptions").value || "";
+        var check = 1;
+        
+        getdata(docNo, date, accId, accName, amount, description, check);
+    }
+
+    function getdata(docNo, date, accId, accName, amount, description, check) {
+        /* Safely encoding URI components */
+        $("#refreshdiv").load('dnoMainSearchGrid.jsp?docNo=' + encodeURIComponent(docNo) + 
+                              '&date=' + date + 
+                              '&accId=' + encodeURIComponent(accId) + 
+                              '&accName=' + encodeURIComponent(accName) + 
+                              '&amount=' + encodeURIComponent(amount) + 
+                              '&description=' + encodeURIComponent(description) + 
+                              '&check=' + check);
+    }
+</script>
+</head>
+
+<body style="background-color: #ffffff !important; margin: 0;">
+
+<div id="search" class="modern-ui">
+
+    <div class="search-panel">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <colgroup>
+                <col width="6%" />  <col width="18%" /> <col width="8%" />  <col width="17%" /> <col width="9%" />  <col width="18%" /> <col width="24%" /> 
+            </colgroup>
+            
+            <tr>
+                <td class="lbl-right">Doc No</td>
+                <td>
+                    <input type="text" name="txtdocumentno" id="txtdocumentno" autocomplete="off" value='<s:property value="txtdocumentno"/>'>
+                </td>
+                
+                <td class="lbl-right">Date</td>
+                <td>
+                    <div id="debitdate" name="debitdate" value='<s:property value="debitdate"/>'></div>
+                    <input type="hidden" name="hiddebitdate" id="hiddebitdate" value='<s:property value="hiddebitdate"/>'>
+                </td>
+                
+                <td class="lbl-right">A/C No.</td>
+                <td>
+                    <input type="text" name="txtaccountid" id="txtaccountid" autocomplete="off" value='<s:property value="txtaccountid"/>'>
+                </td>
+                
+                <td align="center" rowspan="2" valign="middle">
+                    <input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Search" onclick="loadSearch(); return false;">
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="lbl-right">A/C Name</td>
+                <td>
+                    <input type="text" name="txtaccountname" id="txtaccountname" autocomplete="off" value='<s:property value="txtaccountname"/>'>
+                </td>
+                
+                <td class="lbl-right">Amount</td>
+                <td>
+                    <input type="text" name="txtamounts" id="txtamounts" autocomplete="off" value='<s:property value="txtamounts"/>'>
+                </td>
+                
+                <td class="lbl-right">Description</td>
+                <td>
+                    <input type="text" name="txtdescriptions" id="txtdescriptions" autocomplete="off" value='<s:property value="txtdescriptions"/>'>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="grid-container">
+        <div id="refreshdiv">
+            <jsp:include page="dnoMainSearchGrid.jsp"></jsp:include>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
