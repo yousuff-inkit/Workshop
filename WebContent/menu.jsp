@@ -12,7 +12,8 @@
 <link rel="shortcut icon" href="<%=contextPath+"/"%>icons/ink_new_logo_2025.png" >
 <title>INK IT Business Solutions</title>
 <jsp:include page="includes.jsp"></jsp:include>
-<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'> 
+<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+<link href="<%=contextPath%>/css/modern-theme.css" rel="stylesheet" type="text/css" /> 
 
 <script type = "text/javascript">
 		$(document).ready(function () {
