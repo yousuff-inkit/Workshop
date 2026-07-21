@@ -7,7 +7,8 @@
 <link href="<%=contextPath%>/css/table.css" rel="stylesheet" type="text/css" />
 <link href="<%=contextPath%>/css/myButton.css" media="screen" rel="stylesheet" type="text/css" /> 
 <link href="<%=contextPath%>/css/jqx.mobile.css" media="screen" rel="stylesheet" type="text/css" /> 
-<link href="<%=contextPath%>/css/jqx.energyblue.css" media="screen" rel="stylesheet" type="text/css" />  
+<link href="<%=contextPath%>/css/jqx.energyblue.css" media="screen" rel="stylesheet" type="text/css" />
+ 
     <script type="text/javascript" src="<%=contextPath%>/js/jquery-1.11.1.min.js"></script> 
 	<script type="text/javascript" src="<%=contextPath%>/js/jqx-10.1.6/jqxcore.js"></script>
     <script type="text/javascript" src="<%=contextPath%>/js/demos.js"></script>
@@ -61,5 +62,6 @@
 	<script type="text/javascript" src="<%=contextPath%>/js/jqxgrid.export.js"></script> 
 	 <script type="text/javascript" src="<%=contextPath%>/js/jqxinput.js"></script>
 	 <script type="text/javascript" src="<%=contextPath%>/js/exportExcel.js"></script>
+	 <link href="<%=contextPath%>/css/modern-theme.css" rel="stylesheet" type="text/css" />
 </head> 
 </html>
