@@ -5,11 +5,11 @@
 <html lang="en">
 <head>
 	<% String contextPath=request.getContextPath();%>
-	<title>Gateway ERP | Workshop</title>
+	<title>INK IT Business Solutions | Workshop</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="<%=contextPath+"/"%>gatelogo.ico"/>
+	<link rel="shortcut icon" href="<%=contextPath+"/"%>icons/ink_new_logo_2025.png" >
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->

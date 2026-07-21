@@ -8,8 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/mystyle.css">
-<link rel="shortcut icon" href="<%=contextPath+"/"%>gatelogo.ico" >
-<title>Gateway ERP(Integrated) Copyright &#169; 2025 INK IT Solution PVT. LTD.</title>
+<link rel="shortcut icon" href="<%=contextPath+"/"%>icons/ink_new_logo_2025.png" >
+<title>INK IT Business Solutions</title>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="<%=contextPath%>/js/jquery.easyui.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<%=contextPath%>/css/easyui.css">

@@ -7,8 +7,8 @@
     return;
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="shortcut icon" href="<%=contextPath+"/"%>gatelogo.ico" > 
-<title>Gateway ERP(Integrated)</title>
+<link rel="shortcut icon" href="<%=contextPath+"/"%>icons/ink_new_logo_2025.png" >
+<title>INK IT Business Solutions</title>
 <style type="text/css">
 
 html, body {
