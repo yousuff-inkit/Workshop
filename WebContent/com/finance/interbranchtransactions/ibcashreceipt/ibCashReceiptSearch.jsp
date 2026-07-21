@@ -33,26 +33,132 @@
 	}
 
 </script>
+<style>
+html,body{
+    margin:0;
+    padding:0;
+    background:#fff !important;
+    font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+}
+
+#search{
+    padding:10px;
+    background:#fff;
+}
+
+.search-panel{
+    background:#fff;
+    border:1px solid #d8d8d8;
+    border-radius:4px;
+    padding:14px;
+    margin-bottom:12px;
+}
+
+.search-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.search-row label{
+    white-space:nowrap;
+    font-size:12px;
+    font-weight:600;
+    color:#333;
+}
+
+.search-row input[type=text]{
+    flex:1 1 180px !important;
+    width:auto !important;
+    min-width:170px !important;
+    max-width:none !important;
+    height:30px;
+    padding:4px 8px;
+    border:1px solid #cfcfcf;
+    border-radius:3px;
+    box-sizing:border-box;
+    background:#fff;
+}
+
+.grid-container{
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:4px;
+    overflow:hidden;
+}
+</style>
+
 <body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td width="10%" align="right">Account No</td>
-    <td width="30%"><input type="text" name="txtacctno" id="txtacctno" style="width:85%;" value='<s:property value="txtacctno"/>'></td>
-    <td width="10%" align="right">Currency</td>
-    <td width="27%"><input type="text" name="txtacctcurrency" id="txtacctcurrency" style="width:50%;" value='<s:property value="txtacctcurrency"/>'>
-    <input type="hidden" name="txttypes" id="txttypes" value='<s:property value="txttypes"/>'>
-    <input type="hidden" name="txtnewmaindate" id="txtnewmaindate" value='<s:property value="txtnewmaindate"/>'></td>
-    <td width="23%" rowspan="2" align="center"><input type="button" name="btnAccountSearch" id="btnAccountSearch" class="myButton" value="Search"  onclick="loadAccountSearchGrid();"></td>
-  </tr>
-  <tr>
-    <td align="right">Account Name</td>
-    <td colspan="3"><input type="text" name="txtacctname" id="txtacctname" style="width:80%;" value='<s:property value="txtacctname"/>'></td>
-  </tr>
-  <tr>
-    <td colspan="5"><div id="refreshAccountSearchDetailsDiv"><jsp:include page="ibCashReceiptSearchGrid.jsp"></jsp:include></div></td>
-  </tr>
-</table>
+
+<div id="search">
+
+    <div class="search-panel">
+
+        <div class="search-row">
+
+            <label for="txtacctno">Account No</label>
+
+            <input type="text"
+                   id="txtacctno"
+                   name="txtacctno"
+                   value='<s:property value="txtacctno"/>'>
+
+            <label for="txtacctname">Account Name</label>
+
+            <input type="text"
+                   id="txtacctname"
+                   name="txtacctname"
+                   value='<s:property value="txtacctname"/>'>
+
+            <label for="txtacctcurrency">Currency</label>
+
+            <input type="text"
+                   id="txtacctcurrency"
+                   name="txtacctcurrency"
+                   value='<s:property value="txtacctcurrency"/>'>
+
+            <input type="hidden"
+                   id="txttypes"
+                   name="txttypes"
+                   value='<s:property value="txttypes"/>'>
+
+            <input type="hidden"
+                   id="txtnewmaindate"
+                   name="txtnewmaindate"
+                   value='<s:property value="txtnewmaindate"/>'>
+
+            <button
+                type="button"
+                id="btnAccountSearch"
+                onclick="loadAccountSearchGrid();"
+                style="
+                    width:110px;
+                    height:30px;
+                    background:#205fd3;
+                    color:#fff;
+                    border:1px solid #205fd3;
+                    border-radius:4px;
+                    cursor:pointer;
+                    font-size:12px;
+                    font-weight:600;">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="grid-container">
+
+        <div id="refreshAccountSearchDetailsDiv">
+
+            <jsp:include page="ibCashReceiptSearchGrid.jsp"></jsp:include>
+
+        </div>
+
+    </div>
+
 </div>
+
 </body>
 </html>
