@@ -1,57 +1,157 @@
- <%@ taglib prefix="s" uri="/struts-tags" %>
- <% String contextPath=request.getContextPath(); %>
- <%
- String rownindex = request.getParameter("rownindex")==null?"0":request.getParameter("rownindex"); %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<% String contextPath=request.getContextPath(); %>
+<% String rownindex = request.getParameter("rownindex")==null?"0":request.getParameter("rownindex"); %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="<%=contextPath%>/css/body.css" media="screen" rel="stylesheet" type="text/css" />
 <title>GatewayERP(i)</title>
+<link href="<%=contextPath%>/css/body.css" media="screen" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
+/* =========================================================
+   SCOPED UI: Employee Search Panel
+========================================================= */
+
+body {
+    margin: 0;
+    padding: 12px;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #333333;
+}
+
 #search {
-    background-color: #E0ECF8;
+    background-color: #ffffff;
+    border: 1px solid #c5d3e0;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto;
+    gap: 12px 16px;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-family: inherit;
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #0b45a2;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(11, 69, 162, 0.15);
+}
+
+.btn-group {
+    display: flex;
+    align-items: flex-end;
+}
+
+.myButton {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 13px;
+    height: 32px;
+    padding: 0 22px;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(11, 69, 162, 0.2);
+    white-space: nowrap;
+}
+
+.myButton:hover {
+    background: linear-gradient(135deg, #083680 0%, #1d4ed8 100%);
+    box-shadow: 0 3px 6px rgba(11, 69, 162, 0.3);
+}
+
+#refreshdiv {
+    width: 100%;
+    margin-top: 12px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 12px;
 }
 </style>
 
-	<script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function () {}); 
-  var rownindex="<%=rownindex%>";
- 	function loadSearch() {
 
- 		var employeeName=document.getElementById("txtpartyname").value;
- 		var empId=document.getElementById("txtpartyid").value;
- 		var contactNo=document.getElementById("txtcontactno").value;
- 		
-		getdata(employeeName,empId,contactNo);
+	var rownindex = "<%=rownindex%>";
+
+	function loadSearch() {
+		var employeeName = document.getElementById("txtpartyname").value;
+		var empId = document.getElementById("txtpartyid").value;
+		var contactNo = document.getElementById("txtcontactno").value;
+		
+		getdata(employeeName, empId, contactNo);
 	}
-	function getdata(employeeName,empId,contactNo){
-		 $("#refreshdiv").load('employeeDetailsSearchGrid.jsp?employeename='+employeeName.replace(/ /g, "%20")+'&empid='+empId+'&contactno='+contactNo+'&rownindex='+rownindex);
-		}
 
-	</script>
+	function getdata(employeeName, empId, contactNo) {
+		$("#refreshdiv").load('employeeDetailsSearchGrid.jsp?employeename=' + encodeURIComponent(employeeName) + '&empid=' + empId + '&contactno=' + contactNo + '&rownindex=' + rownindex);
+	}
+</script>
+</head>
+
 <body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td align="right">Name</td>
-    <td colspan="2"><input type="text" name="txtpartyname" id="txtpartyname" style="width:100%;" value='<s:property value="txtpartyname"/>'></td>
-    <td width="49%" align="center"><input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Search"  onclick="loadSearch();"></td>
-  </tr>
-  <tr>
-  <td width="7%" align="right">ID#</td>
-    <td width="26%"><input type="text" name="txtpartyid" id="txtpartyid" style="width:70%;" value='<s:property value="txtpartyid"/>'></td>
-    <td width="18%" align="right">Contact No.</td>
-    <td width="49%"><input type="text" name="txtcontactno" id="txtcontactno" style="width:50%;" value='<s:property value="txtcontactno"/>'>
-    <input type="hidden" name="txtatype" id="txtatype" value='<s:property value="txtatype"/>'></td>   
-  </tr>
-  <tr>
-    <td colspan="5"><div id="refreshdiv"><jsp:include page="employeeDetailsSearchGrid.jsp"></jsp:include></div></td>
-  </tr>
-</table>
-  </div>
+<div id="search">
+    <div class="search-grid">
+        <div class="form-group">
+            <label for="txtpartyname">Name</label>
+            <input type="text" class="form-control" name="txtpartyname" id="txtpartyname" value='<s:property value="txtpartyname"/>'>
+        </div>
+
+        <div class="form-group">
+            <label for="txtpartyid">ID#</label>
+            <input type="text" class="form-control" name="txtpartyid" id="txtpartyid" value='<s:property value="txtpartyid"/>'>
+        </div>
+
+        <div class="form-group">
+            <label for="txtcontactno">Contact No.</label>
+            <input type="text" class="form-control" name="txtcontactno" id="txtcontactno" value='<s:property value="txtcontactno"/>'>
+            <input type="hidden" name="txtatype" id="txtatype" value='<s:property value="txtatype"/>'>
+        </div>
+
+        <div class="btn-group">
+            <input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Search" onclick="loadSearch();">
+        </div>
+    </div>
+
+    <div id="refreshdiv">
+        <jsp:include page="employeeDetailsSearchGrid.jsp"></jsp:include>
+    </div>
+</div>
 </body>
 </html>
