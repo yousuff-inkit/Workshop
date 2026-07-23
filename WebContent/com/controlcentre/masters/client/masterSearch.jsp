@@ -41,50 +41,186 @@
 		} 
  
 	</script>
-<body bgcolor="#E0ECF8">
-<div id=search>
-<table width="100%" >
-  <tr >
-   <td>
-   <table >
-   <tr>
-    <td align="right" width="">Name</td>
-    <td align="left" width="53%"><input type="text" name="SCl_name" id="SCl_name"  style="width:96.5%;" value='<s:property value="SCl_name"/>'></td>
-    <td align="right">MOB</td>
-    <td align="left" width="47%"><input type="text" name="Sl_mob" id="Sl_mob" value='<s:property value="Sl_mob"/>'></td>
-    <tr>
-    </table>
-    </td>
-  </tr>
- 
-		
-  <table >
-  <tr>
- 
-     <td colspan="2" align="center">Doc NO</td>
-    <td align="center" width=><input type="text" name="rno" id="rno" value='<s:property value="rno"/>'>
-    
-   <td width="50%"></td>
-    <td align="right">Contact </td>
-    
-    <td align="left" width="50%"><input type="text" name="contact" id="contact" style="width:96.5%;" value='<s:property value="contact"/>'></td>
-    
-    <td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="mbtnrasearch" id="mbtnrasearch" class="myButton" value="Search"  onclick="mainloadSearch();"></td>
-  </tr>
-  </table>
-  </td>
+<style>
+/*=========================================================
+                MASTER SEARCH UI
+=========================================================*/
 
-  <tr>
-    <td colspan="8" align="right">
-    
-    <div id="srefreshdiv">
-      
-   <jsp:include  page="submainSearch.jsp"></jsp:include> 
-   
-   </div>
-    </td>
-  </tr>
-</table>
-  </div>
+html,
+body{
+    margin:0;
+    padding:0;
+    background:#ffffff !important;
+    font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+}
+
+#search{
+    background:#ffffff;
+    padding:10px;
+}
+
+.search-panel{
+    background:#ffffff;
+    border:1px solid #d8d8d8;
+    border-radius:4px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
+.search-panel table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.search-panel td{
+    padding:5px 6px;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.lbl-right{
+    text-align:right;
+    font-size:12px;
+    font-weight:500;
+    color:#333;
+    padding-right:6px;
+}
+
+.search-input{
+    width:130px !important;
+    min-width:130px !important;
+    max-width:130px !important;
+    height:26px !important;
+    border:1px solid #cfcfcf;
+    border-radius:3px;
+    padding:2px 6px;
+    box-sizing:border-box;
+    background:#fff;
+    font-size:12px;
+}
+
+.medium-input{
+    width:170px !important;
+    min-width:170px !important;
+    max-width:170px !important;
+}
+
+.long-input{
+    width:260px !important;
+    min-width:260px !important;
+    max-width:260px !important;
+}
+
+.grid-container{
+    background:#fff;
+    border:1px solid #cccccc;
+    border-radius:4px;
+    overflow:hidden;
+}
+</style>
+
+<body>
+
+<div id="search">
+
+    <div class="search-panel">
+
+        <table>
+
+            <tr>
+
+                <td class="lbl-right">
+                    Name
+                </td>
+
+                <td>
+                    <input type="text"
+                           class="search-input long-input"
+                           name="SCl_name"
+                           id="SCl_name"
+                           value='<s:property value="SCl_name"/>'>
+                </td>
+
+                <td class="lbl-right">
+                    MOB
+                </td>
+
+                <td>
+                    <input type="text"
+                           class="search-input medium-input"
+                           name="Sl_mob"
+                           id="Sl_mob"
+                           value='<s:property value="Sl_mob"/>'>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class="lbl-right">
+                    Doc No
+                </td>
+
+                <td>
+                    <input type="text"
+                           class="search-input"
+                           name="rno"
+                           id="rno"
+                           value='<s:property value="rno"/>'>
+                </td>
+
+                <td class="lbl-right">
+                    Contact
+                </td>
+
+                <td>
+
+                    <input type="text"
+                           class="search-input long-input"
+                           name="contact"
+                           id="contact"
+                           value='<s:property value="contact"/>'>
+
+                </td>
+
+                <td align="center">
+
+                    <button
+                        type="button"
+                        id="mbtnrasearch"
+                        onclick="mainloadSearch();"
+                        style="
+                            width:105px;
+                            height:28px;
+                            background:#205fd3;
+                            color:#ffffff;
+                            border:1px solid #205fd3;
+                            border-radius:4px;
+                            font-size:12px;
+                            font-weight:600;
+                            cursor:pointer;">
+                        Search
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="grid-container">
+
+        <div id="srefreshdiv">
+
+            <jsp:include page="submainSearch.jsp"></jsp:include>
+
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
