@@ -9,119 +9,225 @@
 <title>GatewayERP(i)</title>
 <jsp:include page="../../../../includes.jsp"></jsp:include>
 <script type="text/javascript" src="<%=contextPath%>/js/ajaxfileupload.js"></script> 
-<style type="text/css">
-.myButtons {
-	-moz-box-shadow:inset 0px -1px 3px 0px #91b8b3;
-	-webkit-box-shadow:inset 0px -1px 3px 0px #91b8b3;
-	box-shadow:inset 0px -1px 3px 0px #91b8b3;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
-	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
-	background-color:#768d87;
-	border:1px solid #566963;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	
-	font-size:8pt;
-	
-	padding:3px 17px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #2b665e;
-}
-.myButtons:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
-	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
-	background-color:#6c7c7c;
-}
-.myButtons:active {
-	position:relative;
-	top:1px;
+
+<style>
+/* =========================================================
+SCOPED UI: Modern Layout (Matches Client Master)
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
 
-.myButtonses {
- background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
- background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
- background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
- background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
- background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
- background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
- filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
- background-color:#599bb3;
- -moz-border-radius:4px;
- -webkit-border-radius:4px;
- border-radius:4px;
- display:inline-block;
- cursor:pointer;
- color:#ffffff;
- font-family:Verdana;
- font-size:10px;
- padding:4px 8px;
- text-decoration:none;
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
-.myButtonses:hover {
- background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
- background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
- background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
- background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
- background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
- background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
- filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
- background-color:#408c99;
+
+.modern-ui {
+    font-family: Arial, sans-serif; 
+    color: #333;
+    font-size: 12px; 
+    padding: 5px 15px;
+    box-sizing: border-box;
+    width: 100%;
 }
-.myButtonses:active {
- position:relative;
- top:1px;
+
+/* Master Input Heights - Forced to 24px */
+.modern-ui input[type="text"],
+.modern-ui select { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    width: 100%;
 }
-.myButtonReCheck {
-	-moz-box-shadow:inset 0px 1px 0px 0px #3dc21b;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #3dc21b;
-	box-shadow:inset 0px 1px 0px 0px #3dc21b;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #44c767), color-stop(1, #5cbf2a));
-	background:-moz-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:-webkit-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:-o-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:-ms-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
-	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#5cbf2a',GradientType=0);
-	background-color:#44c767;
-	-moz-border-radius:42px;
-	-webkit-border-radius:42px;
-	border-radius:42px;
-	border:6px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:10px;
-	font-weight:bold;
-	padding:3px 8px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+
+.modern-ui input[type="text"]:focus,
+.modern-ui select:focus { 
+    border-color: #007bff; 
+    outline: none;
 }
-.myButtonReCheck:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cbf2a), color-stop(1, #44c767));
-	background:-moz-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:-webkit-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:-o-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
-	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
-	background-color:#5cbf2a;
+
+.modern-ui input[readonly],
+.modern-ui input:disabled,
+.modern-ui select:disabled { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
 }
-.myButtonReCheck:active {
-	position:relative;
-	top:1px;
+
+/* Layout Utilities */
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: wrap;
 }
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+}
+
+/* Middle Section Panels */
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+/* Custom UI Buttons matching 24px height */
+.modern-ui .myButton {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton:hover { background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); }
+
+.modern-ui .myButton-delete {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton-delete:hover { background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%); }
+
+.modern-ui .myButton-success {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton-success:hover { background: linear-gradient(135deg, #15803d 0%, #166534 100%); }
+
+.modern-ui .myButton-clear {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton-clear:hover { background: linear-gradient(135deg, #475569 0%, #334155 100%); }
+
+
+/* Search Icon Wrapper */
+.modern-ui .input-search-container {
+    position: relative;
+    display: flex;
+}
+.modern-ui .input-search-container input {
+    padding-right: 25px !important;
+}
+.modern-ui .magnifier-icon {
+    position: absolute;
+    right: 6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b; 
+    z-index: 10;
+}
+.modern-ui .magnifier-icon:hover { color: #2563eb; }
+
+/* Grid Wrappers */
+.modern-ui .grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Scrollbar Logic */
+.hidden-scrollbar {
+    overflow: auto;
+    height: calc(100vh - 120px);
+    padding-right: 5px;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+form label.error { color:red; font-weight:bold; }
+#errormsg { color:red; font-weight:bold; text-align:center; margin-bottom: 10px; }
 </style>
 
 <script type="text/javascript">
@@ -129,9 +235,25 @@
     	  $('#btnClose').attr('disabled', true );$('#btnCreate').attr('disabled', true );$('#btnEdit').attr('disabled', true );$('#btnPrint').attr('disabled', true );
  		  $('#btnExcel').attr('disabled', true );$('#btnDelete').attr('disabled', true );$('#btnSearch').attr('disabled', true );$('#btnAttach').attr('disabled', true );
  		 
-    	  /* Time */
-    	  $("#overtime").jqxDateTimeInput({ width: '30%', height: '16px', formatString:'HH:mm', showCalendarButton: false});
+    	  /* Formatted jqxDateTimeInput heights to match modern UI 24px */
+    	  $("#overtime").jqxDateTimeInput({ width: '125px', height: 24, formatString:'HH:mm', showCalendarButton: false, theme: 'energyblue'});
     	  
+          /* force internal alignment AFTER render */
+          setTimeout(function () {
+              $("#overtime").find("input").css({
+                  "margin-top": "0px",
+                  "line-height": "24px",
+                  "font-size": "12px", 
+                  "font-family": "Arial, sans-serif", 
+                  "padding": "0 6px", 
+                  "box-sizing":"border-box"
+              });
+              $("#overtime").find(".jqx-action-button").css({
+                  "top": "0px",
+                  "height": "24px"
+              });
+          }, 0);
+
     	  /* Searching Window */
      	 $('#employeeDetailsWindow').jqxWindow({width: '51%', height: '58%',  maxHeight: '70%' ,maxWidth: '51%' , title: 'Employee Search',position: { x: 300, y: 87 } , theme: 'energyblue', showCloseButton: true, keyboardCloseKey: 27});
   		 $('#employeeDetailsWindow').jqxWindow('close');
@@ -344,9 +466,9 @@
   			    $('#txtattendanceleaveseditgrid').val(items);
   			    
   			  	if(parseInt($('#txtattendanceleaveseditgrid').val())==0){
-  				 	 $("#rdtotalleaves").hide();document.getElementById("rdtotalleaves1").innerText=" ";$("#btnRecheck").show();
+  				 	 $("#rdtotalleaves_container").hide();document.getElementById("rdtotalleaves1").innerText=" ";$("#btnRecheck").show();
 	  			 } else {
-	  				 $("#rdtotalleaves").show();document.getElementById("rdtotalleaves1").innerText="Total Leaves";$("#btnRecheck").hide();
+	  				 $("#rdtotalleaves_container").show();document.getElementById("rdtotalleaves1").innerText="Total Leaves";$("#btnRecheck").hide();
   				 }
   		}
   		}
@@ -375,8 +497,6 @@
 	 function funNotify(){	
  		 return 1;
 		} 
-	 
-	 function funSearchLoad(){}
 	 
 	 function funFocus(){
 		    document.getElementById("cmbyear").focus();
@@ -1072,167 +1192,195 @@
 	 
 </script>
 
-<style>
-.hidden-scrollbar {
-  overflow: auto;
-  height: 530px;
-}
-</style>
-
 </head>
 <body onload="setValues();">
 <div id="mainBG" class="homeContent" data-type="background">
-<form id="frmEmployeeAttendance" action="saveEmployeeAttendance" method="post" autocomplete="off">
-<jsp:include page="../../../../header.jsp"></jsp:include><br/>   
+    <form id="frmEmployeeAttendance" action="saveEmployeeAttendance" method="post" autocomplete="off">
+        <jsp:include page="../../../../header.jsp"></jsp:include>
+        
+        <div class="modern-ui hidden-scrollbar">
+            <div id="errormsg"></div>
+            
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                
+                <!-- LEFT PANEL : Controls -->
+                <div class="middle-panel" style="width: 320px; flex-shrink: 0; margin-bottom: 0;">
+                    <span class="middle-panel-title">Attendance Controls</span>
+                    
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:75px;">Year</label>
+                        <select id="cmbyear" name="cmbyear" style="flex:1;" onchange="funClearYearInfo();getDay();" value='<s:property value="cmbyear"/>'>
+                            <option value="">--Select--</option>
+                        </select>
+                        <input type="hidden" id="hidcmbyear" name="hidcmbyear" value='<s:property value="hidcmbyear"/>'/>
+                    </div>
+                    
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:75px;">Month</label>
+                        <select id="cmbmonth" name="cmbmonth" style="flex:1;" onchange="funClearMonthInfo();getDay();getHolidaysOfMonth($('#cmbyear').val(),this.value);" value='<s:property value="cmbmonth"/>'>
+                            <option value="">--Select--</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="hidden" id="hidcmbmonth" name="hidcmbmonth" value='<s:property value="hidcmbmonth"/>'/>
+                    </div>
+                    
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:75px;">Day</label>
+                        <select id="cmbday" name="cmbday" style="flex:1;" value='<s:property value="cmbday"/>'>
+                            <option value="">--Select--</option>
+                        </select>
+                        <input type="hidden" id="hidcmbday" name="hidcmbday" value='<s:property value="hidcmbday"/>'/>
+                    </div>
+                    
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:75px;">Department</label>
+                        <select id="cmbempdepartment" name="cmbempdepartment" style="flex:1;" value='<s:property value="cmbempdepartment"/>'>
+                            <option value="">--Select--</option>
+                        </select>
+                        <input type="hidden" id="hidcmbempdepartment" name="hidcmbempdepartment" value='<s:property value="hidcmbempdepartment"/>'/>
+                    </div>
+                    
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:75px;">Category</label>
+                        <select id="cmbempcategory" name="cmbempcategory" style="flex:1;" value='<s:property value="cmbempcategory"/>'>
+                            <option value="">--Select--</option>
+                        </select>
+                        <input type="hidden" id="hidcmbempcategory" name="hidcmbempcategory" value='<s:property value="hidcmbempcategory"/>'/>
+                    </div>
+                    
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:75px;">Employee</label>
+                        <div class="input-search-container" style="flex:1;">
+                            <input type="text" id="txtemployeeid" name="txtemployeeid" placeholder="Press F3" value='<s:property value="txtemployeeid"/>' onkeydown="getEmployeeId(event);"/>
+                            <svg class="magnifier-icon" onclick="$('#txtemployeeid').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </div>
+                        <input type="hidden" id="txtemployeedocno" name="txtemployeedocno" value='<s:property value="txtemployeedocno"/>'/>
+                    </div>
+                    
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:75px;"></label>
+                        <input type="text" id="txtemployeename" name="txtemployeename" placeholder="Employee Name" style="flex:1;" tabindex="-1" value='<s:property value="txtemployeename"/>'/>
+                    </div>
+                    
+                    <!-- Inner Control Panel for Mode Selection -->
+                    <div class="middle-panel" style="margin-top: 20px; padding: 15px 10px 5px 10px;">
+                        <span class="middle-panel-title" style="font-size: 12px; color: #475569; border-left-color: #475569;">Mode Selection</span>
+                        
+                        <div class="field-row">
+                            <input type="radio" id="rdholiday" name="rdo" value="rdholiday" onclick="radioClick();">
+                            <label for="rdholiday" style="font-size:12px; margin-right:5px; width:75px;">Holiday</label>
+                            <select id="cmbholiday" name="cmbholiday" style="flex:1;" onchange="newValueSet();getNewGridValue(this.value);" value='<s:property value="cmbholiday"/>'>
+                                <option value="">--Select--</option>
+                            </select>
+                            <input type="hidden" id="hidcmbholiday" name="hidcmbholiday" value='<s:property value="hidcmbholiday"/>'/>
+                        </div>
+                        
+                        <div class="field-row">
+                            <input type="radio" id="rdleavetype" name="rdo" value="rdleavetype" onclick="radioClick();">
+                            <label for="rdleavetype" style="font-size:12px; margin-right:5px; width:75px;">Leave Type</label>
+                            <select id="cmbleavetype" name="cmbleavetype" style="flex:1;" onchange="clearhalfdaycheck();newValueSet();getNewGridValue(this.value);" value='<s:property value="cmbleavetype"/>'>
+                                <option value="">--Select--</option>
+                            </select>
+                            <input type="hidden" id="hidcmbleavetype" name="hidcmbleavetype" value='<s:property value="hidcmbleavetype"/>'/>
+                        </div>
+                        <div class="field-row" style="padding-left: 105px;">
+                            <input type="checkbox" id="chckhalfday" name="chckhalfday" value="" onchange="halfdaycheck();newValueSet();" onclick="$(this).attr('value', this.checked ? 1 : 0)"> 
+                            <label style="font-size:12px;">Half Day</label>
+                            <input type="hidden" id="hidchckhalfday" name="hidchckhalfday" value='<s:property value="hidchckhalfday"/>'/>
+                        </div>
+                        
+                        <div class="field-row">
+                            <input type="radio" id="rdovertime" name="rdo" value="rdovertime" onclick="radioClick();">
+                            <label for="rdovertime" style="font-size:12px; margin-right:5px; width:75px;">Over Time</label>
+                            <div style="flex:1;">
+                                <div id="overtime" name="overtime" onchange="newValueSet();" value='<s:property value="overtime"/>'></div>
+                            </div>
+                            <input type="hidden" id="hidovertime" name="hidovertime" value='<s:property value="hidovertime"/>'/>
+                        </div>
+                        
+                        <div class="field-row" id="rdtotalleaves_container">
+                            <input type="radio" id="rdtotalleaves" name="rdo" value="rdtotalleaves" onclick="radioClick();">
+                            <label id="rdtotalleaves1" for="rdtotalleaves" style="font-size:12px; font-weight:bold; margin-left:5px;"></label>
+                        </div>
+                    </div>
+                    
+                    <div class="field-row" style="justify-content: space-between; margin-top: 15px;">
+                        <label style="font-size: 12px; display: flex; align-items: center; gap: 4px;">
+                            <input type="checkbox" id="chckmarkall" name="chckmarkall" value="" onchange="markallcheck();" onclick="$(this).attr('value', this.checked ? 1 : 0)"> Mark All
+                        </label>
+                        <input type="button" class="myButton" name="btnView" id="btnView" value="View" onclick="funViewAttendance();">
+                        <input type="hidden" id="hidchckmarkall" name="hidchckmarkall" value='<s:property value="hidchckmarkall"/>'/>
+                    </div>
+                    
+                    <div class="field-row" style="justify-content: center; gap: 6px; margin-top: 10px;">
+                        <input type="button" class="myButton" name="btnApply" id="btnApply" value="Apply" onclick="funApplyAttendance(event);">
+                        <input type="button" class="myButton-delete" name="btnApplyDelete" id="btnApplyDelete" value="Delete" onclick="funDeleteAttendance(event);">
+                        <input type="button" class="myButton-clear" name="clear" id="clear" value="Clear" onclick="funClearInfo();">
+                    </div>
+                    
+                    <div class="field-row" style="justify-content: center; margin-top: 10px;">
+                        <input type="button" class="myButton-success" name="btnRecheck" id="btnRecheck" value="Re-Check" onclick="funReCheckAttendance(event);">
+                    </div>
+                    
+                </div>
+                
+                <!-- RIGHT PANEL : Grid -->
+                <div class="middle-panel" style="flex: 1; margin-bottom: 0;">
+                    <span class="middle-panel-title">Attendance Records</span>
+                    <div id="attendanceDiv" class="grid-container" style="border: none; height: 100%;">
+                        <jsp:include page="attendanceGrid.jsp"></jsp:include>
+                    </div>
+                </div>
+                
+            </div>
 
-<div class='hidden-scrollbar'>
-<table width="99%">
-  <tr>
-    <td width="20%">
-<fieldset style="background-color: #EBDEF0;">
-<table width="99%">
-<tr>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td width="29%" align="right">Year</td>
-    <td width="71%"><select id="cmbyear" name="cmbyear" style="width:80%;" onchange="funClearYearInfo();getDay();" value='<s:property value="cmbyear"/>'>
-      <option value="">--Select--</option></select>
-      <input type="hidden" id="hidcmbyear" name="hidcmbyear" value='<s:property value="hidcmbyear"/>'/></td>
-  </tr>
-  <tr>
-    <td align="right">Month</td>
-    <td><select id="cmbmonth" name="cmbmonth" style="width:80%;" onchange="funClearMonthInfo();getDay();getHolidaysOfMonth($('#cmbyear').val(),this.value);" value='<s:property value="cmbmonth"/>'>
-      <option value="">--Select--</option><option value="01">January</option><option value="02">February</option><option value="03">March</option>
-      <option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option>
-      <option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option>
-      <option value="12">December</option></select>
-      <input type="hidden" id="hidcmbmonth" name="hidcmbmonth" value='<s:property value="hidcmbmonth"/>'/></td>
-  </tr>
-  <tr>
-    <td align="right">Day</td>
-    <td><select id="cmbday" name="cmbday" style="width:80%;" value='<s:property value="cmbday"/>'>
-      <option value="">--Select--</option></select>
-      <input type="hidden" id="hidcmbday" name="hidcmbday" value='<s:property value="hidcmbday"/>'/></td>
-  </tr>
-  <tr>
-    <td align="right">Department</td>
-    <td><select id="cmbempdepartment" name="cmbempdepartment" style="width:80%;" value='<s:property value="cmbempdepartment"/>'>
-      <option value="">--Select--</option></select>
-      <input type="hidden" id="hidcmbempdepartment" name="hidcmbempdepartment" value='<s:property value="hidcmbempdepartment"/>'/></td>
-  </tr>
-  <tr>
-    <td align="right">Category</td>
-    <td><select id="cmbempcategory" name="cmbempcategory" style="width:80%;" value='<s:property value="cmbempcategory"/>'>
-      <option value="">--Select--</option></select>
-      <input type="hidden" id="hidcmbempcategory" name="hidcmbempcategory" value='<s:property value="hidcmbempcategory"/>'/></td>
-  </tr>
-  <tr>
-    <td align="right">Employee</td>
-    <td><input type="text" id="txtemployeeid" name="txtemployeeid" style="width:80%;" placeholder="Press F3 to Search" value='<s:property value="txtemployeeid"/>'  onkeydown="getEmployeeId(event);"/>
-    <input type="hidden" id="txtemployeedocno" name="txtemployeedocno" value='<s:property value="txtemployeedocno"/>'/></td>
-  </tr>
-   <tr>
-    <td colspan="2"><input type="text" id="txtemployeename" name="txtemployeename" placeholder="Employee Name" style="width:95%;" tabindex="-1" value='<s:property value="txtemployeename"/>'/></td>
-  </tr>
-  <tr>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td  align="center"><input type="radio" id="rdholiday" name="rdo" value="rdholiday" onclick="radioClick();"><label for="rdholiday">Holiday</label></td>
-    <td><select id="cmbholiday" name="cmbholiday" style="width:80%;" onchange="newValueSet();getNewGridValue(this.value);" value='<s:property value="cmbholiday"/>'>
-      <option value="">--Select--</option></select>
-      <input type="hidden" id="hidcmbholiday" name="hidcmbholiday" value='<s:property value="hidcmbholiday"/>'/></td>
-  </tr>
-  <tr>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td colspan="2">
-	  <fieldset>
-	 <table width="100%">
-      <tr>
-    <td width="36%" align="center"><input type="radio" id="rdleavetype" name="rdo" value="rdleavetype" onclick="radioClick();"><label for="rdleavetype">Leave Type</label></td>
-    <td width="64%"><select id="cmbleavetype" name="cmbleavetype" style="width:80%;" onchange="clearhalfdaycheck();newValueSet();getNewGridValue(this.value);" value='<s:property value="cmbleavetype"/>'>
-      <option value="">--Select--</option></select>
-      <input type="hidden" id="hidcmbleavetype" name="hidcmbleavetype" value='<s:property value="hidcmbleavetype"/>'/></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><input type="checkbox" id="chckhalfday" name="chckhalfday" value="" onchange="halfdaycheck();newValueSet();" onclick="$(this).attr('value', this.checked ? 1 : 0)">Half Day
-                                 <input type="hidden" id="hidchckhalfday" name="hidchckhalfday" value='<s:property value="hidchckhalfday"/>'/></td>
-  </tr>
-</table>
-	  </fieldset>
-	</td>
-    </tr>
-    <tr>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-  <tr>
-    <td><input type="radio" id="rdovertime" name="rdo" value="rdovertime" onclick="radioClick();"><label for="rdovertime">Over Time</label></td>
-    <td><div id="overtime" name="overtime" onchange="newValueSet();" value='<s:property value="overtime"/>'></div>
-    <input type="hidden" id="hidovertime" name="hidovertime" value='<s:property value="hidovertime"/>'/></td>
-  </tr>
-  <tr>
-    <td colspan="2"><input type="radio" id="rdtotalleaves" name="rdo" value="rdtotalleaves" onclick="radioClick();"><label id="rdtotalleaves1" for="rdtotalleaves"></label></td>
-    </tr>
-	<tr>
-    <td><input type="checkbox" id="chckmarkall" name="chckmarkall" value="" onchange="markallcheck();" onclick="$(this).attr('value', this.checked ? 1 : 0)">Mark All
-	    <input type="hidden" id="hidchckmarkall" name="hidchckmarkall" value='<s:property value="hidchckmarkall"/>'/></td>
-    <td align="center"><input type="button" class="myButtonses" name="btnView" id="btnView"  value="View" onclick="funViewAttendance();"></td>
-    </tr>
-    <tr>
-    <td colspan="2" align="center"><input type="button" class="myButtonses" name="btnApply" id="btnApply"  value="Apply" onclick="funApplyAttendance(event);">&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="button" class="myButtonses" name="btnApplyDelete" id="btnApplyDelete"  value="Delete" onclick="funDeleteAttendance(event);">&nbsp;&nbsp;&nbsp;
-    <input type="button" class="myButtons" name="clear" id="clear"  value="Clear" onclick="funClearInfo();"></td>
-    </tr>
-	<tr>
-    <td colspan="2" align="center"><input type="button" class="myButtonReCheck" name="btnRecheck" id="btnRecheck"  value="Re-Check" onclick="funReCheckAttendance(event);"></td>
-    </tr>
-    <tr>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-</table>
-</fieldset>
-    </td>
-    <td width="80%">
-    <div id="attendanceDiv"><jsp:include page="attendanceGrid.jsp"></jsp:include></div>
-    </td>
-  </tr>
-</table>
+            <!-- Hidden Logic Fields -->
+            <div style="display:none;">
+                <input type="hidden" id="mode" name="mode"/>
+                <input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>'/>
+                <input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
+                <input type="hidden" id="docno" name="txtattendancedocno" style="width:75%;" value='<s:property value="txtattendancedocno"/>'/>
+                <input type="hidden" id="txtvalidation" name="txtvalidation" value='<s:property value="txtvalidation"/>'/>
+                <input type="hidden" id="txtselectedemployee" name="txtselectedemployee" value='<s:property value="txtselectedemployee"/>'/>
+                <input type="hidden" id="txtselectedcellrow" name="txtselectedcellrow" value='<s:property value="txtselectedcellrow"/>'/>
+                <input type="hidden" id="txtselectedcellcolumn" name="txtselectedcellcolumn" value='<s:property value="txtselectedcellcolumn"/>'/>
+                <input type="hidden" id="txtselectedcellvalue" name="txtselectedcellvalue" value='<s:property value="txtselectedcellvalue"/>'/>
+                <input type="hidden" id="txtselectedcelltextvalue" name="txtselectedcelltextvalue" value='<s:property value="txtselectedcelltextvalue"/>'/>
+                <input type="hidden" id="txtselectedcellleave1totalvalue" name="txtselectedcellleave1totalvalue" value='<s:property value="txtselectedcellleave1totalvalue"/>'/>
+                <input type="hidden" id="txtselectedcellleave2totalvalue" name="txtselectedcellleave2totalvalue" value='<s:property value="txtselectedcellleave2totalvalue"/>'/>
+                <input type="hidden" id="txtselectedcellleave3totalvalue" name="txtselectedcellleave3totalvalue" value='<s:property value="txtselectedcellleave3totalvalue"/>'/>
+                <input type="hidden" id="txtselectedcellleave4totalvalue" name="txtselectedcellleave4totalvalue" value='<s:property value="txtselectedcellleave4totalvalue"/>'/>
+                <input type="hidden" id="txtselectedcellleave5totalvalue" name="txtselectedcellleave5totalvalue" value='<s:property value="txtselectedcellleave5totalvalue"/>'/>
+                <input type="hidden" id="txtselectedcellleave6totalvalue" name="txtselectedcellleave6totalvalue" value='<s:property value="txtselectedcellleave6totalvalue"/>'/>
+                <input type="hidden" id="txtemptotalleaves" name="txtemptotalleaves" value='<s:property value="txtemptotalleaves"/>'/>
+                <input type="hidden" id="txtemptotalleavesgridlength" name="txtemptotalleavesgridlength" value='<s:property value="txtemptotalleavesgridlength"/>'/>
+                <input type="hidden" id="txtselectedcellovertimevalue" name="txtselectedcellovertimevalue" value='<s:property value="txtselectedcellovertimevalue"/>'/>
+                <input type="hidden" id="txtselectedcellholidayovertimevalue" name="txtselectedcellholidayovertimevalue" value='<s:property value="txtselectedcellholidayovertimevalue"/>'/>
+                <input type="hidden" id="txtholidaysofmonth" name="txtholidaysofmonth" value='<s:property value="txtholidaysofmonth"/>'/>
+                <input type="hidden" id="txtmonthlypayrollprocessed" name="txtmonthlypayrollprocessed" value='<s:property value="txtmonthlypayrollprocessed"/>'/>
+                <input type="hidden" id="txtattendanceleaveseditgrid" name="txtattendanceleaveseditgrid" value='<s:property value="txtattendanceleaveseditgrid"/>'/>
+                <input type="hidden" id="txtmarkedattendance" name="txtmarkedattendance" value='<s:property value="txtmarkedattendance"/>'/>
+                <input type="hidden" id="txtrecheckemptotalleaves" name="txtrecheckemptotalleaves" value='<s:property value="txtrecheckemptotalleaves"/>'/>
+                <input type="hidden" id="txtrecheckemptotalleavesgridlength" name="txtrecheckemptotalleavesgridlength" value='<s:property value="txtrecheckemptotalleavesgridlength"/>'/>
+            </div>
+        </div>
+    </form>
 
-<input type="hidden" id="mode" name="mode"/>
-<input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>'/>
-<input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
-<input type="hidden" id="docno" name="txtattendancedocno" style="width:75%;" value='<s:property value="txtattendancedocno"/>'/>
-<input type="hidden" id="txtvalidation" name="txtvalidation" value='<s:property value="txtvalidation"/>'/>
-<input type="hidden" id="txtselectedemployee" name="txtselectedemployee" value='<s:property value="txtselectedemployee"/>'/>
-<input type="hidden" id="txtselectedcellrow" name="txtselectedcellrow" value='<s:property value="txtselectedcellrow"/>'/>
-<input type="hidden" id="txtselectedcellcolumn" name="txtselectedcellcolumn" value='<s:property value="txtselectedcellcolumn"/>'/>
-<input type="hidden" id="txtselectedcellvalue" name="txtselectedcellvalue" value='<s:property value="txtselectedcellvalue"/>'/>
-<input type="hidden" id="txtselectedcelltextvalue" name="txtselectedcelltextvalue" value='<s:property value="txtselectedcelltextvalue"/>'/>
-<input type="hidden" id="txtselectedcellleave1totalvalue" name="txtselectedcellleave1totalvalue" value='<s:property value="txtselectedcellleave1totalvalue"/>'/>
-<input type="hidden" id="txtselectedcellleave2totalvalue" name="txtselectedcellleave2totalvalue" value='<s:property value="txtselectedcellleave2totalvalue"/>'/>
-<input type="hidden" id="txtselectedcellleave3totalvalue" name="txtselectedcellleave3totalvalue" value='<s:property value="txtselectedcellleave3totalvalue"/>'/>
-<input type="hidden" id="txtselectedcellleave4totalvalue" name="txtselectedcellleave4totalvalue" value='<s:property value="txtselectedcellleave4totalvalue"/>'/>
-<input type="hidden" id="txtselectedcellleave5totalvalue" name="txtselectedcellleave5totalvalue" value='<s:property value="txtselectedcellleave5totalvalue"/>'/>
-<input type="hidden" id="txtselectedcellleave6totalvalue" name="txtselectedcellleave6totalvalue" value='<s:property value="txtselectedcellleave6totalvalue"/>'/>
-<input type="hidden" id="txtemptotalleaves" name="txtemptotalleaves" value='<s:property value="txtemptotalleaves"/>'/>
-<input type="hidden" id="txtemptotalleavesgridlength" name="txtemptotalleavesgridlength" value='<s:property value="txtemptotalleavesgridlength"/>'/>
-<input type="hidden" id="txtselectedcellovertimevalue" name="txtselectedcellovertimevalue" value='<s:property value="txtselectedcellovertimevalue"/>'/>
-<input type="hidden" id="txtselectedcellholidayovertimevalue" name="txtselectedcellholidayovertimevalue" value='<s:property value="txtselectedcellholidayovertimevalue"/>'/>
-<input type="hidden" id="txtholidaysofmonth" name="txtholidaysofmonth" value='<s:property value="txtholidaysofmonth"/>'/>
-<input type="hidden" id="txtmonthlypayrollprocessed" name="txtmonthlypayrollprocessed" value='<s:property value="txtmonthlypayrollprocessed"/>'/>
-<input type="hidden" id="txtattendanceleaveseditgrid" name="txtattendanceleaveseditgrid" value='<s:property value="txtattendanceleaveseditgrid"/>'/>
-<input type="hidden" id="txtmarkedattendance" name="txtmarkedattendance" value='<s:property value="txtmarkedattendance"/>'/>
-<input type="hidden" id="txtrecheckemptotalleaves" name="txtrecheckemptotalleaves" value='<s:property value="txtrecheckemptotalleaves"/>'/>
-<input type="hidden" id="txtrecheckemptotalleavesgridlength" name="txtrecheckemptotalleavesgridlength" value='<s:property value="txtrecheckemptotalleavesgridlength"/>'/>
-</div>
-</form>
-
-<div id="employeeDetailsWindow">
-   <div></div>
-</div>
+    <!-- Search Windows Outside of Form Content -->
+    <div id="employeeDetailsWindow">
+        <div></div><div></div>
+    </div>
 </div>
 </body>
 </html>
