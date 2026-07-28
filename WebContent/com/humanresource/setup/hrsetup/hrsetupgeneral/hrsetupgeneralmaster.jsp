@@ -9,28 +9,177 @@
 	<title>GatewayERP(i)</title>
  <jsp:include page="../../../../../includes.jsp"></jsp:include> 
 <style>
-form label.error {
-  color:red;
-  font-weight:bold;
-
+/* =========================================================
+SCOPED UI: Modern Layout (Matches Client Master)
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
 
-#convformula {
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.modern-ui {
+    font-family: Arial, sans-serif; 
+    color: #333;
+    font-size: 12px; 
+    padding: 5px 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Master Input Heights - Forced to 24px */
+.modern-ui input[type="text"],
+.modern-ui select { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    width: 100%;
+}
+
+.modern-ui input[type="text"]:focus,
+.modern-ui select:focus { 
+    border-color: #007bff; 
+    outline: none;
+}
+
+.modern-ui input[readonly],
+.modern-ui input:disabled,
+.modern-ui select:disabled { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
+}
+
+/* Layout Utilities */
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: wrap;
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+}
+
+/* Middle Section Panels */
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+/* Custom UI Buttons matching 24px height */
+.modern-ui .myButton {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton:hover { background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); }
+
+/* Search Icon Wrapper */
+.modern-ui .input-search-container {
+    position: relative;
+    display: flex;
+}
+.modern-ui .input-search-container input {
+    padding-right: 25px !important;
+}
+.modern-ui .magnifier-icon {
+    position: absolute;
+    right: 6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b; 
+    z-index: 10;
+}
+.modern-ui .magnifier-icon:hover { color: #2563eb; }
+
+/* Grid Wrappers */
+.modern-ui .grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Scrollbar Logic */
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+    padding-right: 5px;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+form label.error { color:red; font-weight:bold; }
+#errormsg { color:red; font-weight:bold; text-align:center; margin-bottom: 10px; }
+
+.custom-checkbox {
+    width: 14px !important; 
+    height: 14px !important;
+    margin: 0 !important;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#convformula, #normalrate, #ot, #holidayot {
   text-transform: uppercase;
 }
-
-#normalrate {
-  text-transform: uppercase;
-}
-
-#ot {
-  text-transform: uppercase;
-}
-
-#holidayot {
-  text-transform: uppercase;
-}
-
 </style>
 <script type="text/javascript">
 
@@ -41,11 +190,27 @@ form label.error {
 		window.parent.formCode.value="HRS"; 
 		window.parent.formName.value="HR Setup";
 		
-   	 	$("#masterdate").jqxDateTimeInput({ width: '125px', height: '15px', formatString:"dd.MM.yyyy"});    
-   	 	$("#validfromdate").jqxDateTimeInput({ width: '125px', height: '15px', formatString:"dd.MM.yyyy"});   
-	   	$("#lastreviseddate").jqxDateTimeInput({ width: '125px', height: '15px', formatString:"dd.MM.yyyy"});   
-   	 	$("#workingtime").jqxDateTimeInput({ width: '60%', height: '15px', formatString:'HH:mm', showCalendarButton: false}); 
+   	 	$("#masterdate").jqxDateTimeInput({ width: '125px', height: 24, formatString:"dd.MM.yyyy", theme: 'energyblue'});    
+   	 	$("#validfromdate").jqxDateTimeInput({ width: '125px', height: 24, formatString:"dd.MM.yyyy", theme: 'energyblue'});   
+	   	$("#lastreviseddate").jqxDateTimeInput({ width: '125px', height: 24, formatString:"dd.MM.yyyy", theme: 'energyblue'});   
+   	 	$("#workingtime").jqxDateTimeInput({ width: '125px', height: 24, formatString:'HH:mm', showCalendarButton: false, theme: 'energyblue'}); 
    	 
+   	 	/* force internal alignment AFTER render */
+		setTimeout(function () {
+		 	$("#masterdate, #validfromdate, #lastreviseddate, #workingtime").find("input").css({
+		 		"margin-top": "0px",
+		 		"line-height": "24px",
+		 		"font-size": "12px", 
+		 		"font-family": "Arial, sans-serif", 
+		 		"padding": "0 6px", 
+		 		"box-sizing":"border-box"
+		 	});
+		 	$("#masterdate, #validfromdate, #lastreviseddate, #workingtime").find(".jqx-action-button").css({
+		 		"top": "0px",
+		 		"height": "24px"
+		 	});
+		}, 0);
+
      	$('#formulawindow').jqxWindow({ width: '45%', height: '54%',  maxHeight: '75%' ,maxWidth: '60%' , title: 'Salary Calculation Formula' ,position: { x: 150, y: 60 }, keyboardCloseKey: 27,theme: 'energyblue', showCloseButton: true});
 	 	$('#formulawindow').jqxWindow('close');
 	 	
@@ -457,139 +622,178 @@ form label.error {
  	}	
 	
 </script>
-
-<style>
-.hidden-scrollbar {  
-    height: 530px;
-    overflow-x: hidden;
-    
-} 
-</style>  
-
 </head>
 <body onload="setValues();">
 <div id="mainBG" class="homeContent" data-type="background">
 <form id="frmhrsetups" action="saveHrsetup" autocomplete="OFF" >
 
-<jsp:include page="../../../../../header.jsp"></jsp:include><br/>
-<div class='hidden-scrollbar'>
-<fieldset>
-<legend>For Days in Year</legend>   
-<fieldset>       
-<table width="99%"  > 
-  <tr>
-    <td width="13%" align="right">Date</td>  
-    <td width="12%"><div id='masterdate' name='masterdate' value='<s:property value="masterdate"/>'></div>
-                     <input type="hidden" id="hidmasterdate" name="hidmasterdate" value='<s:property value="hidmasterdate"/>'/></td>
-    <td colspan="5">&nbsp;</td>
-    <td width="4%" align="right">Doc No</td>
-    <td width="9%"><input type="text" id="docno" name="docno" tabindex="-1" value='<s:property value="docno"/>'/></td>
-  </tr>
-  <tr>
-    <td align="right">Valid From</td> 
-    <td><div id='validfromdate' name='validfromdate' value='<s:property value="validfromdate"/>'></div>
-                     <input type="hidden" id="hidvalidfromdate" name="hidvalidfromdate" value='<s:property value="hidvalidfromdate"/>'/></td>
-    <td width="10%" align="right">Last Revised On</td>
-    <td width="11%"><div id='lastreviseddate' name='lastreviseddate' value='<s:property value="lastreviseddate"/>'></div>
-                     <input type="hidden" id="hidlastreviseddate" name="hidlastreviseddate" value='<s:property value="hidlastreviseddate"/>'/></td>
-    <td width="9%" align="right">PayRoll Category</td>
-    <td width="14%"><select name="cmbcategory" id="cmbcategory" style="width:99%;"  value='<s:property value="cmbcategory"/>'><option value="">-- select -- </option></select></td>
-    <td width="11%" align="right">Working Hours/Day</td>
-    <td width="8%"><div id='workingtime' name='workingtime'  style="width:80%;"  value='<s:property value="workingtime"/>' ></div>
-       <input type="hidden" id="hidworkingtime" name="hidworkingtime" value='<s:property value="hidworkingtime"/>'/></td>
-    <td colspan="2" rowspan="3">&nbsp;</td>
-  </tr>
-  <tr>
-  <td align="right">Annual Leave:Leave ID</td>
-    <td><select name="leaveid" id="leaveid" style="width:99%;"  value='<s:property value="leaveid"/>'><option value="">-- select --</option></select>
-  </td>
-    <td align="right">Weakly Off</td>
-    <td colspan="3"><fieldset>
-  <input type="checkbox" id="mon" name="mon"  value="0"  onclick="$(this).attr('value', this.checked ? 1 : 0)"  > Mon
-  <input type="checkbox" id="tue" name="tue"    value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)"> Tue
-  <input type="checkbox" id="wed" name="wed"   value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)"> Wed
-  <input type="checkbox" id="thu" name="thu"   value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)"> Thu
-  <input type="checkbox" id="fri" name="fri"   value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)"> Fri
-  <input type="checkbox" id="sat" name="sat"   value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)"> Sat
-  <input type="checkbox" id="sun" name="sun"  value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)"> Sun
-  </fieldset></td>
-    <td colspan="2" align="left"> 
-    <input type="checkbox" id="carryforward" name="carryforward"  value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" >Carry Forward</td>
-  </tr>
-  <tr>
-    <td align="right">Eligible Days</td>
-    <td><input type="text" id="eligibledays" name="eligibledays"   onkeypress="javascript:return isNumber (event)"  value='<s:property value="eligibledays"/>' ></td>
-    <td align="right">In a Year</td>
-    <td colspan="5"><input type="text" id="forworkingdays" name="forworkingdays"  onkeypress="javascript:return isNumber (event)"  value='<s:property value="forworkingdays"/>' ></td>
-  </tr>
-</table>
- </fieldset>
- <table width="100%">
- <tr>
- <td height="234" width="55%">
-   <fieldset><legend>Terminal Benefits</legend>
-   <table width="100%" >
-   <tr>
-   <td width="65%">
-   	<div id="termibeni"> <jsp:include page="terminationbenefitcondtiongrid.jsp"></jsp:include></div>
- </td>
- <td width="35%">
-    <fieldset><legend>Termination Details</legend>
-   <div id="trimi"> <jsp:include page="terminationdetailsgrid.jsp"></jsp:include></div>
-   </fieldset>
+<jsp:include page="../../../../../header.jsp"></jsp:include>
 
-   <fieldset><legend>Resignation Details</legend> 
-   <div id="resig"> <jsp:include page="resignationdetailsgrid.jsp"></jsp:include></div>
-   </fieldset>
-  </td>
- </tr>
- </table>
-   </fieldset> 
-       <td  width="45%">
-    <fieldset >
-	<legend>Salary Calculation Formula (Hrs)</legend>    
-    <table width="100%">
-    	<tr><td width="37%" align="right">Conversion Formula Month To Day</td><td align="left"><input type="text" id="convformula" readonly="readonly"   placeholder="Press F3 To Search" name="convformula" Style="width:99%;" value='<s:property value="convformula"/>' onkeydown="getconfor(event);"></td> </tr>
-    	<tr><td  width="37%" align="right">Rate per Hour</td><td align="left" ><input type="text" id="normalrate" name="normalrate" readonly="readonly"   placeholder="Press F3 To Search" Style="width:99%;" value='<s:property value="normalrate"/>' onkeydown="getnr(event);" > </td> </tr>
-    	<tr><td  width="37%" align="right"> OT</td><td  align="left"><input type="text" id="ot" name="ot" Style="width:99%;" readonly="readonly"   placeholder="Press F3 To Search" value='<s:property value="ot"/>'  onkeydown="getot(event);" > </td> </tr>
-    	<tr><td width="37%" align="right">Holiday OT</td><td  align="left"><input type="text" id="holidayot" name="holidayot" readonly="readonly"   placeholder="Press F3 To Search" Style="width:99%;" value='<s:property value="holidayot"/>'  onkeydown="getholyot(event);"> </td> </tr>
-    </table></fieldset>
-    
-    <fieldset><legend>Account Setup</legend>  
-      	<div id="accset"> <jsp:include page="accountsetupgrid.jsp"></jsp:include></div>
-    </fieldset>
-   </td>
-   </tr>
-  </table>
-  </fieldset>   
- </div>
- 
-<input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>' />
-<input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>' />
-<input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
-<input type="hidden" id="hidcatval" name="hidcatval"  value='<s:property value="hidcatval"/>'/>
-<input type="hidden" id="hidleaveid" name="hidleaveid"  value='<s:property value="hidleaveid"/>'/>
-<input type="hidden" id="hidweakoff" name="hidweakoff"  value='<s:property value="hidweakoff"/>'/>
-<input type="hidden" id="hidcarryforward" name="hidcarryforward"  value='<s:property value="hidcarryforward"/>'/>
-<input type="hidden" id="benigridlength" name="benigridlength"  value='<s:property value="benigridlength"/>'/>
-<input type="hidden" id="trmigridlength" name="trmigridlength"  value='<s:property value="trmigridlength"/>'/>
-<input type="hidden" id="resiggridlength" name="resiggridlength"  value='<s:property value="resiggridlength"/>'/>
-<input type="hidden" id="accountsetupgridlength" name="accountsetupgridlength"  value='<s:property value="accountsetupgridlength"/>'/>
-</form>
+<div class='modern-ui hidden-scrollbar'>
+    <div id="errormsg"></div>
 
-<div id="formulawindow">
-   <div></div>
+    <div class="middle-panel">
+        <span class="middle-panel-title">HR Setup Details (For Days in Year)</span>
+        
+        <div class="field-row">
+            <label class="lbl-right" style="width:100px;">Date</label>
+            <div style="width: 125px;">
+                <div id='masterdate' name='masterdate' value='<s:property value="masterdate"/>'></div>
+            </div>
+            
+            <label class="lbl-right" style="width:100px;">Valid From</label>
+            <div style="width: 125px;">
+                <div id='validfromdate' name='validfromdate' value='<s:property value="validfromdate"/>'></div>
+            </div>
+            
+            <label class="lbl-right" style="width:110px;">Last Revised On</label>
+            <div style="width: 125px;">
+                <div id='lastreviseddate' name='lastreviseddate' value='<s:property value="lastreviseddate"/>'></div>
+            </div>
+            
+            <label class="lbl-right" style="width:80px; margin-left:auto;">Doc No</label>
+            <input type="text" id="docno" name="docno" style="width:100px;" tabindex="-1" value='<s:property value="docno"/>' readonly/>
+        </div>
+        
+        <div class="field-row">
+            <label class="lbl-right" style="width:100px;">Payroll Category</label>
+            <select name="cmbcategory" id="cmbcategory" style="width:125px;" value='<s:property value="cmbcategory"/>'>
+                <option value="">-- select -- </option>
+            </select>
+            
+            <label class="lbl-right" style="width:100px;">Working Hrs/Day</label>
+            <div style="width: 125px;">
+                <div id='workingtime' name='workingtime' value='<s:property value="workingtime"/>'></div>
+            </div>
+            
+            <label class="lbl-right" style="width:110px;">Annual Leave ID</label>
+            <select name="leaveid" id="leaveid" style="width:125px;" value='<s:property value="leaveid"/>'>
+                <option value="">-- select --</option>
+            </select>
+        </div>
+        
+        <div class="field-row">
+            <label class="lbl-right" style="width:100px;">Eligible Days</label>
+            <input type="text" id="eligibledays" name="eligibledays" style="width:125px;" onkeypress="javascript:return isNumber (event)" value='<s:property value="eligibledays"/>' />
+            
+            <label class="lbl-right" style="width:100px;">In a Year</label>
+            <input type="text" id="forworkingdays" name="forworkingdays" style="width:125px;" onkeypress="javascript:return isNumber (event)" value='<s:property value="forworkingdays"/>' />
+        </div>
+        
+        <div class="field-row" style="margin-bottom:0;">
+            <label class="lbl-right" style="width:100px;">Weekly Off</label>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <label style="cursor:pointer;"><input type="checkbox" id="mon" name="mon" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Mon</label>
+                <label style="cursor:pointer;"><input type="checkbox" id="tue" name="tue" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Tue</label>
+                <label style="cursor:pointer;"><input type="checkbox" id="wed" name="wed" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Wed</label>
+                <label style="cursor:pointer;"><input type="checkbox" id="thu" name="thu" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Thu</label>
+                <label style="cursor:pointer;"><input type="checkbox" id="fri" name="fri" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Fri</label>
+                <label style="cursor:pointer;"><input type="checkbox" id="sat" name="sat" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Sat</label>
+                <label style="cursor:pointer;"><input type="checkbox" id="sun" name="sun" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Sun</label>
+            </div>
+            
+            <label class="lbl-right" style="width:100px; margin-left:20px; cursor:pointer;">
+                <input type="checkbox" id="carryforward" name="carryforward" value="0" onclick="$(this).attr('value', this.checked ? 1 : 0)" class="custom-checkbox"> Carry Forward
+            </label>
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 15px;">
+        <!-- Left Column -->
+        <div style="flex: 55%; display: flex; flex-direction: column;">
+            <div class="middle-panel" style="margin-bottom: 15px;">
+                <span class="middle-panel-title">Terminal Benefits</span>
+                <div id="termibeni" class="grid-container">
+                    <jsp:include page="terminationbenefitcondtiongrid.jsp"></jsp:include>
+                </div>
+            </div>
+            <div style="display: flex; gap: 15px;">
+                <div class="middle-panel" style="flex: 1; margin-bottom: 0;">
+                    <span class="middle-panel-title">Termination Details</span>
+                    <div id="trimi" class="grid-container">
+                        <jsp:include page="terminationdetailsgrid.jsp"></jsp:include>
+                    </div>
+                </div>
+                <div class="middle-panel" style="flex: 1; margin-bottom: 0;">
+                    <span class="middle-panel-title">Resignation Details</span>
+                    <div id="resig" class="grid-container">
+                        <jsp:include page="resignationdetailsgrid.jsp"></jsp:include>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div style="flex: 45%; display: flex; flex-direction: column;">
+            <div class="middle-panel" style="margin-bottom: 15px;">
+                <span class="middle-panel-title">Salary Calculation Formula (Hrs)</span>
+                
+                <div class="field-row">
+                    <label class="lbl-right" style="width:150px;">Conv. Formula Month To Day</label>
+                    <div class="input-search-container" style="flex:1;">
+                        <input type="text" id="convformula" name="convformula" readonly placeholder="Press F3 To Search" value='<s:property value="convformula"/>' onkeydown="getconfor(event);"/>
+                        <svg class="magnifier-icon" onclick="$('#convformula').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label class="lbl-right" style="width:150px;">Rate per Hour</label>
+                    <div class="input-search-container" style="flex:1;">
+                        <input type="text" id="normalrate" name="normalrate" readonly placeholder="Press F3 To Search" value='<s:property value="normalrate"/>' onkeydown="getnr(event);"/>
+                        <svg class="magnifier-icon" onclick="$('#normalrate').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <label class="lbl-right" style="width:150px;">OT</label>
+                    <div class="input-search-container" style="flex:1;">
+                        <input type="text" id="ot" name="ot" readonly placeholder="Press F3 To Search" value='<s:property value="ot"/>' onkeydown="getot(event);"/>
+                        <svg class="magnifier-icon" onclick="$('#ot').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                <div class="field-row" style="margin-bottom:0;">
+                    <label class="lbl-right" style="width:150px;">Holiday OT</label>
+                    <div class="input-search-container" style="flex:1;">
+                        <input type="text" id="holidayot" name="holidayot" readonly placeholder="Press F3 To Search" value='<s:property value="holidayot"/>' onkeydown="getholyot(event);"/>
+                        <svg class="magnifier-icon" onclick="$('#holidayot').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-panel" style="flex: 1; margin-bottom: 0;">
+                <span class="middle-panel-title">Account Setup</span>
+                <div id="accset" class="grid-container" style="height: 100%;">
+                    <jsp:include page="accountsetupgrid.jsp"></jsp:include>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Logic Fields -->
+    <div style="display:none;">
+        <input type="hidden" id="hidmasterdate" name="hidmasterdate" value='<s:property value="hidmasterdate"/>'/>
+        <input type="hidden" id="hidvalidfromdate" name="hidvalidfromdate" value='<s:property value="hidvalidfromdate"/>'/>
+        <input type="hidden" id="hidlastreviseddate" name="hidlastreviseddate" value='<s:property value="hidlastreviseddate"/>'/>
+        <input type="hidden" id="hidworkingtime" name="hidworkingtime" value='<s:property value="hidworkingtime"/>'/>
+        <input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>' />
+        <input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>' />
+        <input type="hidden" id="msg" name="msg" value='<s:property value="msg"/>'/>
+        <input type="hidden" id="hidcatval" name="hidcatval" value='<s:property value="hidcatval"/>'/>
+        <input type="hidden" id="hidleaveid" name="hidleaveid" value='<s:property value="hidleaveid"/>'/>
+        <input type="hidden" id="hidweakoff" name="hidweakoff" value='<s:property value="hidweakoff"/>'/>
+        <input type="hidden" id="hidcarryforward" name="hidcarryforward" value='<s:property value="hidcarryforward"/>'/>
+        <input type="hidden" id="benigridlength" name="benigridlength" value='<s:property value="benigridlength"/>'/>
+        <input type="hidden" id="trmigridlength" name="trmigridlength" value='<s:property value="trmigridlength"/>'/>
+        <input type="hidden" id="resiggridlength" name="resiggridlength" value='<s:property value="resiggridlength"/>'/>
+        <input type="hidden" id="accountsetupgridlength" name="accountsetupgridlength" value='<s:property value="accountsetupgridlength"/>'/>
+    </div>
 </div>
 
-<div id="accountSearchwindow">
-	   <div></div>
-</div>	
-<div id="costTypeSearchGridWindow">
-	<div></div>
-</div> 
-<div id="costCodeSearchWindow">
-	<div></div>
-</div> 
+</form>
+
+<!-- Search Windows -->
+<div id="formulawindow"><div></div></div>
+<div id="accountSearchwindow"><div></div></div>	
+<div id="costTypeSearchGridWindow"><div></div></div> 
+<div id="costCodeSearchWindow"><div></div></div> 
 
 </div>
 </body>

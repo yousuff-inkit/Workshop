@@ -73,31 +73,213 @@
 	}
 
 	</script>
+<style>
+/*=========================================================
+                MASTER SEARCH UI
+=========================================================*/
+
+html,
+body{
+    margin:0;
+    padding:0;
+    background:#ffffff !important;
+    font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+}
+
+#search{
+    background:#ffffff;
+    padding:10px;
+}
+
+.search-panel{
+    background:#ffffff;
+    border:1px solid #d8d8d8;
+    border-radius:4px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
+.search-panel table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.search-panel td{
+    padding:5px 6px;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.lbl-right{
+    text-align:right;
+    font-size:12px;
+    font-weight:500;
+    color:#333;
+    padding-right:6px;
+}
+
+.search-input{
+    width:130px !important;
+    min-width:130px !important;
+    max-width:130px !important;
+    height:26px !important;
+    border:1px solid #cfcfcf;
+    border-radius:3px;
+    padding:2px 6px;
+    box-sizing:border-box;
+    background:#fff;
+    font-size:12px;
+}
+
+.medium-input{
+    width:170px !important;
+    min-width:170px !important;
+    max-width:170px !important;
+}
+
+.long-input{
+    width:260px !important;
+    min-width:260px !important;
+    max-width:260px !important;
+}
+
+.medium-select{
+    width:170px !important;
+    height:28px !important;
+    border:1px solid #cfcfcf;
+    border-radius:3px;
+    font-size:12px;
+    background:#fff;
+}
+
+.grid-container{
+    background:#fff;
+    border:1px solid #cccccc;
+    border-radius:4px;
+    overflow:hidden;
+}
+</style>
+
 <body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td width="5%" align="right">Date</td>
-    <td width="15%"><div id="alwdate" name="alwdate"  value='<s:property value="alwdate"/>'></div>
-        <input type="hidden" name="hidalwdate" id="hidalwdate" value='<s:property value="hidalwdate"/>'></td>
-    <td width="9%" align="right">Doc No</td>
-    <td width="12%"><input type="text" name="txtdocno" id="txtdocno" value='<s:property value="txtdocno"/>'></td>
-    <td width="10%" align="right">Year</td>
-    <td width="29%"><select id="cmbalwyear" name="cmbalwyear" style="width:50%;" value='<s:property value="cmbalwyear"/>'>
-    <option value="">--Select--</option></select></td>
-    <td width="20%" rowspan="2" align="center"><input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Search"  onclick="loadSearch();"></td>
-  </tr>
-  <tr>
-    <td align="right">Month</td>
-    <td><select id="cmbalwmonth" name="cmbalwmonth" style="width:98%;"  value='<s:property value="cmbalwmonth"/>'>
-      <option value="">--Select--</option></select></td>
-    <td align="right">Description</td>
-    <td colspan="3"><input type="text" name="txtalwdescription" id="txtalwdescription" style="width:80%;" value='<s:property value="txtalwdescription"/>'></td>
-  </tr>
-  <tr>
-    <td colspan="7"><div id="refreshdiv"><jsp:include page="alwMainSearchGrid.jsp"></jsp:include></div></td>
-  </tr>
-</table>
+
+<div id="search">
+
+    <div class="search-panel">
+
+        <table>
+
+            <tr>
+
+                <td class="lbl-right">Date</td>
+
+                <td>
+
+                    <div id="alwdate"
+                         name="alwdate"
+                         value='<s:property value="alwdate"/>'>
+                    </div>
+
+                    <input type="hidden"
+                           name="hidalwdate"
+                           id="hidalwdate"
+                           value='<s:property value="hidalwdate"/>'>
+
+                </td>
+
+                <td class="lbl-right">Doc No</td>
+
+                <td>
+
+                    <input type="text"
+                           class="search-input medium-input"
+                           name="txtdocno"
+                           id="txtdocno"
+                           value='<s:property value="txtdocno"/>'>
+
+                </td>
+
+                <td class="lbl-right">Year</td>
+
+                <td>
+
+                    <select id="cmbalwyear"
+                            name="cmbalwyear"
+                            class="medium-select">
+
+                        <option value="">--Select--</option>
+
+                    </select>
+
+                </td>
+
+                <td rowspan="2" align="center">
+
+                    <button
+                        type="button"
+                        id="btnsearch"
+                        onclick="loadSearch();"
+                        style="
+                            width:105px;
+                            height:28px;
+                            background:#205fd3;
+                            color:#ffffff;
+                            border:1px solid #205fd3;
+                            border-radius:4px;
+                            font-size:12px;
+                            font-weight:600;
+                            cursor:pointer;">
+                        Search
+                    </button>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class="lbl-right">Month</td>
+
+                <td>
+
+                    <select id="cmbalwmonth"
+                            name="cmbalwmonth"
+                            class="medium-select">
+
+                        <option value="">--Select--</option>
+
+                    </select>
+
+                </td>
+
+                <td class="lbl-right">Description</td>
+
+                <td colspan="3">
+
+                    <input type="text"
+                           class="search-input long-input"
+                           name="txtalwdescription"
+                           id="txtalwdescription"
+                           value='<s:property value="txtalwdescription"/>'>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="grid-container">
+
+        <div id="refreshdiv">
+
+            <jsp:include page="alwMainSearchGrid.jsp"></jsp:include>
+
+        </div>
+
+    </div>
+
 </div>
+
 </body>
 </html>
