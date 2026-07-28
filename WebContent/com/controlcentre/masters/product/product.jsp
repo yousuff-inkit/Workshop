@@ -1329,328 +1329,324 @@
 </script>
 
 <style>
-.hidden-scrollbar {
-	overflow: auto;
-	height: 530px;
+/* =========================================================
+SCOPED UI: Modern Layout (Matches Client Master)
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
+
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.modern-ui {
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 12px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.modern-ui input[type="text"],
+.modern-ui select {
+    height: 24px !important;
+    border: 1px solid #b8c6d8;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 12px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+}
+
+.modern-ui input[type="text"]:focus,
+.modern-ui select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.modern-ui input[readonly],
+.modern-ui input:disabled,
+.modern-ui select:disabled {
+    background-color: #f8f9fa;
+    color: #6b7280;
+}
+
+.modern-ui input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    margin: 0 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.modern-ui .field-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.modern-ui .lbl-right {
+    text-align: right;
+    color: #444;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    padding-right: 5px;
+}
+
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0;
+    padding: 20px 10px 10px 10px;
+    background: #ffffff;
+    position: relative;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background: #ffffff;
+    padding: 0 8px;
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 14px;
+    border-left: 3px solid #0056b3;
+    z-index: 2;
+    line-height: normal;
+}
+
+.modern-ui .grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.modern-ui .val-error { color: red; font-size: 11px; font-weight:bold; }
+
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 150px);
+    padding-right: 5px;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
 </style>
 
 </head>
-<body
-	onload="setValues();getpmconfig();">
+<body onload="setValues();getpmconfig();">
 	<div id="mainBG" class="homeContent" data-type="background">
-		<form id="frmProduct" action="saveProduct" method="post"
-			autocomplete="off">
-			
-			
-			<jsp:include page="../../../../header.jsp"></jsp:include><br />
+		<form id="frmProduct" action="saveProduct" method="post" autocomplete="off">
 
-			<div class='hidden-scrollbar'>
+			<jsp:include page="../../../../header.jsp"></jsp:include>
 
-				<table width="100%">
-					<tr>
-						<td width="7%" align="right">Date</td>
-						<td width="43%"><div id="date" name="date"
-								value='<s:property value="date"/>'></div> <input type="hidden"
-							id="hiddate" name="hiddate" value='<s:property value="hiddate"/>' /></td>
-						<td width="31%" align="right">Doc No</td>
-						<td width="19%"><input type="text" id="docno" name="docno"
-							style="width: 65%;" tabindex="-1"
-							value='<s:property value="docno"/>' /></td>
-					</tr>
-				</table>
+			<div class='modern-ui hidden-scrollbar'>
 
-				<table width="100%" >
-					<tr>
-						<td width="40%">
-							<fieldset>
-								<table width="100%">
-									<tr>
-										<td width="15%" align="right">Product Code</td>
-										<td width="85%"><input type="text" id="txtproductcode"
-											name="txtproductcode" style="width: 30%;"
-											value='<s:property value="txtproductcode" />' onblur="chkpartnoconf();"/></td>
-									</tr>
-									<tr>
-										<td align="right">Product Name</td>
-										<td><input type="text" id="txtproductname"
-											name="txtproductname" style="width: 100%;"
-											value='<s:property value="txtproductname"/>' /></td>
-									
-									</tr>
-									<tr>
-										<td align="right">Bar Code</td>
-										<td><input type="text" id="txtbarcode" name="txtbarcode"
-											style="width: 30%;" value='<s:property value="txtbarcode"/>' /></td>
-									</tr>
-																 <tr>
-    <td width="11%" align="right">Star</td>
-    <td colspan="6"><select  name="cmbstar" id="cmbstar"  value='<s:property value="cmbstar"/>' style="width:31%;"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
-    &nbsp;&nbsp;&nbsp;
-    <label id="mtypess">Type</label> 
-       <select  name="cmbmastertype" id="cmbmastertype"  value='<s:property value="cmbmastertype"/>' style="width:30%;"><option ></option></select>
-    
-    </td> 
-       <td width="30%">
-        </td>
-  </tr>
-								</table>
-							</fieldset>
-						</td>
-						<td width="60%">
-							<fieldset>
-								<table width="100%">
-									<tr>
-										<td width="10%" align="right">Product Type</td>
-										<td width="45%">
-											<input type="text" id="txtproducttype" name="txtproducttype"
-											style="width: 80%;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdType(event);" value='<s:property value="txtproducttype"/>' /></td>
-											
-										<td width="11%" align="right">Brand</td>
-										<td><input type="text" id="txtbrand" name="txtbrand"
-											style="width: 75%;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdBrand(event);" value='<s:property value="txtbrand"/>' /></td>
-									</tr>
-									<tr>
-										<td align="right">Category</td>
-										<td>
-											<input type="text" id="txtcategory" name="txtcategory"
-											style="width: 80%;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdCat(event);" value='<s:property value="txtcategory"/>' /></td>
-											
-										<td align="right">Sub Category</td>
-										<td>
-											<input type="text" id="txtsubcategory" name="txtsubcategory"
-											style="width: 75%;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdSubCat(event);" value='<s:property value="txtsubcategory"/>' /></td>
-									</tr>
-									<tr>
-										<td align="right">Unit</td>
-										<td>
-											<input type="text" id="txtunit" name="txtunit"
-											style="width: 50%;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdUnit(event);" value='<s:property value="txtunit"/>' /></td>
+				<div class="middle-panel">
+					<span class="middle-panel-title">General Info</span>
+					<div class="field-row" style="margin-bottom:0;">
+						<label class="lbl-right" style="width:50px;">Date</label>
+						<div style="width: 110px;">
+							<div id="date" name="date" value='<s:property value="date"/>'></div>
+							<input type="hidden" id="hiddate" name="hiddate" value='<s:property value="hiddate"/>' />
+						</div>
 
-										<td align="right">Department</td>
-										<td><input type="text" id="textdept" name="textdept"
-											style="width: 50%;" placeholder="Press F3 for Search" readonly="true"  onKeyDown="getProdDept(event);" value='<s:property value="textdept"/>' />
-											
-											<input
-											type="hidden" id="spec1" name="spec1"
-											value='<s:property value="spec1"/>' /> <input type="hidden"
-											id="spec2" name="spec2" value='<s:property value="spec2"/>' />
-											<input type="hidden" id="spec3" name="spec3"
-											value='<s:property value="spec3"/>' /> <input type="hidden"
-											id="spec4" name="spec4" value='<s:property value="spec4"/>' />
-											
-											<input type="hidden" id="cmbproducttype" name="cmbproducttype" value='<s:property value="cmbproducttype"/>' />
-											<input type="hidden" id="cmbbrand" name="cmbbrand" value='<s:property value="cmbbrand"/>' />
-											<input type="hidden" id="cmbcategory" name="cmbcategory" value='<s:property value="cmbcategory"/>' />
-											<input type="hidden" id="cmbsubcategory" name="cmbsubcategory" value='<s:property value="cmbsubcategory"/>' />
-											<input type="hidden" id="cmbunit" name="cmbunit" value='<s:property value="cmbunit"/>' />
-											<input type="hidden" id="cmbdept" name="cmbdept" value='<s:property value="cmbdept"/>' />
-											
-											
-											<input type="hidden" id="hidcmbmastertype" name="hidcmbmastertype" value='<s:property value="hidcmbmastertype"/>' />
+						<label class="lbl-right" style="width:70px; margin-left:auto;">Doc No</label>
+						<input type="text" id="docno" name="docno" tabindex="-1" value='<s:property value="docno"/>' style="width:130px;" />
+					</div>
+				</div>
 
+				<div style="display:flex; gap:15px; margin-bottom:15px;">
 
+					<div class="middle-panel" style="flex: 0 0 38%; margin-bottom:0;">
+						<span class="middle-panel-title">Basic Info</span>
 
+						<div class="field-row">
+							<label class="lbl-right" style="width:100px;">Product Code</label>
+							<input type="text" id="txtproductcode" name="txtproductcode" style="flex:1;" value='<s:property value="txtproductcode" />' onblur="chkpartnoconf();" />
+						</div>
 
+						<div class="field-row">
+							<label class="lbl-right" style="width:100px;">Product Name</label>
+							<input type="text" id="txtproductname" name="txtproductname" style="flex:1;" value='<s:property value="txtproductname"/>' />
+						</div>
 
+						<div class="field-row">
+							<label class="lbl-right" style="width:100px;">Bar Code</label>
+							<input type="text" id="txtbarcode" name="txtbarcode" style="flex:1;" value='<s:property value="txtbarcode"/>' />
+						</div>
 
+						<div class="field-row" style="margin-bottom:0;">
+							<label class="lbl-right" style="width:100px;">Star</label>
+							<select name="cmbstar" id="cmbstar" value='<s:property value="cmbstar"/>' style="width:70px;">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
 
-											<input type="hidden" id="specGridlen" name="specGridlen"
-											value='<s:property value="specGridlen"/>' /> <input
-											type="hidden" id="proGridlen" name="proGridlen"
-											value='<s:property value="proGridlen"/>' /> <input
-											type="hidden" id="suitGridlen" name="suitGridlen"
-											value='<s:property value="suitGridlen"/>' /> <input
-											type="hidden" id="uomGridlen" name="uomGridlen"
-											value='<s:property value="uomGridlen"/>' />
-										<input type="hidden" name="mode" id="mode"
-											value='<s:property value="mode"/>' />
-										<input type="hidden" name="deleted" id="deleted"
-											value='<s:property value="deleted"/>' />
-										<input type="hidden" id="msg" name="msg"
-											value='<s:property value="msg"/>' />
-											<input type="hidden" id="hidspec1id" name="hidspec1id"
-											value='<s:property value="hidspec1id"/>' />
-											<input type="hidden" id="hidspec2id" name="hidspec2id"
-											value='<s:property value="hidspec2id"/>' />
-											<input type="hidden" id="hidspec3id" name="hidspec3id"
-											value='<s:property value="hidspec3id"/>' />
-											<input type="hidden" id="hidsuitid" name="hidsuitid"
-											value='<s:property value="hidsuitid"/>' /></td>
-									</tr>
+							<label class="lbl-right" id="mtypess" style="width:50px;">Type</label>
+							<select name="cmbmastertype" id="cmbmastertype" value='<s:property value="cmbmastertype"/>' style="width:120px;">
+								<option></option>
+							</select>
+						</div>
+					</div>
 
-								</table>
-							</fieldset>
-							
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><label id="stdcostname"  name="stdcostname"   style="font-size: 13px;font-family: Tahoma; color:#6000FC"><s:property value="stdcostname"/> </label></b>   
-							 <b><label id="stdcostprice"  name="stdcostprice"   style="font-size: 13px;font-family: Tahoma; color:#a03838"><s:property value="stdcostprice"/> </label></b>
-							&nbsp;&nbsp;
-							 <b><label id="fixname"  name="fixname"   style="font-size: 13px;font-family: Tahoma; color:#6000FC"><s:property value="fixname"/> </label></b> 
-							 <b><label id="fixprices"  name="fixprices"   style="font-size: 13px;font-family: Tahoma; color:#a03838"><s:property value="fixprices"/> </label></b>
-							 &nbsp;&nbsp;
-							 <b><label id="lbrcostname"  name="lbrcostname"   style="font-size: 13px;font-family: Tahoma; color:#6000FC"><s:property value="lbrcostname"/> </label></b>
-							 <b><label id="lbrcosts"  name="lbrcosts"   style="font-size: 13px;font-family: Tahoma; color:#a03838"><s:property value="lbrcosts"/> </label></b>
-						</td>
-					</tr>
-				</table>
-				<br />
-				<table width="100%">
-					<tr>
-						<td colspan="4">
-							<fieldset>
-									<legend>Permissions</legend>
-									<table width="100%">
-									<tr>
-									<td>
-									&nbsp;
-									<input type="radio" id="company" name="chkbrorcom" value=""  onchange="funcomorbranch()"> Company &nbsp;&nbsp;
-									  <input type="radio"id="branch"  name="chkbrorcom" value="" onchange="funcomorbranch()"> Branch  
-									</td></tr>
-										</table>
-									
-									<div id="productDiv">
-									<jsp:include page="productGrid.jsp"></jsp:include><br /></div>
-								</fieldset>
-							
-							<table width="100%">
-							
-							<tr>
-									<td>
-									<div id="pricediv">
-										<fieldset>
-												<legend>Price Management</legend>
-												
-												
-												<div id="pmDiv"> 
-											
-												<jsp:include page="pricemanagementgrid.jsp"></jsp:include></div>
-									</fieldset>
-										</div></td>
-								</tr>
-	
-								
-								<tr>
-									<td>
-										<fieldset>
-												<legend>UOM</legend>
-												<div id="uomDiv">
-											
-												<jsp:include page="uomGrid.jsp"></jsp:include></div>
-									</fieldset>
-										
-								</tr>
-									 
-								
-								
-								
+					<div class="middle-panel" style="flex: 1; margin-bottom:0;">
+						<span class="middle-panel-title">Classification</span>
 
-								<tr>
-									<td>
-									
-										<div id="SpecDiv">
-											<fieldset>
-												<legend>Specification</legend>
-												<jsp:include page="specGrid.jsp"></jsp:include></fieldset>
-												</div>
-										
-									</td>
-								</tr>
+						<div class="field-row">
+							<label class="lbl-right" style="width:80px;">Product Type</label>
+							<input type="text" id="txtproducttype" name="txtproducttype" style="width:150px;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdType(event);" value='<s:property value="txtproducttype"/>' />
 
+							<label class="lbl-right" style="width:50px;">Brand</label>
+							<input type="text" id="txtbrand" name="txtbrand" style="flex:1;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdBrand(event);" value='<s:property value="txtbrand"/>' />
+						</div>
 
+						<div class="field-row">
+							<label class="lbl-right" style="width:80px;">Category</label>
+							<input type="text" id="txtcategory" name="txtcategory" style="width:150px;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdCat(event);" value='<s:property value="txtcategory"/>' />
 
+							<label class="lbl-right" style="width:80px;">Sub Category</label>
+							<input type="text" id="txtsubcategory" name="txtsubcategory" style="flex:1;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdSubCat(event);" value='<s:property value="txtsubcategory"/>' />
+						</div>
 
+						<div class="field-row" style="margin-bottom:0;">
+							<label class="lbl-right" style="width:80px;">Unit</label>
+							<input type="text" id="txtunit" name="txtunit" style="width:150px;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdUnit(event);" value='<s:property value="txtunit"/>' />
 
+							<label class="lbl-right" style="width:80px;">Department</label>
+							<input type="text" id="textdept" name="textdept" style="flex:1;" placeholder="Press F3 for Search" readonly="true" onKeyDown="getProdDept(event);" value='<s:property value="textdept"/>' />
 
-								<tr>
-									<td><div id="suits">
-												 <fieldset>
-												<legend>Suitabilty</legend>
-												<table width="100%">
-												<tr>
-												<td width="99%" height="300">
-												<div  id="SuitDiv">
-										
-												<jsp:include page="suitGrid.jsp"></jsp:include>
-												</div></td><td width="1%" height="300">&nbsp;</td></tr></table></fieldset>
-										</div>
-									</td>
-								</tr>
+							<input type="hidden" id="spec1" name="spec1" value='<s:property value="spec1"/>' />
+							<input type="hidden" id="spec2" name="spec2" value='<s:property value="spec2"/>' />
+							<input type="hidden" id="spec3" name="spec3" value='<s:property value="spec3"/>' />
+							<input type="hidden" id="spec4" name="spec4" value='<s:property value="spec4"/>' />
 
+							<input type="hidden" id="cmbproducttype" name="cmbproducttype" value='<s:property value="cmbproducttype"/>' />
+							<input type="hidden" id="cmbbrand" name="cmbbrand" value='<s:property value="cmbbrand"/>' />
+							<input type="hidden" id="cmbcategory" name="cmbcategory" value='<s:property value="cmbcategory"/>' />
+							<input type="hidden" id="cmbsubcategory" name="cmbsubcategory" value='<s:property value="cmbsubcategory"/>' />
+							<input type="hidden" id="cmbunit" name="cmbunit" value='<s:property value="cmbunit"/>' />
+							<input type="hidden" id="cmbdept" name="cmbdept" value='<s:property value="cmbdept"/>' />
 
-							</table>
-						</td>
-					</tr>
-				</table>
+							<input type="hidden" id="hidcmbmastertype" name="hidcmbmastertype" value='<s:property value="hidcmbmastertype"/>' />
+
+							<input type="hidden" id="specGridlen" name="specGridlen" value='<s:property value="specGridlen"/>' />
+							<input type="hidden" id="proGridlen" name="proGridlen" value='<s:property value="proGridlen"/>' />
+							<input type="hidden" id="suitGridlen" name="suitGridlen" value='<s:property value="suitGridlen"/>' />
+							<input type="hidden" id="uomGridlen" name="uomGridlen" value='<s:property value="uomGridlen"/>' />
+							<input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>' />
+							<input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>' />
+							<input type="hidden" id="msg" name="msg" value='<s:property value="msg"/>' />
+							<input type="hidden" id="hidspec1id" name="hidspec1id" value='<s:property value="hidspec1id"/>' />
+							<input type="hidden" id="hidspec2id" name="hidspec2id" value='<s:property value="hidspec2id"/>' />
+							<input type="hidden" id="hidspec3id" name="hidspec3id" value='<s:property value="hidspec3id"/>' />
+							<input type="hidden" id="hidsuitid" name="hidsuitid" value='<s:property value="hidsuitid"/>' />
+						</div>
+
+						<div class="field-row" style="margin-top:10px; margin-bottom:0;">
+							<b><label id="stdcostname" name="stdcostname" style="font-size: 13px;font-family: Tahoma; color:#6000FC"><s:property value="stdcostname"/></label></b>
+							<b><label id="stdcostprice" name="stdcostprice" style="font-size: 13px;font-family: Tahoma; color:#a03838"><s:property value="stdcostprice"/></label></b>
+							<b><label id="fixname" name="fixname" style="font-size: 13px;font-family: Tahoma; color:#6000FC; margin-left:15px;"><s:property value="fixname"/></label></b>
+							<b><label id="fixprices" name="fixprices" style="font-size: 13px;font-family: Tahoma; color:#a03838"><s:property value="fixprices"/></label></b>
+							<b><label id="lbrcostname" name="lbrcostname" style="font-size: 13px;font-family: Tahoma; color:#6000FC; margin-left:15px;"><s:property value="lbrcostname"/></label></b>
+							<b><label id="lbrcosts" name="lbrcosts" style="font-size: 13px;font-family: Tahoma; color:#a03838"><s:property value="lbrcosts"/></label></b>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="middle-panel">
+					<span class="middle-panel-title">Permissions</span>
+					<div class="field-row">
+						<input type="radio" id="company" name="chkbrorcom" value="" onchange="funcomorbranch()" />Company
+						<input type="radio" id="branch" name="chkbrorcom" value="" onchange="funcomorbranch()" style="margin-left:15px;" />Branch
+					</div>
+					<div id="productDiv" class="grid-container">
+						<jsp:include page="productGrid.jsp"></jsp:include>
+					</div>
+				</div>
+
+				<div id="pricediv">
+					<div class="middle-panel">
+						<span class="middle-panel-title">Price Management</span>
+						<div id="pmDiv" class="grid-container">
+							<jsp:include page="pricemanagementgrid.jsp"></jsp:include>
+						</div>
+					</div>
+				</div>
+
+				<div class="middle-panel">
+					<span class="middle-panel-title">UOM</span>
+					<div id="uomDiv" class="grid-container">
+						<jsp:include page="uomGrid.jsp"></jsp:include>
+					</div>
+				</div>
+
+				<div id="SpecDiv">
+					<div class="middle-panel">
+						<span class="middle-panel-title">Specification</span>
+						<div class="grid-container">
+							<jsp:include page="specGrid.jsp"></jsp:include>
+						</div>
+					</div>
+				</div>
+
+				<div id="suits">
+					<div class="middle-panel">
+						<span class="middle-panel-title">Suitabilty</span>
+						<div id="SuitDiv" class="grid-container">
+							<jsp:include page="suitGrid.jsp"></jsp:include>
+						</div>
+					</div>
+				</div>
+
+				<div style="display:none;">
+					<input type="hidden" id="hidecmbstar" name="hidecmbstar" value='<s:property value="hidecmbstar"/>' />
+					<input type="hidden" id="pmgtgridlength" name="pmgtgridlength" value='<s:property value="pmgtgridlength"/>' />
+					<input type="hidden" id="comorbranch" name="comorbranch" value='<s:property value="comorbranch"/>' />
+					<input type="hidden" id="hidpricemgt" name="hidpricemgt" value='<s:property value="hidpricemgt"/>' />
+				</div>
 
 			</div>
-			
-			
-				<input type="hidden" id="hidecmbstar" name="hidecmbstar" value='<s:property value="hidecmbstar"/>' />
-			
-					<input type="hidden" id="pmgtgridlength" name="pmgtgridlength" value='<s:property value="pmgtgridlength"/>' />
-			<input type="hidden" id="comorbranch" name="comorbranch" value='<s:property value="comorbranch"/>' />
-			
-			<input type="hidden" id="hidpricemgt" name="hidpricemgt" value='<s:property value="hidpricemgt"/>' /> <!-- //div -->
-			
-		</form>
-		<div id="unitsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		
-		<div id="catsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		
-		<div id="subcatsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		
-		<div id="typesearchwindow">
-			<div></div>
-			<div></div>
-		</div>
 
-		<div id="brandsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		<div id="modelsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		<div id="deptsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		
-		<div id="yomsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		<div id="spec1searchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		<div id="spec2searchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		<div id="spec3searchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		<div id="suitsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
-		<div id="submodelsearchwindow">
-			<div></div>
-			<div></div>
-		</div>
+		</form>
+		<div id="unitsearchwindow"><div></div><div></div></div>
+		<div id="catsearchwindow"><div></div><div></div></div>
+		<div id="subcatsearchwindow"><div></div><div></div></div>
+		<div id="typesearchwindow"><div></div><div></div></div>
+		<div id="brandsearchwindow"><div></div><div></div></div>
+		<div id="modelsearchwindow"><div></div><div></div></div>
+		<div id="deptsearchwindow"><div></div><div></div></div>
+		<div id="yomsearchwindow"><div></div><div></div></div>
+		<div id="spec1searchwindow"><div></div><div></div></div>
+		<div id="spec2searchwindow"><div></div><div></div></div>
+		<div id="spec3searchwindow"><div></div><div></div></div>
+		<div id="suitsearchwindow"><div></div><div></div></div>
+		<div id="submodelsearchwindow"><div></div><div></div></div>
 	</div>
-	 <div id="binWindow"><div></div></div>
+	<div id="binWindow"><div></div></div>
 </body>
 </html>

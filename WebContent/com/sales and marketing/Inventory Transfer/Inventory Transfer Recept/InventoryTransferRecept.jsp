@@ -478,167 +478,339 @@ function getrefno(event)
 </script>
 
 <style>
-	.hidden-scrollbar {
-	  overflow: auto;
-	  height: 530px;
-	}
-	.textbox {
-    border: 0;
-    height: 25px;
-    width: 20%;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -moz-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-background-clip: padding-box;
-    outline: 0;
+/* =========================================================
+   SCOPED UI: Modern Layout Adapted for Table Structure
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
+
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+#frminventoryrecept input[type="text"],
+#frminventoryrecept select,
+.textbox { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    box-shadow: none !important;
+    outline: none;
+    width: 100%;
+}
+
+#frminventoryrecept input[type="text"]:focus,
+#frminventoryrecept select:focus,
+.textbox:focus { 
+    border-color: #007bff; 
+}
+
+#frminventoryrecept input[readonly],
+#frminventoryrecept input:disabled,
+#frminventoryrecept select:disabled,
+.textbox[readonly] { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
+}
+
+form label.error {
+    color: red;
+    font-weight: bold;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+}
+
+.myButton, .btn {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.myButton:hover, .btn:hover { 
+    background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); 
+}
+
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+    padding-right: 5px;
+    overflow-x: hidden;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+/* Grid Containers */
+.grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* JQX Widget Overrides for 24px Alignment */
+.jqx-datetimeinput-input { 
+    height: 24px !important; 
+    line-height: 24px !important; 
+    margin-top: 0px !important; 
+    padding-top: 0px !important;
+    box-sizing: border-box !important;
+    font-size: 12px !important;
+}
+.jqx-action-button {
+    height: 24px !important;
+}
+
+/* Middle Section Panels */
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+    flex-shrink: 0; /* Keep labels from squishing */
+}
+
+.modern-ui .input-search-container {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+}
+.modern-ui .input-search-container input {
+    padding-right: 25px !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+.modern-ui .magnifier-icon {
+    position: absolute;
+    right: 6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b; 
+    z-index: 10;
+}
+.modern-ui .magnifier-icon:hover { color: #2563eb; }
 </style>
 
 </head>
 <body onload="setValues();"> 
+
+<!-- JQX input alignment fix -->
+<script type="text/javascript">
+    $(document).ready(function() {
+         setTimeout(function () {
+             $("#date").find("input").css({
+                 "margin-top": "0px",
+                 "line-height": "24px",
+                 "font-size": "12px", 
+                 "font-family": "Arial, sans-serif", 
+                 "padding": "0 6px", 
+                 "box-sizing":"border-box"
+             });
+             $("#date").find(".jqx-action-button").css({
+                 "top": "0px",
+                 "height": "24px"
+             });
+         }, 0);
+         
+         $("#date").jqxDateTimeInput({ width: '100%', height: '24px', formatString:"dd.MM.yyyy"});
+    });
+</script>
+
 <div id="mainBG" class="homeContent" data-type="background">
 <form id="frminventoryrecept" action="savetransferRecept" method="post" autocomplete="off">
- <jsp:include page="../../../../header.jsp"></jsp:include> 
+    <jsp:include page="../../../../header.jsp"></jsp:include> 
 
-<div  class='hidden-scrollbar'>
-<input type="text" name="gridtext" id="gridtext"  style="width:0%;height:0%;"  class="textbox"  value='<s:property value="gridtext"/>'  />   
- <input type="text" name="gridtext1" id="gridtext1"  style="width:0%;height:0%;"  class="textbox" value='<s:property value="gridtext1"/>' />
-<table width="100%">
-  <tr>
-    <td width="3%" height="42" align="right">Date</td>
-    <td width="11%"><div id="date" name="date"  value='<s:property value="date"/>'></div>
-    <input type="hidden" id="hiddate" name="hiddate" value='<s:property value="hiddate"/>'/></td>
-    <td width="21%" align="left">&nbsp;</td>
-    <td width="9%" align="right">Ref. No.</td>
-    <td width="29%"><input type="text" id="txtrefno" name="txtrefno" style="width:40%;" value='<s:property value="txtrefno"/>'/></td>
-    <td width="6%" align="right">Doc No.</td>
-    <td width="21%"><input type="text" id="docno" name="docno" style="width:50%;" value='<s:property value="docno"/>' tabindex="-1"/>
-  </tr>
-</table>
-<table width="100%">
-<tr>
-<td width="50%">
-<fieldset>
-<legend>Inventory Issue From</legend>
-<table width="100%" >
-<tr>
-    <td width="10%" align="right"> Type</td>
-    <td width="27%"><select id="cmbreftype" name="cmbreftype" style="width:20%;" value='<s:property value="cmbreftype"/>'>
-    <option value="">-Select-</option>
-    <option value="IBT">Branch Trasfer</option>
-    <option value="ILT">Location Transfer</option></select></td>
-  </tr>
-  <tr>
-    <td width="21%"><div align="right">Branch</div></td>
-    <td width="79%"><input type="text" id="txtfrmbranch" name="txtfrmbranch" placeholder="Press F3 to Search" style="width:50%;" onkeydown="getBranch(event,1);"  value='<s:property value="txtfrmbranch"/>'/></td>
-  </tr>
-  <tr>
-    <td><div align="right">Location</div></td>
-    <td><input type="text" id="txtfrmlocation" name="txtfrmlocation" placeholder="Press F3 to Search" style="width:50%;" onkeydown="getLocation(event,1);" value='<s:property value="txtfrmlocation"/>'/></td>
-  </tr>
-  
-</table>
+    <div class='modern-ui hidden-scrollbar'>
+        
+        <!-- General Info -->
+        <div class="middle-panel">
+            <span class="middle-panel-title">General Info</span>
+            
+            <div class="field-row" style="margin-bottom:0;">
+                <label class="lbl-right" style="width:80px; flex-shrink:0;">Date</label>
+                <div style="width: 125px; flex-shrink:0;">
+                    <div id="date" name="date" value='<s:property value="date"/>'></div>
+                    <input type="hidden" id="hiddate" name="hiddate" value='<s:property value="hiddate"/>'/>
+                </div>
+                
+                <label class="lbl-right" style="width:80px; flex-shrink:0; margin-left: 15px;">Ref. No.</label>
+                <input type="text" id="txtrefno" name="txtrefno" value='<s:property value="txtrefno"/>' style="width:150px; flex-shrink:0;">
+                
+                <label class="lbl-right" style="width:80px; flex-shrink:0; margin-left: auto;">Doc No.</label>
+                <input type="text" id="docno" name="docno" value='<s:property value="docno"/>' tabindex="-1" readonly style="width:150px; flex-shrink:0;">
+            </div>
+        </div>
 
-</fieldset>
-</td>
+        <!-- Dual Panel: Transfer From & Receipt Details -->
+        <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+            
+            <!-- Left Panel: Inventory Issue From -->
+            <div class="middle-panel" style="flex: 1; margin-bottom: 0;">
+                <span class="middle-panel-title">Inventory Issue From</span>
+                
+                <div class="field-row">
+                    <label class="lbl-right" style="width:80px; flex-shrink:0;">Type</label>
+                    <select id="cmbreftype" name="cmbreftype" value='<s:property value="cmbreftype"/>' style="width:150px; flex-shrink:0;">
+                        <option value="">-Select-</option>
+                        <option value="IBT">Branch Trasfer</option>
+                        <option value="ILT">Location Transfer</option>
+                    </select>
+                </div>
+                
+                <div class="field-row">
+                    <label class="lbl-right" style="width:80px; flex-shrink:0;">Branch</label>
+                    <div class="input-search-container" style="flex:1; min-width:0;">
+                        <input type="text" id="txtfrmbranch" name="txtfrmbranch" placeholder="Press F3 to Search" onkeydown="getBranch(event,1);" value='<s:property value="txtfrmbranch"/>'/>
+                        <svg class="magnifier-icon" onclick="if($('#mode').val()!='view' && $('#cmbreftype').val()!=''){ if($('#cmbreftype').val()=='IBT') { branchSearchContent('branchSearch.jsp?branchfrmid='+$('#branchfrmid').val()); } else { getfrmBranch(1); } }" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                
+                <div class="field-row" style="margin-bottom:0;">
+                    <label class="lbl-right" style="width:80px; flex-shrink:0;">Location</label>
+                    <div class="input-search-container" style="flex:1; min-width:0;">
+                        <input type="text" id="txtfrmlocation" name="txtfrmlocation" placeholder="Press F3 to Search" onkeydown="getLocation(event,1);" value='<s:property value="txtfrmlocation"/>'/>
+                        <svg class="magnifier-icon" onclick="if($('#mode').val()!='view' && $('#cmbreftype').val()!=''){ locationSearchContent('locationSearch.jsp?branchid='+$('#branchfrmid').val()+'&searchtype=1'); }" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel: Inventory Receipt Details -->
+            <div class="middle-panel" style="flex: 1; margin-bottom: 0;">
+                <span class="middle-panel-title">Inventory Receipt Details</span>
+                
+                <div class="field-row">
+                    <label class="lbl-right" style="width:80px; flex-shrink:0;">Location</label>
+                    <div class="input-search-container" style="flex:1; min-width:0;">
+                        <input type="text" id="txttolocation" name="txttolocation" placeholder="Press F3 to Search" onkeydown="getLocation(event,2);" value='<s:property value="txttolocation"/>'/>
+                        <svg class="magnifier-icon" onclick="if($('#mode').val()!='view' && $('#cmbreftype').val()!=''){ locationSearchContent('locationSearch.jsp?branchid='+$('#branchtoid').val()+'&searchtype=2'); }" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                
+                <div class="field-row">
+                    <label class="lbl-right" style="width:80px; flex-shrink:0;">Issue No</label>
+                    <div class="input-search-container" style="flex:1; min-width:0;">
+                        <input type="text" id="rrefno" name="rrefno" placeholder="Press F3 to Search" onkeydown="getrefno(event);" value='<s:property value="rrefno"/>'/>
+                        <svg class="magnifier-icon" onclick="if($('#mode').val()!='view' && $('#cmbreftype').val()!=''){ $('#refnosearchwindow').jqxWindow('open'); refsearchContent('refnosearch.jsp'); }" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                
+                <div class="field-row" style="margin-bottom:0;">
+                    <label class="lbl-right" style="width:80px; flex-shrink:0;">Remarks</label>
+                    <input type="text" id="txtremark" name="txtremark" value='<s:property value="txtremark"/>' style="flex:1; min-width:0;">
+                </div>
+            </div>
+        </div>
 
-<td width="50%">
-<fieldset>
-<legend>Inventory Receipt Details</legend>
-<table width="100%" >
+        <!-- Details Grid -->
+        <div class="middle-panel">
+            <span class="middle-panel-title">Receipt Details</span>
+            <div id="InvTransReceptGrid" class="grid-container">
+                <jsp:include page="InvTransReceptGrid.jsp"></jsp:include>
+            </div> 
+        </div>
 
-	<tr>
-   <td><div align="right">Location</div></td>
-    <td><input type="text" id="txttolocation" name="txttolocation" placeholder="Press F3 to Search" style="width:50%;" onkeydown="getLocation(event,2);" value='<s:property value="txttolocation"/>'/></td>
-  </tr>
+        <!-- Hidden Inputs -->
+        <div style="display:none;">
+            <input type="hidden" name="gridtext" id="gridtext" value='<s:property value="gridtext"/>' />   
+            <input type="hidden" name="gridtext1" id="gridtext1" value='<s:property value="gridtext1"/>' />
+            <input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>'/>
+            <input type="hidden" id="clientid" name="clientid" value='<s:property value="clientid"/>'/>
+            <input type="hidden" id="deleted" name="deleted" value='<s:property value="deleted"/>'/>
+            <input type="hidden" id="nettotal" name="nettotal" value='<s:property value="nettotal"/>'/>
+            <input type="hidden" name="txtdiscount" id="txtdiscount" value='<s:property value="txtdiscount"/>'>
+            <input type="hidden" name="txtnettotal" id="txtnettotal" value='<s:property value="txtnettotal"/>'>
+            <input type="hidden" id="orderValue" name="orderValue" value='<s:property value="orderValue"/>'/>
+            <input type="hidden" name="txtproductamt" id="txtproductamt" value='<s:property value="txtproductamt"/>'>
+            <input type="hidden" name="descPercentage" id="descPercentage" value='<s:property value="descPercentage"/>'>
+            <input type="hidden" name="prddiscount" id="prddiscount" value='<s:property value="prddiscount"/>'>
+            <input type="hidden" name="roundOf" id="roundOf" value='<s:property value="roundOf"/>'>
+            <input type="hidden" id="msg" name="msg" value='<s:property value="msg"/>'/>
+            <input type="hidden" id="masterdoc_no" name="masterdoc_no" value='<s:property value="masterdoc_no"/>'/>
+            <input type="hidden" id="refmasterdocno" name="refmasterdocno" value='<s:property value="refmasterdocno"/>'/>
+            <input type="hidden" id="gridlength" name="gridlength"/>
+            <input type="hidden" id="servgridlen" name="servgridlen" value='<s:property value="servgridlen"/>'/>
+            <input type="hidden" id="prodsearchtype" name="prodsearchtype" value='<s:property value="prodsearchtype"/>'/>
+            <input type="hidden" id="branchfrmid" name="branchfrmid" value='<s:property value="branchfrmid"/>'/>
+            <input type="hidden" id="locationfrmid" name="locationfrmid" value='<s:property value="locationfrmid"/>'/>
+            <input type="hidden" id="branchtoid" name="branchtoid" value='<s:property value="branchtoid"/>'/>
+            <input type="hidden" id="locationtoid" name="locationtoid" value='<s:property value="locationtoid"/>'/>
+            <input type="hidden" id="hidcmbreftype" name="hidcmbreftype" value='<s:property value="hidcmbreftype"/>'/>
+        </div>
 
-  <tr>
-    <td width="21%"><div align="right">Issue No</div></td>
-    <td width="79%"><input type="text" id="rrefno" placeholder="Press F3 to Search" name="rrefno" onkeydown="getrefno(event);" style="width:50%;" value='<s:property value="rrefno"/>'/></td>
-  
-  </tr>
-  
- <tr>
-    <td width="10%" align="right">Remarks</td>
-    <td width="27%"><input type="text" id="txtremark" name="txtremark" style="width:70%;" value='<s:property value="txtremark"/>' /></td>
-  </tr>
-  
-</table>
-</fieldset>
-</td>
-</tr></table>
-<fieldset>
-
-<%-- <table width="100%">
-  <tr>
-    <td width="10%" align="right">Remarks</td>
-    <td width="27%"><input type="text" id="txtremark" name="txtremark" style="width:50%;" value='<s:property value="txtremark"/>' tabindex="-1"/></td>
-  </tr>
-</table>
-</fieldset> --%><br/>
-
-  <div id="InvTransReceptGrid"><jsp:include page="InvTransReceptGrid.jsp"></jsp:include></div><br/> 
-
-
-<%--  <fieldset>
-   <legend>Service</legend>
-       <div id="servicegrid" ><jsp:include page="servicegrid.jsp"></jsp:include></div>
-</fieldset> --%>
-
-<%-- table width="100%">
-<tr>
-<td width="80%">&nbsp;<td><td width="10%" align="right"><label >Order Value :</label></td><td><input type="text" class="textbox" id="orderValue" readonly="readonly" tabindex="-1" name="orderValue" style="width:73%;" value='<s:property value="orderValue"/>'/></td>
-<tr>
-
-</table> --%>
-
-<input type="hidden" id="mode" name="mode"  value='<s:property value="mode"/>'/>
-<input type="hidden" id="clientid" name="clientid" value='<s:property value="clientid"/>'/>
-<input type="hidden" id="deleted" name="deleted" value='<s:property value="deleted"/>'/>
-<input type="hidden" id="nettotal" name="nettotal"  value='<s:property value="nettotal"/>'/>
-<input type="hidden" name="txtdiscount" id="txtdiscount" value='<s:property value="txtdiscount"/>'>
-<input type="hidden" name="txtnettotal"  id="txtnettotal" value='<s:property value="txtnettotal"/>'>
-<input type="hidden"  id="orderValue"  name="orderValue"  value='<s:property value="orderValue"/>'/>
-<input type="hidden" name="txtproductamt" id="txtproductamt" value='<s:property value="txtproductamt"/>'>
-<input type="hidden" name="descPercentage" id="descPercentage" value='<s:property value="descPercentage"/>'>
-<input type="hidden" name="prddiscount" id="prddiscount" value='<s:property value="prddiscount"/>'>
-<input type="hidden" name="roundOf" id="roundOf" value='<s:property value="roundOf"/>'>
-
-<input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
-<input type="hidden" id="masterdoc_no" name="masterdoc_no"  value='<s:property value="masterdoc_no"/>'/>
-<input type="hidden" id="refmasterdocno" name="refmasterdocno"  value='<s:property value="refmasterdocno"/>'/>
-<input type="hidden" id="gridlength" name="gridlength"/>
-<input type="hidden" id="servgridlen" name="servgridlen"  value='<s:property value="servgridlen"/>'/>
-<input type="hidden" id="prodsearchtype" name="prodsearchtype" value='<s:property value="prodsearchtype"/>'/>
-
-<input type="hidden" id="branchfrmid" name="branchfrmid" value='<s:property value="branchfrmid"/>'/>
-<input type="hidden" id="locationfrmid" name="locationfrmid" value='<s:property value="locationfrmid"/>'/>
-<input type="hidden" id="branchtoid" name="branchtoid" value='<s:property value="branchtoid"/>'/>
-<input type="hidden" id="locationtoid" name="locationtoid" value='<s:property value="locationtoid"/>'/>
-<input type="hidden" id="hidcmbreftype" name="hidcmbreftype" value='<s:property value="hidcmbreftype"/>'/>
-
- 
-
-</div>
+    </div>
 </form>
-	
-<div id="branchwindow">
-	<div></div>
-</div>	
-	
-<div id="locationwindow">
-	<div></div>
-</div>
-<div id="sidesearchwndow">
-	<div></div>
-</div>
-<div id="refnosearchwindow">
-	<div></div>
-</div> 
-	
+    
+<div id="branchwindow"><div></div></div>    
+<div id="locationwindow"><div></div></div>
+<div id="sidesearchwndow"><div></div></div>
+<div id="refnosearchwindow"><div></div></div> 
+    
 </div>
 </body>
 </html>
