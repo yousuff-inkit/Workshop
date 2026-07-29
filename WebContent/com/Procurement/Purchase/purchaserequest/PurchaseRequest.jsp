@@ -26,12 +26,167 @@ String dtype=  session.getAttribute("Code").toString();
  %>
  
 <style>
-form label.error {
-color:red;
-  font-weight:bold;
-
+/* =========================================================
+SCOPED UI: Modern Layout (Matches Client Master)
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
 
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.modern-ui {
+    font-family: Arial, sans-serif; 
+    color: #333;
+    font-size: 12px; 
+    padding: 5px 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Master Input Heights - Forced to 24px */
+.modern-ui input[type="text"],
+.modern-ui select { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    width: 100%;
+}
+
+.modern-ui input[type="text"]:focus,
+.modern-ui select:focus { 
+    border-color: #007bff; 
+    outline: none;
+}
+
+.modern-ui input[readonly],
+.modern-ui input:disabled,
+.modern-ui select:disabled { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
+}
+
+/* Layout Utilities */
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: wrap;
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+}
+
+/* Middle Section Panels */
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+/* Custom UI Buttons matching 24px height */
+.modern-ui .myButton {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton:hover { background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); }
+
+/* Search Icon Wrapper */
+.modern-ui .input-search-container {
+    position: relative;
+    display: flex;
+}
+.modern-ui .input-search-container input {
+    padding-right: 25px !important;
+}
+.modern-ui .magnifier-icon {
+    position: absolute;
+    right: 6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b; 
+    z-index: 10;
+}
+.modern-ui .magnifier-icon:hover { color: #2563eb; }
+
+/* Grid Wrappers */
+.modern-ui .grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Scrollbar Logic */
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+    padding-right: 5px;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+form label.error { color:red; font-weight:bold; }
+#errormsg { color:red; font-weight:bold; text-align:center; margin-bottom: 10px; }
+
+/* Legacy Textbox kept for compatibility */
 .textbox {
     border: 0;
     height: 25px;
@@ -52,8 +207,23 @@ var mod1='<%=mod%>';
 var prcharray='<%=purchasearray%>';
  $(document).ready(function () {
 	 
-   	 $("#reqmasterdate").jqxDateTimeInput({ width: '125px', height: '15px', formatString:"dd.MM.yyyy"});   
-   	 
+   	 $("#reqmasterdate").jqxDateTimeInput({ width: '125px', height: 24, formatString:"dd.MM.yyyy", theme: 'energyblue'});   
+     
+     /* force internal alignment AFTER render */
+     setTimeout(function () {
+         $("#reqmasterdate").find("input").css({
+             "margin-top": "0px",
+             "line-height": "24px",
+             "font-size": "12px", 
+             "font-family": "Arial, sans-serif", 
+             "padding": "0 6px", 
+             "box-sizing":"border-box"
+         });
+         $("#reqmasterdate").find(".jqx-action-button").css({
+             "top": "0px",
+             "height": "24px"
+         });
+     }, 0);
   
   /*  	$('#brandsearchwndow').jqxWindow({width: '51%', height: '58%',  maxHeight: '70%' ,maxWidth: '51%' , title: 'Brand Search',position: { x: 250, y: 60 } , theme: 'energyblue', showCloseButton: true, keyboardCloseKey: 27});
     $('#brandsearchwndow').jqxWindow('close'); */
@@ -470,96 +640,93 @@ var prcharray='<%=purchasearray%>';
 </head>
 <body onload="setValues();chkcostcode();getitemtype();">
 <div id="mainBG" class="homeContent" data-type="background">
-<form id="frmpurReq" action="savepurreqdata" autocomplete="OFF" >     
+    <form id="frmpurReq" action="savepurreqdata" autocomplete="OFF" >     
+        <jsp:include page="../../../../header.jsp"></jsp:include>
+        <jsp:include page="multiqty.jsp"></jsp:include>
+        
+        <div class="modern-ui hidden-scrollbar">
+            <div id="errormsg"></div>
 
-<jsp:include page="../../../../header.jsp"></jsp:include>
-<jsp:include page="multiqty.jsp"></jsp:include><br/>
-<br>
-<fieldset>
+            <div class="middle-panel">
+                <span class="middle-panel-title">Purchase Request Details</span>
+                
+                <div class="field-row">
+                    <label class="lbl-right" style="width:80px;">Date</label>
+                    <div style="width: 125px;">
+                        <div id='reqmasterdate' name='reqmasterdate' value='<s:property value="reqmasterdate"/>'></div> 
+                    </div>
+                    <input type="hidden" id="hidreqmasterdate" name="hidreqmasterdate" value='<s:property value="hidreqmasterdate"/>'/>
+                    
+                    <label class="lbl-right" style="width:80px; margin-left:15px;">Ref No</label>
+                    <input type="text" id="refno" name="refno" style="width:125px;" value='<s:property value="refno"/>' />
+                    
+                    <label class="lbl-right" style="width:80px; margin-left:auto;">Doc No</label>
+                    <input type="text" id="docno" name="docno" style="width:125px;" tabindex="-1" value='<s:property value="docno"/>'/>
+                </div>
 
-<table width="100%" >                        
-  <tr>
-    <td width="4.5%" align="right">Date</td> 
-    <td colspan="2"  width="6%"><div id='reqmasterdate' name='reqmasterdate' value='<s:property value="reqmasterdate"/>'></div> 
-                     <input type="hidden" id="hidreqmasterdate" name="hidreqmasterdate" value='<s:property value="hidreqmasterdate"/>'/></td>
-                     
-                 <td width="20%" align="right">Ref No</td><td><input type="text" id="refno" name="refno" value='<s:property value="refno"/>'  /></td>
-                 
-                <td width="50%" align="right">&nbsp;<div id="hcostcodes" hidden="true"> Group&nbsp; <select  id="itemtype"  name="itemtype" style="width:15%;" onchange="cleardata()"> 
-    <option>
-     </option>   
-                             
-    </select> &nbsp;  &nbsp;
-    Job No&nbsp;<input type="text" id="itemdocno" placeholder="Press F3 to Search"    name="itemdocno"  onkeydown="getitem(event);" value='<s:property value="itemdocno"/>' >
-    
-    <input type="text" id="itemname" name="itemname" style="width:43%;"   value='<s:property value="itemname"/>' > </div></td>
-                 
-                 
-    <td width="5%" align="right">Doc No</td>
-    <td width="33%"><input type="text" id="docno" name="docno" tabindex="-1" value='<s:property value="docno"/>'/></td>
-  </tr>
-  
-   
-</table>    
-<table width="100%" >                                                                 
-<tr>
-  
+                <div id="hcostcodes" style="display:none;">
+                    <div class="field-row">
+                        <label class="lbl-right" style="width:80px;">Group</label>
+                        <select id="itemtype" name="itemtype" style="width:125px;" onchange="cleardata()"> 
+                            <option></option>   
+                        </select> 
+                        
+                        <label class="lbl-right" style="width:80px; margin-left:15px;">Job No</label>
+                        <div class="input-search-container" style="width:150px;">
+                            <input type="text" id="itemdocno" placeholder="Press F3" name="itemdocno" onkeydown="getitem(event);" value='<s:property value="itemdocno"/>'>
+                            <svg class="magnifier-icon" onclick="$('#itemdocno').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </div>
+                        
+                        <input type="text" id="itemname" name="itemname" style="flex:1; margin-left:15px;" value='<s:property value="itemname"/>' >
+                    </div>
+                </div>
+                
+                <div class="field-row" style="margin-bottom:0;">
+                    <label class="lbl-right" style="width:80px;">Description</label>
+                    <input type="text" id="purdesc" name="purdesc" style="flex:1;" value='<s:property value="purdesc"/>'/>
+                </div>
+            </div>    
+            
+            <div class="middle-panel">
+                <span class="middle-panel-title">Purchase Details</span>
+                <div id="vehpurcgasereq" class="grid-container">
+                    <jsp:include page="purreqDetails.jsp"></jsp:include>
+                </div>
+            </div>
+            
+            <!-- Hidden Logic Fields -->
+            <div style="display:none;">
+                <input type="hidden" id="masterdoc_no" name="masterdoc_no" value='<s:property value="masterdoc_no"/>' /> 
+                <input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>' />
+                <input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>' />
+                <input type="hidden" id="msg" name="msg" value='<s:property value="msg"/>'/>
+                <input type="hidden" name="reqgridlenght" id="reqgridlenght" value='<s:property value="reqgridlenght"/>' />   
+                <input type="text" name="gridtext" id="gridtext" class="textbox" value='<s:property value="gridtext"/>' />   
+                <input type="text" name="gridtext1" id="gridtext1" class="textbox" value='<s:property value="gridtext1"/>' />   
+                <input type="hidden" id="costtr_no" name="costtr_no" value='<s:property value="costtr_no"/>'/> 
+                <input type="hidden" id="costcheck" name="costcheck" value='<s:property value="costcheck"/>'/> 
+                <input type="hidden" id="hideitemtype" name="hideitemtype" value='<s:property value="hideitemtype"/>'/> 
+                <input type="hidden" id="hidetype" name="hidetype" value='<s:property value="hidetype"/>'/>
+            </div>
+        </div>
+    </form>
 
- <td width="3%" align="right">Description</td>
-    <td colspan="2"  width="70%">  <input type="text" id="purdesc" name="purdesc"  style="width:70%;" value='<s:property value="purdesc"/>'/></td>
-     <td></td> <td></td>          
-</tr>
-
-</table>    
-</fieldset>    
-  
-<br/>
-<fieldset>
-<div id="vehpurcgasereq">  <jsp:include page="purreqDetails.jsp"></jsp:include></div>
- </fieldset>
- 
- 
-  
- <input type="hidden" id="masterdoc_no" name="masterdoc_no" value='<s:property value="masterdoc_no"/>' /> 
- 
-<input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>' />
-<input type="hidden" name="deleted" id="deleted" value='<s:property value="deleted"/>' />
-
-  <input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
- 
- <input type="hidden" name="reqgridlenght" id="reqgridlenght" value='<s:property value="reqgridlenght"/>' />   
- 
- 
-  <input type="text" name="gridtext" id="gridtext"  style="width:0%;height:0%;"  class="textbox" value='<s:property value="gridtext"/>'  />   
-  
-    <input type="text" name="gridtext1" id="gridtext1"  style="width:0%;height:0%;"  class="textbox" value='<s:property value="gridtext1"/>' />   
-    
- 
- 
- <input type="hidden" id="costtr_no" name="costtr_no"  value='<s:property value="costtr_no"/>'/> 
- <input type="hidden" id="costcheck" name="costcheck"  value='<s:property value="costcheck"/>'/> 
- <input type="hidden" id="hideitemtype" name="hideitemtype"  value='<s:property value="hideitemtype"/>'/> 
- <input type="hidden" id="hidetype" name="hidetype"  value='<s:property value="hidetype"/>'/>
-
-
-</form>
-
-	 <div id="sidesearchwndow">
-	   <div ></div>
-	</div>
- <div id="searchwindow">
-   <div ></div>
-</div>
-<!-- <div id="colorsearchwndow">
-   <div ></div>
-</div>
-<div id="modelsearchwndow">
-   <div ></div>
-</div>
-<div id="brandsearchwndow">
-   <div ></div>
-</div> -->
-
+    <!-- Search Windows Outside of Form Content to prevent scrolling issues -->
+    <div id="sidesearchwndow">
+        <div></div><div></div>
+    </div>
+    <div id="searchwindow">
+        <div></div><div></div>
+    </div>
+    <!-- <div id="colorsearchwndow">
+        <div></div>
+    </div>
+    <div id="modelsearchwndow">
+        <div></div>
+    </div>
+    <div id="brandsearchwndow">
+        <div></div>
+    </div> -->
 </div>
 </body>
 </html>

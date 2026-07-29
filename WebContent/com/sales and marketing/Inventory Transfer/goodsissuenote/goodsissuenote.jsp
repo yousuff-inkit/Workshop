@@ -1,332 +1,346 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
- <% String contextPath=request.getContextPath();%>
-
+<% String contextPath=request.getContextPath();%>
 <html>
 <head>
 <title>GatewayERP(i)</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <jsp:include page="../../../../includes.jsp"></jsp:include>
+<jsp:include page="../../../../includes.jsp"></jsp:include>
 
 <style>
-form label.error {
-	color:red;
-  	font-weight:bold;
-}
- #psearch {
- 
-	background:#FAEBD7;
- 
-}
-.btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 10px;
-  padding: 4px 15px 6px 17px;
-  text-decoration: none;
+/* =========================================================
+SCOPED UI: Modern Layout (Matches Client Master)
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
 
-.btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
-}     
-.textbox {
-    border: 0;
-    height: 25px;
-    width: 20%;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -moz-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-background-clip: padding-box;
-    outline: 0;
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.modern-ui {
+    font-family: Arial, sans-serif; 
+    color: #333;
+    font-size: 12px; 
+    padding: 5px 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Master Input Heights - Forced to 24px */
+.modern-ui input[type="text"],
+.modern-ui select { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    width: 100%;
+}
+
+.modern-ui input[type="text"]:focus,
+.modern-ui select:focus { 
+    border-color: #007bff; 
+    outline: none;
+}
+
+.modern-ui input[readonly],
+.modern-ui input:disabled,
+.modern-ui select:disabled { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
+}
+
+/* Layout Utilities */
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: wrap;
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+}
+
+/* Middle Section Panels */
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+/* Custom UI Buttons matching 24px height */
+.modern-ui .myButton {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton:hover { background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); }
+
+/* Search Icon Wrapper */
+.modern-ui .input-search-container {
+    position: relative;
+    display: flex;
+}
+.modern-ui .input-search-container input {
+    padding-right: 25px !important;
+}
+.modern-ui .magnifier-icon {
+    position: absolute;
+    right: 6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b; 
+    z-index: 10;
+}
+.modern-ui .magnifier-icon:hover { color: #2563eb; }
+
+/* Grid Wrappers */
+.modern-ui .grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Scrollbar Logic */
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+    padding-right: 5px;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+form label.error { color:red; font-weight:bold; }
+#errormsg { color:red; font-weight:bold; text-align:center; margin-bottom: 10px; }
+
+/* Product Entry Row Specifics */
+.item-entry-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.item-entry-col label {
+    font-weight: bold;
+    color: #444;
+    font-size: 11px;
 }
 </style>
 
 <script type="text/javascript">
-
-
 $(document).ready(function () {  
+    $('#btnvaluechange').hide();
     
-	   /* Date */ 	
-	    
-	   		 $('#btnvaluechange').hide();
-	   
-	   	  
-       $("#masterdate").jqxDateTimeInput({  width: '125px', height: '15px', formatString:"dd.MM.yyyy"});
-     
-       $('#accountSearchwindow').jqxWindow({ width: '50%', height: '62%',  maxHeight: '75%' ,maxWidth: '50%' , title: 'Account Search' ,position: { x: 150, y: 60 }, keyboardCloseKey: 27});
-	   $('#accountSearchwindow').jqxWindow('close');
-	     $('#searchwndow').jqxWindow({ width: '50%', height: '55%',  maxHeight: '85%' ,maxWidth: '80%' ,title: 'Product Search' , position: { x: 250, y: 120 }, keyboardCloseKey: 27});
-	     $('#searchwndow').jqxWindow('close');  
-	       $('#sidesearchwndow').jqxWindow({ width: '55%', height: '90%',  maxHeight: '90%' ,maxWidth: '80%' ,title: 'Product Search ' , position: { x: 600, y: 0 }, keyboardCloseKey: 27});
-	     $('#sidesearchwndow').jqxWindow('close');   
-	     
-	     
-	     
-	     $('#searchwindow').jqxWindow({ width: '50%', height: '60%',  maxHeight: '75%' ,maxWidth: '50%' , title: ' Search' ,position: { x: 500, y: 60 }, keyboardCloseKey: 27});
-		   $('#searchwindow').jqxWindow('close'); 
-	 
-		   
-		   
-		   $('#importwindow').jqxWindow({ width: '30%', height: '24.4%',  maxHeight: '85%' ,maxWidth: '80%' ,title: 'Import Options' , position: { x: 500, y: 200 }, theme: 'energyblue', showCloseButton: false});
-		     $('#importwindow').jqxWindow('close');   
-		     
-		     
-		     $('#locationwindow').jqxWindow({ width: '30%', height: '55%',  maxHeight: '75%' ,maxWidth: '50%' , title: 'Location Search' ,position: { x: 200, y: 70 }, keyboardCloseKey: 27});
-		     $('#locationwindow').jqxWindow('close');  
-			   
+    $("#masterdate").jqxDateTimeInput({  width: '125px', height: 24, formatString:"dd.MM.yyyy", theme: 'energyblue'});
+    
+    setTimeout(function () {
+        $("#masterdate").find("input").css({
+            "margin-top": "0px", "line-height": "24px", "font-size": "12px", 
+            "font-family": "Arial, sans-serif", "padding": "0 6px", "box-sizing":"border-box"
+        });
+        $("#masterdate").find(".jqx-action-button").css({"top": "0px", "height": "24px"});
+    }, 0);
+    
+    $('#accountSearchwindow').jqxWindow({ width: '50%', height: '62%',  maxHeight: '75%' ,maxWidth: '50%' , title: 'Account Search' ,position: { x: 150, y: 60 }, keyboardCloseKey: 27, theme: 'energyblue'});
+    $('#accountSearchwindow').jqxWindow('close');
+    $('#searchwndow').jqxWindow({ width: '50%', height: '55%',  maxHeight: '85%' ,maxWidth: '80%' ,title: 'Product Search' , position: { x: 250, y: 120 }, keyboardCloseKey: 27, theme: 'energyblue'});
+    $('#searchwndow').jqxWindow('close');  
+    $('#sidesearchwndow').jqxWindow({ width: '55%', height: '90%',  maxHeight: '90%' ,maxWidth: '80%' ,title: 'Product Search ' , position: { x: 600, y: 0 }, keyboardCloseKey: 27, theme: 'energyblue'});
+    $('#sidesearchwndow').jqxWindow('close');   
+    
+    $('#searchwindow').jqxWindow({ width: '50%', height: '60%',  maxHeight: '75%' ,maxWidth: '50%' , title: ' Search' ,position: { x: 500, y: 60 }, keyboardCloseKey: 27, theme: 'energyblue'});
+    $('#searchwindow').jqxWindow('close'); 
+    
+    $('#importwindow').jqxWindow({ width: '30%', height: '24.4%',  maxHeight: '85%' ,maxWidth: '80%' ,title: 'Import Options' , position: { x: 500, y: 200 }, theme: 'energyblue', showCloseButton: false});
+    $('#importwindow').jqxWindow('close');   
+    
+    $('#locationwindow').jqxWindow({ width: '30%', height: '55%',  maxHeight: '75%' ,maxWidth: '50%' , title: 'Location Search' ,position: { x: 200, y: 70 }, keyboardCloseKey: 27, theme: 'energyblue'});
+    $('#locationwindow').jqxWindow('close');  
+       
+    $('#itemdocno').dblclick(function(){
+        if($("#mode").val() == "A" || $("#mode").val() == "E") {
+            $('#searchwindow').jqxWindow('open');
+            if(document.getElementById("itemtype").value=="1") {
+                refsearchContent('costCodeSearchGrid.jsp?docno='+document.getElementById("itemtype").value); 	
+            } else if(document.getElementById("itemtype").value=="6") {
+                refsearchContent('fleetGrid.jsp?'); 	
+            } else {
+                refsearchContent('costunitsearch.jsp?docno='+document.getElementById("itemtype").value); 	
+            } 
+        }
+    }); 
+          
+    $('#txtlocation').dblclick(function(){
+        if($("#mode").val() == "A" || $("#mode").val() == "E") {
+            $('#locationwindow').jqxWindow('open');
+            locationsearchContent('searchlocation.jsp?'); 
+        }
+    }); 
 
-		 
-		   
-		   $('#itemdocno').dblclick(function(){
-
-				  if($("#mode").val() == "A" || $("#mode").val() == "E")
-					  {
-			 
-				//itemtype,itemdocno,itemname
-				  
-		  	    $('#searchwindow').jqxWindow('open');
-		  	
-				if(document.getElementById("itemtype").value=="1")
-					{
-					refsearchContent('costCodeSearchGrid.jsp?docno='+document.getElementById("itemtype").value); 	
-					}
-				
-				
-				
-	    		else if(document.getElementById("itemtype").value=="6")
-				{
-				 refsearchContent('fleetGrid.jsp?'); 	
-				}
-			
-		  	  	  	  
-		  	
-	    		else
-				{
-				 refsearchContent('costunitsearch.jsp?docno='+document.getElementById("itemtype").value); 	
-				} 
-					  }
-			  }); 
-			  
-			   $('#txtlocation').dblclick(function(){
-				   
-					  if($("#mode").val() == "A" || $("#mode").val() == "E")
-						  {
-					   
-				  	    $('#locationwindow').jqxWindow('open');
-				  	
-				  	  locationsearchContent('searchlocation.jsp?'); 
-						  }
-					  
-			  	  
-		          
-	                     }); 
-		   
-
-				 $('#masterdate').on('change', function (event) {
-					  
-					    var maindate = $('#masterdate').jqxDateTimeInput('getDate');
-					  	 if ($("#mode").val() == "A" || $("#mode").val() == "E" ) {   
-					    funDateInPeriodchk(maindate);
-					  	 }
-					   });
-
-
-
-
- 
-  
+    $('#masterdate').on('change', function (event) {
+        var maindate = $('#masterdate').jqxDateTimeInput('getDate');
+        if ($("#mode").val() == "A" || $("#mode").val() == "E" ) {   
+            funDateInPeriodchk(maindate);
+        }
+    });
 });
 
+function getitem(event){
+    var x= event.keyCode;
+    if(x==114){
+        $('#searchwindow').jqxWindow('open');
+        if(document.getElementById("itemtype").value=="1") {
+            refsearchContent('costCodeSearchGrid.jsp?docno='+document.getElementById("itemtype").value); 	
+        } else if(document.getElementById("itemtype").value=="6") {
+            refsearchContent('fleetGrid.jsp?'); 	
+        } else {
+            refsearchContent('costunitsearch.jsp?docno='+document.getElementById("itemtype").value); 	
+        }
+    }
+}  
 
- 
+function refsearchContent(url) {
+    $.get(url).done(function (data) {
+        $('#searchwindow').jqxWindow('setContent', data);
+    }); 
+}
 
-	  
-	  
-	  function getitem(event){
-	      	 var x= event.keyCode;
-	      	 if(x==114){
+function productSearchContent(url) {
+    $.get(url).done(function (data) {
+        $('#sidesearchwndow').jqxWindow('open');
+        $('#sidesearchwndow').jqxWindow('setContent', data);
+    }); 
+} 
 
-	      		  $('#searchwindow').jqxWindow('open');
-	      			
-	      		if(document.getElementById("itemtype").value=="1") //com/search/costunit/costCodeSearchGrid.jsp
-				{
-				refsearchContent('costCodeSearchGrid.jsp?docno='+document.getElementById("itemtype").value); 	
-				}
-	      		
-	    		else if(document.getElementById("itemtype").value=="6")
-				{
-				 refsearchContent('fleetGrid.jsp?'); 	
-				}
-			
-	      		
-			else
-				{
-				 refsearchContent('costunitsearch.jsp?docno='+document.getElementById("itemtype").value); 	
-				}
-			
+function getloc(event){
+    var x= event.keyCode;
+    if(x==114){
+        $('#locationwindow').jqxWindow('open');
+        locationsearchContent('searchlocation.jsp?');   
+    }
+}  
 
-	      		 
-	      		  
-	      	 
-	      	 }
-	      	 else{
-	      		 }
-	      	 }  
-	      	  function refsearchContent(url) {
-	           //alert(url);
-	              $.get(url).done(function (data) {
-	      //alert(data);
-	            $('#searchwindow').jqxWindow('setContent', data);
-
-	      	}); 
-	        	}
-	  
-	  
-      function productSearchContent(url) {
-     	 //alert(url);
-     		 $.get(url).done(function (data) {
-     			 
-     			 $('#sidesearchwndow').jqxWindow('open');
-     		$('#sidesearchwndow').jqxWindow('setContent', data);
-     
-     	}); 
-     	} 
-
-      function getloc(event){
-      	 var x= event.keyCode;
-      	 if(x==114){
-      	  $('#locationwindow').jqxWindow('open');
-      	
-      	  locationsearchContent('searchlocation.jsp?');   }
-      	 else{
-      		 }
-      	 }  
-      	  function locationsearchContent(url) {
-           //alert(url);
-              $.get(url).done(function (data) {
-      //alert(data);
-            $('#locationwindow').jqxWindow('setContent', data);
-
-      	}); 
-        	}
-
+function locationsearchContent(url) {
+    $.get(url).done(function (data) {
+        $('#locationwindow').jqxWindow('setContent', data);
+    }); 
+}
 
 function funReset(){
-	//$('#frmgin')[0].reset(); 
+    //$('#frmgin')[0].reset(); 
 }
+
 function funReadOnly(){
-	$('#frmgin input').attr('readonly', true );
-	$('#frmgin select').attr('disabled', true );
-	 $('#masterdate').jqxDateTimeInput({ disabled: true});
-	 
-		$("#serviecGrid").jqxGrid({ disabled: true});
-		
- 
- 
- $('#btnvaluechange').hide();
- $('#psearch').attr('disabled', true );
- $('#setbtn').attr('disabled', true ); 
-	
+    $('#frmgin input').attr('readonly', true );
+    $('#frmgin select').attr('disabled', true );
+    $('#masterdate').jqxDateTimeInput({ disabled: true});
+    $("#serviecGrid").jqxGrid({ disabled: true});
+    $('#btnvaluechange').hide();
+    $('#setbtn').attr('disabled', true ); 
 }
+
 function funRemoveReadOnly(){
-	 chkmultiqty();
-	 reloads(); 
-	 document.getElementById("editdata").value="";
-	$('#frmgin input').attr('readonly', false );
-/* 	$('#serviecGrid').jqxGrid('setcolumnproperty', 'discount',  "editable", true); */
-	$('#frmgin select').attr('disabled', false );
+    chkmultiqty();
+    reloads(); 
+    document.getElementById("editdata").value="";
+    $('#frmgin input').attr('readonly', false );
+    $('#frmgin select').attr('disabled', false );
     
-		 $('#btnvaluechange').hide();
-		 
-		 $('#txtlocation').attr('readonly', true);
-		 
-		 $('#itemdocno').attr('readonly', true);
-		 $('#itemname').attr('readonly', true);
-		 
-		 $('#clientname').attr('readonly', true);
-		 
-		 $('#site').attr('readonly', true);
-		 
-		 
-		// itemname  clientname site
-		 
-		 
-	  
-	 $('#masterdate').jqxDateTimeInput({ disabled: false});
-	 
- 
-	 
-	$('#docno').attr('readonly', true);
-	 
-	 $("#serviecGrid").jqxGrid({ disabled: false});
+    $('#btnvaluechange').hide();
+    $('#txtlocation').attr('readonly', true);
+    $('#itemdocno').attr('readonly', true);
+    $('#itemname').attr('readonly', true);
+    $('#clientname').attr('readonly', true);
+    $('#site').attr('readonly', true);
+    
+    $('#masterdate').jqxDateTimeInput({ disabled: false});
+    $('#docno').attr('readonly', true);
+    $("#serviecGrid").jqxGrid({ disabled: false});
 
- 
-	 
-	if ($("#mode").val() == "A") {
-		  //$('#chkdiscount').attr('disabled', false);
-		$('#masterdate').val(new Date());
-	 
-			 $("#serviecGrid").jqxGrid('clear');
-			    $("#serviecGrid").jqxGrid('addrow', null, {});
-				 $('#itemname').attr('readonly', true);
-				 
-				 $('#clientname').attr('readonly', true);
-				 
-				 $('#site').attr('readonly', true);
-				 
-		   
-	   }
-	
-  	if ($("#mode").val() == "E") {
-		 $('#btnvaluechange').show();
-  	 
-		$("#serviecGrid").jqxGrid({ disabled: true});
-		
-		
-		
-	}  
+    if ($("#mode").val() == "A") {
+        $('#masterdate').val(new Date());
+        $("#serviecGrid").jqxGrid('clear');
+        $("#serviecGrid").jqxGrid('addrow', null, {});
+        $('#itemname').attr('readonly', true);
+        $('#clientname').attr('readonly', true);
+        $('#site').attr('readonly', true);
+    }
+    
+    if ($("#mode").val() == "E") {
+        $('#btnvaluechange').show();
+        $("#serviecGrid").jqxGrid({ disabled: true});
+    }  
   
-	$('#psearch').attr('disabled', false );
-	   $('#setbtn').attr('disabled', false );    
+    $('#setbtn').attr('disabled', false );    
 }
 
-function funcheckaccinvendor()
-{
-	if(document.getElementById("puraccid").value=="")
-		{
-		
-		 document.getElementById("errormsg").innerText="Search Vendor";  
-		 document.getElementById("puraccid").focus();
-	       
-	        return 0;
-		}
-	
+function funcheckaccinvendor() {
+    if(document.getElementById("puraccid").value=="") {
+        document.getElementById("errormsg").innerText="Search Vendor";  
+        document.getElementById("puraccid").focus();
+        return 0;
+    }
 }
-
 
 function funFocus(){
-	 
-   	$('#masterdate').jqxDateTimeInput('focus'); 	    		
+    $('#masterdate').jqxDateTimeInput('focus'); 	    		
 }
+
 function funDateInPeriodchk(value){
     var styear = new Date(window.parent.txtaccountperiodfrom.value);
     var edyear = new Date(window.parent.txtaccountperiodto.value);
@@ -336,924 +350,503 @@ function funDateInPeriodchk(value){
     styear.setHours(0,0,0,0);
     var currentDate = new Date(new Date());
  
-     if(value>currentDate){
-     document.getElementById("errormsg").innerText="Future Date, Transaction Restricted. ";
-    
-     return 0;
+    if(value>currentDate){
+        document.getElementById("errormsg").innerText="Future Date, Transaction Restricted. ";
+        return 0;
     } 
-    
     document.getElementById("errormsg").innerText="";
-   
-     return 1;
- }
-
-function calculatedata(val)
-{
-
+    return 1;
 }
+
+function calculatedata(val) {}
 
 function getunit(val){ 
-	 
-	
-	   var x=new XMLHttpRequest();
-	   x.onreadystatechange=function(){
-	   if (x.readyState==4 && x.status==200)
-	    {
-	      items= x.responseText;
-	       
-	      items=items.split('####');
-	           var docno=items[0].split(",");
-	           var type=items[1].split(",");
-	        
-	           var optionstype;
-
-	
-	           for ( var i = 0; i < type.length; i++) {
-	        	   optionstype += '<option value="' + docno[i] + '">' + type[i] + '</option>';
-		        }
-	            
-	            $("select#unit").html(optionstype); 	
-	            
-	            
-	         
-	  
-	    }
-	       }
-	   x.open("GET","getunit.jsp?psrno="+val,true);
-		x.send();
-	        }	
+    var x=new XMLHttpRequest();
+    x.onreadystatechange=function(){
+        if (x.readyState==4 && x.status==200) {
+            items= x.responseText;
+            items=items.split('####');
+            var docno=items[0].split(",");
+            var type=items[1].split(",");
+            var optionstype;
+            for ( var i = 0; i < type.length; i++) {
+                optionstype += '<option value="' + docno[i] + '">' + type[i] + '</option>';
+            }
+            $("select#unit").html(optionstype); 	
+        }
+    }
+    x.open("GET","getunit.jsp?psrno="+val,true);
+    x.send();
+}	
 
 function funNotify(){	
-	   
+    var maindate = $('#masterdate').jqxDateTimeInput('getDate');
+    var validdate=funDateInPeriodchk(maindate);
+    if(validdate==0){
+        return 0; 
+    }
 
-
-	var maindate = $('#masterdate').jqxDateTimeInput('getDate');
-	   var validdate=funDateInPeriodchk(maindate);
-	   if(validdate==0){
-	   return 0; 
-	   }
-
-	if(document.getElementById("txtlocation").value=="")
-	{
-
-	 document.getElementById("errormsg").innerText="Search Location";  
-	 document.getElementById("txtlocation").focus();
-	   
-	    return 0;
-	}
-		 
-	else
-		{
-		  document.getElementById("errormsg").innerText="";
-		}
-		   
-	  if(parseInt(document.getElementById("multimethod").value)==1)
-		{	
-		  chkstock();
-		}
-	  else
-		  {
-	 save();
-		  }
-	  
-	  
-	}
-
-
-function chkstock()
-{
-
-		var rows = $("#serviecGrid").jqxGrid('getrows');
-		var list = new Array();
-		 
-	   for(var i=0 ; i < rows.length; i++){
-		 
-		   if(parseInt(rows[i].prodoc)>0)  
-		   { 
-		 
-		   list.push(rows[i].prodoc+"::"+rows[i].specid+"::"+rows[i].qty+"::"+rows[i].unitdocno+"::"+rows[i].oldqty);
-		 
-		   }
-	   }
-			 
-	  ajaxcallchk(list);
-	   
+    if(document.getElementById("txtlocation").value=="") {
+        document.getElementById("errormsg").innerText="Search Location";  
+        document.getElementById("txtlocation").focus();
+        return 0;
+    } else {
+        document.getElementById("errormsg").innerText="";
+    }
+           
+    if(parseInt(document.getElementById("multimethod").value)==1) {	
+        chkstock();
+    } else {
+        save();
+    }
 }
-	   
 
-	 function ajaxcallchk(list){
-		 var branch=document.getElementById("brchName").value;
-		 var location=document.getElementById("txtlocationid").value;
-		 var mode=$('#mode').val();
-		 	
-		 	var x=new XMLHttpRequest();
-		 	x.onreadystatechange=function(){
-		 		if (x.readyState==4 && x.status==200)
-		 			{
-		 			 var items= x.responseText.trim();
-		  
-		 	 
-		 		   
-		 		    if(parseInt(items)==1)
-			           {
-		 		    	document.getElementById("errormsg").innerText=" Does Not Have Sufficient Stock !!";  
-		 		        return 0;
-			           }
-		 		    else  if(parseInt(items)==2)
-		 		    	{
-		 		    	document.getElementById("errormsg").innerText=" error!!";  
-		 		        return 0;
-		 		    	
-		 		    	}
-			       
-
-				           
-			           
-			           else
-			        	   {
-			        	   save();
-			        	   }
-			           
-		 			    
-		 			}
-		 		  //type,description,remarks,lbrcost,partscost,total
-		 	}
-		 	 x.open("GET","validateqty.jsp?list="+list+"&branch="+branch+"&mode="+mode+"&location="+location+"&date="+document.getElementById("masterdate").value,true);
-				x.send();
-			        
-		 }
-
+function chkstock() {
+    var rows = $("#serviecGrid").jqxGrid('getrows');
+    var list = new Array();
+    for(var i=0 ; i < rows.length; i++){
+        if(parseInt(rows[i].prodoc)>0)  { 
+            list.push(rows[i].prodoc+"::"+rows[i].specid+"::"+rows[i].qty+"::"+rows[i].unitdocno+"::"+rows[i].oldqty);
+        }
+    }
+    ajaxcallchk(list);
+}
+       
+function ajaxcallchk(list){
+    var branch=document.getElementById("brchName").value;
+    var location=document.getElementById("txtlocationid").value;
+    var mode=$('#mode').val();
+        
+    var x=new XMLHttpRequest();
+    x.onreadystatechange=function(){
+        if (x.readyState==4 && x.status==200) {
+            var items= x.responseText.trim();
+            if(parseInt(items)==1) {
+                document.getElementById("errormsg").innerText=" Does Not Have Sufficient Stock !!";  
+                return 0;
+            } else if(parseInt(items)==2) {
+                document.getElementById("errormsg").innerText=" error!!";  
+                return 0;
+            } else {
+                save();
+            }
+        }
+    }
+    x.open("GET","validateqty.jsp?list="+list+"&branch="+branch+"&mode="+mode+"&location="+location+"&date="+document.getElementById("masterdate").value,true);
+    x.send();
+}
 
 function save(){	
-var rows = $("#serviecGrid").jqxGrid('getrows');
-   
-  //alert($('#gridlength').val());
-  var gridlength=0;
-  for(var i=0 ; i < rows.length ; i++){
-	  var psrno=rows[i].psrno;
-	  
-	  if(psrno!=null && psrno!="" && psrno!="undefined" && typeof(psrno)!="undefined"){
-		  gridlength++;
-		  // var myvar = rows[i].tarif; 
-			   newTextBox = $(document.createElement("input"))  
-			      .attr("type", "dil")
-			      .attr("id", "sertest"+i)
-			      .attr("name", "sertest"+i)
-			      .attr("hidden", "true");         
-			  
-			  /* newTextBox.val(rows[i].psrno+"::"+rows[i].prodoc+" :: "+rows[i].unitdocno+" :: "+rows[i].qty+" :: "
-					   +rows[i].unitprice+" :: "+rows[i].total+" :: "+rows[i].discount+" :: "+rows[i].nettotal+" :: "+rows[i].saveqty+" :: "+rows[i].checktype+" :: "+rows[i].specid+" :: ");
-			 */ /* discount  disper */    /* 	 cost_price   savecost_price */
-			 
-			 newTextBox.val(rows[i].psrno+"::"+rows[i].prodoc+" :: "+rows[i].unitdocno+" :: "+rows[i].qty+" :: "  
-					   +rows[i].saveqty+" :: "+rows[i].checktype+" :: "+rows[i].specid+" :: "+rows[i].foc+" ::"+rows[i].cost_price+" ::"+rows[i].savecost_price);
-			
-			 
-			// alert(newTextBox.val());
-			  newTextBox.appendTo('form');
-				  
-	  }
-	 
-	  
-		   
- 
-   
-  }   
-  $('#serviecGridlength').val(gridlength);  
-	    
-	    	   
-	    		$("#serviecGrid").jqxGrid({ disabled: false});
-			 
-			 
-	    		$("#frmgin").submit();
-			 
-			   
-	   
-	
-	return 1;
+    var rows = $("#serviecGrid").jqxGrid('getrows');
+    var gridlength=0;
+    for(var i=0 ; i < rows.length ; i++){
+        var psrno=rows[i].psrno;
+        if(psrno!=null && psrno!="" && psrno!="undefined" && typeof(psrno)!="undefined"){
+            gridlength++;
+            newTextBox = $(document.createElement("input"))  
+                .attr("type", "dil")
+                .attr("id", "sertest"+i)
+                .attr("name", "sertest"+i)
+                .attr("hidden", "true");         
+            newTextBox.val(rows[i].psrno+"::"+rows[i].prodoc+" :: "+rows[i].unitdocno+" :: "+rows[i].qty+" :: "  
+                     +rows[i].saveqty+" :: "+rows[i].checktype+" :: "+rows[i].specid+" :: "+rows[i].foc+" ::"+rows[i].cost_price+" ::"+rows[i].savecost_price);
+            newTextBox.appendTo('form');
+        }
+    }   
+    $('#serviecGridlength').val(gridlength);  
+    $("#serviecGrid").jqxGrid({ disabled: false});
+    $("#frmgin").submit();
+    return 1;
 } 
 
-
-
 function funwarningopen(){
-	   $.messager.confirm('Confirm', 'Transaction Will Affect Already Inserted Values.', function(r){
-	       if (r){
-	     
-		 		  document.getElementById("editdata").value="Editvalue";
-				 
-	    		$("#serviecGrid").jqxGrid({ disabled: false});
-	    		  $("#serviecGrid").jqxGrid('addrow', null, {});
-	    		  if($('#reftypeval').val()!="DIR")
-	     		  {  
-	       			$('#psearch').attr('disabled', true );
-	       		    $('#setbtn').attr('disabled', true );  
-	     		  }
-	       		else
-	       			{  
-	       			$('#psearch').attr('disabled', false );
-	       		    $('#setbtn').attr('disabled', false );  
-	       			
-	       			}
-	       }
-	      });
-	     
-	   }
-
-function funChkButton() {
+    $.messager.confirm('Confirm', 'Transaction Will Affect Already Inserted Values.', function(r){
+        if (r){
+            document.getElementById("editdata").value="Editvalue";
+            $("#serviecGrid").jqxGrid({ disabled: false});
+            $("#serviecGrid").jqxGrid('addrow', null, {});
+            if($('#reftypeval').val()!="DIR") {  
+                $('#setbtn').attr('disabled', true );  
+            } else {  
+                $('#setbtn').attr('disabled', false );  
+            }
+        }
+    });
 }
+
+function funChkButton() {}
 
 function funSearchLoad(){
-	changeContent('mainsearch.jsp'); 
+    changeContent('mainsearch.jsp'); 
 }
-function getCurrencyIds(){
-	   
-	      
-	        }
-	   
-	   function getRatevalue(angel)
-	   {
-	   
-	      
-	        }
-	   
-	   
-	   function combochange()
-	   {
-	   }
 
-	   function setValues() {
-			if($('#hidmasterdate').val()){
-				$("#masterdate").jqxDateTimeInput('val', $('#hidmasterdate').val());
-			}
-			
-			 
-			
-		 	var dis=document.getElementById("masterdoc_no").value;
-			if(dis>0)
-				{     
-				//alert("");
-				//funchkforedit();
-		 	 var indexval1 = document.getElementById("masterdoc_no").value;   
+function getCurrencyIds(){}
+function getRatevalue(angel){}
+function combochange(){}
 
-	     	  		  
-		 	
-		 	var locationid=document.getElementById("txtlocationid").value;
-	     	  		 
-	     	  		 $("#sevdesc").load("serviecgrid.jsp?purdoc="+indexval1+"&locationid="+locationid+"&date="+document.getElementById("masterdate").value);
-	     	  		
-				 } 
-
-				 if($('#msg').val()!=""){
-				   $.messager.alert('Message',$('#msg').val());
-				  } 
-				
-    		combochange();
-    		document.getElementById("formdet").innerText=$('#formdetail').val()+" ("+$('#formdetailcode').val().trim()+")";
-				//  getCurrencyId();
-		} 
-	   function funPrintBtn(){
-	 	  
-	 	   if (($("#mode").val() == "view") && $("#masterdoc_no").val()!="") {
-	 	  
-	 	   var url=document.URL;
- 
-	        var reurl=url.split("saveActiongins");
-	        
-	        $("#docno").prop("disabled", false);                
-	        var dtype=$('#formdetailcode').val();
-	  
-	/* var win= window.open(reurl[0]+"printGrn?docno="+document.getElementById("masterdoc_no").value+"&dtype="+dtype,"_blank","top=250,left=310,Width=800,Height=800,location=no,scrollbars=no,toolbar=yes");
-	     
-	win.focus(); */ 
-	         var win= window.open(reurl[0]+"PRINTgin?docno="+document.getElementById("masterdoc_no").value+"&dtype="+dtype,"_blank","top=250,left=310,Width=800,Height=800,location=no,scrollbars=no,toolbar=yes");
-		     
-	    	win.focus(); 
-	 	   } 
-	 	  
-	 	   else {
-		    	      $.messager.alert('Message','Select a Document....!','warning');
-		    	      return false;
-		    	     }
-		    	
-	 	}
-	$(function(){
-        $('#frmgin').validate({
-                rules: { 
-              
-                	delterms:{maxlength:200},
-                	purdesc:{maxlength:200},
-                	payterms:{maxlength:200},
-                	/* refno:{required:true}, */
-                	puraccid:{required:true}
-                 },
-                 messages: {
-                	 delterms: {maxlength:"  Max 200 chars"},
-                	 purdesc: {maxlength:"  Max 200 chars"},
-                	 payterms: {maxlength:"  Max 200 chars"},
-               /*  	 refno: {required:" * required"}, */
-                	 puraccid: {required:" *"}
-                 }
-        });});
-    function isNumber(evt) {
-        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
-        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
-        	{
-     	   document.getElementById("errormsg").innerText=" Enter Numbers Only";  
-           
-            return false;
-        	}
-        document.getElementById("errormsg").innerText="";  
-        return true;
+function setValues() {
+    if($('#hidmasterdate').val()){
+        $("#masterdate").jqxDateTimeInput('val', $('#hidmasterdate').val());
     }
- 
- function funrefdisslno()
- {
- }
-		function funchkforedit() 
-	    {
-			var x = new XMLHttpRequest();
-			x.onreadystatechange = function() {
-				if (x.readyState == 4 && x.status == 200) {
-					var items = x.responseText.trim();	
-					if(parseInt(items)>0)
-						{
-						
-						 $("#btnEdit").attr('disabled', true );
-						 $("#btnDelete").attr('disabled', true ); 
-						 
-						 
-						 
-						}
-					else
-						{
-						 
-						}
-				  
-					
-					
-					
-				} else {
-				}
-			}
-			x.open("GET", "linkchk.jsp?masterdoc_no="+document.getElementById("masterdoc_no").value, true);
-			x.send();
-		
-		
-		}
-	 
-	function removemsg()
-	{
-		 document.getElementById("errormsg").innerText="";
-		
-	}
-	
-	 function gettype(){ 
-		var x=new XMLHttpRequest();
-		x.onreadystatechange=function(){
-			if (x.readyState==4 && x.status==200){
-				items= x.responseText.trim();
-			    items=JSON.parse(items);
-			    var optionstype ='';
-			    $.each(items.typedata,function(index,value){
-			    	optionstype += '<option value="'+value.docno+'">'+value.refname+'</option>';
-			    });
-			    $("select#type").html($.parseHTML(optionstype));
-  				if($('#hidtype').val()!=""){
-					$('#type').val($('#hidtype').val());   
-				}
-			}
-		}
-		x.open("GET","gettype.jsp?",true);
-		x.send();
-	}
-	 
-	function getitemtype(){ 
-		var x=new XMLHttpRequest();
-		x.onreadystatechange=function(){
-			if (x.readyState==4 && x.status==200){
-		    	items= x.responseText;
-		    	items=JSON.parse(items);
-			    var optionstype ='';
-			    $.each(items.itemdata,function(index,value){
-			    	optionstype += '<option value="'+value.docno+'">'+value.refname+'</option>';
-			    });
-			    $("select#itemtype").html($.parseHTML(optionstype));
-  				if($('#hideitemtype').val()!=""){
-					$('#itemtype').val($('#hideitemtype').val());   
-				}
-			}
-		}
-		x.open("GET","getitem.jsp?",true);
-		x.send();
-	}
-	 
-	 
-	 function cleardata()
-	 {
-		 document.getElementById("itemdocno").value="";
-		 document.getElementById("itemname").value="";
-		 document.getElementById("clientname").value="";
-	 
-		 document.getElementById("cldocno").value="";
-		 document.getElementById("siteid").value="";
-		 document.getElementById("site").value="";
-		 
-	 
-	 }
-	 function setgrid()
-	 {
-		
-		   
-		 
-		 var temppsrno=document.getElementById("temppsrno").value; 
-		 var unit=document.getElementById("unit").value; 
-		 
-		 
- 
-   	  
-		var rows1 = $("#serviecGrid").jqxGrid('getrows');
-	    var aa=0;
-	    for(var i=0;i<rows1.length;i++){
-	 
-	    	
-	    	 
-		   if(parseInt(rows1[i].prodoc)==parseInt(temppsrno))
-			   {
-		  
-			 if((parseInt(document.getElementById("multimethod").value)==1))
-			{	
-				   
-			   if(parseInt(rows1[i].unitdocno)==parseInt(unit))
-			   {
-				   
-				   aa=1;
-   			   break;
-			   }
-			}
-			 else
-				 {
-			   
-			   aa=1;
-			   break;
-				 }
-			   }
-		   else{
-			   
-			   aa=0;
-		       } 
-	    }
-		 
-	   if(parseInt(aa)==1)
-	   {
-	   
-		document.getElementById("errormsg").innerText="You have already select this product";
-		  
+    var dis=document.getElementById("masterdoc_no").value;
+    if(dis>0) {     
+        var indexval1 = document.getElementById("masterdoc_no").value;   
+        var locationid=document.getElementById("txtlocationid").value;
+        $("#sevdesc").load("serviecgrid.jsp?purdoc="+indexval1+"&locationid="+locationid+"&date="+document.getElementById("masterdate").value);
+    } 
+    if($('#msg').val()!=""){
+        $.messager.alert('Message',$('#msg').val());
+    } 
+    combochange();
+    document.getElementById("formdet").innerText=$('#formdetail').val()+" ("+$('#formdetailcode').val().trim()+")";
+} 
 
-			 
-	     document.getElementById("jqxInput1").focus();
-		 
-	   return 0;
-	   
-	   
-	   
-	   }
-   else
-	   {
-	   document.getElementById("errormsg").innerText="";
-	   }
+function funPrintBtn(){
+    if (($("#mode").val() == "view") && $("#masterdoc_no").val()!="") {
+        var url=document.URL;
+        var reurl=url.split("saveActiongins");
+        $("#docno").prop("disabled", false);                
+        var dtype=$('#formdetailcode').val();
+        var win= window.open(reurl[0]+"PRINTgin?docno="+document.getElementById("masterdoc_no").value+"&dtype="+dtype,"_blank","top=250,left=310,Width=800,Height=800,location=no,scrollbars=no,toolbar=yes");
+        win.focus(); 
+    } else {
+        $.messager.alert('Message','Select a Document....!','warning');
+        return false;
+    }
+}
+
+$(function(){
+    $('#frmgin').validate({
+        rules: { 
+            delterms:{maxlength:200},
+            purdesc:{maxlength:200},
+            payterms:{maxlength:200},
+            puraccid:{required:true}
+        },
+        messages: {
+            delterms: {maxlength:"  Max 200 chars"},
+            purdesc: {maxlength:"  Max 200 chars"},
+            payterms: {maxlength:"  Max 200 chars"},
+            puraccid: {required:" *"}
+        }
+    });
+});
+
+function isNumber(evt) {
+    var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57)) {
+        document.getElementById("errormsg").innerText=" Enter Numbers Only";  
+        return false;
+    }
+    document.getElementById("errormsg").innerText="";  
+    return true;
+}
+
+function funrefdisslno() {}
+
+function funchkforedit() {
+    var x = new XMLHttpRequest();
+    x.onreadystatechange = function() {
+        if (x.readyState == 4 && x.status == 200) {
+            var items = x.responseText.trim();	
+            if(parseInt(items)>0) {
+                $("#btnEdit").attr('disabled', true );
+                $("#btnDelete").attr('disabled', true ); 
+            }
+        }
+    }
+    x.open("GET", "linkchk.jsp?masterdoc_no="+document.getElementById("masterdoc_no").value, true);
+    x.send();
+}
+
+function removemsg() {
+    document.getElementById("errormsg").innerText="";
+}
+
+function gettype(){ 
+    var x=new XMLHttpRequest();
+    x.onreadystatechange=function(){
+        if (x.readyState==4 && x.status==200){
+            items= x.responseText.trim();
+            items=JSON.parse(items);
+            var optionstype ='<option value="">--Select--</option>';
+            $.each(items.typedata,function(index,value){
+                optionstype += '<option value="'+value.docno+'">'+value.refname+'</option>';
+            });
+            $("select#type").html(optionstype);
+            if($('#hidtype').val()!=""){
+                $('#type').val($('#hidtype').val());   
+            }
+        }
+    }
+    x.open("GET","gettype.jsp?",true);
+    x.send();
+}
+ 
+function getitemtype(){ 
+    var x=new XMLHttpRequest();
+    x.onreadystatechange=function(){
+        if (x.readyState==4 && x.status==200){
+            items= x.responseText;
+            items=JSON.parse(items);
+            var optionstype ='<option value="">--Select--</option>';
+            $.each(items.itemdata,function(index,value){
+                optionstype += '<option value="'+value.docno+'">'+value.refname+'</option>';
+            });
+            $("select#itemtype").html(optionstype);
+            if($('#hideitemtype').val()!=""){
+                $('#itemtype').val($('#hideitemtype').val());   
+            }
+        }
+    }
+    x.open("GET","getitem.jsp?",true);
+    x.send();
+}
+
+function cleardata() {
+    document.getElementById("itemdocno").value="";
+    document.getElementById("itemname").value="";
+    document.getElementById("clientname").value="";
+    document.getElementById("cldocno").value="";
+    document.getElementById("siteid").value="";
+    document.getElementById("site").value="";
+}
+
+function setgrid() {
+    var temppsrno=document.getElementById("temppsrno").value; 
+    var unit=document.getElementById("unit").value; 
+    var rows1 = $("#serviecGrid").jqxGrid('getrows');
+    var aa=0;
+    for(var i=0;i<rows1.length;i++){
+        if(parseInt(rows1[i].prodoc)==parseInt(temppsrno)) {
+            if((parseInt(document.getElementById("multimethod").value)==1)) {	
+                if(parseInt(rows1[i].unitdocno)==parseInt(unit)) {
+                    aa=1;
+                    break;
+                }
+            } else {
+                aa=1;
+                break;
+            }
+        } else {
+            aa=0;
+        } 
+    }
+     
+    if(parseInt(aa)==1) {
+        document.getElementById("errormsg").innerText="You have already select this product";
+        document.getElementById("jqxInput1").focus();
+        return 0;
+    } else {
+        document.getElementById("errormsg").innerText="";
+    }
     
-		
-		
-		
-		 var rows = $('#serviecGrid').jqxGrid('getrows');
-		  
-	 	 
-	     var rowlength= rows.length;
-		 
+    var rows = $('#serviecGrid').jqxGrid('getrows');
+    var rowlength= rows.length;
 
-	     
-	  /*    if(document.getElementById("multi").checked)
-		 {
-	    	
-	    	 
-	    	 
-	    	 
-	    	 $('#serviecGrid').jqxGrid('setcellvalue', rowlength-1, "chkbox",true);
-			 $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "batch_no",'');
-			  $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "exp_date",'');
-			  
-			 
-			  if(document.getElementById("colbatch").value=="")
-				  {
-				  document.getElementById("errormsg").innerText="Multi_Batch Details Is Required ";
-	        		 
-	        		return 0;
-				  }
-			  
-			  
-			  $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "colbatch", document.getElementById("colbatch").value);
-			     
-	    	 
-	    	 
-	     }
-	     else
-	    	 {
-	    	 
-	    	 
-	    	 $('#serviecGrid').jqxGrid('setcellvalue', rowlength-1, "chkbox",false);
-			 $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "batch_no", document.getElementById("batch").value);
-			 
-		 
-			 if(parseInt(document.getElementById("expchk").value)==1)
-				 {
-				 
-				  var  exp_date=document.getElementById("expdate").value;
-				 
-				 
-				   if(exp_date=="" ||exp_date==null || typeof(exp_date)=="undefiend") 
-	      	 	   {
-						 document.getElementById("errormsg").innerText="Expiry Date Is Required ";
-		        		 
-			        		return 0;
-	      	 	   }
-	     		   
-				 
-		 
-				 
-				 
-				 
-				   $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "exp_date", $('#expdate').jqxDateTimeInput('getDate'));
-				 }else
-					 {
-					 $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "exp_date", "1990.01.01");
-					 }
-			 
-			 
-			
-			 
-	    	 
-	    	 } */
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "proid", document.getElementById("jqxInput").value);
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "proname", document.getElementById("jqxInput1").value);
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "brandname", document.getElementById("brand").value);
-	    // $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "foc", document.getElementById("focs").value);
-	    
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "unitdocno", document.getElementById("unit").value);
-	     if(document.getElementById("unit").value>0)
-	     {
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "unit", $("#unit option:selected").text());
-	     }
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "psrno", document.getElementById("temppsrno").value);
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "prodoc", document.getElementById("temppsrno").value);
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "specid", document.getElementById("tempspecid").value);
-	     $('#serviecGrid').jqxGrid('setcellvalue', rowlength-1, "productid" ,document.getElementById("jqxInput").value);
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "productname", document.getElementById("jqxInput1").value);
-	     $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "qty", document.getElementById("quantity").value);
-	   /*  
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "proid", document.getElementById("jqxInput").value);
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "proname", document.getElementById("jqxInput1").value);
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "brandname", document.getElementById("brand").value);
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "unitdocno", document.getElementById("unit").value);
+    if(document.getElementById("unit").value>0) {
+        $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "unit", $("#unit option:selected").text());
+    }
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "psrno", document.getElementById("temppsrno").value);
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "prodoc", document.getElementById("temppsrno").value);
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "specid", document.getElementById("tempspecid").value);
+    $('#serviecGrid').jqxGrid('setcellvalue', rowlength-1, "productid" ,document.getElementById("jqxInput").value);
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "productname", document.getElementById("jqxInput1").value);
+    $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "qty", document.getElementById("quantity").value);
+    
+    document.getElementById("quvals").value
+    document.getElementById("jqxInput").value ="";
+    document.getElementById("jqxInput1").value="";
+    document.getElementById("brand").value=""; 
+    document.getElementById("collqty").value ="";
+    document.getElementById("quantity").value ="";
+    document.getElementById("unit").value ="";
+    document.getElementById("temppsrno").value="";
+    document.getElementById("tempspecid").value="";
+                                
+    $("#serviecGrid").jqxGrid('addrow', null, {});
+    document.getElementById("jqxInput1").focus();
+}  
+ 
+function reloads() {  
+    var locid = document.getElementById("txtlocationid").value;      
+    var date = document.getElementById("masterdate").value; 
+    $("#part").load('part.jsp?locid='+locid+"&date="+date);
+    $("#pnames").load('name.jsp?locid='+locid+"&date="+date);  
+} 
 
-
-	     
-	     if(document.getElementById("multi").checked)
-		 {
-	    	
-	    	 
-	    	 
-	    	 
-	    	 $('#serviecGrid').jqxGrid('setcellvalue', rowlength-1, "chkbox",true);
-			 $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "batch_no",'');
-			  $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "exp_date",'');
-			  
-			 
-			  if(document.getElementById("colbatch").value=="")
-				  {
-				  document.getElementById("errormsg").innerText="Multi_Batch Details Is Required ";
-	        		 
-	        		return 0;
-				  }
-			  
-			  
-			  $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "colbatch", document.getElementById("colbatch").value);
-			     
-	    	 
-	    	 
-	     }
-	     else
-	    	 {
-	    	 
-	    	 
-	    	 $('#serviecGrid').jqxGrid('setcellvalue', rowlength-1, "chkbox",false);
-			 $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "batch_no", document.getElementById("batch").value);
-			 
-		 
-			 if(parseInt(document.getElementById("expchk").value)==1)
-				 {
-				 
-				  var  exp_date=document.getElementById("expdate").value;
-				 
-				 
-				   if(exp_date=="" ||exp_date==null || typeof(exp_date)=="undefiend") 
-	      	 	   {
-						 document.getElementById("errormsg").innerText="Expiry Date Is Required ";
-		        		 
-			        		return 0;
-	      	 	   }
-	     		   
-				 
-		 
-				 
-				 
-				 
-				   $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "exp_date", $('#expdate').jqxDateTimeInput('getDate'));
-				 }else
-					 {
-					 $('#serviecGrid').jqxGrid('setcellvalue',  rowlength-1, "exp_date", "1990.01.01");
-					 }
-			 
-			 
-			
-			 
-	    	 
-	    	 }
-			  
-			  */
-			  document.getElementById("quvals").value
-			   document.getElementById("jqxInput").value ="";
-			   document.getElementById("jqxInput1").value="";
-			   document.getElementById("brand").value=""; 
-	           document.getElementById("collqty").value ="";
-			   document.getElementById("quantity").value ="";
-			   document.getElementById("unit").value ="";
-			  /*  document.getElementById("focs").value="";
-		  	   document.getElementById("batch").value="";
-			   document.getElementById("colbatch").value=""; */
-			    document.getElementById("temppsrno").value="";
-			     document.getElementById("tempspecid").value="";
-			     
-			      
-			     /*  
-			      
-			      document.getElementById("multi").checked=false;
-				 	 document.getElementById("batch").value="";
-					 document.getElementById("colbatch").value="";
-					 
-					 
-					  $('#batch').attr('readonly', false);
-					 $('#expdate').jqxDateTimeInput({ disabled: false});
-					 $('#expdate').val(null);
-					  */
-			      								
-		 		 $("#serviecGrid").jqxGrid('addrow', null, {});
-	    		 document.getElementById("jqxInput1").focus();
-	 
-	 }  
-	 
- 	function reloads()
-		{  
-	    var locid = document.getElementById("txtlocationid").value;      
-        var date = document.getElementById("masterdate").value; 
-     		
- 		 $("#part").load('part.jsp?locid='+locid+"&date="+date);
- 		 $("#pnames").load('name.jsp?locid='+locid+"&date="+date);  
-		} 
- 	function checkval()
-	{  
+function checkval() {  
     var qty = parseFloat(document.getElementById("quantity").value);        
     var qutval = parseFloat(document.getElementById("quvals").value); 
- //   console.log(qty+"====="+parseFloat(qty));
- //   console.log(qutval+"====="+parseFloat(qutval));
-    if(qty>qutval)   
-	{
-	document.getElementById("errormsg").innerText=" Qty value not more than Actual Qty "+qutval;
-	document.getElementById("quantity").value=qutval; 
-	}
-	}
+    if(qty>qutval) {
+        document.getElementById("errormsg").innerText=" Qty value not more than Actual Qty "+qutval;
+        document.getElementById("quantity").value=qutval; 
+    }
+}
 </script>
 </head>
-<body onLoad="setValues();gettype();getitemtype();" >
-
+<body onLoad="setValues();gettype();getitemtype();">
 
 <div id="mainBG" class="homeContent" data-type="background">
 <form id="frmgin" action="saveActiongins" method="post" autocomplete="off">  
 <jsp:include page="../../../../header.jsp" />  
-<jsp:include page="multiqty.jsp"></jsp:include><br/> 
-	<fieldset>
-<table width="100%"    > 
-  <tr>
-    <td width="6%" align="right">Date</td>
-    <td width="11%"><div id="masterdate" name="masterdate" value='<s:property value="masterdate"/>'></div>
-      <input type="hidden" name="hidmasterdate" id="hidmasterdate" value='<s:property value="hidmasterdate"/>'>
-      
-                     
-      </td>
-       <td width="7%" align="right">Type</td>
-    <td width="13%"><select  id="type" name="type" style="width:90%;" > 
-    <option value="">--Select--</option>
+<jsp:include page="multiqty.jsp"></jsp:include>
+
+<div class="modern-ui hidden-scrollbar">
+    <div id="errormsg"></div>
+
+    <!-- General Details Panel -->
+    <div class="middle-panel">
+        <span class="middle-panel-title">GIN Details</span>
+        
+        <div class="field-row">
+            <label class="lbl-right" style="width:100px;">Date</label>
+            <div style="width: 125px;">
+                <div id="masterdate" name="masterdate" value='<s:property value="masterdate"/>'></div>
+            </div>
+            <input type="hidden" name="hidmasterdate" id="hidmasterdate" value='<s:property value="hidmasterdate"/>'>
+            
+            <label class="lbl-right" style="width:100px; margin-left:auto;">Doc No</label>
+            <input type="text" name="docno" id="docno" style="width:150px;" tabindex="-1" value='<s:property value="docno"/>' readonly="readonly">
+            
+            <label class="lbl-right" style="width:100px; margin-left:auto;">Ref No</label>
+            <input type="text" name="refno" id="refno" style="width:150px;" value='<s:property value="refno"/>'>
+        </div>
+
+        <div class="field-row">
+            <label class="lbl-right" style="width:100px;">Type</label>
+            <select id="type" name="type" style="width:125px;">
+                <option value="">--Select--</option>
+            </select>
+            
+            <label class="lbl-right" style="width:100px; margin-left:auto;">Location</label>
+            <div class="input-search-container" style="flex:1; max-width:250px;">
+                <input type="text" id="txtlocation" name="txtlocation" placeholder="Press F3 to Search" value='<s:property value="txtlocation"/>' onkeydown="getloc(event);">
+                <svg class="magnifier-icon" onclick="$('#txtlocation').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <input type="hidden" id="txtlocationid" name="txtlocationid" value='<s:property value="txtlocationid"/>'>
+        </div>
+
+        <div class="field-row">
+            <label class="lbl-right" style="width:100px;">Item Info</label>
+            <select id="itemtype" name="itemtype" style="width:125px;" onchange="cleardata()"> 
+                <option value="">--Select--</option>              
+            </select>
+            
+            <div class="input-search-container" style="width:150px; margin-left:10px;">
+                <input type="text" id="itemdocno" name="itemdocno" placeholder="Press F3" value='<s:property value="itemdocno"/>'>
+                <svg class="magnifier-icon" onclick="$('#itemdocno').dblclick();" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <input type="text" id="itemname" name="itemname" style="flex:1;" value='<s:property value="itemname"/>' onkeydown="getitem(event);">
+        </div>
+
+        <div class="field-row">
+            <label class="lbl-right" style="width:100px;">Client</label>
+            <input type="text" id="clientname" name="clientname" style="width:285px;" value='<s:property value="clientname"/>'>
+            <input type="hidden" id="cldocno" name="cldocno" value='<s:property value="cldocno"/>'>
+            
+            <label class="lbl-right" style="width:60px; margin-left:15px;">Site</label>
+            <input type="text" name="site" id="site" style="flex:1; max-width:250px;" value='<s:property value="site"/>'>
+            <input type="hidden" name="siteid" id="siteid" value='<s:property value="siteid"/>'>
+        </div>
+        
+        <div class="field-row" style="margin-bottom:0;">
+            <label class="lbl-right" style="width:100px;">Description</label>
+            <input type="text" name="purdesc" id="purdesc" style="flex:1;" value='<s:property value="purdesc"/>'>
+            <button class="myButton" type="button" id="btnvaluechange" name="btnvaluechange" onclick="funwarningopen();" style="margin-left: 10px;">Value Change</button>
+        </div>
+    </div>
     
-    </select></td>
-            <td align="right" width="6%">Location</td> 
-    <td colspan="3"  ><input type="text" id="txtlocation" name="txtlocation" style="width:90%;" placeholder="Press F3 to Search" value='<s:property value="txtlocation"/>'  onkeydown="getloc(event);"/>
-      <input type="hidden" id="txtlocationid" name="txtlocationid" value='<s:property value="txtlocationid"/>'/></td>
-    <td width="4%" align="right">Ref No</td>
-    <td width="15%"><input type="text" name="refno" id="refno" style="width:90%;" value='<s:property value="refno"/>'></td>
- 
-   
-    <td width="9%" align="right">Doc No</td>
-    <td width="12%"><input type="text" name="docno" id="docno" tabindex="-1" value='<s:property value="docno"/>' readonly></td>
-  </tr>
-
-     <tr>
-   
-        <td width="6%" align="right">&nbsp;</td>
-        <td colspan="9"><select  id="itemtype" name="itemtype" style="width:15%;" onchange="cleardata()"> 
-    <option value="">--Select--</option>              
-    </select>  
-    <input type="text" id="itemdocno" placeholder="Press F3 to Search"  name="itemdocno"  value='<s:property value="itemdocno"/>' >
+    <!-- Item Entry Panel -->
+    <div class="middle-panel" id="psearch">
+        <span class="middle-panel-title">Item Entry</span>
+        <div class="field-row" style="align-items:flex-end;">
+            <div class="item-entry-col" style="flex:1;">
+                <label>Product ID</label>
+                <div id="part"><jsp:include page="part.jsp"></jsp:include></div>
+            </div>
+            <div class="item-entry-col" style="flex:2;">
+                <label>Product Name</label>
+                <div id="pnames"><jsp:include page="name.jsp"></jsp:include></div>
+            </div>
+            <div class="item-entry-col" style="width:150px;">
+                <label>Brand</label>
+                <input type="text" id="brand"> 
+                <input type="hidden" id="collqty">
+            </div>
+            <div class="item-entry-col" style="width:120px;">
+                <label>Unit</label>
+                <select id="unit"></select>
+            </div>
+            <div class="item-entry-col" style="width:100px;">
+                <label>Qty</label>
+                <input type="text" id="quantity" onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber1 (event);" style="text-align: left;" onchange="checkval();">
+                <input type="hidden" id="loads" class="myButtons" value="Load Data" onclick="loaddatass()">
+            </div>
+            <div class="item-entry-col">
+                <input type="button" id="setbtn" class="myButton" onclick="setgrid();checkval();" value="ADD">
+            </div>
+        </div>
+    </div>
     
-    <input type="text" id="itemname" name="itemname" style="width:43%;"   value='<s:property value="itemname"/>' onkeydown="getitem(event);">
-    </td>
-    <td>&nbsp;</td><td>&nbsp;</td> 
-    </tr>
-    <tr>
-         <td width="6%" align="right">Client</td>    
-    <td colspan="10"  ><input type="text" id="clientname" name="clientname"  style="width:42%;" value='<s:property value="clientname"/>'  />
-      <input type="hidden" id="cldocno" name="cldocno" value='<s:property value="cldocno"/>'/>&nbsp;&nbsp;
-   Site
-      <input type="text" name="site" id="site" style="width:18.5%;" value='<s:property value="site"/>'  >
-      
-       <input type="hidden" name="siteid" id="siteid" style="width:18.5%;" value='<s:property value="siteid"/>'   >
-      </td>
- 
-   <td>&nbsp;</td>
-  </tr>
-   
-  <tr>
-    <td   align="right">Description</td>
-    <td colspan="11"><input type="text" name="purdesc" id="purdesc" value='<s:property value="purdesc"/>' style="width:55.7%;"> &nbsp;&nbsp;&nbsp;
-   <button class="myButton" type="button" id="btnvaluechange" name="btnvaluechange" onclick="funwarningopen();">Value Change</button></td>
-  </tr>
-</table>
-  <input type="text" name="gridtext" id="gridtext"  style="width:0%;height:0%;"  class="textbox"  value='<s:property value="gridtext"/>'  />   
-  
-    <input type="text" name="gridtext1" id="gridtext1"  style="width:0%;height:0%;"  class="textbox" value='<s:property value="gridtext1"/>' />  
- 
- </fieldset>
- <br>
-  <fieldset id="psearch">
- 
- <legend>Item Details</legend>
- 
-   <table width="100% "  >   
-   <tr> 
-   <td align="center">Product ID</td>
-   <td align="center" colspan="2">Product Name</td>
-   <td align="center" style="width:15%;"  >Brand</td>
-   <td align="center">Unit</td>
-   <td  width="6%" align="center">Qty</td>
-  <!--  <td align="center" class="ff">FOC</td>
-  <td align="center" class="ff1">Multi_Batch</td> 
-   <td align="center" class="ff2">Batch</td>
-      <td align="center" class="ff3">ExpDate</td>  --> 
-    <td align="center">&nbsp;</td>  
-    <td align="center">&nbsp;</td> 
-   </tr>
-     
-   
-    <tr><td align="center"><div id="part"><jsp:include page="part.jsp"></jsp:include></div> </td>
- <td colspan="2" align="center"> <div id="pnames"><jsp:include page="name.jsp"></jsp:include></div> </td> 
- <td align="center" >   <input type="text" id="brand"   > <input type="hidden" id="collqty"   ></td>
-<td align="center"> <select    id="unit"   >   </select>      </td> 
- 
-<td width="6%" align="center"> <input type="hidden" id="loads" class="myButtons" value="Load Data" onclick="loaddatass()">  
-  <input type="text" id="quantity"   onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber1 (event);" style="text-align: left;" onchange="checkval();"  ></td>
-<td align="center" class="ff"><input type="hidden" id="focs"  onblur="funRoundAmt(this.value,this.id);"  style="width:82%;" onkeypress="javascript:return isNumber1 (event);"     ></td>
- 
- 
-   <td align="center" class="ff1"> 
-   <input type="hidden" id="multi" style="text-align: right;" onchange="chkmultis()" > </td>
- 
-   <td align="center" class="ff2"> 
-   <input type="hidden" id="batch"    onkeydown="getbatch(event)" > </td>
-<td  class="ff3"><div id="expdate" hidden:"true" name="expdate" value='<s:property value="expdate"/>'></div> </td> 
- <td align="center"><input type="hidden" id="quvals" name="quvals" value='<s:property value="quvals"/>' onblur="funRoundAmt(this.value,this.id);"  style="width:82%;" onkeypress="javascript:return isNumber1 (event);"></td>
-  <td align="center">  
-     <input type="hidden" id="cleardata">          
- &nbsp; <input type="button" id="setbtn"  class="btn" onclick="setgrid();checkval();" value="ADD" ></td>
-
- </tr>   
- 
-   
-   </table> 
-   </fieldset>    
- <fieldset>
- 
-    <div id="sevdesc" ><jsp:include page="serviecgrid.jsp"></jsp:include></div>
-     
-
-</fieldset>
-
- 
-<table width="100%">
-<tr>
-<td align="right">&nbsp;</td><td><input type="hidden" name="productTotal" readonly="readonly" id="productTotal" value='<s:property value="productTotal"/>'    style="width:50%;text-align: right;"></td>
-
- <td><input type="hidden" name="prddiscount" id="prddiscount" value='<s:property value="prddiscount"/>'   onkeypress="javascript:return isNumber (event);"  style="width:51%;text-align: right;"></td>
-<%-- <td align="right">Discount</td><td><input type="checkbox"  value="0" id="chkdiscount" name="chkdiscount" onchange="fundisable()"    onclick="$(this).attr('value', this.checked ? 1 : 0)" ></td>
-<td align="right">Discount %</td><td><input type="text" name="descPercentage" id="descPercentage" value='<s:property value="descPercentage"/>'   onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);"  style="width:50%;text-align: right;"></td>
-    <td align="center"><button type="button" class="icon" id="btnCalculate" title="Calculate" onclick="funcalcu();">
-       <img alt="Calculate" src="<%=contextPath%>/icons/calculate_new.png">
-      </button> 
-      </td> --%>
-  <%-- <td align="right">Discount Value</td><td><input type="text" name="descountVal" id="descountVal" value='<s:property value="descountVal"/>' onblur="funvalcalcu();" onkeypress="javascript:return isNumber (event);"  style="width:51%;text-align: right;"></td> --%>  
-<%-- <td align="right">Round of</td><td><input type="text" name="roundOf" id="roundOf" value='<s:property value="roundOf"/>' onblur="roundval();funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);"  style="width:51%;text-align: right;"></td> --%>
-<td align="right">&nbsp;</td><td><input type="hidden" name="netTotaldown" readonly="readonly" id="netTotaldown" value='<s:property value="netTotaldown"/>'  onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);"  style="width:50%;text-align: right;"></td>
- 
-<%-- <td align="right">&nbsp;<td><td width="10%" align="right"><label >Order Value :</label></td><td><input type="text" class="textbox" id="orderValue" readonly="readonly" tabindex="-1" name="orderValue" style="width:73%;" value='<s:property value="orderValue"/>'/></td> --%>
- 
- 
-</tr>
-
-
-</table>
- 
-
-
-
-
-
-<%--  <fieldset>
-   <legend>Summary</legend>  
-<table width="100%">
-<tr>
-<td align="right">Product</td><td><input type="text" name="productTotal" readonly="readonly" id="productTotal" value='<s:property value="productTotal"/>'    style="width:50%;text-align: right;"></td>
-<td align="right">Discount</td><td><input type="checkbox"  value="0" id="chkdiscount" name="chkdiscount" onchange="fundisable()"    onclick="$(this).attr('value', this.checked ? 1 : 0)" ></td>
-<td align="right">Discount %</td><td><input type="text" name="descPercentage" id="descPercentage" value='<s:property value="descPercentage"/>'   onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);"  style="width:50%;text-align: right;"></td>
-    <td align="center"><button type="button" class="icon" id="btnCalculate" title="Calculate" onclick="funcalcu();">
-       <img alt="Calculate" src="<%=contextPath%>/icons/calculate_new.png">
-      </button> 
-      </td>
-<td align="right">Discount Value</td><td><input type="text" name="descountVal" id="descountVal" value='<s:property value="descountVal"/>' onblur="funvalcalcu();" onkeypress="javascript:return isNumber (event);"  style="width:51%;text-align: right;"></td>
-<td align="right">Round of</td><td><input type="text" name="roundOf" id="roundOf" value='<s:property value="roundOf"/>' onblur="roundval();funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);"  style="width:51%;text-align: right;"></td>
-<td align="right">Net Total</td><td><input type="text" name="netTotaldown" readonly="readonly" id="netTotaldown" value='<s:property value="netTotaldown"/>'  onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);"  style="width:50%;text-align: right;"></td>
- 
-</tr>
-
-
-</table>
-</fieldset> --%>
-
-
- <input type="hidden" id="costtr_no" name="costtr_no"  value='<s:property value="costtr_no"/>'/> 
-
- <input type="hidden" id="hideitemtype" name="hideitemtype"  value='<s:property value="hideitemtype"/>'/> 
-	 <input type="hidden" id="hidetype" name="hidetype"  value='<s:property value="hidetype"/>'/>
-	 <input type="hidden" id="masterdoc_no" name="masterdoc_no"  value='<s:property value="masterdoc_no"/>'/>
-
- 
-<input type="hidden" id="refmasterdoc_no" name="refmasterdoc_no"  value='<s:property value="refmasterdoc_no"/>'/>
-     <input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
-     <input type="hidden" id="mode" name="mode"  value='<s:property value="mode"/>'/>   
+    <!-- Grid Panel -->
+    <div class="middle-panel">
+        <span class="middle-panel-title">Service Details Grid</span>
+        <div class="grid-container">
+            <div id="sevdesc"><jsp:include page="serviecgrid.jsp"></jsp:include></div>
+        </div>
+    </div>
     
-
-     <input type="hidden" id="rowval" name="rowval"  value='<s:property value="rowval"/>'/>   <!-- for refno  slno set grid -->
-               <input type="hidden" id="accdocno" name="accdocno"  value='<s:property value="accdocno"/>'/>  
-              <input type="hidden" id="descgridlenght" name="descgridlenght"  value='<s:property value="descgridlenght"/>'/>    
-         <input type="hidden" id="cmbcurrval" name="cmbcurrval"  value='<s:property value="cmbcurrval"/>'/>    
-          <input type="hidden" id="acctypeval" name="acctypeval"  value='<s:property value="acctypeval"/>'/>  
-           <input type="hidden" id="reftypeval" name="reftypeval"  value='<s:property value="reftypeval"/>'/>  
-           
-           
-           <input type="hidden" id="deleted" name="deleted"  value='<s:property value="deleted"/>'/>
-           
-            <input type="hidden" id="acctypegrid" name="acctypegrid"  value='<s:property value="acctypegrid"/>'/>
-           
-            <input type="hidden" id="serviecGridlength" name="serviecGridlength"  value='<s:property value="serviecGridlength"/>'/>  
-          
-                <input type="hidden" id="hidelocation" name="hidelocation"  value='<s:property value="hidelocation"/>'/>
-                <input type="hidden" id="editdata" name="editdata"  value='<s:property value="editdata"/>'/>
-        <input type="hidden" id="temppsrno" >  
-        <input type="hidden" id="tempspecid" > 
-        <input type="hidden" id="tempunitdocno" >    
-          
-</form>
- <div id="searchwindow">
-   <div ></div>
+    <!-- Hidden Elements & Totals -->
+    <div style="display:none;">
+        <input type="hidden" name="gridtext" id="gridtext" value='<s:property value="gridtext"/>'/>   
+        <input type="hidden" name="gridtext1" id="gridtext1" value='<s:property value="gridtext1"/>'/>  
+        <input type="hidden" id="focs" onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber1 (event);">
+        <input type="hidden" id="multi" onchange="chkmultis()"> 
+        <input type="hidden" id="batch" onkeydown="getbatch(event)"> 
+        <div id="expdate" name="expdate" value='<s:property value="expdate"/>'></div>
+        <input type="hidden" id="quvals" name="quvals" value='<s:property value="quvals"/>' onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber1 (event);">
+        <input type="hidden" id="cleardata"> 
+        <input type="hidden" name="productTotal" readonly="readonly" id="productTotal" value='<s:property value="productTotal"/>'>
+        <input type="hidden" name="prddiscount" id="prddiscount" value='<s:property value="prddiscount"/>'>
+        <input type="hidden" name="netTotaldown" readonly="readonly" id="netTotaldown" value='<s:property value="netTotaldown"/>'>
+        <input type="hidden" id="costtr_no" name="costtr_no" value='<s:property value="costtr_no"/>'/> 
+        <input type="hidden" id="hideitemtype" name="hideitemtype" value='<s:property value="hideitemtype"/>'/> 
+        <input type="hidden" id="hidetype" name="hidetype" value='<s:property value="hidetype"/>'/>
+        <input type="hidden" id="masterdoc_no" name="masterdoc_no" value='<s:property value="masterdoc_no"/>'/>
+        <input type="hidden" id="refmasterdoc_no" name="refmasterdoc_no" value='<s:property value="refmasterdoc_no"/>'/>
+        <input type="hidden" id="msg" name="msg" value='<s:property value="msg"/>'/>
+        <input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>'/>   
+        <input type="hidden" id="rowval" name="rowval" value='<s:property value="rowval"/>'/> 
+        <input type="hidden" id="accdocno" name="accdocno" value='<s:property value="accdocno"/>'/>  
+        <input type="hidden" id="descgridlenght" name="descgridlenght" value='<s:property value="descgridlenght"/>'/>    
+        <input type="hidden" id="cmbcurrval" name="cmbcurrval" value='<s:property value="cmbcurrval"/>'/>    
+        <input type="hidden" id="acctypeval" name="acctypeval" value='<s:property value="acctypeval"/>'/>  
+        <input type="hidden" id="reftypeval" name="reftypeval" value='<s:property value="reftypeval"/>'/>  
+        <input type="hidden" id="deleted" name="deleted" value='<s:property value="deleted"/>'/>
+        <input type="hidden" id="acctypegrid" name="acctypegrid" value='<s:property value="acctypegrid"/>'/>
+        <input type="hidden" id="serviecGridlength" name="serviecGridlength" value='<s:property value="serviecGridlength"/>'/>  
+        <input type="hidden" id="hidelocation" name="hidelocation" value='<s:property value="hidelocation"/>'/>
+        <input type="hidden" id="editdata" name="editdata" value='<s:property value="editdata"/>'/>
+        <input type="hidden" id="temppsrno">  
+        <input type="hidden" id="tempspecid"> 
+        <input type="hidden" id="tempunitdocno">    
+    </div>
 </div>
-  <div id="accountSearchwindow">
-	   <div ></div>
-	</div>
-	  <div id="sidesearchwndow">
-	   <div ></div>
-	</div>
-		  <div id="importwindow">
-	   <div ></div>
-	</div>
-		  <div id="searchwndow">
-	   <div ></div>
-	</div>
-		  <div id="locationwindow">
-	   <div ></div>
-	</div>
-	
+</form>
+
+<!-- Dialog Windows -->
+<div id="searchwindow"><div></div></div>
+<div id="accountSearchwindow"><div></div></div>
+<div id="sidesearchwndow"><div></div></div>
+<div id="importwindow"><div></div></div>
+<div id="searchwndow"><div></div></div>
+<div id="locationwindow"><div></div></div>
+
 </div>
 </body>
 </html>

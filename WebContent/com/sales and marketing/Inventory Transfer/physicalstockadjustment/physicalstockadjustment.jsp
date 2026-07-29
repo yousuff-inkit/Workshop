@@ -9,43 +9,183 @@
 <title>GatewayERP(i)</title>
 <jsp:include page="../../../../includes.jsp"></jsp:include>
 <style>
-
-.myButtons {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
-	background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
-	background-color:#007dc1;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:12px;
-	padding:2px 8px;
-	text-decoration:none;
-}
-.myButtons:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
-	background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
-	background-color:#0061a7;
-}
-.myButtons:active {
-	position:relative;
-	top:1px;
+/* =========================================================
+   SCOPED UI: Modern Layout Adapted for Table Structure
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
 
-   
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+#frmstkadjust input[type="text"],
+#frmstkadjust select,
+.textbox { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    box-shadow: none !important;
+    outline: none;
+    width: 100%;
+}
+
+#frmstkadjust input[type="text"]:focus,
+#frmstkadjust select:focus,
+.textbox:focus { 
+    border-color: #007bff; 
+}
+
+#frmstkadjust input[readonly],
+#frmstkadjust input:disabled,
+#frmstkadjust select:disabled,
+.textbox[readonly] { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
+}
+
+form label.error {
+    color: red;
+    font-weight: bold;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+}
+
+.myButton, .btn {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.myButton:hover, .btn:hover { 
+    background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); 
+}
+
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+    padding-right: 5px;
+    overflow-x: hidden;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+/* Grid Containers */
+.grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* JQX Widget Overrides for 24px Alignment */
+.jqx-datetimeinput-input { 
+    height: 24px !important; 
+    line-height: 24px !important; 
+    margin-top: 0px !important; 
+    padding-top: 0px !important;
+    box-sizing: border-box !important;
+    font-size: 12px !important;
+}
+.jqx-action-button {
+    height: 24px !important;
+}
+
+/* Middle Section Panels */
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+    flex-shrink: 0; /* Keep labels from squishing */
+}
+
+.modern-ui .input-search-container {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+}
+.modern-ui .input-search-container input {
+    padding-right: 25px !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+.modern-ui .magnifier-icon {
+    position: absolute;
+    right: 6px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b; 
+    z-index: 10;
+}
+.modern-ui .magnifier-icon:hover { color: #2563eb; }
 </style>
 <script type="text/javascript">
 	 $(document).ready(function() {
@@ -1024,127 +1164,120 @@ function Clearloc(){
 
 </script>
 
-<style>
-.hidden-scrollbar {
-  overflow: auto;
-  height: 530px;
-}
-.textbox {
-    border: 0;
-    height: 25px;
-    width: 20%;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -moz-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-background-clip: padding-box;
-    outline: 0;
-}
-</style> 
+<style></style> 
 
 </head>
-<body onload="setValues();getBrchs();">
-<div id="mainBG" class="homeContent" data-type="background" >
+<body onload="setValues();getBrchs();"> 
+
+<!-- JQX input alignment fix -->
+<script type="text/javascript">
+    $(document).ready(function() {
+         setTimeout(function () {
+             $("#date").find("input").css({
+                 "margin-top": "0px",
+                 "line-height": "24px",
+                 "font-size": "12px", 
+                 "font-family": "Arial, sans-serif", 
+                 "padding": "0 6px", 
+                 "box-sizing":"border-box"
+             });
+             $("#date").find(".jqx-action-button").css({
+                 "top": "0px",
+                 "height": "24px"
+             });
+         }, 0);
+         
+         $("#date").jqxDateTimeInput({ width: '100%', height: '24px', formatString:"dd.MM.yyyy"});
+    });
+</script>
+
+<div id="mainBG" class="homeContent" data-type="background">
 <form id="frmstkadjust" action="savephkadjst" method="post" autocomplete="off">
-<jsp:include page="../../../../header.jsp" />
+    <jsp:include page="../../../../header.jsp" />
 
-<div  class='hidden-scrollbar'>
-<input type="text" name="gridtext" id="gridtext"  style="width:0%;height:0%;"  class="textbox"  value='<s:property value="gridtext"/>'  />   
- <input type="text" name="gridtext1" id="gridtext1"  style="width:0%;height:0%;"  class="textbox" value='<s:property value="gridtext1"/>' />
- <fieldset>
-<table width="100%" >
-  <tr>
-   
-    <td width="3%"  align="right">Date</td> 
-    <td width="13%"><div id="date"  name="date" value='<s:property value="date"/>'></div>
-    <input type="hidden" id="hiddate" name="hiddate" value='<s:property value="hiddate"/>'/></td>
-    <td width="9%" align="right">Branch</td>
-    <td width="14%"><select name="brchNames1" id="brchNames1" style="width:98%;"  onchange="Clearloc()"> 
-			</select>
-			
-			<input type="hidden" id="hidbrchids"  name="hidbrchids" value='<s:property value="hidbrchids"/>'/>
-			</td>
-    <td  align="right">Location</td><td>
-        <input type="text" id="txtlocation" name="txtlocation" style="width:75%;" readonly placeholder="Press F3 to Search"  onKeyDown="getLocation(event);" value='<s:property value="txtlocation"/>'/>
-        <input type="hidden" id="locationid" name="locationid" value='<s:property value="locationid"/>'/></td>
-    <td width="8%" align="right">Doc No.</td>
-    <td width="30%"><input type="text" id="docno" name="docno" style="width:30%;" value='<s:property value="docno"/>' tabindex="-1"/></td>
-  </tr>
- 
+    <div class='modern-ui hidden-scrollbar'>
+        
+        <!-- Adjustment Details -->
+        <div class="middle-panel">
+            <span class="middle-panel-title">Adjustment Details</span>
+            
+            <div class="field-row">
+                <label class="lbl-right" style="width:60px; flex-shrink:0;">Date</label>
+                <div style="width: 125px; flex-shrink:0;">
+                    <div id="date" name="date" value='<s:property value="date"/>'></div>
+                    <input type="hidden" id="hiddate" name="hiddate" value='<s:property value="hiddate"/>'/>
+                </div>
+                
+                <label class="lbl-right" style="width:60px; flex-shrink:0; margin-left: 15px;">Branch</label>
+                <select name="brchNames1" id="brchNames1" style="width:150px; flex-shrink:0;" onchange="Clearloc()"> 
+                </select>
+                <input type="hidden" id="hidbrchids" name="hidbrchids" value='<s:property value="hidbrchids"/>'/>
+                
+                <label class="lbl-right" style="width:60px; flex-shrink:0; margin-left: 15px;">Location</label>
+                <div class="input-search-container" style="width: 150px; flex-shrink:0;">
+                    <input type="text" id="txtlocation" name="txtlocation" readonly placeholder="Press F3" onKeyDown="getLocation(event);" value='<s:property value="txtlocation"/>'/>
+                    <svg class="magnifier-icon" onclick="if($('#mode').val()!='view'){ $('#locationwindow').jqxWindow('open'); locationSearchContent('locationSearch.jsp?brch='+$('#brchNames1').val()); }" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <input type="hidden" id="locationid" name="locationid" value='<s:property value="locationid"/>'/>
+                
+                <label class="lbl-right" style="width:60px; flex-shrink:0; margin-left: auto;">Doc No.</label>
+                <input type="text" id="docno" name="docno" value='<s:property value="docno"/>' tabindex="-1" readonly style="width:120px; flex-shrink:0;">
+            </div>
 
-  <tr>
-    <td align="right">Description</td>
-    <td colspan="5"><input type="text" id="txtdescription" name="txtdescription" style="width:93%;" value='<s:property value="txtdescription"/>'/>
- 
-<!--     <button class="myButton" type="button" id="btnvaluechange" name="btnvaluechange" onclick="funwarningopen();">Value Change</button> -->
-    </td>
-  </tr>
-</table>
- </fieldset>
-<fieldset><legend>Product Details</legend>
-<div id="delNoteDiv"><center><jsp:include page="prdGrid.jsp"></jsp:include></center></div><br/>
-</fieldset>
- 
- 
-<input type="hidden" id="cmbprice" name="cmbprice" value='<s:property value="cmbprice"/>'/>
-<input type="hidden" id="hidcmbprice" name="hidcmbprice" value='<s:property value="hidcmbprice"/>'/>
-<input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>'/>
-<input type="hidden" id="clientid" name="clientid" value='<s:property value="clientid"/>'/>
-<input type="hidden" id="deleted" name="deleted" value='<s:property value="deleted"/>'/>
-<input type="hidden" id="nettotal" name="nettotal"  value='<s:property value="nettotal"/>'/>
-<input type="hidden" name="txtdiscount" id="txtdiscount" value='<s:property value="txtdiscount"/>'>
-<input type="hidden" name="txtnettotal"  id="txtnettotal" value='<s:property value="txtnettotal"/>'>
-<input type="hidden"  id="orderValue"  name="orderValue"  value='<s:property value="orderValue"/>'/>
-<input type="hidden" name="txtproductamt" id="txtproductamt" value='<s:property value="txtproductamt"/>'>
-<input type="hidden" name="descPercentage" id="descPercentage" value='<s:property value="descPercentage"/>'>
-<input type="hidden" name="prddiscount" id="prddiscount" value='<s:property value="prddiscount"/>'>
-<input type="hidden" name="roundOf" id="roundOf" value='<s:property value="roundOf"/>'>
-<input type="hidden" id="msg" name="msg"  value='<s:property value="msg"/>'/>
-<input type="hidden" id="masterdoc_no" name="masterdoc_no"  value='<s:property value="masterdoc_no"/>'/>
-<input type="hidden" id="refmasterdocno" name="refmasterdocno"  value='<s:property value="refmasterdocno"/>'/>
-<input type="hidden" id="gridlength" name="gridlength"/>
-<input type="hidden" id="termsgridlength" name="termsgridlength" value='<s:property value="termsgridlength"/>'/>
-<input type="hidden" id="servgridlen" name="servgridlen"  value='<s:property value="servgridlen"/>'/>
-<input type="hidden" id="prodsearchtype" name="prodsearchtype" value='<s:property value="prodsearchtype"/>'/>
-   <input type="hidden" id="editdata" name="editdata"  value='<s:property value="editdata"/>'/>
-   
-   
-    <input type="hidden" id="shipdocno" name="shipdocno"  value='<s:property value="shipdocno"/>'/>
-                <input type="hidden" id="shipdatagridlenght" name="shipdatagridlenght"  value='<s:property value="shipdatagridlenght"/>'/>
-   
-</div>
-<div id="salespersonwindow">
-			<div></div>
-			<div></div>
-		</div>
-<div id="customerDetailsWindow">
-	<div></div>
-</div>
+            <div class="field-row" style="margin-bottom:0;">
+                <label class="lbl-right" style="width:60px; flex-shrink:0;">Description</label>
+                <input type="text" id="txtdescription" name="txtdescription" value='<s:property value="txtdescription"/>' style="flex:1; min-width:0;">
+            </div>
+        </div>
 
-<div id="sidesearchwndow">
-	<div></div>
-</div>  
-<div id="refnosearchwindow">
-	<div></div>
-</div>
-<div id="searchwndow">
-	<div></div>
-</div>
-<div id="locationwindow">
-	<div></div>
-</div>	
+        <!-- Details Grid -->
+        <div class="middle-panel">
+            <span class="middle-panel-title">Product Details</span>
+            <div id="delNoteDiv" class="grid-container">
+                <center><jsp:include page="prdGrid.jsp"></jsp:include></center>
+            </div> 
+        </div>
 
-<div id="tremwndow">
-	<div></div>
-</div>	
+        <!-- Hidden Inputs -->
+        <div style="display:none;">
+            <input type="hidden" name="gridtext" id="gridtext" value='<s:property value="gridtext"/>' />   
+            <input type="hidden" name="gridtext1" id="gridtext1" value='<s:property value="gridtext1"/>' />
+            <input type="hidden" id="cmbprice" name="cmbprice" value='<s:property value="cmbprice"/>'/>
+            <input type="hidden" id="hidcmbprice" name="hidcmbprice" value='<s:property value="hidcmbprice"/>'/>
+            <input type="hidden" id="mode" name="mode" value='<s:property value="mode"/>'/>
+            <input type="hidden" id="clientid" name="clientid" value='<s:property value="clientid"/>'/>
+            <input type="hidden" id="deleted" name="deleted" value='<s:property value="deleted"/>'/>
+            <input type="hidden" id="nettotal" name="nettotal" value='<s:property value="nettotal"/>'/>
+            <input type="hidden" name="txtdiscount" id="txtdiscount" value='<s:property value="txtdiscount"/>'>
+            <input type="hidden" name="txtnettotal" id="txtnettotal" value='<s:property value="txtnettotal"/>'>
+            <input type="hidden" id="orderValue" name="orderValue" value='<s:property value="orderValue"/>'/>
+            <input type="hidden" name="txtproductamt" id="txtproductamt" value='<s:property value="txtproductamt"/>'>
+            <input type="hidden" name="descPercentage" id="descPercentage" value='<s:property value="descPercentage"/>'>
+            <input type="hidden" name="prddiscount" id="prddiscount" value='<s:property value="prddiscount"/>'>
+            <input type="hidden" name="roundOf" id="roundOf" value='<s:property value="roundOf"/>'>
+            <input type="hidden" id="msg" name="msg" value='<s:property value="msg"/>'/>
+            <input type="hidden" id="masterdoc_no" name="masterdoc_no" value='<s:property value="masterdoc_no"/>'/>
+            <input type="hidden" id="refmasterdocno" name="refmasterdocno" value='<s:property value="refmasterdocno"/>'/>
+            <input type="hidden" id="gridlength" name="gridlength"/>
+            <input type="hidden" id="termsgridlength" name="termsgridlength" value='<s:property value="termsgridlength"/>'/>
+            <input type="hidden" id="servgridlen" name="servgridlen" value='<s:property value="servgridlen"/>'/>
+            <input type="hidden" id="prodsearchtype" name="prodsearchtype" value='<s:property value="prodsearchtype"/>'/>
+            <input type="hidden" id="editdata" name="editdata" value='<s:property value="editdata"/>'/>
+            <input type="hidden" id="shipdocno" name="shipdocno" value='<s:property value="shipdocno"/>'/>
+            <input type="hidden" id="shipdatagridlenght" name="shipdatagridlenght" value='<s:property value="shipdatagridlenght"/>'/>
+        </div>
 
-	
+    </div>
 </form>
-	
 
+<div id="salespersonwindow"><div></div></div>
+<div id="customerDetailsWindow"><div></div></div>
+<div id="sidesearchwndow"><div></div></div>  
+<div id="refnosearchwindow"><div></div></div>
+<div id="searchwndow"><div></div></div>
+<div id="locationwindow"><div></div></div>	
+<div id="tremwndow"><div></div></div>	
+	
 </div>
 </body>
 </html>
- 
