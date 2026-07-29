@@ -1,6 +1,6 @@
-<link href="../../../../css/dashboard.css" media="screen" rel="stylesheet" type="text/css" />  
 <jsp:include page="../../../../includes.jsp"></jsp:include>    
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<% String contextPath=request.getContextPath();%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,48 +8,212 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
-<%-- <script type="text/javascript" src="../../js/dashboard.js"></script> --%> 
+<link href="../../../../css/dashboard.css" media="screen" rel="stylesheet" type="text/css" />  
+
 <style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+/* ===== MASTER LAYOUT (Modern Flexbox) ===== */
+html, body, #mainBG {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 300px; 
+    flex: 0 0 300px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
 }
- 
-select{
-    height:15px;
+
+/* Cards */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+/* Tables */
+.release-filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.release-filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 90px;
+}
+
+/* ===== UNIFORM INPUTS & SELECTS ===== */
+input[type="text"], select, textarea,
+.release-filter-table input[type="text"],
+.release-filter-table select,
+.release-filter-table textarea {
+    width: 100%;
+    height: 24px;             
+    padding: 2px 8px;         
+    border: 1px solid #ccd6e0;
+    border-radius: 4px;       
+    font-size: 12px;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.release-filter-table textarea {
+    height: auto;
+    resize: none;
+}
+
+/* Readonly / disabled look */
+input[readonly],
+input:disabled,
+textarea[readonly],
+.release-filter-table input[readonly],
+.release-filter-table input:disabled,
+.release-filter-table select:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed;
+}
+
+/* jqx date/time containers */
+.release-filter-table div[id^="fromdate"],
+.release-filter-table div[id^="todate"] {
+    width: 100% !important;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 12px;
+    color: #333;
+    padding: 2px 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.radio-group input[type="radio"] {
+    margin-right: 4px;
+}
+
+/* Add/Remove Item Input Group */
+.search-by-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.search-by-group select {
+    flex: 1;
+}
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    background: #e1e8ed;
+    border: 1px solid #ccd6e0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+.btn-icon:hover {
+    background: #d0d7de;
+}
+
+/* ===== BUTTONS ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px;            
+    padding: 0 12px;         
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;      
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 30px;       
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8;
+}
+
+.btn-submit:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Action buttons layout */
+.release-secondary-actions, .release-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.release-actions .btn-submit {
+    min-width: 100px;
+}
+
+/* ===== RIGHT CONTENT AREA (Dynamically fills screen) ===== */
+.main-content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.grid-content-container {
+    flex: 1;
+    padding: 15px;
+    overflow: auto; 
+    box-sizing: border-box;
 }
 </style>
 
@@ -60,8 +224,8 @@ $(document).ready(function () {
 		$("body").prepend('<div id="overlay" class="ui-widget-overlay" style="z-index: 1; display: none;"></div>');
 	    $("body").prepend("<div id='PleaseWait' style='display: none;position:absolute; z-index: 1;top:200px;right:750px;'><img src='../../../../icons/31load.gif'/></div>");
 	    
-	 $("#fromdate").jqxDateTimeInput({ width: '125px', height: '15px',formatString:"dd.MM.yyyy"});
-	 $("#todate").jqxDateTimeInput({ width: '125px', height: '15px',formatString:"dd.MM.yyyy"});
+	 $("#fromdate").jqxDateTimeInput({ width: '100%', height: '24px',formatString:"dd.MM.yyyy"});
+	 $("#todate").jqxDateTimeInput({ width: '100%', height: '24px',formatString:"dd.MM.yyyy"});
 	 
 	 var curfromdate=$('#fromdate').jqxDateTimeInput('getDate');
 	 var onemonthbackdate=new Date(curfromdate.setMonth(curfromdate.getMonth()-1));
@@ -115,7 +279,7 @@ function funreload(event)
 	   		
 	   	}else if(x=="sm"){
 	   		$("#overlay, #PleaseWait").show(); 
-	   	   	$("#revenuereportdiv").load("summaryGrid.jsp?fromdate="+fromdate+"&todate="+todate+"&id=1"+"&hidclient="+hidclient+"&hidclientslm="+hidclientslm+"&hidrepairtype="+hidrepairtype+"&hidserviceadvisor="+hidserviceadvisor+"&sumtype=sm"); 
+	   	   	$("#revenuereportdiv").load("summaryGrid.jsp?fromdate="+fromdate+"&todate="+todate+"&id=1"+"&hidclient="+hidclient+"&hidclientslm="+hidclientslm+"&hidrepairtype="+hidserviceadvisor+"&sumtype=sm"); 
 	   		
 	   	}else if(x=="rt"){
 	   		$("#overlay, #PleaseWait").show(); 
@@ -407,140 +571,124 @@ function setRemove(){
     
 }
 	
-	
 	/* setValues(); */
 	</script>
 	
 </head>
 <body onload="getBranch();">
-	<form id="revenueReport" method="post">
-		<div id="mainBG" class="homeContent" data-type="background"> 
-			<div class='hidden-scrollbar'>
-				<table width="100%">
-					<tr>
-						<td width="20%" align="center">
-   	 						<fieldset style="background: #ECF8E0;">
-								<table width="100%">
-									<jsp:include page="../../heading.jsp"></jsp:include>
-		 							<tr>
-		   								<td width="37%" align="right"><label class="branch">From Date</label></td><td width="63%"><div id="fromdate"></div></td>
-		   							</tr>
-		 							<tr>
-		   								<td align="right"><label class="branch">To Date</label></td>
-		   								<td><div id="todate"></div></td>
-		 							</tr>
-									<tr>
-										<td colspan="2">
-				  							<fieldset>
-					  							<table width="100%">
-				      								<tr>
-					      								<td width="40%" align="left">
-					      									<input type="radio" id="rdall" name="rdo" onclick="summaryDisable();" value="rdall">
-					      									<label for="rdall" class="branch">Detail</label>
-					      								</td>
-					      								<td width="60%">&nbsp;</td>
-				      								</tr>
-				      								<tr>
-				     	 								<td align="left">
-				     	 									<input type="radio" id="rdsummary" name="rdo" onclick="summaryDisable();" value="rdsummary">
-				     	 									<label for="rdsummary" class="branch">Summary</label>
-				     	 								</td>
-				      									<td>
-				      										<select id="cmbsummarytype" name="cmbsummarytype" style="width:80%;"  value='<s:property value="cmbsummarytype"/>'>
-				      											<option value="">--Select--</option>
-				      											<option value="clt">Client</option>
-				      											<option value="sm">Sales Man</option>
-				      											<option value="rt">Repair Type</option>
-				      											<option value="wsa">Service Advisor</option>
-				      											<option value="dly">Daily</option>
-				      											<option value="mly">Monthly</option>
-				      											<option value="yly">Yearly</option>
-					  										</select>
-				      									</td>
-				      								</tr>
-				      							</table>
-			      							</fieldset>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<table width="100%">
-				  								<tr>
-				    								<td align="right"><label class="branch">Search By</label></td>
-				    								<td align="left">
-				    									<select name="searchby" id="searchby">
-				    										<option value="">--Select--</option>
-															<option value="client">Client</option>
-															<option value="clientslm">Salesman</option>
-															<option value="repairtype">Repair Type</option>
-															<option value="wsa">Service Advisor</option>
-														</select>
-													</td>
-				    								<td><button type="button" name="btnadditem" id="additem" class="myButtons1" onClick="setSearch();">+</button></td>
-				    								<td><button type="button" name="btnremoveitem" id="btnremoveitem" class="myButtons1" onclick="setRemove();">-</button></td>
-				  								</tr>
-				  								<tr>
-				    								<td colspan="4" align="center">
-				    									<textarea id="searchdetails" style="height:140px;width:230px;font: 10px Tahoma;resize:none" name="searchdetails" readonly="readonly"><s:property value="searchdetails"></s:property></textarea>
-				    								</td>
-				  								</tr>
-											</table>
-										</td>
-									</tr>  
-		 							<tr>
-										<td colspan="2" style="border-top:2px solid #DCDDDE;">
-											<div style="text-align:center;">
-												<input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();"> &nbsp;&nbsp;
-												<!-- <input type="button" name="btnrepprint" id="btnrepprint" value="Account Wise Print" class="myButtons" onclick="funAccwisePrint();"> -->
-											</div>
-		    							</td>
-		    						</tr>
-									<tr>
-										<td colspan="2" >
-											<div style="text-align:center;" hidden="true">
-												<input type="button" name="btnrepprint" id="btnrepprint" value="Month Wise Print" class="myButtons" onclick="funMnthwisePrint();">
-											</div>
-										</td>
-									</tr>
-									<tr >
-										<td colspan="2">
-											<!-- <textarea id="agmtdetails" name="agmtdetails" readonly style="resize:none;" rows="10" cols="35"></textarea> -->
-											<br><br><br><br>
-										</td>
-									</tr>
-									<tr colspan="2"><td>&nbsp;</td></tr>		
-								</table>
-							</fieldset>
-						</td>
-						<td width="80%">
-							<table width="100%">
-								<tr>
-		  							<td><div id="revenuereportdiv"><jsp:include page="detailGrid.jsp"></jsp:include></div></td>
-		  							<input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-									<input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
-									<input type="hidden" name="client" id="client"><input type="hidden" name="hidclient" id="hidclient">
-									<input type="hidden" name="clientslm" id="clientslm"><input type="hidden" name="hidclientslm" id="hidclientslm">
-									<input type="hidden" name="repairtype" id="repairtype"><input type="hidden" name="hidrepairtype" id="hidrepairtype">
-									<input type="hidden" name="serviceadvisor" id="serviceadvisor"><input type="hidden" name="hidserviceadvisor" id="hidserviceadvisor">
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</form>
-	<div id="clientToWindow">
-		<div></div>
-	</div>
-	<div id="salesmanSearchWindow">
-		<div></div>
-	</div>	
-	<div id="repairtypeSearchWindow">
-		<div></div>
-	</div>
-	<div id="serviceAdvisorSearchWindow">
-		<div></div>
-	</div>
+<form id="revenueReport" method="post">
+    <div id="mainBG" class="homeContent" data-type="background"> 
+        <div class="master-container">
+
+            <!-- Sidebar / Filter Section -->
+            <div class="sidebar-filters">
+                <div class="sidebar-scroll-content">
+                    <div class="filter-card">
+                        <table class="release-filter-table">
+                            <tr>
+                                <td class="label-cell">From Date</td>
+                                <td><div id="fromdate"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">To Date</td>
+                                <td><div id="todate"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Report Type</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label><input type="radio" id="rdall" name="rdo" onclick="summaryDisable();" value="rdall">Detail</label>
+                                        <label><input type="radio" id="rdsummary" name="rdo" onclick="summaryDisable();" value="rdsummary">Summary</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Summary Type</td>
+                                <td>
+                                    <select id="cmbsummarytype" name="cmbsummarytype" value='<s:property value="cmbsummarytype"/>'>
+                                        <option value="">--Select--</option>
+                                        <option value="clt">Client</option>
+                                        <option value="sm">Sales Man</option>
+                                        <option value="rt">Repair Type</option>
+                                        <option value="wsa">Service Advisor</option>
+                                        <option value="dly">Daily</option>
+                                        <option value="mly">Monthly</option>
+                                        <option value="yly">Yearly</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Search By</td>
+                                <td>
+                                    <div class="search-by-group">
+                                        <select name="searchby" id="searchby">
+                                            <option value="">--Select--</option>
+                                            <option value="client">Client</option>
+                                            <option value="clientslm">Salesman</option>
+                                            <option value="repairtype">Repair Type</option>
+                                            <option value="wsa">Service Advisor</option>
+                                        </select>
+                                        <button type="button" name="btnadditem" id="additem" class="btn-icon" onClick="setSearch();">+</button>
+                                        <button type="button" name="btnremoveitem" id="btnremoveitem" class="btn-icon" onclick="setRemove();">-</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <textarea id="searchdetails" name="searchdetails" readonly="readonly" style="height:100px;"><s:property value="searchdetails"></s:property></textarea>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="release-actions">
+                            <button type="button" name="btnclear" id="btnclear" class="btn-submit" onclick="funClearData();">Clear</button>
+                            <!-- <button type="button" name="btnrepprint" id="btnrepprint" class="btn-submit" onclick="funAccwisePrint();">Print</button> -->
+                        </div>
+
+                        <!-- Hidden elements logically retained -->
+                        <div style="display:none; text-align:center;">
+                            <button type="button" name="btnrepprint_mnth" id="btnrepprint_mnth" class="btn-submit" onclick="funMnthwisePrint();">Month Wise Print</button>
+                        </div>
+                        
+                        <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
+                        <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+                        <input type="hidden" name="client" id="client"><input type="hidden" name="hidclient" id="hidclient">
+                        <input type="hidden" name="clientslm" id="clientslm"><input type="hidden" name="hidclientslm" id="hidclientslm">
+                        <input type="hidden" name="repairtype" id="repairtype"><input type="hidden" name="hidrepairtype" id="hidrepairtype">
+                        <input type="hidden" name="serviceadvisor" id="serviceadvisor"><input type="hidden" name="hidserviceadvisor" id="hidserviceadvisor">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid / Data Section -->
+            <div class="main-content-area">
+                
+                <div class="top-toolbar-container">
+                    <jsp:include page="../../heading.jsp"></jsp:include>
+                </div>
+
+                <div class="grid-content-container">
+                    <div id="revenuereportdiv"><jsp:include page="detailGrid.jsp"></jsp:include></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Modals -->
+        <div id="clientToWindow">
+            <div></div>
+        </div>
+        <div id="salesmanSearchWindow">
+            <div></div>
+        </div>	
+        <div id="repairtypeSearchWindow">
+            <div></div>
+        </div>
+        <div id="serviceAdvisorSearchWindow">
+            <div></div>
+        </div>
+    </div>
+</form>
 </body>
 </html>
