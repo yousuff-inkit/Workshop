@@ -7,7 +7,7 @@
 			username="root" 
 			password="gateway" 
 			driverClassName="com.mysql.jdbc.Driver"
-			url="jdbc:mysql://localhost:3306/workshop_pal"   
+			url="jdbc:mysql://172.17.0.111:3306/workshop_pal"   
 			autoReconnect="true"
 			maxActive="50"  
 			maxIdle="50"
