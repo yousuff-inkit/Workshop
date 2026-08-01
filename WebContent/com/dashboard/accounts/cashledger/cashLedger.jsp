@@ -1,8 +1,8 @@
 <jsp:include page="../../../../includes.jsp"></jsp:include>    
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<% String contextPath=request.getContextPath();%>
 <!DOCTYPE html>
 <html>
-<% String contextPath=request.getContextPath();%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="UTF-8">
@@ -11,40 +11,218 @@
 <link href="../../../../css/dashboard.css" media="screen" rel="stylesheet" type="text/css" />  
 <script type="text/javascript" src="<%=contextPath%>/js/ajaxfileupload.js"></script>
 <script type="text/javascript" src="<%=contextPath%>/js/resample.js"></script>
+
 <style type="text/css">
-.account {
-	color: black;
-	background-color: #E0ECF8;
-	width: 100%;
-	height: 28px;
-	font-family: Myriad Pro;
-	font-weight: bold;
+/* ===== MASTER LAYOUT (Modern Flexbox matching image_55e599.png) ===== */
+html, body, #mainBG {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.accname {
-	color: black;
-	background-color: #E0ECF8;
-	width: 100%;
-	font-family: comic sans ms;
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
 }
-.textbox {
-    border: 0;
-    height: 25px;
-    width: 20%;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -moz-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-box-shadow: 1px 1px 0 0 #E0ECF8, 5px 5px 40px 2px #E0ECF8 inset;
-    -webkit-background-clip: padding-box;
-    outline: 0;
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 290px; 
+    flex: 0 0 290px; 
+    background: #f4f7f9;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
+}
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px; 
+}
+
+/* Cards */
+.filter-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+/* Tables & Spacing */
+.release-filter-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.release-filter-table td {
+    padding: 6px 2px; 
+    vertical-align: middle;
+}
+
+.release-filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px !important; 
+    color: #4b5563;
+    font-weight: normal;
+    width: 80px; 
+}
+
+/* ===== UNIFORM INPUTS & SELECTS ===== */
+input[type="text"], select, textarea,
+.release-filter-table input[type="text"],
+.release-filter-table select,
+.release-filter-table textarea {
+    width: 100%;
+    height: 24px;             
+    padding: 2px 6px;         
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 3px;       
+    font-size: 12px !important; 
+    background-color: #ffffff !important; 
+    color: #333333 !important; 
+    box-sizing: border-box;
+    font-family: inherit;
+    outline: none;
+}
+
+select:focus, input[type="text"]:focus, textarea:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.release-filter-table textarea {
+    height: auto;
+    resize: none;
+    margin-top: 4px;
+}
+
+/* Readonly / disabled look */
+input[readonly], input:disabled, textarea[readonly],
+.release-filter-table input[readonly], .release-filter-table select:disabled {
+    background-color: #f8fafc !important;
+    color: #6b7280 !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* jqx date/time containers */
+.release-filter-table div[id^="fromdate"],
+.release-filter-table div[id^="todate"] {
+    width: 100% !important;
+    height: 24px !important;
+}
+
+/* ===== BUTTONS ===== */
+.release-actions {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid #e3e8ee;
+    padding-top: 15px;
+}
+
+.btn-submit {
+    width: 100%;
+    height: 32px;            
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;      
+    font-size: 12px !important;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8;
+}
+
+.btn-submit:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* ===== RIGHT CONTENT AREA ===== */
+.main-content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.grid-content-container {
+    flex: 1;
+    padding: 15px;
+    overflow: auto; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Specific UI Elements from Legacy */
+.account-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+.account-header span {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.net-total-container {
+    text-align: right;
+    margin-top: 15px;
+    padding: 10px 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1e293b;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.net-total-container input {
+    width: 150px !important;
+    text-align: right;
+    font-weight: bold;
+    color: #0f172a !important;
+    background-color: #f1f5f9 !important;
 }
 </style>
+
 <script type="text/javascript">
 
 	$(document).ready(function () {
-		 $("#fromdate").jqxDateTimeInput({ width: '125px', height: '15px',formatString:"dd.MM.yyyy"});
-		 $("#todate").jqxDateTimeInput({ width: '125px', height: '15px',formatString:"dd.MM.yyyy"});
+         // Adjusted width and height for modern UI compliance
+		 $("#fromdate").jqxDateTimeInput({ width: '100%', height: '24px',formatString:"dd.MM.yyyy"});
+		 $("#todate").jqxDateTimeInput({ width: '100%', height: '24px',formatString:"dd.MM.yyyy"});
 		 
 		 $("body").prepend('<div id="overlay" class="ui-widget-overlay" style="z-index: 1; display: none;"></div>');
 	     $("body").prepend("<div id='PleaseWait' style='display: none;position:absolute; z-index: 1;top:180px;right:550px;'><img src='../../../../icons/31load.gif'/></div>");
@@ -86,8 +264,7 @@
         if(x==114){
       		accountsSearchContent('accountsDetailsSearch.jsp');
         }
-        else{}
-        }
+    }
 	
 	function getAccountingPeriod(date){
   		var x = new XMLHttpRequest();
@@ -95,30 +272,27 @@
   			if (x.readyState == 4 && x.status == 200) {
   				var items = x.responseText;
   			    $('#txtaccountperiodfrom').val(items);
-  		}
+  		    }
   		}
   		x.open("GET", "getAccountingPeriod.jsp?fromDate="+date, true);
   		x.send();
- }
+    }
 	
 	function getAccountFromPeriod(){
-		
 		 var date = $('#fromdate').val();
 		 getAccountingPeriod(date);
 			  
-	 		if($('#txtaccountperiodfrom').val()<0){
+	 	 if($('#txtaccountperiodfrom').val()<0){
 			  $.messager.alert('Message','Not in Account-Period.','warning');
 			  return;
-		   }
-		
+		 }
 	}
 	
 	function funreload(event){
-		
 		if($('#txtaccountperiodfrom').val()<0){
 			  $.messager.alert('Message','Not in Account-Period.','warning');
 			  return;
-		   }
+		}
 		
 		 var branchval = document.getElementById("cmbbranch").value;
 		 var fromdate = $('#fromdate').val();
@@ -134,7 +308,7 @@
 		 
 		 document.getElementById("lblaccountname").innerText=$('#txtaccname').val(); 
 		 $("#cashLedgerDiv").load("cashLedgerGrid.jsp?branchval="+branchval+'&fromdate='+fromdate+'&todate='+todate+'&accdocno='+accdocno+'&check=1');
-		}
+	}
 	
 	function funPrintAccountStatement(){
     	if ($("#txtdocno").val()!="") {
@@ -235,71 +409,93 @@
  		
 		  } 
       }
-
 	
 </script>
 </head>
 <body onload="getBranch();">
-<div id="mainBG" class="homeContent" data-type="background"> 
-<form id="frmCashLedger" action="saveCashLedger" method="post" autocomplete="off">
-<div class='hidden-scrollbar'>
-<table width="100%" >
-<tr>
-<td width="20%" >
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%"  >
-	<jsp:include page="../../heading.jsp"></jsp:include>
-		
-	 <tr><td colspan="2">&nbsp;</td></tr>
-	 <tr>
-	 <td align="right"><label class="branch">Period</label></td>
-     <td align="left"><div id="fromdate" name="fromdate" onchange="getAccountFromPeriod();" value='<s:property value="fromdate"/>'></div></td></tr> 
-	<tr>
-	<td align="right"><label class="branch">To</label></td>
-    <td align="left"><div id="todate" name="todate" value='<s:property value="todate"/>'></div></td>
-	</tr>  
-	<tr><td colspan="2">&nbsp;</td></tr> 
-    <tr><td align="right"><label class="branch">Account</label></td>
-	<td align="left"><input type="text" id="txtaccid" name="txtaccid" style="width:60%;height:20px;" readonly="readonly" placeholder="Press F3 to Search" value='<s:property value="txtaccid"/>' onkeydown="getAccTypeFrom(event);"/></td></tr> 
-	<tr><td>&nbsp;</td>
-	<td><input type="text" id="txtaccname" name="txtaccname" style="width:100%;height:20px;" readonly="readonly" value='<s:property value="txtaccname"/>' tabindex="-1"/>
-    <input type="hidden" id="txtdocno" name="txtdocno" value='<s:property value="txtdocno"/>'/>
-    <input type="hidden" id="txtaccemail" name="txtaccemail" value='<s:property value="txtaccemail"/>'/></td></tr> 
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2" align="center"><button class="myButton" type="button" id="btnPrintAccount" name="btnPrintAccount" onclick="funPrintAccountStatement(event);">Statement</button></td></tr>
-    <tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	</table>
-	</fieldset>
-</td>
-<td width="80%">
-	<table width="100%">
-	    <tr><td><label class="account">Account :&nbsp;</label><label class="accname" name="lblaccountname" id="lblaccountname"></label></td></tr> 
-		<tr>
-			 <td><div id="cashLedgerDiv"><jsp:include page="cashLedgerGrid.jsp"></jsp:include></div></td>
-		</tr>
-	</table>
-</tr>
-</table>
-<table width="100%">
-<tr>
-		<td width="92%" align="right" style="font-family: Myriad Pro;font-size: 12px;font-weight: bold;">Net Amount :&nbsp;</td>
-        <td width="8%" align="left"><input type="text" class="textbox" id="txtnetamount" name="txtnetamount" style="width:80%;text-align: right;" value='<s:property value="txtnetamount"/>'/></td>
-</tr>
-</table>
+    <div id="mainBG" class="homeContent" data-type="background"> 
+        <form id="frmCashLedger" action="saveCashLedger" method="post" autocomplete="off" style="height: 100%;">
+            <div class="master-container">
 
-<input type="hidden" id="txtaccountperiodfrom" name="txtaccountperiodfrom" value='<s:property value="txtaccountperiodfrom"/>'/>
-</div>
-</form>
-<div id="accountDetailsWindow">
-	<div></div><div></div>
-</div>
-</div> 
+                <!-- Sidebar / Filter Section -->
+                <div class="sidebar-filters">
+                    <div class="sidebar-scroll-content">
+                        <div class="filter-card">
+                            <table class="release-filter-table">
+                                <tr>
+                                    <td class="label-cell">Period</td>
+                                    <td>
+                                        <div id="fromdate" name="fromdate" onchange="getAccountFromPeriod();" value='<s:property value="fromdate"/>'></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">To</td>
+                                    <td>
+                                        <div id="todate" name="todate" value='<s:property value="todate"/>'></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell">Account</td>
+                                    <td>
+                                        <input type="text" id="txtaccid" name="txtaccid" readonly="readonly" placeholder="Press F3 to Search" value='<s:property value="txtaccid"/>' onkeydown="getAccTypeFrom(event);"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-cell"></td>
+                                    <td>
+                                        <input type="text" id="txtaccname" name="txtaccname" readonly="readonly" value='<s:property value="txtaccname"/>' tabindex="-1"/>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="release-actions">
+                                <button type="button" class="btn-submit" id="btnPrintAccount" name="btnPrintAccount" onclick="funPrintAccountStatement(event);">Statement</button>
+                            </div>
+
+                            <!-- Hidden Fields Logical Grouping -->
+                            <input type="hidden" id="txtdocno" name="txtdocno" value='<s:property value="txtdocno"/>'/>
+                            <input type="hidden" id="txtaccemail" name="txtaccemail" value='<s:property value="txtaccemail"/>'/>
+                            <input type="hidden" id="txtaccountperiodfrom" name="txtaccountperiodfrom" value='<s:property value="txtaccountperiodfrom"/>'/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Grid / Data Section -->
+                <div class="main-content-area">
+                    
+                    <div class="top-toolbar-container">
+                        <jsp:include page="../../heading.jsp"></jsp:include>
+                    </div>
+
+                    <div class="grid-content-container">
+                        
+                        <div class="account-header">
+                            Account : <span id="lblaccountname"></span>
+                        </div>
+
+                        <!-- Data Grid Container -->
+                        <div id="cashLedgerDiv" style="flex: 1; display: flex; flex-direction: column;">
+                            <jsp:include page="cashLedgerGrid.jsp"></jsp:include>
+                        </div>
+
+                        <!-- Bottom Totals Section -->
+                        <div class="net-total-container">
+                            <label>Net Amount :</label>
+                            <input type="text" id="txtnetamount" name="txtnetamount" readonly="readonly" value='<s:property value="txtnetamount"/>'/>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <!-- Modals -->
+            <div id="accountDetailsWindow">
+                <div></div><div></div>
+            </div>
+            
+        </form>
+    </div> 
 </body>
 </html>

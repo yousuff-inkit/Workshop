@@ -26,22 +26,179 @@
 	}
 
 </script>
+<style>
+/* =========================================================
+   SCOPED UI : MASTER SEARCH UI
+========================================================= */
+
+body{
+    margin:0 !important;
+    background:#ffffff !important;
+    font-family:'Segoe UI','Roboto','Arial',sans-serif !important;
+}
+
+/* Remove project theme background */
+#search,
+.modern-ui,
+.search-panel,
+.grid-container{
+    background:#fff !important;
+}
+
+/* Typography */
+.modern-ui,
+.modern-ui *{
+    font-family:'Segoe UI','Roboto','Arial',sans-serif !important;
+    font-size:12px;
+    color:#333;
+    box-sizing:border-box;
+}
+
+/* Search Panel */
+.modern-ui{
+    padding:10px;
+}
+
+.modern-ui .search-panel{
+    border:1px solid #BDBDBD;
+    border-radius:4px;
+    padding:12px 10px;
+    margin-bottom:10px;
+}
+
+/* Table */
+.modern-ui table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:8px 10px;
+    table-layout:fixed;
+}
+
+.modern-ui td{
+    vertical-align:middle;
+}
+
+/* Labels */
+.modern-ui .lbl-right{
+    text-align:right;
+    font-weight:600;
+    color:#222;
+    white-space:nowrap;
+    padding-right:6px;
+}
+
+/* Inputs */
+.modern-ui input[type=text],
+.modern-ui select{
+    width:100%;
+    height:24px !important;
+    padding:2px 6px;
+    border:1px solid #BDBDBD;
+    border-radius:3px;
+    background:#fff !important;
+    font-size:12px;
+    color:#333;
+}
+
+.modern-ui input[type=text]:focus,
+.modern-ui select:focus{
+    outline:none;
+    border-color:#007bff;
+}
+
+/* Button */
+.modern-ui .myButton{
+    height:26px;
+    min-width:95px;
+    padding:0 20px;
+    background:#0056b3 !important;
+    background-image:none !important;
+    color:#fff !important;
+    border:none !important;
+    border-radius:3px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:none !important;
+}
+
+.modern-ui .myButton:hover{
+    background:#004494 !important;
+}
+
+/* Grid */
+.modern-ui .grid-container{
+    border:1px solid #BDBDBD;
+    overflow:hidden;
+}
+</style>
+
 <body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td width="10%" align="right" style="font-size:9px;">Account No</td>
-    <td width="51%"><input type="text" name="txtaccountsno" id="txtaccountsno" style="width:70%;height:20px;" value='<s:property value="txtaccountsno"/>'></td>
-    <td width="39%" align="center"><input type="button" name="btnAccountSearch" id="btnAccountSearch" class="myButton" value="Search"  onclick="loadAccountSearch();"></td>
-  </tr>
-  <tr>
-    <td align="right" style="font-size:9px;">Account Name</td>
-    <td colspan="2"><input type="text" name="txtaccountsname" id="txtaccountsname" style="width:70%;height:20px;" value='<s:property value="txtaccountsname"/>'></td>
-  </tr>
-  <tr>
-    <td colspan="3"><div id="refreshAccountDetailsDiv"><jsp:include page="accountDetailsSearchGrid.jsp"></jsp:include></div></td>
-  </tr>
-</table>
+
+<div id="search" class="modern-ui">
+
+    <div class="search-panel">
+
+        <table>
+
+            <colgroup>
+                <col width="15%">
+                <col width="65%">
+                <col width="20%">
+            </colgroup>
+
+            <tr>
+
+                <td class="lbl-right">
+                    Account No
+                </td>
+
+                <td>
+                    <input type="text"
+                           name="txtaccountsno"
+                           id="txtaccountsno"
+                           value='<s:property value="txtaccountsno"/>'>
+                </td>
+
+                <td align="center" rowspan="2">
+                    <input type="button"
+                           name="btnAccountSearch"
+                           id="btnAccountSearch"
+                           class="myButton"
+                           value="Search"
+                           onclick="loadAccountSearch();">
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class="lbl-right">
+                    Account Name
+                </td>
+
+                <td>
+                    <input type="text"
+                           name="txtaccountsname"
+                           id="txtaccountsname"
+                           value='<s:property value="txtaccountsname"/>'>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="grid-container">
+
+        <div id="refreshAccountDetailsDiv">
+            <jsp:include page="accountDetailsSearchGrid.jsp"></jsp:include>
+        </div>
+
+    </div>
+
 </div>
+
 </body>
 </html>

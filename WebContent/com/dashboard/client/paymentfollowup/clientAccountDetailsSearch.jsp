@@ -32,23 +32,78 @@
 
 	</script>
 <body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td align="right" style="font-size:9px;">Name</td>
-    <td colspan="2"><input type="text" name="txtpartyname" id="txtpartyname" style="width:100%;height:20px;" value='<s:property value="txtpartyname"/>'></td>
-    <td width="49%" align="center"><input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Search"  onclick="loadSearch();"></td>
-  </tr>
-  <tr>
-  <td width="7%" align="right" style="font-size:9px;">Account</td>
-    <td width="26%"><input type="text" name="txtaccountno" id="txtaccountno" style="width:70%;height:20px;" value='<s:property value="txtaccountno"/>'></td>
-    <td width="18%" align="right" style="font-size:9px;">Contact No.</td>
-    <td width="49%"><input type="text" name="txtcontactno" id="txtcontactno" style="width:50%;height:20px;" value='<s:property value="txtcontactno"/>'></td>   
-  </tr>
-  <tr>
-    <td colspan="5"><div id="refreshdiv"><jsp:include page="clientAccountDetailsSearchGrid.jsp"></jsp:include></div></td>
-  </tr>
-</table>
-  </div>
+
+<div id="search" class="modern-ui">
+
+    <div class="search-panel">
+
+        <table>
+
+            <colgroup>
+                <col width="12%">
+                <col width="28%">
+                <col width="12%">
+                <col width="28%">
+                <col width="20%">
+            </colgroup>
+
+            <tr>
+
+                <td class="lbl-right">Name</td>
+
+                <td colspan="3">
+                    <input type="text"
+                           name="txtpartyname"
+                           id="txtpartyname"
+                           value='<s:property value="txtpartyname"/>'>
+                </td>
+
+                <td align="center" rowspan="2">
+                    <input type="button"
+                           name="btnsearch"
+                           id="btnsearch"
+                           class="myButton"
+                           value="Search"
+                           onclick="loadSearch();">
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class="lbl-right">Account</td>
+
+                <td>
+                    <input type="text"
+                           name="txtaccountno"
+                           id="txtaccountno"
+                           value='<s:property value="txtaccountno"/>'>
+                </td>
+
+                <td class="lbl-right">Contact No.</td>
+
+                <td>
+                    <input type="text"
+                           name="txtcontactno"
+                           id="txtcontactno"
+                           value='<s:property value="txtcontactno"/>'>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="grid-container">
+
+        <div id="refreshdiv">
+            <jsp:include page="clientAccountDetailsSearchGrid.jsp"></jsp:include>
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
