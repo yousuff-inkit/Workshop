@@ -538,7 +538,11 @@ body {
     margin: 0 auto;
     box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
-
+body::after {
+    content: "";
+    display: block;
+    height: 120px;
+}
 #frmCashPayment input[type="text"],
 #frmCashPayment select,
 .textbox { 
