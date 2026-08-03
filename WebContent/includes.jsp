@@ -62,6 +62,6 @@
 	<script type="text/javascript" src="<%=contextPath%>/js/jqxgrid.export.js"></script> 
 	 <script type="text/javascript" src="<%=contextPath%>/js/jqxinput.js"></script>
 	 <script type="text/javascript" src="<%=contextPath%>/js/exportExcel.js"></script>
-	 <link href="<%=contextPath%>/css/modern-theme.css" rel="stylesheet" type="text/css" />
+	 <link href="<%=contextPath%>/css/modern-theme.css" rel="stylesheet" type="text/css" /> 
 </head> 
 </html>
