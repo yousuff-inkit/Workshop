@@ -9,50 +9,189 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
 <%--  <script type="text/javascript" src="../../js/dashboard.js"></script>  --%>
-<style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 320px; 
+    flex: 0 0 320px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
+     overflow-y: auto;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+.sidebar-scroll-content {
+    flex: 1;
+    padding: 15px 15px 25px; 
 }
- 
-select{
-    height:18px;
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
 }
-	  
-</style>
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 95px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* Readonly fields override */
+input[readonly],
+input:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed !important;
+    cursor: text;
+}
+
+/* Select specific styling */
+select {
+    padding: 2px 24px 2px 8px !important; 
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234e5e71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    background-size: 12px;
+}
+
+/* Checkboxes & Radios */
+.checkbox-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4e5e71;
+}
+
+.checkbox-row input[type="checkbox"] {
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="fromdate"],
+.filter-table div[id^="todate"],
+.filter-table div[id^="newDate"],
+.filter-table div[id^="time"] {
+    width: 100%;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Button Group Styling */
+.button-group-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.button-group-row .btn-submit {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}</style>
 
 <script type="text/javascript">
 
@@ -294,122 +433,160 @@ function funreload(event)
 <form id="frmWorkGateOutPass" method="post" autocomplete="off"> 
 <div id="mainBG" class="homeContent" data-type="background"> 
 <div class='hidden-scrollbar'>
-<table width="100%" >
-<tr>
-<td width="23%" align="center">
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%" >
-	<jsp:include page="../../heading.jsp"></jsp:include>
 
- <tr>
-   <td width="37%" align="right"><label class="branch">From Date</label></td><td width="63%"><div id="fromdate"></div></td></tr>
- <tr>
-   <td align="right"><label class="branch">To Date</label></td>
-   <td><div id="todate"></div></td>
- </tr>
-  <tr width="100%">
-  <td align="right"><input type="checkbox" name="chkpassed" id="chkpassed"></td>
-   <td align="left">
-   <label class="branch">Gate out pass Generated</label></td>
- </tr>
- <tr>
-	<td align="right"><label class="branch">Client</label></td>
-	<td>
-		<input type="text" name="clnames" id="clnames" style="height:18px; margine:1px;" placeholder="Press F3 to Search" onkeydown="getClientDetails(event)">
-		<input type="hidden" name="cldocnos" id="cldocnos">
-	</td>
-</tr>
- <tr>
-	<td align="right"><label class="branch">Reg No</label></td>
-	<td>
-		<input type="text" name="regDocnos" id="regDocnos" style="height:18px; margine:1px;" placeholder="Press F3 to Search" onkeydown="getGateDetails(event)">
-	</td>
-</tr>
- <tr>
-	<td align="right"><label class="branch">Gate In Pass No</label></td>
-	<td>
-		
-		<input type="text" name="gipDocno" id="gipDocno" style="height:18px; margine:1px;" placeholder="Press F3 to Search" onkeydown="getGateDetails(event)">
-	</td>
-</tr>
+<div class="master-container">
 
-<tr>
-	<td align="right"><label class="branch">Date</label></td>
-	<td><div id="newDate" name="newDate"></div></td>
-</tr>
-<tr>
-<!-- 	<td align="right"><label class="branch">Time</label></td>
-	<td><input type="text" name="time" id="time" style="height:18px; margine:1px;"></td>
-</tr> -->
-<tr>
-	<td  align="right"><label class="branch">Start Time</label></td>
-	<td><div id="time" name="time"></div></td>
-</tr>
-<tr>
-	<td align="right"><label class="branch">Kilometer</label></td>
-	<td><input type="text" name="txtkilometer" id="txtkilometer" style="height:18px; margine:1px;" onkeypress="javascript:return isNumber (event,id)" onblur="funRoundAmt(value,id);"></td>
-</tr>
-<tr>
-	<td align="right"><label class="branch">Fuel</label></td>
-	<td align="left">
-		<select name="cmbfuel" id="cmbfuel" style="width:126px;" value='<s:property value="cmbfuel"/>'>
-			<option value=0.000 selected>Level 0/8</option><option value=0.125>Level 1/8</option><option value=0.250>Level 2/8</option><option value=0.375>Level 3/8</option><option value=0.500>Level 4/8</option>
-    		<option value=0.625>Level 5/8</option><option value=0.750>Level 6/8</option><option value=0.875>Level 7/8</option><option value=1.000>Level 8/8</option>
-		</select>
-	</td>
-</tr>
-<tr>
-	<td align="right"><label class="branch">Doc No</label></td>
-	<td><input type="text" name="Docno" id="Docno" style="height:18px; margine:1px;"></td>
-</tr>
-<tr>
- <td align="right"><label class="branch">New Driver</label><input type="checkbox" name="chkdriver" id="chkdriver" onchange="funchangedriver();"></td>   
-	<td><div id="drvid" ><jsp:include page="driverSearch.jsp"></jsp:include></div>
-	<input type="hidden" name="driverid" id="driverid">  
-	<input type="text" name="txtdriver" id="txtdriver" style="height:18px; margine:1px;"></td>                   
-</tr>
- <tr >
-	<td colspan="2" style="border-top:2px solid #DCDDDE;">
-	<div style="text-align:center;">
-	<input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();"> &nbsp;&nbsp;
-	<input type="button" name="btnUpdate" id="btnUpdate" value="Update" class="myButtons" onclick="funUpdateGate();"> 
-	</div>
-    </td>
-	</tr>
-	<tr><td colspan="2" align="center"><button type="button" class="myButtons" id="btnprint" onclick="funPrint();">Print</button></td></tr>
-<tr ><td colspan="2"><!-- <textarea id="agmtdetails" name="agmtdetails" readonly style="resize:none;" rows="10" cols="35"></textarea> -->
-	<br><br>
-</td></tr>
-	</table>
-	</fieldset>
-</td>
-<td width="77%">
-	<table width="100%">
-		<tr>
-			 <td><div id="gateoutpassdiv"><jsp:include page="gateOutPassGrid.jsp"></jsp:include></div></td>
-			  <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-			  <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
 
-		
-		</tr>
-	</table>
-</tr>
-</table>
+            <!-- Primary Filters Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">From Date</td>
+                        <td><div id="fromdate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">To Date</td>
+                        <td><div id="todate"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="checkbox-row" style="justify-content: center; margin-top: 5px;">
+                                <input type="checkbox" name="chkpassed" id="chkpassed">
+                                <label for="chkpassed" style="cursor: pointer;">Gate out pass Generated</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Search Details Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Client</td>
+                        <td>
+                            <input type="text" name="clnames" id="clnames" placeholder="Press F3 to Search" onkeydown="getClientDetails(event)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Reg No</td>
+                        <td>
+                            <input type="text" name="regDocnos" id="regDocnos" placeholder="Press F3 to Search" onkeydown="getGateDetails(event)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Gate In Pass No</td>
+                        <td>
+                            <input type="text" name="gipDocno" id="gipDocno" placeholder="Press F3 to Search" onkeydown="getGateDetails(event)">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Update Details Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Date</td>
+                        <td><div id="newDate" name="newDate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Start Time</td>
+                        <td><div id="time" name="time"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Kilometer</td>
+                        <td>
+                            <input type="text" name="txtkilometer" id="txtkilometer" onkeypress="javascript:return isNumber (event,id)" onblur="funRoundAmt(value,id);">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Fuel</td>
+                        <td>
+                            <select name="cmbfuel" id="cmbfuel" value='<s:property value="cmbfuel"/>'>
+                                <option value=0.000 selected>Level 0/8</option>
+                                <option value=0.125>Level 1/8</option>
+                                <option value=0.250>Level 2/8</option>
+                                <option value=0.375>Level 3/8</option>
+                                <option value=0.500>Level 4/8</option>
+                                <option value=0.625>Level 5/8</option>
+                                <option value=0.750>Level 6/8</option>
+                                <option value=0.875>Level 7/8</option>
+                                <option value=1.000>Level 8/8</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Doc No</td>
+                        <td><input type="text" name="Docno" id="Docno"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="checkbox-row" style="margin-top: 8px;">
+                                <input type="checkbox" name="chkdriver" id="chkdriver" onchange="funchangedriver();">
+                                <label for="chkdriver" style="cursor: pointer;">New Driver</label>
+                            </div>
+                            <div id="drvid" style="margin-bottom: 5px;"><jsp:include page="driverSearch.jsp"></jsp:include></div>
+                            <input type="text" name="txtdriver" id="txtdriver">
+                        </td>
+                    </tr>
+                </table>
+
+                <hr style="border: 0; border-top: 1px solid #e1e8ed; margin: 15px 0;">
+
+                <div class="button-group-row">
+                    <input type="button" name="btnclear" id="btnclear" value="Clear" class="btn-submit" onclick="funClearData();" style="background:#64748b !important;">
+                    <input type="button" name="btnUpdate" id="btnUpdate" value="Update" class="btn-submit" onclick="funUpdateGate();" style="background:#10b981 !important;">
+                </div>
+                <button type="button" class="btn-submit" id="btnprint" onclick="funPrint();">Print</button>
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="hidden" name="cldocnos" id="cldocnos">
+                <input type="hidden" name="driverid" id="driverid">
+                <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
+                <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            <div id="gateoutpassdiv">
+                <jsp:include page="gateOutPassGrid.jsp"></jsp:include>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Popups Maintained Outside the Layout Flow -->
+<div id="ClientDetailsToWindow">
+    <div></div>
+</div>
+
+<div id="RegnoToWindow">
+    <div></div>
+</div>
+
+<div id="gateDocnoToWindow">
+    <div></div>
 </div>
 
 </div>
 </form>
-	<div id="ClientDetailsToWindow">
-	<div></div>
-	</div>
-	
-	<div id="RegnoToWindow">
-	<div></div>
-	</div>
-	
-	<div id="gateDocnoToWindow">
-	<div></div>
-	</div>
-	
 </body>
 </html>

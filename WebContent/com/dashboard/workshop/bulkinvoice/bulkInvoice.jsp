@@ -9,12 +9,151 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
 <%-- <script type="text/javascript" src="../../js/dashboard.js"></script> --%> 
-<style type="text/css">
-	.hidden-scrollbar {
-    overflow: auto;
-    height: 550px;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-</style>
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 300px; 
+    flex: 0 0 300px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
+}
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
+}
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 90px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="periodupto"] {
+    width: 100%;
+}
+
+/* Select2 overrides to match 24px height */
+.select2-container .select2-selection--single {
+    height: 24px !important;
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 22px !important;
+    font-size: 12px !important;
+    padding-left: 8px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 22px !important;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+    position: relative;
+}</style>
 <link href="../../../../vendors/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../../../vendors/select2/js/select2.min.js"></script>
 <script type="text/javascript">
@@ -197,54 +336,75 @@ function funreload(event)
 <form id="frmWSBulkInvoice" action="saveWSBulkInvoice" method="post">
 <div id="mainBG" class="homeContent" data-type="background"> 
 <div class='hidden-scrollbar'>
-<table width="100%">
-<tr>
-<td width="20%">
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%">
-	<jsp:include page="../../heading.jsp"></jsp:include>
- 	
-	<tr>
-		<td colspan="2">
-			<select name="cmbclient" id="cmbclient" style="width:200;">
-				<option value="">--Select--</option>
-			</select>
-		</td>
-	</tr>
-	<tr><td><label class="branch">Invoice Date</label></td><td><div id="periodupto"></div></td></tr>
-	<tr>
-	<td colspan="2" align="center">
-		<input type="button" name="btninvoicesave" id="btninvoicesave" class="myButton" value="Generate" onclick="funNotify();">
-		<!-- <input hidden="true" type="button" name="btninvoiceprint" id="btninvoiceprint" class="myButton" value="Print" onclick="funPrint();"> -->
-	</td>
-	</tr>
-	<tr>
-	<td colspan="2"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td>
-	</tr>	
-	</table>
-	</fieldset>
-</td>
-<td width="80%">
-	<table width="100%">
-		<tr>
-			<td>
-			 	<div id="imgdiv" style="position:absolute; z-index: 1;top:200;right:600;">
-					<img id="imgloading" alt="" src="../../../../icons/29load.gif"/>
-				</div>
-				<div id="amountgriddiv"><jsp:include page="amountGrid.jsp"></jsp:include></div>
-			</td>
-			
-			 <input type="hidden" name="gridlength" id="gridlength" >
-			  <input type="hidden" name="invgridlength" id="invgridlength" >
-			  <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-			  <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
-			  <input type="hidden" name="hidchkmultiple" id="hidchkmultiple" value='<s:property value="hidchkmultiple"/>'>
-			  <input type="hidden" name="jobcarddocno" id="jobcarddocno" value='<s:property value="jobcarddocno"/>'>
-			  <input type="hidden" name="invno" id="invno" value='<s:property value="invno"/>'>
-		</tr>
-	</table>
-</tr>
-</table>
+
+<div class="master-container">
+
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
+
+            <!-- Primary Filters Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Client</td>
+                        <td>
+                            <select name="cmbclient" id="cmbclient" style="width:100%;">
+                                <option value="">--Select--</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Invoice Date</td>
+                        <td>
+                            <div id="periodupto"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Action Buttons Card -->
+            <div class="filter-card">
+                <input type="button" name="btninvoicesave" id="btninvoicesave" class="btn-submit" value="Generate" onclick="funNotify();">
+                <!-- <input hidden="true" type="button" name="btninvoiceprint" id="btninvoiceprint" class="btn-submit" value="Print" onclick="funPrint();"> -->
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="hidden" name="gridlength" id="gridlength" >
+                <input type="hidden" name="invgridlength" id="invgridlength" >
+                <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
+                <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+                <input type="hidden" name="hidchkmultiple" id="hidchkmultiple" value='<s:property value="hidchkmultiple"/>'>
+                <input type="hidden" name="jobcarddocno" id="jobcarddocno" value='<s:property value="jobcarddocno"/>'>
+                <input type="hidden" name="invno" id="invno" value='<s:property value="invno"/>'>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            <div id="imgdiv" style="position:absolute; z-index: 1; top:200px; right:600px;">
+                <img id="imgloading" alt="" src="../../../../icons/29load.gif"/>
+            </div>
+            
+            <div id="amountgriddiv">
+                <jsp:include page="amountGrid.jsp"></jsp:include>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 </div>
 </div>
 </form>

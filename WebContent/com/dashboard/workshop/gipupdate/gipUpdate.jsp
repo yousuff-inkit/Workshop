@@ -9,49 +9,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
 <%-- <script type="text/javascript" src="../../js/dashboard.js"></script> --%> 
-<style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 300px; 
+    flex: 0 0 300px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
 }
- 
-select{
-    height:15px;
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
 }
-</style>
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 80px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* Select specific styling */
+select {
+    padding: 2px 24px 2px 8px !important; 
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234e5e71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    background-size: 12px;
+}
+
+/* Readonly fields override */
+input[readonly],
+input:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed !important;
+    cursor: text;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="fromdate"],
+.filter-table div[id^="todate"],
+.filter-table div[id^="estdate"],
+.filter-table div[id^="esttime"] {
+    width: 100%;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Button Group Styling */
+.button-group-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.button-group-row .btn-submit {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}</style>
 
 <script type="text/javascript">
 
@@ -204,82 +327,111 @@ $(document).ready(function () {
 <form id="frmReplaceList" method="post">
 <div id="mainBG" class="homeContent" data-type="background"> 
 <div class='hidden-scrollbar'>
-<table width="100%">
-<tr>
-<td width="23%" align="center">
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%">
-	<jsp:include page="../../heading.jsp"></jsp:include>
 
- <tr>
-   <td width="37%" align="right"><label class="branch">From Date</label></td><td width="63%"><div id="fromdate"></div></td></tr>
- <tr>
-   <td align="right"><label class="branch">To Date</label></td>
-   <td><div id="todate"></div></td>
- </tr>
- <tr><td align="right"><label class="branch">Client</label></td><td align="left"><input type="text" name="clientname" id="clientname" placeholder="Press F3 To Search" readonly="readonly" onKeyDown="getclinfo(event);" onclick="this.placeholder='' "  style="height:20px;width:90%;" value='<s:property value="clientname"/>'></td>
-  <td><input type="hidden" name="cldocno" id="cldocno" style="height:20px;width:70%;" value='<s:property value="cldocno"/>' ></td>
- </tr>
-<tr>
-	
-   <td width="37%" align="right"><label class="branch">Type</label></td>            
-         <td ><select id="txttype" name="txttype" style="width:75%;height:20px;" value='<s:property value="txttype"/>'>   
-      <option value="">--select--</option><option value="open">open</option><option value="close">close</option></select>
-  </tr>
-  <tr><td colspan="2" align="center"><label id="lblgip" style="color:blue;"></label></td></tr>
- <tr><td colspan="2"><hr></td></tr>
-  <tr>
-  	<td align="right"><label class="branch">Est.Date</label></td>
-  	<td><div id="estdate"></div></td>
-  	</tr>
-  	<tr>
-  	<td align="right"><label class="branch">Est.Time</label></td>
-  	<td><div id="esttime"></div></td>
-  	</tr>
-  	<tr>
-  	<td align="right"><label class="branch">Km</label></td>
-  	<td><input type="text" name="estkm" id="estkm" onkeypress="return isNumber(event);" style="height:20px;width:90%;"></td>
-  	</tr>
-  <tr><td colspan="2"><hr></td></tr>
- <tr>
-	<td colspan="2">
-	<div style="text-align:center;">
-	<input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();">&nbsp;&nbsp;
-	<input type="button" name="btnsave" id="btnsave" value="Update" class="myButtons" onclick="funSaveData();">
-	</div>
-    </td>
-	</tr>
-<tr ><td colspan="2"><!-- <textarea id="agmtdetails" name="agmtdetails" readonly style="resize:none;" rows="10" cols="35"></textarea> -->
-	<br><br><br><br><br><br><br><br>
-    <br>
-    </td></tr>
+<div class="master-container">
 
-<tr colspan="2"><td>&nbsp;</td></tr>
-	
-		
-	</table>
-	</fieldset>
-</td>
-<td width="77%">
-	<table width="100%">
-		<tr>
-			 <td><div id="gateinpassdiv"><jsp:include page="gipUpdateGrid.jsp"></jsp:include></div></td>
-			 <input type="hidden" name="gipdocno" id="gipdocno" value='<s:property value="gipdocno"/>'>
-			 <input type="hidden" name="gipvocno" id="gipvocno" value='<s:property value="gipvocno"/>'>
-			 <%--  <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-			 <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
-			 <input type="hidden" name="printdocno" id="printdocno" value='<s:property value="printdocno"/>'> --%>
-		     
-		</tr>
-	</table>
-</tr>
-</table>
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
+
+            <!-- Primary Filters Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">From Date</td>
+                        <td><div id="fromdate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">To Date</td>
+                        <td><div id="todate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Client</td>
+                        <td>
+                            <input type="text" name="clientname" id="clientname" placeholder="Press F3 To Search" readonly="readonly" onKeyDown="getclinfo(event);" onclick="this.placeholder=''" value='<s:property value="clientname"/>'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Type</td>            
+                        <td>
+                            <select id="txttype" name="txttype" value='<s:property value="txttype"/>'>   
+                                <option value="">--select--</option>
+                                <option value="open">open</option>
+                                <option value="close">close</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- GIP Label Container -->
+            <div style="text-align: center; font-weight: bold; margin-bottom: 12px; color: blue;">
+                <label id="lblgip"></label>
+            </div>
+
+            <!-- Estimation & Update Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Est.Date</td>
+                        <td><div id="estdate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Est.Time</td>
+                        <td><div id="esttime"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Km</td>
+                        <td>
+                            <input type="text" name="estkm" id="estkm" onkeypress="return isNumber(event);">
+                        </td>
+                    </tr>
+                </table>
+
+                <hr style="border: 0; border-top: 1px solid #e1e8ed; margin: 15px 0;">
+
+                <div class="button-group-row">
+                    <input type="button" name="btnclear" id="btnclear" value="Clear" class="btn-submit" onclick="funClearData();" style="background:#64748b !important;">
+                    <input type="button" name="btnsave" id="btnsave" value="Update" class="btn-submit" onclick="funSaveData();">
+                </div>
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="hidden" name="cldocno" id="cldocno" value='<s:property value="cldocno"/>' >
+                <input type="hidden" name="gipdocno" id="gipdocno" value='<s:property value="gipdocno"/>'>
+                <input type="hidden" name="gipvocno" id="gipvocno" value='<s:property value="gipvocno"/>'>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            <div id="gateinpassdiv">
+                <jsp:include page="gipUpdateGrid.jsp"></jsp:include>
+            </div>
+        </div>
+
+    </div>
+
 </div>
+
+<!-- Popups Maintained Outside the Layout -->
 <div id="clientwindow">
    <div></div>
 </div>
 <div id="agmtnowindow">
-<div></div>
+    <div></div>
+</div>
+
 </div>
 </div>
 </form>

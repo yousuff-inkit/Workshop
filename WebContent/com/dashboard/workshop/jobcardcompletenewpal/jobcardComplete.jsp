@@ -10,54 +10,161 @@
 <title>GatewayERP(i)</title>
 <% String contextPath=request.getContextPath();%>
 <%-- <script type="text/javascript" src="../../js/dashboard.js"></script> --%> 
-<style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
-}
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
-}
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
-}
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
-}
- 
-select{
-    height:15px;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
 
-.hidden-scrollbar {
-    overflow: auto;
-    height: 600px;
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-</style>
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 330px; 
+    flex: 0 0 330px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
+    overflow-y: auto;
+}
+
+.sidebar-scroll-content {
+    flex: 1;
+    padding: 15px 15px 25px; 
+}
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 100px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* Readonly fields override */
+input[readonly],
+input:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed !important;
+    cursor: text;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="todate"] {
+    width: 100%;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Button Group Styling */
+.button-group-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.button-group-row .btn-submit {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}
+
+/* Vertical spacing for stacked grids */
+.grid-stack-container {
+    margin-bottom: 20px;
+}</style>
 
 <script type="text/javascript">
 
@@ -470,134 +577,143 @@ function funreload(event)
 	
 </head>
 <body onload="setValues();getBranch();">
-	<form id="frmWSJobCardCompleteNewPAL" method="post" action="saveWSJobCardCompleteNewPAL">
-		<div id="mainBG" class="homeContent" data-type="background"> 
-			<div class='hidden-scrollbar'>
-				<table width="100%">
-					<tr>
-						<td width="23%" align="center">
-    						<fieldset style="background: #ECF8E0;">
-								<table width="100%">
-									<jsp:include page="../../heading.jsp"></jsp:include>
-									<!--  <tr>
-									   <td width="37%" align="right"><label class="branch">From Date</label></td><td width="63%"><div id="fromdate"></div></td></tr> -->
-									<tr>
-   										<td align="right"><label class="branch">To Date</label></td>
-   										<td><div id="todate"></div></td>
- 									</tr>
-									<tr>
-    									<td width="37%" align="right"><label class="branch">Client Name</label></td>
-    									<td width="63%" align="left"><input type="text" name="clientname" id="clientname" placeholder="Press F3 to search" style="height: 20px;" onkeydown="searchClient(event);"></td>
-  									</tr>
-  									<tr>
-									    <td width="37%" align="right"><label class="branch">Claim No</label></td>
-									    <td width="63%" align="left"><input type="text" name="claimno" id="claimno" style="height: 20px;"></td>
-									</tr>
-									<tr>
-									    <td width="37%" align="right"><label class="branch">LPO No</label></td>
-									    <td width="63%" align="left"><input type="text" name="lpono" id="lpono" style="height: 20px;"></td>
-									</tr>
-									<tr>
-									    <td width="37%" align="right"><label class="branch">LPO Amount</label></td>
-									    <td width="63%" align="left"><input type="text" name="lpoamount" id="lpoamount" style="height: 20px;text-align:right;" onblur="funRoundAmt(value,id);"></td>
-									</tr>
- 									<tr hidden="true">
-  										<td colspan="2" style="border-top:2px solid #DCDDDE;">
-  											<div style="text-align:center;">&nbsp;&nbsp;
-  												<label class="branch">Doc. No.</label>
-  												<input type="text" name = "docno" id = "docno" readonly="readonly">
-  												<input type="hidden" name="brhid" id="brhid">
-  											</div>
-  										</td>
-  									</tr>
-    								<tr>
-	    								<td width="37%" align="right"><label class="branch">Net Total</label></td>
-	    								<td width="63%" align="left"><input type="text" name="nettotal" id="nettotal"  value='<s:property value="nettotal"/>' style="text-align:right;height:20px;" readonly onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);"></td>
-	  								</tr>
-	  								<tr>
-	  									<td colspan="2">
-	  										<div id="esttotalgriddiv"><jsp:include page="estTotalGrid.jsp"></jsp:include></div>
-	  									</td>
-	  								</tr>
-									<tr>
-										<td colspan="2" style="border-top:2px solid #DCDDDE;">
-											<div style="text-align:center;">
-												<input type="button" name="btnrefresh" id="btnrefresh" value="Refresh" class="myButtons" onclick="funRefreshData();">
-												<input type="button" name="btnPrint" id="btnPrint" value="Print" class="myButtons" onclick="funPrintBtn();">
-												<input type="button" name="btnSave" id="btnSave" value="Save" class="myButtons" onclick="funNotify();">
-												<input type="button" name="btnComplete" id="btnComplete" value="Complete" class="myButtons" onclick="funComplete();">
-												<input type="button" name="btnsendsms" id="btnsendsms" value="Send SMS" class="myButtons" onclick="funSendSMS();">
-											</div>
-    									</td>
-									</tr>
-									<tr>
-										<td colspan="2" >
-											<div style="text-align:center;">
-												<input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();">&nbsp;
-											</div>
-    									</td>
-									</tr>
+<form id="frmWSJobCardCompleteNewPAL" method="post" action="saveWSJobCardCompleteNewPAL">
+<div id="mainBG" class="homeContent" data-type="background"> 
+<div class='hidden-scrollbar'>
 
-<br/><br/>	
+<div class="master-container">
 
-	
-	
-	
-<tr ><td colspan="2"><!-- <textarea id="agmtdetails" name="agmtdetails" readonly style="resize:none;" rows="10" cols="35"></textarea> -->
-	<br><br>
-<br><br><br><br><br><br><br>
-</td></tr>
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
 
-<tr colspan="2"><td>&nbsp;</td></tr>
-	
-		
-	</table>
-	</fieldset>
-	
-	 
-	
-</td>
-<td width="77%">
-	<!-- <div class="hidden-scrollbar"> -->
-		<table width="100%">
-		<tr>
-			<td><div id="jobcardcompletediv"><jsp:include page="jobcardCompleteGrid.jsp"></jsp:include></div></td>
-			<input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-			<input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
-			<input type="hidden" name="strlabourarray" id="strlabourarray" value='<s:property value="strlabourarray"/>'>
-			<input type="hidden" name="strpartsarray" id="strpartsarray" value='<s:property value="strpartsarray"/>'>
-			<input type="hidden" name="strextraarray" id="strextraarray" value='<s:property value="strextraarray"/>'>
-			<input type="hidden" name="estdocno" id="estdocno" value='<s:property value="estdocno"/>'>
-			<input type="hidden" name="sparetotal" id="sparetotal"  value='<s:property value="sparetotal"/>' style="text-align:right;" readonly onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);">
-			<input type="hidden" name="labourtotal" id="labourtotal"  value='<s:property value="labourtotal"/>' style="text-align:right;" readonly onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);">
-			<input type="hidden" name="extratotal" id="extratotal"  value='<s:property value="extratotal"/>' style="text-align:right;" readonly onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);">
-			<div id="fromdate" hidden="true"></div>
-			<input type="hidden" name="materialreqpending" id="materialreqpending" value='<s:property value="materialreqpending"/>'>
-			<input type="hidden" name="savestatus" id="savestatus" value='<s:property value="savestatus"/>'>
-		</tr>
-		<tr><td><div id="labourdiv"><jsp:include page="labourGrid.jsp"></jsp:include></div></td></tr>
-		<tr><td><div id="sparediv"><jsp:include page="spareGrid.jsp"></jsp:include></div></td></tr>
-		<tr><td><div id="extradiv"><jsp:include page="extraDetailGrid.jsp"></jsp:include></div></td></tr>
-	</table>
-	<!-- </div> -->
-	
-</tr>
-</table>
+            <!-- Primary Filters Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">To Date</td>
+                        <td><div id="todate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Client Name</td>
+                        <td><input type="text" name="clientname" id="clientname" placeholder="Press F3 to search" onkeydown="searchClient(event);"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Claim No</td>
+                        <td><input type="text" name="claimno" id="claimno"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">LPO No</td>
+                        <td><input type="text" name="lpono" id="lpono"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">LPO Amount</td>
+                        <td><input type="text" name="lpoamount" id="lpoamount" style="text-align:right;" onblur="funRoundAmt(value,id);"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Net Total & Grid Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Net Total</td>
+                        <td>
+                            <input type="text" name="nettotal" id="nettotal" value='<s:property value="nettotal"/>' style="text-align:right; font-weight:bold; color:#0f172a; background-color:#f8fafc;" readonly onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);">
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px;">
+                    <div id="esttotalgriddiv"><jsp:include page="estTotalGrid.jsp"></jsp:include></div>
+                </div>
+            </div>
+
+            <!-- Action Buttons Card -->
+            <div class="filter-card">
+                <div class="button-group-row">
+                    <input type="button" name="btnrefresh" id="btnrefresh" value="Refresh" class="btn-submit" onclick="funRefreshData();">
+                    <input type="button" name="btnPrint" id="btnPrint" value="Print" class="btn-submit" onclick="funPrintBtn();">
+                </div>
+                
+                <div class="button-group-row">
+                    <input type="button" name="btnSave" id="btnSave" value="Save" class="btn-submit" onclick="funNotify();">
+                    <input type="button" name="btnComplete" id="btnComplete" value="Complete" class="btn-submit" onclick="funComplete();">
+                </div>
+
+                <input type="button" name="btnsendsms" id="btnsendsms" value="Send SMS" class="btn-submit" onclick="funSendSMS();">
+                
+                <hr style="border: 0; border-top: 1px solid #e1e8ed; margin: 12px 0;">
+                
+                <input type="button" name="btnclear" id="btnclear" value="Clear" class="btn-submit" onclick="funClearData();" style="background:#64748b !important;">
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="text" name="docno" id="docno" readonly="readonly">
+                <input type="hidden" name="brhid" id="brhid">
+                <input type="hidden" name="cldocno" id="cldocno"/>
+                <input type="hidden" name="pendingconfirm" id="pendingconfirm">
+                <input type="hidden" name="pendingapproval" id="pendingapproval">
+                <div id="fromdate"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            
+            <div class="grid-stack-container">
+                <div id="jobcardcompletediv"><jsp:include page="jobcardCompleteGrid.jsp"></jsp:include></div>
+            </div>
+            
+            <div class="grid-stack-container">
+                <div id="labourdiv"><jsp:include page="labourGrid.jsp"></jsp:include></div>
+            </div>
+            
+            <div class="grid-stack-container">
+                <div id="sparediv"><jsp:include page="spareGrid.jsp"></jsp:include></div>
+            </div>
+            
+            <div class="grid-stack-container">
+                <div id="extradiv"><jsp:include page="extraDetailGrid.jsp"></jsp:include></div>
+            </div>
+
+            <!-- Grid Level Hidden Data Inputs -->
+            <div style="display:none;">
+                <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
+                <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+                <input type="hidden" name="strlabourarray" id="strlabourarray" value='<s:property value="strlabourarray"/>'>
+                <input type="hidden" name="strpartsarray" id="strpartsarray" value='<s:property value="strpartsarray"/>'>
+                <input type="hidden" name="strextraarray" id="strextraarray" value='<s:property value="strextraarray"/>'>
+                <input type="hidden" name="estdocno" id="estdocno" value='<s:property value="estdocno"/>'>
+                <input type="hidden" name="sparetotal" id="sparetotal" value='<s:property value="sparetotal"/>' onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);">
+                <input type="hidden" name="labourtotal" id="labourtotal" value='<s:property value="labourtotal"/>' onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);">
+                <input type="hidden" name="extratotal" id="extratotal" value='<s:property value="extratotal"/>' onKeyPress="javascript:return isNumber (event,id)" onBlur="funRoundAmt(value,id);">
+                <input type="hidden" name="materialreqpending" id="materialreqpending" value='<s:property value="materialreqpending"/>'>
+                <input type="hidden" name="savestatus" id="savestatus" value='<s:property value="savestatus"/>'>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-</div>
-
-
+<!-- Popups Maintained Outside the Layout Flow -->
 <div id="clientSearchWindow">
-	<div></div>
+    <div></div>
 </div>
-<input type="hidden" name="cldocno" id="cldocno"/>
-<input type="hidden" name="brhid" id="brhid">
-<input type="hidden" name="pendingconfirm" id="pendingconfirm">
-<input type="hidden" name="pendingapproval" id="pendingapproval">
+
+</div>
+</div>
 </form>
-
-
-
 </body>
 </html>

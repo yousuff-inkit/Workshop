@@ -9,79 +9,164 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
 <%--  <script type="text/javascript" src="../../js/dashboard.js"></script>  --%>
-<style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 280px; 
+    flex: 0 0 280px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
 }
- 
-select{
-    height:18px;
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
 }
-.hidden-scrollbar {
-  /* // overflow: auto; */
-  height: 600px;
-    overflow-x: hidden;
-    
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
 }
-.headClass
-        {
-            background-color: #FFEBC2;
-        }
-        .redClass
-        {
-            background-color: #FFEBEB;
-        }
-        .violetClass
-        {
-            background-color: #EBD6FF;
-        }
-        .yellowClass
-        {
-            background-color: #FFFFD1;
-        }
-        .whiteClass
-        {
-           background-color: #FFF;
-        }
-        .greenClass
-        {
-           background-color: #CEFFCE;
-        }	  
-</style>
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 80px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* Readonly fields override */
+input[readonly],
+input:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed !important;
+    cursor: text;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="Uptodate"] {
+    width: 100%;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Button Group Styling */
+.button-group-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.button-group-row .btn-submit {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}
+
+/* Color Classes Native to Page */
+.headClass { background-color: #FFEBC2; }
+.redClass { background-color: #FFEBEB; }
+.violetClass { background-color: #EBD6FF; }
+.yellowClass { background-color: #FFFFD1; }
+.whiteClass { background-color: #FFF; }
+.greenClass { background-color: #CEFFCE; }</style>
 
 <script type="text/javascript">
 
@@ -257,86 +342,113 @@ function funCheckAvail(){
 <form id="frmWorkQuotationApproval" method="post">
 <div id="mainBG" class="homeContent" data-type="background"> 
 <div class='hidden-scrollbar'>
-<table width="100%">
-<tr>
-<td width="20%" align="center">
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%">
-	<jsp:include page="../../heading.jsp"></jsp:include>
 
- <tr>
-   <td width="37%" align="right"><label class="branch">Upto</label></td><td width="63%"><div id="Uptodate"></div></td>
- </tr>
- <tr>
-   <td width="37%" align="right"><label class="branch">Job Card</label></td>
-   <td width="63%"><input type="text" name="jobcard" id="jobcard" readonly placeholder="Press F3 to Search" onkeydown="getjobCardDetails(event)"></td>
- </tr>
- <tr >
-	<td colspan="2" style="border-top:2px solid #DCDDDE;">
-	<div style="text-align:center;">
-	<input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();"> &nbsp;
-	<input type="button" name="btnupdate" id="btnupdate" value="Save" class="myButtons" onclick="funUpdateData();"> &nbsp;
-	</div>
-    </td>
-	</tr>
-	<tr><td align="center" colspan="2"><input type="button" name="btncheckavail" id="btncheckavail" value="Check Availability" class="myButtons" onclick="funCheckAvail();"></td></tr>
-	
-<tr colspan="2"><td><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td></tr>
-	
-		
-	</table>
-	</fieldset>
-</td>
-<td width="80%">
-	<fieldset>
-	<legend>Job Details </legend>
-	    <table width="100%" border="0">
-		  <tr>
-	   		<td colspan="2"><div id="jobplanninggriddiv"><jsp:include page="jobPlanningGrid.jsp"></jsp:include></div></td>
-	   	  </tr>
-	   	  <tr>
-	   		<td width="50%">
-	   			<fieldset class="redClass">
-					<legend>Bay Details </legend>
-					<div id="baygriddiv"><jsp:include page="bayGrid.jsp"></jsp:include></div>
-				</fieldset>	
-			</td>
-			<td width="50%">
-	   			<fieldset class="violetClass">
-					<legend>Service Team Details </legend>
-					<div id="serviceteamgriddiv"><jsp:include page="serviceTeamGrid.jsp"></jsp:include></div>
-				</fieldset>	
-			</td>
-	   	  </tr>
-		</table>
-	</fieldset>
-	
-</tr>
-</table>
+<div class="master-container">
+
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
+
+            <!-- Primary Filters Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Upto</td>
+                        <td><div id="Uptodate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Job Card</td>
+                        <td>
+                            <input type="text" name="jobcard" id="jobcard" readonly placeholder="Press F3 to Search" onkeydown="getjobCardDetails(event)">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Action Buttons Card -->
+            <div class="filter-card">
+                <div class="button-group-row">
+                    <input type="button" name="btnclear" id="btnclear" value="Clear" class="btn-submit" onclick="funClearData();" style="background:#64748b !important;">
+                    <input type="button" name="btnupdate" id="btnupdate" value="Save" class="btn-submit" onclick="funUpdateData();" style="background:#10b981 !important;">
+                </div>
+                
+                <input type="button" name="btncheckavail" id="btncheckavail" value="Check Availability" class="btn-submit" onclick="funCheckAvail();">
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
+                <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+                <input type="hidden" name="jobdocno" id="jobdocno" value='<s:property value="jobdocno"/>'>
+                <input type="hidden" name="gatedocno" id="gatedocno" value='<s:property value="gatedocno"/>'>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            
+            <fieldset style="border: 1px solid #e1e8ed; border-radius: 8px; padding: 15px; margin-bottom: 15px; background: #fff;">
+                <legend style="font-weight: 600; color: #4e5e71; padding: 0 5px;">Job Details</legend>
+                
+                <!-- Main Grid -->
+                <div id="jobplanninggriddiv" style="margin-bottom: 20px;">
+                    <jsp:include page="jobPlanningGrid.jsp"></jsp:include>
+                </div>
+                
+                <!-- Side-by-side Grids -->
+                <div style="display: flex; gap: 15px;">
+                    
+                    <div style="flex: 1;">
+                        <fieldset class="redClass" style="border: 1px solid #e1e8ed; border-radius: 8px; padding: 15px; height: 100%; box-sizing: border-box;">
+                            <legend style="font-weight: 600; color: #4e5e71; padding: 0 5px; background: transparent;">Bay Details</legend>
+                            <div id="baygriddiv"><jsp:include page="bayGrid.jsp"></jsp:include></div>
+                        </fieldset>	
+                    </div>
+
+                    <div style="flex: 1;">
+                        <fieldset class="violetClass" style="border: 1px solid #e1e8ed; border-radius: 8px; padding: 15px; height: 100%; box-sizing: border-box;">
+                            <legend style="font-weight: 600; color: #4e5e71; padding: 0 5px; background: transparent;">Service Team Details</legend>
+                            <div id="serviceteamgriddiv"><jsp:include page="serviceTeamGrid.jsp"></jsp:include></div>
+                        </fieldset>	
+                    </div>
+
+                </div>
+            </fieldset>
+
+        </div>
+
+    </div>
+
 </div>
 
-</div>
-			  <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-			  <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
-			  <input type="hidden" name="jobdocno" id="jobdocno" value='<s:property value="jobdocno"/>'>
-			  <input type="hidden" name="gatedocno" id="gatedocno" value='<s:property value="gatedocno"/>'>
-			  
-</form>
+<!-- Popups Maintained Outside the Layout Flow -->
 <div id="TechnicianWindow">
-	<div></div>
-	</div>
-	<div id="bayWindow">
-		<div></div>
-	</div>
-	<div id="sparePartWindow">
-		<div></div>
-	</div>
-	<div id="jobCardToWindow">
-		<div></div>
-	</div>
-	<div id="availWindow">
-		<div></div>
-	</div>
-	
+    <div></div>
+</div>
+<div id="bayWindow">
+    <div></div>
+</div>
+<div id="sparePartWindow">
+    <div></div>
+</div>
+<div id="jobCardToWindow">
+    <div></div>
+</div>
+<div id="availWindow">
+    <div></div>
+</div>
+
+</div>
+</div>
+</form>
 </body>
 </html>
