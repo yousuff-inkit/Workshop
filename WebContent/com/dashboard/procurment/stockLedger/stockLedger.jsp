@@ -1,5 +1,5 @@
 <jsp:include page="../../../../includes.jsp"></jsp:include>    
- <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,46 +9,194 @@
 <title>GatewayERP(i)</title>
 <link href="../../../../css/dashboard.css" media="screen" rel="stylesheet" type="text/css" />  
 
- <style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+<style type="text/css">
+/* ===== MASTER LAYOUT (Modern Flexbox) ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+#mainBG {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 280px; 
+    flex: 0 0 280px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
+}
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
+}
+
+/* Cards */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+/* Tables */
+.release-filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.release-filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 80px;
+}
+
+/* ===== UNIFORM 24px INPUTS, SELECTS & TEXTAREAS ===== */
+input[type="text"], select, textarea,
+.release-filter-table input[type="text"],
+.release-filter-table select,
+.release-filter-table textarea {
+    width: 100%;
+    height: 24px;              
+    padding: 2px 8px;          
+    border: 1px solid #ccd6e0;
+    border-radius: 4px;        
+    font-size: 12px;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    font-family: inherit;
+}
+
+textarea {
+    height: auto;
+    resize: none;
+}
+
+/* Readonly / disabled look */
+input[readonly],
+input:disabled,
+textarea[readonly],
+textarea:disabled,
+.release-filter-table input[readonly],
+.release-filter-table input:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed;
+}
+
+/* jqx date/time containers */
+.release-filter-table div[id^="fromdate"],
+.release-filter-table div[id^="todate"] {
+    width: 100%;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #333;
+    padding: 2px 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.radio-group input[type="radio"] {
+    margin-right: 4px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px;            
+    padding: 0 12px;         
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;      
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 30px;       
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8;
+}
+
+.btn-submit:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Action buttons layout */
+.release-secondary-actions, .release-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.release-actions .btn-submit {
+    min-width: 80px;
+}
+
+/* ===== RIGHT CONTENT AREA ===== */
+.main-content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.grid-content-container {
+    flex: 1;
+    padding: 15px;
+    overflow: auto; 
+    box-sizing: border-box;
 }
 </style>
-
 
 <script type="text/javascript">
 
@@ -62,8 +210,8 @@
 		  /* $('#rdet').hide(); */
 		 
 		 
-		  $("#fromdate").jqxDateTimeInput({ width: '125px', height: '15px',formatString:"dd.MM.yyyy"});
-		  $("#todate").jqxDateTimeInput({ width: '125px', height: '15px',formatString:"dd.MM.yyyy"});
+		  $("#fromdate").jqxDateTimeInput({ width: '100%', height: '24px',formatString:"dd.MM.yyyy"});
+		  $("#todate").jqxDateTimeInput({ width: '100%', height: '24px',formatString:"dd.MM.yyyy"});
 		 
 		 $("body").prepend('<div id="overlay" class="ui-widget-overlay" style="z-index: 1; display: none;"></div>');
 	     $("body").prepend("<div id='PleaseWait' style='display: none;position:absolute; z-index: 1;top:180px;right:550px;'><img src='../../../../icons/31load.gif'/></div>");
@@ -466,56 +614,8 @@
 			document.getElementById("hidept").value="";
 		}
 		
-		/* if(suitvalue=="sbrand"){
-			 document.getElementById("hidsbrandid").value="";
-			 document.getElementById("hidsbrand").value="";
-			 
-		}
-		else if(suitvalue=="smodel"){
-			document.getElementById("hidsmodelid").value="";
-			document.getElementById("hidsmodel").value="";
-			
-		}
-		else if(suitvalue=="syom"){
-			document.getElementById("hidyomid").value="";
-			 document.getElementById("hidyom").value="";
-			 
-		}
-		
-		else if(suitvalue=="spec1"){
-			document.getElementById("hidspec1id").value="";
-			document.getElementById("hidspec1").value="";
-			 
-		}
-		else if(suitvalue=="spec2"){
-			document.getElementById("hidspec2id").value="";
-			document.getElementById("hidspec2").value="";
-			 
-		}
-		else if(suitvalue=="spec3"){
-			document.getElementById("hidspec3id").value="";
-			document.getElementById("hidspec3").value="";
-		} */
 		document.getElementById("searchdetails").value="";
 		
-/* 		if(document.getElementById("hidsbrand").value!=""){
-			document.getElementById("searchdetails").value+="\n"+document.getElementById("hidsbrand").value;	
-		}
-		if(document.getElementById("hidsmodel").value!=""){
-			document.getElementById("searchdetails").value+="\n"+document.getElementById("hidsmodel").value;	
-		}
-		if(document.getElementById("hidyom").value!=""){
-			document.getElementById("searchdetails").value+="\n"+document.getElementById("hidyom").value;	
-		}
-		if(document.getElementById("hidspec1").value!=""){
-			document.getElementById("searchdetails").value+="\n"+document.getElementById("hidspec1").value;	
-		}
-		if(document.getElementById("hidspec2").value!=""){
-			document.getElementById("searchdetails").value+="\n"+document.getElementById("hidspec2").value;	
-		}
-		if(document.getElementById("hidspec3").value!=""){
-			document.getElementById("searchdetails").value+="\n"+document.getElementById("hidspec3").value;	
-		} */
 		if(document.getElementById("hidbrand").value!=""){
 			document.getElementById("searchdetails").value+="\n"+document.getElementById("hidbrand").value;	
 		}
@@ -540,138 +640,127 @@
 </script>
 </head>
 <body onload="getBranch();">
-<div id="mainBG" class="homeContent" data-type="background"> 
-<div class='hidden-scrollbar'>
-<table width="100%" >
-<tr>
-<td width="20%" >
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%"  >
-	<jsp:include page="../../heading.jsp"></jsp:include>
-		
-	 <tr><td colspan="2" align="center"><input type="radio" id="rsumm" name="stkled" onchange="fundisable();" value="rsumm"><label for="rsumm" class="branch">Summary</label>&nbsp;&nbsp;
-	 <input type="radio" id="rdet" name="stkled" onchange="fundisable();" value="rdet"><label for="rdet" class="branch">Detail</label></td></tr>
-	 <tr>
-	 <td align="right"><label class="branch">Period</label></td>
-     <td align="left"><div id="fromdate" name="fromdate" value='<s:property value="fromdate"/>' ></div></td></tr> 
-	<tr>
-	<td align="right"><label class="branch">To</label></td>
-    <td align="left"><div id="todate" name="todate" value='<s:property value="todate"/>'></div></td>
-	</tr>  
-	
-	  <tr >
-	  <td colspan="2">
-	  	  
-	  <div id="detial" >   
-	  <table width="100%">
-	    <tr>  <td align="right"><label class="branch">Product</label></td> <td  align="left"  ><input type="text" id="name" style="width: 100%;height:20PX;"  style="width: 40%;"  placeholder="Press F3 for Search" readonly="readonly" onKeyDown="getname(event);" name="name"  value='<s:property value="name"/>'> </td></tr>
-       <tr >
-	  <td colspan="2"
-      align="right" ><textarea id="searchdetails1" name="searchdetails1" style="resize:none;font: 10px Tahoma;width:100%;" rows="18"  readonly></textarea></td>
-	  </tr>
-	  </table>
-	  </div>
-	  
-	  <div id="summs">
-	  <table width="100%">
-	  <tr>
-	  <td align="right"><label class="branch">Product</label></td>
-	  <td  align="left"><select name="prodsearchby" id="prodsearchby" style="width:52%;">
-<option value="">--Select--</option>
-    <option value="ptype">TYPE</option>
-    <option value="pbrand">BRAND</option>
-    <option value="pdept">DEPARTMENT</option>
-    <option value="pcategory">CATEGORY</option>
-    <option value="psubcategory">SUB CATEGORY</option>
-    <option value="product">PRODUCT</option>
-    </select>&nbsp;&nbsp;<button type="button" name="btnadditem" id="additem" class="myButtons" onClick="setprodSearch();">+</button>&nbsp;&nbsp;<button  type="button" name="btnremoveitem" id="btnremoveitem" class="myButtons" onclick="setRemove();">-</button></td>
-	  
-	</tr> 
-	<tr >
-	  <td colspan="2"
-      align="right" ><textarea id="searchdetails" name="searchdetails" style="resize:none;font: 10px Tahoma;width:100%;" rows="18"  readonly></textarea></td>
-	  </tr>
-	  <tr >
-	  
-	   </tr></table>
-	 </div>
-	  </td>
-	  </tr>
-	  <tr>
-	  
-	<td colspan="2" style="border-top:2px solid #DCDDDE;"><center><input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();"></center>
-    </td>
-	</tr>
-	<tr><td colspan="2">&nbsp;</td></tr> 
-	<!--<tr><td colspan="2">&nbsp;</td></tr> 
-	<tr><td colspan="2">&nbsp;</td></tr> 
-	<tr><td colspan="2">&nbsp;</td></tr>	
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr><td colspan="2">&nbsp;</td></tr> -->
-			<tr><td>
-			 <input type="hidden" name="hidbrandid" id="hidbrandid">
-			  <input type="hidden" name="hidtypeid" id="hidtypeid">
-			  <input type="hidden" name="hideptid" id="hideptid">
-			  <input type="hidden" name="hidcatid" id="hidcatid">
-			  <input type="hidden" name="hidsubcatid" id="hidsubcatid">
-			  <input type="hidden" name="hidproductid" id="hidproductid">
-			  
-			  <input type="hidden" name="hidbrand" id="hidbrand">
-			  <input type="hidden" name="hidept" id="hidept">
-			  <input type="hidden" name="hidtype" id="hidtype">
-			  <input type="hidden" name="hidcat" id="hidcat">
-			  <input type="hidden" name="hidsubcat" id="hidsubcat">
-			  <input type="hidden" name="hidproduct" id="hidproduct"></td></tr>
-			  
-			   <input type="hidden" name="psrno" id="psrno">
-			  
-			  
-	
-	</table>
-	</fieldset>
-</td>
-<td width="80%">
-	<table width="100%">
-		<tr>
-			 <td><div id="stockLedgerDiv"><jsp:include page="stockLedgerGridSummary.jsp"></jsp:include></div></td>
-		</tr>
-		    <tr><td><div id="stockLedgerDetDiv">
-				 <jsp:include page="stockLedgerGridDetail.jsp"></jsp:include> 
-				</div></td></tr> 
-	</table>
-</tr>
-</table>
-<div id="ptypewindow">
-<div></div>
-</div>
-<div id="brandwindow">
-<div></div>
-</div>
-<div id="modelwindow">
-<div></div>
-</div>
-<div id="submodelwindow">
-<div></div>
-</div>
-<div id="productwindow">
-<div></div>
-</div>
-<div id="pcategorywindow">
-<div></div>
-</div>
-<div id="pdeptwindow">
-<div></div>
-</div>
-<div id="psubcategorywindow">
-<div></div>
-</div>
-<div id="productwindow1">
-<div></div>
-</div>
-</div>
-</div>
+    <div id="mainBG" class="homeContent" data-type="background"> 
+        <div class="master-container">
+
+            <!-- Sidebar / Filter Section -->
+            <div class="sidebar-filters">
+                <div class="sidebar-scroll-content">
+                    <div class="filter-card">
+                        <table class="release-filter-table">
+                            <tr>
+                                <td colspan="2">
+                                    <div class="radio-group">
+                                        <label><input type="radio" id="rsumm" name="stkled" onchange="fundisable();" value="rsumm">Summary</label>
+                                        <label><input type="radio" id="rdet" name="stkled" onchange="fundisable();" value="rdet">Detail</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Period</td>
+                                <td><div id="fromdate" name="fromdate" value='<s:property value="fromdate"/>'></div></td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">To</td>
+                                <td><div id="todate" name="todate" value='<s:property value="todate"/>'></div></td>
+                            </tr>
+                        </table>
+
+                        <!-- Dynamic Section: Detail -->
+                        <div id="detial">
+                            <table class="release-filter-table">
+                                <tr>
+                                    <td class="label-cell">Product</td>
+                                    <td>
+                                        <input type="text" id="name" name="name" placeholder="Press F3 for Search" readonly="readonly" onkeydown="getname(event);" value='<s:property value="name"/>'>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <textarea id="searchdetails1" name="searchdetails1" style="height: 120px;" readonly></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Dynamic Section: Summary -->
+                        <div id="summs">
+                            <table class="release-filter-table">
+                                <tr>
+                                    <td class="label-cell">Product</td>
+                                    <td>
+                                        <div style="display: flex; gap: 5px;">
+                                            <select name="prodsearchby" id="prodsearchby" style="flex: 1;">
+                                                <option value="">--Select--</option>
+                                                <option value="ptype">TYPE</option>
+                                                <option value="pbrand">BRAND</option>
+                                                <option value="pdept">DEPARTMENT</option>
+                                                <option value="pcategory">CATEGORY</option>
+                                                <option value="psubcategory">SUB CATEGORY</option>
+                                                <option value="product">PRODUCT</option>
+                                            </select>
+                                            <button type="button" name="btnadditem" id="additem" class="btn-submit" style="min-width: 26px; width: 26px; padding: 0;" onclick="setprodSearch();">+</button>
+                                            <button type="button" name="btnremoveitem" id="btnremoveitem" class="btn-submit" style="min-width: 26px; width: 26px; padding: 0;" onclick="setRemove();">-</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <textarea id="searchdetails" name="searchdetails" style="height: 120px;" readonly></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="release-actions">
+                            <button type="button" name="btnclear" id="btnclear" class="btn-submit" onclick="funClearData();">Clear</button>
+                        </div>
+
+                        <!-- Hidden Fields -->
+                        <input type="hidden" name="hidbrandid" id="hidbrandid">
+                        <input type="hidden" name="hidtypeid" id="hidtypeid">
+                        <input type="hidden" name="hideptid" id="hideptid">
+                        <input type="hidden" name="hidcatid" id="hidcatid">
+                        <input type="hidden" name="hidsubcatid" id="hidsubcatid">
+                        <input type="hidden" name="hidproductid" id="hidproductid">
+                        <input type="hidden" name="hidbrand" id="hidbrand">
+                        <input type="hidden" name="hidept" id="hidept">
+                        <input type="hidden" name="hidtype" id="hidtype">
+                        <input type="hidden" name="hidcat" id="hidcat">
+                        <input type="hidden" name="hidsubcat" id="hidsubcat">
+                        <input type="hidden" name="hidproduct" id="hidproduct">
+                        <input type="hidden" name="psrno" id="psrno">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid / Data Section -->
+            <div class="main-content-area">
+                
+                <div class="top-toolbar-container">
+                    <jsp:include page="../../heading.jsp"></jsp:include>
+                </div>
+
+                <div class="grid-content-container">
+                    <div id="stockLedgerDiv"><jsp:include page="stockLedgerGridSummary.jsp"></jsp:include></div>
+                    <div id="stockLedgerDetDiv"><jsp:include page="stockLedgerGridDetail.jsp"></jsp:include></div> 
+                </div>
+
+            </div>
+
+        </div> 
+        
+        <!-- Modals -->
+        <div id="ptypewindow"><div></div></div>
+        <div id="brandwindow"><div></div></div>
+        <div id="modelwindow"><div></div></div>
+        <div id="submodelwindow"><div></div></div>
+        <div id="productwindow"><div></div></div>
+        <div id="pcategorywindow"><div></div></div>
+        <div id="pdeptwindow"><div></div></div>
+        <div id="psubcategorywindow"><div></div></div>
+        <div id="productwindow1"><div></div></div>
+        
+    </div>
 </body>
 </html>

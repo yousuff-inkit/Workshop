@@ -553,6 +553,12 @@ form label.error {
     z-index: 10;
 }
 .modern-ui .magnifier-icon:hover { color: #2563eb; }
+
+body::after {
+    content: "";
+    display: block;
+    height: 120px;
+}
 </style>
 
 </head>

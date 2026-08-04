@@ -200,8 +200,8 @@ input:-webkit-autofill:focus {
 /* Target only Branch & Currency labels */
 #full label.branch,
 #full label.currency {
-   font-weight: 700 !important;
-   font-size: 14px;
+   font-weight: 600 !important;
+   font-size: 12px;
    color: #253858;
 }
 

@@ -49,7 +49,7 @@
 
     $(document).ready(function () {
         $('#db').hide(); $("#btnPrevious").hide(); $("#btnRemove").hide();
-           
+            
         // ==========================================
         // Floor Status Chart
         // ==========================================
@@ -276,6 +276,7 @@
     <div class='hidden-scrollbar'>
         <table width="100%">
             <tr>
+                <!-- LEFT COLUMN (30%) -->
                 <td width="30%" valign="top">
                     <table width="100%">
                         <tr><td>&nbsp;</td></tr> 
@@ -284,12 +285,16 @@
                         <tr><td><div id='daysUtilize' style="width: 100%; height: 170px;"></div></td></tr>
                     </table>
                 </td>
+                
+                <!-- MIDDLE COLUMN (40%) -->
                 <td width="40%" valign="top"> 
                     <table width="100%">
                         <tr><td>&nbsp;</td></tr>
                         <tr>
                             <td colspan="2">
-                                <center><img src="../../icons/ink_new_logo_2025.png" onclick="location.reload();" style="width:50%;height:30px; cursor:pointer;" alt="Logo"></center>
+                                <center>
+                                    <img src="../../icons/ink_new_logo_2025.png" onclick="location.reload();" style="width:50%;height:30px; cursor:pointer;" alt="Logo">
+                                </center>
                             </td>
                         </tr>  
                         <tr>
@@ -302,6 +307,8 @@
                         </tr>
                     </table>
                 </td>
+                
+                <!-- RIGHT COLUMN (30%) -->
                 <td width="30%" valign="top">
                     <table width="100%">
                         <tr><td>&nbsp;</td></tr>

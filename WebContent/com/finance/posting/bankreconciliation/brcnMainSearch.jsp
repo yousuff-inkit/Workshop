@@ -105,6 +105,28 @@ body{
     border-radius:4px;
     overflow:hidden;
 }
+
+/* EXACT MASTER BUTTON */
+.myButton,
+.btn{
+    height:24px !important;
+    line-height:22px !important;
+    padding:0 12px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    border-radius:3px;
+    cursor:pointer;
+    text-shadow:none;
+    transition:all .2s;
+    box-shadow:0 1px 2px rgba(0,0,0,.1);
+    border:none;
+    background:linear-gradient(135deg,#0b45a2 0%,#2563eb 100%);
+    color:#ffffff;
+    white-space:nowrap;
+    display:inline-block;
+    box-sizing:border-box;
+}
 </style>
 
 <body>
@@ -147,22 +169,12 @@ body{
 
                 <td align="center">
 
-                    <button
-                        type="button"
-                        id="btnsearch"
-                        onclick="loadSearch();"
-                        style="
-                            width:105px;
-                            height:28px;
-                            background:#205fd3;
-                            color:#ffffff;
-                            border:1px solid #205fd3;
-                            border-radius:4px;
-                            font-size:12px;
-                            font-weight:600;
-                            cursor:pointer;">
-                        Search
-                    </button>
+                    <input type="button"
+                           id="btnsearch"
+                           name="btnsearch"
+                           class="myButton"
+                           value="Search"
+                           onclick="loadSearch();">
 
                 </td>
 
@@ -225,9 +237,7 @@ body{
     <div class="grid-container">
 
         <div id="refreshdiv">
-
             <jsp:include page="brcnMainSearchGrid.jsp"></jsp:include>
-
         </div>
 
     </div>

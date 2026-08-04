@@ -15,14 +15,194 @@
 <script type="text/javascript" src="<%=contextPath%>/js/resample.js"></script>
  <% String docNo = request.getParameter("docno")==null?"0":request.getParameter("docno"); %>
  
- <style type="text/css">
- .icon {
-	width: 2.5em;
-	height: 2em;
-	border: none;
-	background-color: #E0ECF8;
+<style>
+/* =========================================================
+SCOPED UI: Modern Layout (Matches Client Master)
+========================================================= */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 24px 0;
+    box-sizing: border-box;
+    overflow-y: auto !important;
 }
- </style>
+
+#mainBG {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.modern-ui {
+    font-family: Arial, sans-serif; 
+    color: #333;
+    font-size: 12px; 
+    padding: 5px 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Master Input Heights - Forced to 24px */
+.modern-ui input[type="text"],
+.modern-ui select { 
+    height: 24px !important; 
+    border: 1px solid #b8c6d8; 
+    border-radius: 3px; 
+    padding: 2px 6px;
+    font-size: 12px;
+    box-sizing: border-box; 
+    background-color: #fff; 
+    color: #333;
+    width: 100%;
+}
+
+/* File Input Override */
+.modern-ui input[type="file"] {
+    font-size: 11px;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.modern-ui input[type="text"]:focus,
+.modern-ui select:focus { 
+    border-color: #007bff; 
+    outline: none;
+}
+
+.modern-ui input[readonly],
+.modern-ui input:disabled,
+.modern-ui select:disabled { 
+    background-color: #f8f9fa; 
+    color: #6b7280;
+}
+
+/* Layout Utilities */
+.modern-ui .field-row { 
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+    flex-wrap: wrap;
+}
+
+.modern-ui .lbl-right { 
+    text-align: right; 
+    color: #444;
+    font-size: 12px; 
+    font-weight: bold;
+    white-space: nowrap; 
+    padding-right: 5px;
+}
+
+/* Middle Section Panels */
+.modern-ui .middle-panel {
+    border: 1px solid #c5d3e0; 
+    padding: 20px 10px 10px 10px; 
+    background: #ffffff; 
+    position: relative; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.modern-ui .middle-panel-title { 
+    position: absolute; 
+    top: -12px;
+    left: 10px; 
+    background: #ffffff; 
+    padding: 0 8px; 
+    color: #0056b3;
+    font-weight: bold; 
+    font-size: 14px; 
+    border-left: 3px solid #0056b3;
+    z-index: 2; 
+    line-height: normal; 
+}
+
+/* Custom UI Buttons matching 24px height */
+.modern-ui .myButton {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #0b45a2 0%, #2563eb 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton:hover { background: linear-gradient(135deg, #083a8a 0%, #1d4ed8 100%); }
+
+.modern-ui .myButton-delete {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton-delete:hover { background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%); }
+
+.modern-ui .myButton-success {
+    height: 24px !important;
+    line-height: 22px !important;
+    padding: 0 12px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    text-shadow: none;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: none;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+    white-space: nowrap;
+}
+.modern-ui .myButton-success:hover { background: linear-gradient(135deg, #15803d 0%, #166534 100%); }
+
+/* Grid Wrappers */
+.modern-ui .grid-container {
+    border: 1px solid #c5d3e0;
+    border-radius: 4px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Scrollbar Logic */
+.hidden-scrollbar {
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+    padding-right: 5px;
+}
+.hidden-scrollbar::-webkit-scrollbar { width: 6px; }
+.hidden-scrollbar::-webkit-scrollbar-thumb { background: #c5d3e0; border-radius: 3px; }
+
+form label.error { color:red; font-weight:bold; }
+#errormsg { color:red; font-weight:bold; text-align:center; margin-bottom: 10px; }
+</style>
 
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -63,10 +243,11 @@
           
           $("#jqxDocumentsAttach").jqxGrid(
           {
-              width: '125%',
+              width: '100%',
               height: 300,
               source: dataAdapter,
               editable: true,
+              theme: 'energyblue',
               selectionmode: 'singlerow',
               columns: [
 							{ text: 'Sr. No.', sortable: false, filterable: false, editable: false,
@@ -437,58 +618,66 @@ function getRef(c){
 
 	 
 	</script>
-	
-	
+</head>	
 <body>
-<div id=search>
-<table width="100%">
-  <tr>
-    <td width="7%" align="right">Description</td>
-    <td colspan="2"><input type="text" name="txtdesc" id="txtdesc" style="width:80%" value='<s:property value="txtdesc"/>'></td>
-    
-    <td width="23%"  align="left"> Ref Type:
-      <select name="reftype" id="reftype"  onchange="getRef(this.value);"> 
-					</select> </td>     
-      <td width="21%"><input type="file" id="file" name="file" onChange="return loading();" /></td>  
-    <td width="20%" align="center"><!-- <input type="button" name="btnsearch" id="btnsearch" class="myButton" value="Attach"  onclick="return ajaxFileUpload();"> -->
-    
-    <button class="icon" id="btnsearch" name="btnsearch" title="Attach" onclick="return upload();">
-							<img alt="Attach" src="<%=contextPath%>/icons/attachicon.png">
-						</button>
-    <button class="icon" id="btnAttachDelete" title="Delete current Document" onclick="Delete();">
-							<img alt="deleteDocument" src="<%=contextPath%>/icons/attachdelete.png">
-						</button>
-						
-		<button class="icon" id="click" title="Take SnapShot " onclick="comonsnapshotWindow();">
-							<img alt="deleteDocument" src="<%=contextPath%>/icons/asnapshot.png">
-						</button>				
-						</td>
-						
-						
-			<input id="reftypid" type="hidden"  />									
-		<input id="width" type="hidden" value="640" />
-		<input id="height" type="hidden" />
-		<input id="data" type="hidden" />
-		<input id="iscapture" type="hidden" />
-		<br /><span id="message"></span><br />
-		<canvas id="canvasid" hidden="true"  height="480" width="640"></canvas>
-		<canvas id="canvasids" hidden="true"  height="240" width="320"></canvas>
-		<div id="img">
-		</div>
-						
-  </tr>
-  
-  <tr>
-  
-    <td colspan="5" align="center"> <div id="refreshdiv"><div id="jqxDocumentsAttach"></div></div>
-    </td>
-  </tr>
-</table>
-<input type="hidden" name="filename" id="filename" value='<s:property value="filename"/>'/>
-  </div>
-  
-  
-  
+<div id="mainBG" class="homeContent" data-type="background">
+    <div class="modern-ui hidden-scrollbar">
+        <div id="errormsg"></div>
+        
+        <div class="middle-panel">
+            <span class="middle-panel-title">Attachment Details</span>
+            
+            <div class="field-row">
+                <label class="lbl-right" style="width:100px;">Description</label>
+                <input type="text" name="txtdesc" id="txtdesc" style="flex:2;" value='<s:property value="txtdesc"/>'>
+                
+                <label class="lbl-right" style="width:100px; margin-left:20px;">Ref Type</label>
+                <select name="reftype" id="reftype" style="flex:1;" onchange="getRef(this.value);"></select>
+            </div>
+            
+            <div class="field-row" style="margin-top: 15px;">
+                <label class="lbl-right" style="width:100px;">File Upload</label>
+                <div style="flex: 1; border: 1px dashed #b8c6d8; padding: 6px 12px; border-radius: 4px; background: #f8fafc; display: flex; align-items: center; max-width: 400px;">
+                    <input type="file" id="file" name="file" onChange="return loading();" style="width:100%; cursor: pointer;" />
+                </div>
+            </div>
+            
+            <div class="field-row" style="justify-content: flex-end; margin-top: 20px; padding-top: 15px; border-top: 1px solid #e2e8f0; margin-bottom: 0;">
+                <button class="myButton-success" id="btnsearch" name="btnsearch" title="Attach" onclick="return upload();">
+                    <img alt="Attach" src="<%=contextPath%>/icons/attachicon.png" style="width:14px; height:14px; vertical-align:middle; margin-right:4px;"> Attach
+                </button>
+                <button class="myButton-delete" id="btnAttachDelete" title="Delete current Document" onclick="Delete();" style="margin-left: 10px;">
+                    <img alt="deleteDocument" src="<%=contextPath%>/icons/attachdelete.png" style="width:14px; height:14px; vertical-align:middle; margin-right:4px;"> Delete
+                </button>
+                <button class="myButton" id="click" title="Take SnapShot" onclick="comonsnapshotWindow();" style="margin-left: 10px;">
+                    <img alt="Snapshot" src="<%=contextPath%>/icons/asnapshot.png" style="width:14px; height:14px; vertical-align:middle; margin-right:4px;"> SnapShot
+                </button>
+            </div>
+        </div>
+
+        <div class="middle-panel">
+            <span class="middle-panel-title">Attached Documents</span>
+            <div id="refreshdiv" class="grid-container" style="border: none;">
+                <div id="jqxDocumentsAttach"></div>
+            </div>
+        </div>
+
+        <!-- Hidden Logic Fields -->
+        <div style="display:none;">
+            <input type="hidden" name="filename" id="filename" value='<s:property value="filename"/>'/>
+            <input id="reftypid" type="hidden"  />									
+            <input id="width" type="hidden" value="640" />
+            <input id="height" type="hidden" />
+            <input id="data" type="hidden" />
+            <input id="iscapture" type="hidden" />
+            <span id="message"></span>
+            <canvas id="canvasid" height="480" width="640"></canvas>
+            <canvas id="canvasids" height="240" width="320"></canvas>
+            <div id="img"></div>
+        </div>
+        
+    </div>
+</div>
 </body>
  <script>
 	(function ( $width, $height, $file) {
@@ -564,7 +753,7 @@ function getRef(c){
 			;
 			// no width and height specified
 			// or both are NaN
-			if (!width && !height) {
+			if (!width && height) {
 				// reset the input simply swapping it
 				$file.parentNode.replaceChild(
 					file = $file.cloneNode(false),
@@ -630,8 +819,4 @@ function getRef(c){
 		document.getElementById("file")
 	));
 	</script>
-
-
-
-
 </html>

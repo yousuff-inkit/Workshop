@@ -9,79 +9,193 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
 <%--  <script type="text/javascript" src="../../js/dashboard.js"></script>  --%>
-<style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 320px; 
+    flex: 0 0 320px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
 }
- 
-select{
-    height:18px;
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
 }
-.hidden-scrollbar {
-  /* // overflow: auto; */
-  height: 530px;
-    overflow-x: hidden;
-    
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
 }
-.headClass
-        {
-            background-color: #FFEBC2;
-        }
-        .redClass
-        {
-            background-color: #FFEBEB;
-        }
-        .violetClass
-        {
-            background-color: #EBD6FF;
-        }
-        .yellowClass
-        {
-            background-color: #FFFFD1;
-        }
-        .whiteClass
-        {
-           background-color: #FFF;
-        }
-        .greenClass
-        {
-           background-color: #CEFFCE;
-        }	  
-</style>
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 90px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* Select specific styling */
+select {
+    padding: 2px 24px 2px 8px !important; 
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234e5e71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    background-size: 12px;
+}
+
+/* Readonly fields override */
+input[readonly],
+input:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed !important;
+    cursor: text;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="Uptodate"],
+.filter-table div[id^="Invdate"] {
+    width: 100%;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Button Group Styling */
+.button-group-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.button-group-row .btn-submit {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}
+
+/* Custom Grid Wrappers */
+.grid-fieldset {
+    border: 1px solid #e1e8ed; 
+    border-radius: 8px; 
+    padding: 15px; 
+    margin-bottom: 15px;
+    background: #fff;
+}
+.grid-fieldset legend {
+    font-weight: 600; 
+    color: #4e5e71; 
+    padding: 0 5px; 
+    background: transparent;
+}
+
+/* Original Native Color Classes Maintained */
+.headClass { background-color: #FFEBC2; }
+.redClass { background-color: #FFEBEB; }
+.violetClass { background-color: #fff; }
+.yellowClass { background-color: #FFFFD1; }
+.whiteClass { background-color: #FFF; }
+.greenClass { background-color: #CEFFCE; }</style>
 
 <script type="text/javascript">
 
@@ -539,176 +653,178 @@ function funExportBtn(){
 </head>
 <!-- setValues(); -->
 <body onload="getBranch();disablepart();">
-<!-- <form id="frmWorkQuotationApproval" method="post"> -->
+<form id="frmWorkQuotationApproval" method="post">
 <div id="mainBG" class="homeContent" data-type="background"> 
 <div class='hidden-scrollbar'>
-<table width="100%">
-<tr>
-<td width="20%" align="center">
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%">
-	<jsp:include page="../../heading.jsp"></jsp:include>
-	
-	<tr>
-	
-   <td width="37%" align="right"><label class="branch">Status</label></td>            
-         <td ><select id="txtstatus" name="txtstatus" style="width:75%;height:20px;" value='<s:property value="txtstatus"/>'>   
-      <option value="">--select--</option><option value="Available">Available</option><option value="PartAvail">Partially Available</option><option value="Delayed">Delayed</option><option value="Ordered">Ordered</option></select>
-  </tr>
 
- <tr>
-   <td width="37%" align="right"><label class="branch">Parts exp.Dt</label></td><td width="63%"><div id="Uptodate"></div></td>
- </tr>
- <tr>
-   <td width="37%" align="right"><label class="branch">Remarks</label></td>
-   <td width="63%"><input type="text" name="txtremks" id="txtremks" style="height:20px;width:90%;" value='<s:property value="txtremks"/>' ></td>
- </tr>
- <!-- <tr>
-   <td width="37%" align="right"><label class="branch">Job Card</label></td>
-   <td width="63%"><input type="text" name="jobcard" id="jobcard" readonly placeholder="Press F3 to Search" onkeydown="getjobCardDetails(event)"></td>
- </tr> -->
+<div class="master-container">
 
- <%--  <tr>
-   <td width="37%" align="right"><label class="branch">Remarks</label></td>
-   <td width="63%"><input type="text" name="txtremarks" id="txtremarks" style="height:20px;width:90%;" value='<s:property value="txtremarks"/>' ></td>
- </tr> --%>
- <tr colspan="2"><td>&nbsp;</td></tr>
- <tr >
-	<td colspan="2" style="border-top:2px solid #DCDDDE;">
-	<div style="text-align:center;">
-	<!-- <input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();"> &nbsp;
- -->	<input type="button" name="btnupdate" id="btnupdate" value="Update" class="myButtons" onclick="funServiceUpdate();"> &nbsp;
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- 
-  <input type="button" name="btncreatepurch" id="btncreatepurch" value="Create Ni purchase" class="myButtons" onclick="funCreatePurch();"> &nbsp;
-  <input type="button" class="myButton" name="btnPrint" id="btnPrint"  value="Print" onclick="funcPrint();">
-  </tr>
-	</div>
-    </td>
-	</tr>
-<tr ><td colspan="2"><!-- <textarea id="agmtdetails" name="agmtdetails" readonly style="resize:none;" rows="10" cols="35"></textarea> -->
-	
-	<!-- <div style="text-align:center;">
-		<input type="button" name="btncreatmr" id="btncreatmr" value="Creat MR" class="myButtons" onclick="funUpdateDetails();">
-	</div> -->
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
 
-</td></tr>
+            <!-- Primary Filters Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Status</td>            
+                        <td>
+                            <select id="txtstatus" name="txtstatus" value='<s:property value="txtstatus"/>'>   
+                                <option value="">--select--</option>
+                                <option value="Available">Available</option>
+                                <option value="PartAvail">Partially Available</option>
+                                <option value="Delayed">Delayed</option>
+                                <option value="Ordered">Ordered</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Parts exp.Dt</td>
+                        <td><div id="Uptodate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Remarks</td>
+                        <td><input type="text" name="txtremks" id="txtremks" value='<s:property value="txtremks"/>'></td>
+                    </tr>
+                </table>
+            </div>
 
-<tr colspan="2"><td>&nbsp;</td></tr>
-	
-		
-	</table>
-	</fieldset>
-</td>
-<td width="80%">
-	<fieldset class="violetClass">
-	<legend>Parts Management </legend>
-	    <table width="100%" border="0">
-		  <tr>
-	   		<td><div id="floorMgmtGridDiv"><jsp:include page="partsmanagementGrid.jsp"></jsp:include></div></td>
-	   	  </tr>
-		</table>
-	</fieldset>
-	
-	 <fieldset class="violetClass">
-	<legend>Parts </legend>
-	    <table width="100%" border="0">
-		  <tr>
-	   	<td><div id="partsgrid3div"><jsp:include page="partsGrid.jsp"></jsp:include></div></td>
-	   	  </tr>  
-		</table>
-	</fieldset>
-	<table width="100%" border="0">
-	
-     <tr>
-     <td align="left" width="30%"><label class="branch">Vendor</label>
-     <input type="text" name="vendor" id="vendor" style="height: 18px;" size=40% readonly="readonly" placeholder="Press F3 to search" onkeydown="vendorSearchContent(url)" value='<s:property value="vendor" />'></td>
-	
-     <td align="left" width="10%"><label class="branch">InvNo</label>
-     <input type="text" name="invno" id="invno" style="height: 18px;" size=4%  placeholder="Enter Inv No"  value='<s:property value="invno" />'></td>
-	
-   <td  align="center"><label class="branch">InvDate</label></td>
-   <td width="10%"><div id="Invdate" align="left" ></div></td> 
-	
-	<td align="left" width="50%"><label class="branch">Remarks</label>
-    <input type="text" name="txtremarks" id="txtremarks" style="height: 18px;" size=80%   placeholder="Enter Remarks"  value='<s:property value="txtremarks" />'></td>
-	
-	</tr>
-	<tr>
-	 <td align="left"><input type="button" name="btnload" id="btnload" value="Load" class="myButtons" onclick="funLoadData();"> &nbsp;</td>	 
-	 </tr>
-   </table>
-	<fieldset class="violetClass">
-	<legend>Ni Purchase </legend>
-	    <table width="100%" border="0">
-		 <tr>
-	   		<td><div id="nipurchasegrid"><jsp:include page="nipurchaseGrid.jsp"></jsp:include></div></td>
-	   			   		
-	   	  </tr> 
-		</table>
-	</fieldset>
-   <fieldset> 
-   <table width="100%" border="0"> 
-   <td align="right"><label class="branch">Roundof</label></td>
-    <td><div><input type="text" id="roundoff" name="roundoff" onblur="funroundof()"  style="text-align: right;"   onblur="funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);" value='<s:property value="roundoff"/>'/>&nbsp;&nbsp;</div></td>
-    <td width="50%" align="right"><label class="branch">NetTotal</label></td>
-    <td><div><input type="text" id="nettotalval" name="nettotalval"  style="text-align: right;"   value='<s:property value="nettotalval"/>'/></div></td>
-   </table>
-   </fieldset>
-	<fieldset class="violetClass">
-	<legend>Parts Followup</legend>
-	    <table width="100%" border="0">
-		 <tr>
-	   		<td><div id="partflwupgrid"><jsp:include page="partsfllwup.jsp"></jsp:include></div></td>
-	   	  </tr> 
-		</table>
-	</fieldset> 
-	
-</tr>
-</table>
+            <!-- Action Buttons Card -->
+            <div class="filter-card">
+                <input type="button" name="btnupdate" id="btnupdate" value="Update" class="btn-submit" onclick="funServiceUpdate();"> 
+                <hr style="border: 0; border-top: 1px solid #e1e8ed; margin: 12px 0;">
+                <input type="button" name="btncreatepurch" id="btncreatepurch" value="Create Ni purchase" class="btn-submit" onclick="funCreatePurch();"> 
+                <input type="button" name="btnPrint" id="btnPrint" value="Print" class="btn-submit" onclick="funcPrint();" style="background:#10b981 !important;">
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
+                <input type="hidden" name="rowsno" id="rowsno" value='<s:property value="rowsno"/>'>
+                <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+                <input type="hidden" name="jobcarddocno" id="jobcarddocno" value='<s:property value="jobcarddocno"/>'>
+                <input type="hidden" name="cldocno" id="cldocno" value='<s:property value="cldocno"/>'>
+                <input type="hidden" name="jobno" id="jobno" value='<s:property value="jobno"/>'>
+                <input type="hidden" name="techno" id="techno" value='<s:property value="techno"/>'>
+                <input type="hidden" name="bayno" id="bayno" value='<s:property value="techno"/>'>
+                <input type="hidden" name="part" id="part" value='<s:property value="part"/>'>
+                <input type="hidden" name="qnty" id="qnty" value='<s:property value="qnty"/>'>
+                <input type="hidden" name="rownum" id="rownum" value='<s:property value="rownum"/>'>
+                <input type="hidden" name="purqty" id="purqty" value='<s:property value="purqty"/>'>
+                <input type="hidden" name="tbpur" id="tbpur" value='<s:property value="tbpur"/>'>
+                <input type="hidden" id="srvdetmtrno" name="srvdetmtrno" value='<s:property value="srvdetmtrno"/>'>
+                <input type="hidden" id="chngntb" name="chngntb" value='<s:property value="chngntb"/>'>
+                <input type="hidden" id="addval" name="addval" value='<s:property value="addval"/>'>
+                <input type="hidden" id="vendorname" name="vendorname" value='<s:property value="vendorname"/>'>
+                <input type="hidden" id="vendorid" name="vendorid" value='<s:property value="vendorid"/>'>
+                <input type="hidden" id="vendtax" name="vendtax" value='<s:property value="vendtax"/>'>
+                <input type="hidden" id="vendacno" name="vendacno" value='<s:property value="vendacno"/>'>
+                <input type="hidden" id="raccno" name="raccno" value='<s:property value="raccno"/>'>
+                <input type="hidden" id="nettotal" name="nettotal" value='<s:property value="nettotal"/>'>
+                <input type="hidden" name="remtrno" id="remtrno" value='<s:property value="remtrno"/>'>
+                <input type="hidden" id="hiddesc" name="hiddesc" value='<s:property value="hiddesc"/>'>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            
+            <fieldset class="violetClass grid-fieldset">
+                <legend>Parts Management</legend>
+                <div id="floorMgmtGridDiv"><jsp:include page="partsmanagementGrid.jsp"></jsp:include></div>
+            </fieldset>
+            
+            <fieldset class="violetClass grid-fieldset">
+                <legend>Parts</legend>
+                <div id="partsgrid3div"><jsp:include page="partsGrid.jsp"></jsp:include></div>
+            </fieldset>
+            
+            <!-- Intermediary Form Elements Row (Vendor, InvNo, InvDate, Remarks, Load) -->
+            <div class="filter-card" style="margin-bottom: 15px;">
+                <table class="calc-grid-table" style="width:100%;">
+                    <tr>
+                        <td>
+                            <label class="branch" style="display:block; margin-bottom:3px;">Vendor</label>
+                            <input type="text" name="vendor" id="vendor" readonly="readonly" placeholder="Press F3 to search" onkeydown="vendorSearchContent(url)" value='<s:property value="vendor" />'>
+                        </td>
+                        <td>
+                            <label class="branch" style="display:block; margin-bottom:3px;">InvNo</label>
+                            <input type="text" name="invno" id="invno" placeholder="Enter Inv No" value='<s:property value="invno" />'>
+                        </td>
+                        <td>
+                            <label class="branch" style="display:block; margin-bottom:3px;">InvDate</label>
+                            <div id="Invdate"></div>
+                        </td>
+                        <td>
+                            <label class="branch" style="display:block; margin-bottom:3px;">Remarks</label>
+                            <input type="text" name="txtremarks" id="txtremarks" placeholder="Enter Remarks" value='<s:property value="txtremarks" />'>
+                        </td>
+                        <td style="vertical-align: bottom; width: 80px;">
+                            <input type="button" name="btnload" id="btnload" value="Load" class="btn-submit" onclick="funLoadData();" style="margin-bottom:0;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <fieldset class="violetClass grid-fieldset">
+                <legend>Ni Purchase</legend>
+                <div id="nipurchasegrid"><jsp:include page="nipurchaseGrid.jsp"></jsp:include></div>
+            </fieldset>
+
+            <fieldset class="grid-fieldset" style="background:#f8fafc;">
+                <table width="100%" border="0" style="border-spacing: 5px;">
+                    <tr>
+                        <td align="right" style="width: 70px;"><label class="branch">Roundof</label></td>
+                        <td style="width: 150px;">
+                            <input type="text" id="roundoff" name="roundoff" onblur="funroundof(); funRoundAmt(this.value,this.id);" onkeypress="javascript:return isNumber (event);" value='<s:property value="roundoff"/>' style="text-align: right;"/>
+                        </td>
+                        <td align="right" style="width: 70px;"><label class="branch">NetTotal</label></td>
+                        <td style="width: 150px;">
+                            <input type="text" id="nettotalval" name="nettotalval" style="text-align: right;" value='<s:property value="nettotalval"/>' readonly/>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </fieldset>
+            
+            <fieldset class="violetClass grid-fieldset">
+                <legend>Parts Followup</legend>
+                <div id="partflwupgrid"><jsp:include page="partsfllwup.jsp"></jsp:include></div>
+            </fieldset> 
+
+        </div>
+
+    </div>
+
 </div>
 
-</div>
-			  <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-			  <input type="hidden" name="rowsno" id="rowsno" value='<s:property value="rowsno"/>'>
-			  <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
-			  <input type="hidden" name="jobcarddocno" id="jobcarddocno" value='<s:property value="jobcarddocno"/>'>
-			  <input type="hidden" name="cldocno" id="cldocno" value='<s:property value="cldocno"/>'>
-			  <input type="hidden" name="jobno" id="jobno" value='<s:property value="jobno"/>'>
-			  <input type="hidden" name="techno" id="techno" value='<s:property value="techno"/>'>
-			  <input type="hidden" name="bayno" id="techno" value='<s:property value="techno"/>'>
-			  <input type="hidden" name="part" id="part" value='<s:property value="part"/>'>
-			  <input type="hidden" name="qnty" id="qnty" value='<s:property value="qnty"/>'>
-			  <input type="hidden" name="rownum" id="rownum" value='<s:property value="rownum"/>'>
-			  <input type="hidden" name="purqty" id="purqty" value='<s:property value="purqty"/>'>
-			   <input type="hidden" name="tbpur" id="tbpur" value='<s:property value="tbpur"/>'>
-			  <input type="hidden"  id="srvdetmtrno" name="srvdetmtrno" value='<s:property value="srvdetmtrno"/>' >
-			  <input type="hidden"  id="chngntb" name="chngntb" value='<s:property value="chngntb"/>' >
-			  <input type="hidden"  id="addval" name="addval" value='<s:property value="addval"/>' >
-			  <input type="hidden" id="vendorname" name=vendorname value='<s:property value="vendorname"/>'>
-			  <input type="hidden" id="vendorid" name=vendorid value='<s:property value="vendorid"/>'>
-			  <input type="hidden" id="vendtax" name=vendtax value='<s:property value="vendtax"/>'>
-			  <input type="hidden" id="vendacno" name=vendacno value='<s:property value="vendacno"/>'>
-			   <input type="hidden" id="raccno" name=raccno value='<s:property value="raccno"/>'>
-			     <input type="hidden" id="nettotal" name=nettotal value='<s:property value="nettotal"/>'>
-			     <input type="hidden" id="remtrno" name=remtrno value='<s:property value="remtrno"/>'>
-			     <input type="hidden" id="hiddesc" name=hiddesc value='<s:property value="hiddesc"/>'>
-</form>
+<!-- Popups Maintained Outside the Layout Flow -->
 <div id="TechnicianWindow">
-	<div></div>
-	</div>
-	<div id="bayWindow">
-	<div></div>
-	</div>
-	<div id="sparePartWindow">
-	<div></div>
-	</div>
-	<div id="jobCardToWindow">
-	<div></div>
-	</div>
-	<div id="vendorToWindow">
-	<div></div>
+    <div></div>
 </div>
+<div id="bayWindow">
+    <div></div>
+</div>
+<div id="sparePartWindow">
+    <div></div>
+</div>
+<div id="jobCardToWindow">
+    <div></div>
+</div>
+<div id="vendorToWindow">
+    <div></div>
+</div>
+
+</div>
+</form>
 </body>
 </html>
