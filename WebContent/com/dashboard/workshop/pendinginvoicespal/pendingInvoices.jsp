@@ -12,44 +12,174 @@
 <title>GatewayERP(i)</title>
 <link href="../../../../css/dashboard.css" media="screen" rel="stylesheet" type="text/css" />  
 <%-- <script type="text/javascript" src="../../js/dashboard.js"></script> --%> 
-<style>
-.myButtons {
-  display: inline-block;
-  margin-right:4px;
-  margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
-}
-.myButtons:hover {
-  color: #fff;
-  background-color: #31b0d5;
-}
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-}
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+<style>/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
 
-</style>
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 320px; 
+    flex: 0 0 320px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
+}
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
+}
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 100px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* Textarea standardization */
+textarea {
+    width: 100%;
+    border: 1px solid #ccd6e0;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Select specific styling */
+select {
+    padding: 2px 24px 2px 8px !important; 
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234e5e71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    background-size: 12px;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="todate"],
+.filter-table div[id^="followupdate"] {
+    width: 100%;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Button Group Styling */
+.button-group-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.button-group-row .btn-submit {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}</style>
 
 <script type="text/javascript">
 
@@ -164,47 +294,81 @@ function funPrintBtn(){
 	<div id="mainBG" class="homeContent" data-type="background"> 
 		<form id="frmPendingInvoices" method="POST">
 			<div class='hidden-scrollbar'>
-				<table width="100%">
-					<tr>
-						<td width="20%" >
-						    <fieldset style="background: #ECF8E0;">
-								<table  width="100%"  >
-									<jsp:include page="../../heading.jsp"></jsp:include>
-								  	<%-- <tr width="100%">
-								  		<td align="right" width="40%" ><label class="branch">From Date</label></td>
-								  		<td align="left" width="40%"><div id='fromdate' name='fromdate' value='<s:property value="fromdate"/>'></div></td>
-								  	</tr>  --%> 
-								  	<tr width="100%">
-								  		<td align="right" width="40%" ><label class="branch">Up To Date</label></td>
-								  		<td align="left" width="40%"><div id='todate' name='todate' value='<s:property value="todate"/>'></div></td>
-								  	</tr>  
-								  	<tr width="100%">
-								  		<td align="right" width="40%" ><label class="branch">FollowUp Date</label></td>
-								  		<td align="left" width="40%"><div id='followupdate' name='followupdate' value='<s:property value="followupdate"/>'></div></td>
-								  	</tr>
-								  	<tr width="100%">
-								  		<td align="right" width="40%" ><label class="branch">Change Status</label></td>
-								  		<td align="left" width="40%"><select name="cmbstatus" id="cmbstatus" style="width:125px;"><option value="">--Select--</option><option value="WIP">WIP</option></select></td>
-								  	</tr>
-								  	<tr width="100%">
-								  		<td align="right" width="40%" ><label class="branch">Remarks</label></td>
-								  		<td align="left" width="40%"><textarea id="remarks" name="remarks" rows="17"></textarea></td>
-								  	</tr>
-								  	<tr><td colspan="2"><hr></td></tr>
-								  	<tr><td colspan="2" align="center"><button type="button" class="myButtons" id="btnupdate" onclick="funUpdate();">Update</button>&nbsp;&nbsp;<button type="button" class="myButtons" id="btnclear" onclick="funClearData();">Clear</button></td></tr>
-									<tr><td colspan="2" align="center">&nbsp;<input type="button" class="myButtons"  name="btnPrint" id="btnPrint" value="Print" class="myButtons" onclick="funPrintBtn();"></td></tr>
-									
-								</table>
-							</fieldset>
-						</td>
-						<td width="80%">
-							<table width="100%">
-								<tr><td><div id="pendingdiv"><jsp:include page="pendingInvoicesGrid.jsp"></jsp:include></div></td></tr>
-								<tr><td><div id="followupdiv"><jsp:include page="followupGrid.jsp"></jsp:include></div></td></tr>
-							</table>
-						</td>
-					</tr>
-				</table>
+
+                <div class="master-container">
+
+                    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+                    <div class="sidebar-filters">
+                        <div class="sidebar-scroll-content">
+
+                            <!-- Primary Filters Card -->
+                            <div class="filter-card">
+                                <table class="filter-table">
+                                    <tr>
+                                        <td class="label-cell">Up To Date</td>
+                                        <td><div id='todate' name='todate' value='<s:property value="todate"/>'></div></td>
+                                    </tr>  
+                                </table>
+                            </div>
+
+                            <!-- Followup Details Card -->
+                            <div class="filter-card">
+                                <table class="filter-table">
+                                    <tr>
+                                        <td class="label-cell">FollowUp Date</td>
+                                        <td><div id='followupdate' name='followupdate' value='<s:property value="followupdate"/>'></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label-cell">Change Status</td>
+                                        <td>
+                                            <select name="cmbstatus" id="cmbstatus">
+                                                <option value="">--Select--</option>
+                                                <option value="WIP">WIP</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <label class="branch" style="display:block; margin-bottom: 5px;">Remarks</label>
+                                            <textarea id="remarks" name="remarks" rows="10"></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <hr style="border: 0; border-top: 1px solid #e1e8ed; margin: 15px 0;">
+
+                                <div class="button-group-row">
+                                    <button type="button" class="btn-submit" id="btnupdate" onclick="funUpdate();">Update</button>
+                                    <button type="button" class="btn-submit" id="btnclear" onclick="funClearData();" style="background:#64748b !important;">Clear</button>
+                                </div>
+                                <button type="button" class="btn-submit" id="btnPrint" onclick="funPrintBtn();" style="background:#10b981 !important;">Print</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+                    <div class="main-content-wrapper">
+                        
+                        <!-- Horizontally Aligned Heading Toolbar -->
+                        <div class="top-toolbar-container">
+                            <jsp:include page="../../heading.jsp"></jsp:include>
+                        </div>
+
+                        <div class="scrollable-grid-area">
+                            <div id="pendingdiv" style="margin-bottom: 20px;">
+                                <jsp:include page="pendingInvoicesGrid.jsp"></jsp:include>
+                            </div>
+                            
+                            <div id="followupdiv">
+                                <jsp:include page="followupGrid.jsp"></jsp:include>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
 			</div>
 			<input type="hidden" name="jobcarddocno" id="jobcarddocno">
 		</form>

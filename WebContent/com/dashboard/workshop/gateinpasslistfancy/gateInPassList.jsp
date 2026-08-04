@@ -9,65 +9,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
 <%-- <script type="text/javascript" src="../../js/dashboard.js"></script> --%> 
-<style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar-filters {
+    width: 320px; 
+    flex: 0 0 320px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
 }
- 
-select{
-    height:15px;
+
+/* Cards Layout Rules */
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
 }
-.custompanel1{  
-      border:1px solid #ccc;
-      float: left;
-      display: inline-block;
-      margin-top: 10px; 
-      margin-right: 10px;
-      padding-right: 10px;
-      padding-left: 10px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      border-radius: 8px;
-    }
-    .tabheight{
-    height:515px;
-    }
-    
-</style>
+
+/* Internal Presentation Tables */
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 90px;
+}
+
+/* ===== UNIFORM 24px INPUTS & SELECTS ===== */
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+/* Select specific styling */
+select {
+    padding: 2px 24px 2px 8px !important; 
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234e5e71' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    background-size: 12px;
+}
+
+/* Readonly fields override */
+input[readonly],
+input:disabled {
+    background-color: #f3f6f9 !important;
+    color: #555;
+    border-color: #e1e8ed !important;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="fromdate"],
+.filter-table div[id^="todate"] {
+    width: 100%;
+}
+
+/* Checkboxes & Radios */
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4e5e71;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+/* ===== MASTER 30px BUTTON SYSTEM ===== */
+.btn-submit, .myButtons {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover, .myButtons:hover {
+    background: #1d4ed8 !important;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}</style>
 
 <script type="text/javascript">
 
@@ -240,86 +355,122 @@ $(document).ready(function () {
 <form id="frmReplaceList" method="post">
 <div id="mainBG" class="homeContent" data-type="background"> 
 <div class='hidden-scrollbar'>
-<table width="100%">
-<tr>
-<td width="23%" align="center">
-    <fieldset style="background: #ECF8E0;" class="tabheight">
-	<table width="100%">
-	<jsp:include page="../../heading.jsp"></jsp:include>
-<tr>
-	
-   <td width="37%" align="right"><label class="branch">Date Type</label></td>            
-         <td >
-         	<select id="txttype" name="txttype" style="width:75%;height:20px;" value='<s:property value="txttype"/>'>   
-      			<option value="GIP">Gate In Pass</option>
-      			<option value="EST">Estimation</option>
-      			<option value="JC">Job Card</option>
-      			<option value="JCC">Job Card Complete</option>
-      			
-      			<option value="INV">Invoice</option>
-      		</select>
-  </tr>
 
- <tr>
-   <td width="37%" align="right"><label class="branch">From Date</label></td><td width="63%"><div id="fromdate"></div></td></tr>
- <tr>
-   <td align="right"><label class="branch">To Date</label></td>
-   <td><div id="todate"></div></td>
- </tr>
- <tr><td align="right"><label class="branch">Client</label></td><td align="left"><input type="text" name="clientname" id="clientname" placeholder="Press F3 To Search" readonly="readonly" onKeyDown="getclinfo(event);" onclick="this.placeholder='' "  style="height:20px;width:90%;" value='<s:property value="clientname"/>'></td>
-  <td><input type="hidden" name="cldocno" id="cldocno" style="height:20px;width:70%;" value='<s:property value="cldocno"/>' ></td>
- </tr>
-<tr>
-	
-   <td width="37%" align="right"><label class="branch">Type</label></td>            
-         <td ><select id="type" name="type" style="width:75%;height:20px;" value='<s:property value="type"/>'>   
-      <option value="">--select--</option><option value="open">open</option><option value="close">close</option></select>
-  </tr>
- <tr>
-    <td width="37%" align="right"><label class="branch">Client Category</label></td>
-    <td><select id="cmbcategory" name="cmbcategory"  style="width:75%;height:20px;" value='<s:property value="cmbcategory"/>'>
-      <option value="">--Select--</option></select>
-      <input type="hidden" id="hidcmbcategory" name="hidcmbcategory" value='<s:property value="hidcmbcategory"/>'/></td>
-   </tr>
-   <tr>
-       <td width="48%" align="center"><input type="radio"  id="sumrdo" name="rdo" onchange="funchangerdo();" ><label for="rdsummary" class="branch">Summary</label></td>
-       <td width="52%" align="center"><input type="radio" id="detrdo" name="rdo" onchange="funchangerdo();" ><label for="rddetailed" class="branch">Detail</label></td>
-      </tr>
-     
- <tr>
-	<td colspan="2" style="border-top:2px solid #DCDDDE;">
-	<div style="text-align:center;">
-	<input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();"><!-- &nbsp;&nbsp;
-	<input type="button" name="btnrepprint" id="btnrepprint" value="Print" class="myButtons" onclick="funPrintData();"> -->
-	</div>
-    </td>
-	</tr>
-<tr ><td colspan="2"><!-- <textarea id="agmtdetails" name="agmtdetails" readonly style="resize:none;" rows="10" cols="35"></textarea> -->
-	<br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br>
-    </td></tr>
+<div class="master-container">
 
-	
-	</table>
-	</fieldset>
-</td>
-<td width="77%">
-	<table width="100%">
-		<tr class="detailz">
-			 <td><div id="gateinpassdiv"><jsp:include page="gateInPassListGrid.jsp"></jsp:include></div></td>
-		 </tr>
-		<tr class="summaryz">
-			 <td><div id="gipdetdiv"><jsp:include page="summarydetailsGrid.jsp"></jsp:include></div></td>
-		</tr>
-	</table>
-</tr>
-</table>
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
+
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Date Type</td>            
+                        <td>
+                            <select id="txttype" name="txttype" value='<s:property value="txttype"/>'>   
+                                <option value="GIP">Gate In Pass</option>
+                                <option value="EST">Estimation</option>
+                                <option value="JC">Job Card</option>
+                                <option value="JCC">Job Card Complete</option>
+                                <option value="INV">Invoice</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">From Date</td>
+                        <td><div id="fromdate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">To Date</td>
+                        <td><div id="todate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Client</td>
+                        <td>
+                            <input type="text" name="clientname" id="clientname" placeholder="Press F3 To Search" readonly="readonly" onKeyDown="getclinfo(event);" onclick="this.placeholder=''" value='<s:property value="clientname"/>'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Type</td>            
+                        <td>
+                            <select id="type" name="type" value='<s:property value="type"/>'>   
+                                <option value="">--select--</option>
+                                <option value="open">open</option>
+                                <option value="close">close</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Category</td>
+                        <td>
+                            <select id="cmbcategory" name="cmbcategory" value='<s:property value="cmbcategory"/>'>
+                                <option value="">--Select--</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="radio-group">
+                    <label for="rdsummary">
+                        <input type="radio" id="sumrdo" name="rdo" onchange="funchangerdo();">
+                        Summary
+                    </label>
+                    <label for="rddetailed">
+                        <input type="radio" id="detrdo" name="rdo" onchange="funchangerdo();">
+                        Detail
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-card">
+                <input type="button" name="btnclear" id="btnclear" value="Clear" class="btn-submit" onclick="funClearData();">
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="hidden" name="cldocno" id="cldocno" value='<s:property value="cldocno"/>' >
+                <input type="hidden" id="hidcmbcategory" name="hidcmbcategory" value='<s:property value="hidcmbcategory"/>'/>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            
+            <div class="detailz">
+                <div id="gateinpassdiv">
+                    <jsp:include page="gateInPassListGrid.jsp"></jsp:include>
+                </div>
+            </div>
+
+            <div class="summaryz">
+                <div id="gipdetdiv">
+                    <jsp:include page="summarydetailsGrid.jsp"></jsp:include>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
+
+<!-- Popups Maintained Outside the Layout -->
 <div id="clientwindow">
    <div></div>
 </div>
 <div id="agmtnowindow">
-<div></div>
+    <div></div>
+</div>
+
 </div>
 </div>
 </form>

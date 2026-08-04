@@ -9,50 +9,166 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GatewayERP(i)</title>
 <%--  <script type="text/javascript" src="../../js/dashboard.js"></script>  --%>
-<style type="text/css">
-.myButtons {
-	display: inline-block;
-	margin-right:4px;
-	margin-left:4px; 
-  margin-bottom: 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: grey;
+<style type="text/css">/* ===== MASTER LAYOUT ===== */
+html, body, #mainBG, .hidden-scrollbar {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f4f7f9;
 }
-.myButtons:hover {
-	  color: #fff;
-  background-color: #31b0d5;
-  
+
+.master-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
-.myButtons:active {
-  color: #fff;
-  background-color: #31b0d5;
-  
+
+.sidebar-filters {
+    width: 320px; 
+    flex: 0 0 320px; 
+    background: #fff;
+    border-right: 1px solid #e1e8ed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 2px 0 8px rgba(0,0,0,.05);
+    z-index: 10;
 }
-.myButtons:focus {
-  color: #fff;
-  background-color: grey;
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 15px 25px; 
 }
- 
-select{
-    height:18px;
+
+.filter-card {
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
 }
-	  
-</style>
+
+.filter-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.filter-table .label-cell {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 12px;
+    color: #4e5e71;
+    font-weight: 600;
+    width: 100px;
+}
+
+input[type="text"], select,
+.filter-table input[type="text"],
+.filter-table select {
+    width: 100%;
+    height: 24px !important;             
+    padding: 2px 8px !important;         
+    border: 1px solid #ccd6e0 !important;
+    border-radius: 4px !important;       
+    font-size: 12px !important;          
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+}
+
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4e5e71;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+/* jqx Date Container Mapping Rules */
+.filter-table div[id^="todate"] {
+    width: 100%;
+}
+
+.btn-submit {
+    width: 100%;
+    height: 30px !important;            
+    padding: 0 12px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    line-height: 30px !important;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.btn-submit:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Button Group Styling */
+.button-group-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.button-group-row .btn-submit {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* ===== RIGHT CONTENT AREA (Horizontally Aligned Heading) ===== */
+.main-content-wrapper {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-toolbar-container {
+    width: 100%;
+    padding: 10px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e8ed;
+    box-sizing: border-box;
+}
+
+.scrollable-grid-area {
+    flex: 1;
+    padding: 15px 20px;
+    overflow: auto; 
+    box-sizing: border-box;
+}</style>
 
 <script type="text/javascript">
 
@@ -339,122 +455,140 @@ function funUpdateApprv() {
 <form id="frmWorkQuotationApproval" method="post">
 <div id="mainBG" class="homeContent" data-type="background"> 
 <div class='hidden-scrollbar'>
-<table width="100%">
-<tr>
-<td width="23%" align="center">
-    <fieldset style="background: #ECF8E0;">
-	<table width="100%">
-	<jsp:include page="../../heading.jsp"></jsp:include>
 
- <!-- <tr>
-   <td width="37%" align="right"><label class="branch">From Date</label></td><td width="63%"><div id="fromdate"></div></td></tr>
- <tr> -->
-   <td width="37%" align="right"><label class="branch">Up To Date</label></td>
-   <td width="63%"><div id="todate"></div></td>
- </tr>
- <tr>
-	<td align="right"><label class="branch">Client</label></td>
-	<td>
-		<input type="text" name="clnames" id="clnames" style="height:18px; margine:1px;" placeholder="Press F3 to Search" onkeydown="getClientDetails(event)">
-		<input type="hidden" name="cldocnos" id="cldocnos">
-	</td>
-</tr>
-<tr>
-	<td  colspan="2" align="center"><label class="branch">Approved</label>
-	<input type="radio" name="approv" id="approved">
-		<label class="branch">To Be Approved</label>
-		<input type="radio" name="approv" id="tobeapproved">
-		<input type="hidden" id="approval" name="approval" value='<s:property value="approval"/>'>
-	</td>
-</tr>
+<div class="master-container">
 
-<tr>
-	<td align="right"><label class="branch">PO No</label></td>
-	<td><input type="text" name="pono" id="pono" style="height:18px; margine:1px;"></td>
-</tr>
-<!-- <tr style="hidden="hidden";">
-	<td align="right"><label class="branch">PO Date</label></td>
-	<td><div id="podate" name="podate"></div></td>
-</tr> -->
-<tr>
-	<td align="right"><label class="branch">Description</label></td>
-	<td><input type="text" name="description" id="description" style="height:18px; margine:1px;"></td>
-</tr>
-<tr>
-	<td align="right"><label class="branch">Excess</label></td>
-	<td><input type="checkbox" name="chkexcess" id="chkexcess" style="height:18px; margine:1px;"></td>
-</tr>
-<tr>
-	<td align="right"><label class="branch">Excess Amount</label></td>
-	<td><input type="text" name="excessamt" id="excessamt" style="height:18px; margine:1px;"></td>
-</tr>
-<tr>
-<!-- 	<td align="right"><label class="branch">Doc No</label></td> -->
-	<td><input type="hidden" name="estDocno" id="estDocno" style="height:18px; margine:1px;"></td>
-</tr>
-<tr>
-	<td align="right"><label class="branch">Wave Off/Cancel Reason</label></td>
-	<td><input type="text" name="waveoffreason" id="waveoffreason" style="height:18px; margine:1px;"></td>
-</tr>
-<tr>
-	<td align="right"><label class="branch">Addition</label></td>
-	<td><input type="text" name="addition" id="addition" value='<s:property value="addition"/>' style="height:18px;" readonly/> </td>
-</tr>
-<tr>
-	<td colspan="2">
-		<div id="btnDiv1" style="text-align:center;">
-			<input type="button" name="btnApprove" id="btnApprove" value="Approve" class="myButtons" onclick="funSetApprv(1)">&nbsp;&nbsp;
-			<input type="button" name="btnWaveoff" id="btnWaveoff" value="Waveoff" class="myButtons" onclick="funSetApprv(2)">
-			<input type="button" name="btnCancel" id="btnCancel" value="Cancel" class="myButtons" onclick="funSetApprv(3)">
-		</div>
-		<div id="btnDiv2" style="text-align:center;">
-			<input type="button" name="btnUpdateApprove" id="btnUpdateApprove" value="Update" class="myButtons" onclick="funUpdateApprv()">
-		</div>
-		
-	</td>
-</tr>
- <tr >
-	<td colspan="2" style="border-top:2px solid #DCDDDE;">
-	<div style="text-align:center;">
-	<input type="button" name="btnclear" id="btnclear" value="Clear" class="myButtons" onclick="funClearData();"> &nbsp;&nbsp;
-	<input type="button" name="btnrepprint" id="btnrepprint" value="Print" class="myButtons" onclick="funPrintData();"> 
-	</div>
-    </td>
-	</tr>
-<tr ><td colspan="2"><!-- <textarea id="agmtdetails" name="agmtdetails" readonly style="resize:none;" rows="10" cols="35"></textarea> -->
-	<br><br><br><br><br>
-<br>
-</td></tr>
+    <!-- ================= LEFT PANEL (SIDEBAR) ================= -->
+    <div class="sidebar-filters">
+        <div class="sidebar-scroll-content">
 
-<tr colspan="2"><td>&nbsp;</td></tr>
-	
-		
-	</table>
-	</fieldset>
-</td>
-<td width="77%">
-	<table width="100%">
-		<tr>
-			 <td><div id="quotationapprovaldiv"><jsp:include page="quotationAprovalGrid.jsp"></jsp:include></div>
-			  <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
-			  <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
-			  <input type="hidden" name="brhid" id="brhid" value='<s:property value="brhid"/>'>
-			  <input type="hidden" name="gipnos" id="gipnos" value='<s:property value="gipno"/>'>
-			  <input type="hidden" name="estvocno" id="estvocno" value='<s:property value="estvocno"/>'>
-			  <input type="hidden" name="estDocno" id="estDocno" value='<s:property value="estDocno"/>'>
-			  <input type="hidden" name="gipdocno" id="gipdocno" value='<s:property value="gipdocno"/>'>
-			  <input type="hidden" name="estprintconfig" id="estprintconfig" value='<s:property value="estprintconfig"/>'/>
-			  </td>
-		</tr>
-	</table>
-</tr>
-</table>
+            <!-- Primary Filters Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">Up To Date</td>
+                        <td><div id="todate"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Client</td>
+                        <td>
+                            <input type="text" name="clnames" id="clnames" placeholder="Press F3 to Search" onkeydown="getClientDetails(event)">
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="approv" id="approved">
+                        Approved
+                    </label>
+                    <label>
+                        <input type="radio" name="approv" id="tobeapproved">
+                        To Be Approved
+                    </label>
+                </div>
+            </div>
+
+            <!-- Details Card -->
+            <div class="filter-card">
+                <table class="filter-table">
+                    <tr>
+                        <td class="label-cell">PO No</td>
+                        <td><input type="text" name="pono" id="pono"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Description</td>
+                        <td><input type="text" name="description" id="description"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Excess Amount</td>
+                        <td>
+                            <div style="display:flex; align-items:center; gap: 5px;">
+                                <input type="checkbox" name="chkexcess" id="chkexcess">
+                                <input type="text" name="excessamt" id="excessamt">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Wave Off/Cancel Reason</td>
+                        <td><input type="text" name="waveoffreason" id="waveoffreason"></td>
+                    </tr>
+                    <tr>
+                        <td class="label-cell">Addition</td>
+                        <td><input type="text" name="addition" id="addition" value='<s:property value="addition"/>' readonly/></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Action Buttons Card -->
+            <div class="filter-card">
+                <div id="btnDiv1">
+                    <button type="button" name="btnApprove" id="btnApprove" class="btn-submit" onclick="funSetApprv(1)">Approve</button>
+                    <div class="button-group-row">
+                        <button type="button" name="btnWaveoff" id="btnWaveoff" class="btn-submit" onclick="funSetApprv(2)">Waveoff</button>
+                        <button type="button" name="btnCancel" id="btnCancel" class="btn-submit" onclick="funSetApprv(3)">Cancel</button>
+                    </div>
+                </div>
+                
+                <div id="btnDiv2">
+                    <button type="button" name="btnUpdateApprove" id="btnUpdateApprove" class="btn-submit" onclick="funUpdateApprv()">Update</button>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid #e1e8ed; margin: 12px 0;">
+
+                <div class="button-group-row">
+                    <button type="button" name="btnclear" id="btnclear" class="btn-submit" onclick="funClearData();" style="background:#64748b !important;">Clear</button>
+                    <button type="button" name="btnrepprint" id="btnrepprint" class="btn-submit" onclick="funPrintData();" style="  background: #2563eb !important;">Print</button>
+                </div>
+            </div>
+
+            <!-- Hidden Inputs Maintained Safely Outside Visual Layout -->
+            <div style="display:none;">
+                <input type="hidden" name="cldocnos" id="cldocnos">
+                <input type="hidden" id="approval" name="approval" value='<s:property value="approval"/>'>
+                <input type="hidden" name="estDocno" id="estDocno">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL (WORKSPACE GRIDS) ================= -->
+    <div class="main-content-wrapper">
+        
+        <!-- Horizontally Aligned Heading Toolbar -->
+        <div class="top-toolbar-container">
+            <jsp:include page="../../heading.jsp"></jsp:include>
+        </div>
+
+        <div class="scrollable-grid-area">
+            
+            <div id="quotationapprovaldiv">
+                <jsp:include page="quotationAprovalGrid.jsp"></jsp:include>
+            </div>
+
+            <!-- Hidden Output Bindings -->
+            <div style="display:none;">
+                <input type="hidden" name="mode" id="mode" value='<s:property value="mode"/>'>
+                <input type="hidden" name="msg" id="msg" value='<s:property value="msg"/>'>
+                <input type="hidden" name="brhid" id="brhid" value='<s:property value="brhid"/>'>
+                <input type="hidden" name="gipnos" id="gipnos" value='<s:property value="gipno"/>'>
+                <input type="hidden" name="estvocno" id="estvocno" value='<s:property value="estvocno"/>'>
+                <input type="hidden" name="estDocno" id="estDocno" value='<s:property value="estDocno"/>'>
+                <input type="hidden" name="gipdocno" id="gipdocno" value='<s:property value="gipdocno"/>'>
+                <input type="hidden" name="estprintconfig" id="estprintconfig" value='<s:property value="estprintconfig"/>'/>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="ClientDetailsToWindow">
+    <div></div>
 </div>
 
 </div>
 </form>
-<div id="ClientDetailsToWindow">
-	<div></div>
-	</div>
 </body>
 </html>
