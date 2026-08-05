@@ -63,5 +63,7 @@
 	 <script type="text/javascript" src="<%=contextPath%>/js/jqxinput.js"></script>
 	 <script type="text/javascript" src="<%=contextPath%>/js/exportExcel.js"></script>
 	 <link href="<%=contextPath%>/css/modern-theme.css" rel="stylesheet" type="text/css" /> 
+	  <link href="<%=contextPath%>/css/spinner.css" rel="stylesheet" type="text/css" />
+<script src="<%=contextPath%>/js/spinner.js" type="text/javascript"></script>
 </head> 
 </html>
