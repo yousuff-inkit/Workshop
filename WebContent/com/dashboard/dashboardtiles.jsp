@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import="java.net.URLEncoder" %>
 <%@ page import="com.connection.ClsConnection" %>
 <%@ page import="com.dashboard.ClsDashBoardDAO" %>
 <%@ page import="com.dashboard.ClsDashBoardBean" %>
@@ -36,54 +37,66 @@
 
     String cPath = request.getContextPath();
     String selectedModule = request.getParameter("module");
-    if(selectedModule == null || selectedModule.trim().isEmpty()){ selectedModule = "Finance"; }
     String roleId = (session.getAttribute("ROLEID") != null) ? session.getAttribute("ROLEID").toString() : "0";
 
+    String powrCheck = " AND p.roleid = ? AND (p.add1<>0 OR p.edit<>0 OR p.del<>0 OR p.print<>0 OR p.attach<>0 OR p.excel<>0 OR p.view<>0) ";
+
+    List<String> moduleList = new ArrayList<String>();
     List<ClsDashBoardBean> tileList = new ArrayList<ClsDashBoardBean>();
-    Connection conn = null; Statement stmt = null; ResultSet rs = null;
+    Connection conn = null; PreparedStatement pstmt = null; ResultSet rs = null;
 
     try {
         ClsConnection clsCon = new ClsConnection();
         conn = clsCon.getMyConnection();
-        stmt = conn.createStatement();
-        String searchTerm = selectedModule;
-        if(selectedModule.equalsIgnoreCase("Finance")) searchTerm = "Fin";
-        else if(selectedModule.equalsIgnoreCase("Operation")) searchTerm = "Oper";
-        else if(selectedModule.equalsIgnoreCase("Fleet")) searchTerm = "Fleet";
-        else if(selectedModule.equalsIgnoreCase("Human")) searchTerm = "Hum";
-        else if(selectedModule.equalsIgnoreCase("Asset")) searchTerm = "Asset";
-        else if(selectedModule.equalsIgnoreCase("Control")) searchTerm = "Control";
 
-        String sql = 
-                "SELECT DISTINCT menu_name, func FROM ( " +
+        // Module tabs = root menus (pmenu=0) this role can access, same as the top menu bar
+        pstmt = conn.prepareStatement(
+                "SELECT t.mno, t.menu_name FROM my_menu t JOIN my_powr p ON p.mno = t.mno " +
+                "WHERE t.pmenu = 0 AND t.GATE != 'N'" + powrCheck + "ORDER BY t.mno");
+        pstmt.setString(1, roleId);
+        rs = pstmt.executeQuery();
+        while(rs.next()) {
+            String modName = rs.getString("menu_name");
+            if(modName != null && !modName.trim().isEmpty() && !moduleList.contains(modName)) moduleList.add(modName);
+        }
+        rs.close(); pstmt.close();
+
+        if(selectedModule == null || !moduleList.contains(selectedModule)) {
+            selectedModule = moduleList.isEmpty() ? "" : moduleList.get(0);
+        }
+
+        // All actionable forms (up to 3 levels) under the selected root menu
+        String rootFilter = " WHERE m1.pmenu = 0 AND m1.GATE != 'N' AND m1.menu_name = ? ";
+        String sql =
+                "SELECT menu_name, func FROM ( " +
                 "  SELECT m2.menu_name, m2.func FROM my_menu m1 " +
                 "  JOIN my_menu m2 ON m2.pmenu = m1.mno " +
-                "  LEFT JOIN my_powr p ON p.mno = m2.mno " +
-                "  WHERE (m1.menu_name LIKE '%" + searchTerm + "%' OR m1.doc_type LIKE '%" + searchTerm + "%') " +
-                "  AND m2.GATE != 'N' AND m2.func IS NOT NULL AND m2.func <> '' " +
-                "  AND p.roleid = '" + roleId + "' AND (p.add1<>0 OR p.edit<>0 OR p.del<>0 OR p.print<>0 OR p.attach<>0 OR p.excel<>0 OR p.view<>0) " +
+                "  JOIN my_powr p ON p.mno = m2.mno " + rootFilter +
+                "  AND m2.GATE != 'N' AND m2.func IS NOT NULL AND m2.func <> '' " + powrCheck +
                 "  UNION " +
                 "  SELECT m3.menu_name, m3.func FROM my_menu m1 " +
                 "  JOIN my_menu m2 ON m2.pmenu = m1.mno " +
                 "  JOIN my_menu m3 ON m3.pmenu = m2.mno " +
-                "  LEFT JOIN my_powr p ON p.mno = m3.mno " +
-                "  WHERE (m1.menu_name LIKE '%" + searchTerm + "%' OR m1.doc_type LIKE '%" + searchTerm + "%') " +
-                "  AND m3.GATE != 'N' AND m3.func IS NOT NULL AND m3.func <> '' " +
-                "  AND p.roleid = '" + roleId + "' AND (p.add1<>0 OR p.edit<>0 OR p.del<>0 OR p.print<>0 OR p.attach<>0 OR p.excel<>0 OR p.view<>0) " +
+                "  JOIN my_powr p ON p.mno = m3.mno " + rootFilter +
+                "  AND m2.GATE != 'N' AND m3.GATE != 'N' AND m3.func IS NOT NULL AND m3.func <> '' " + powrCheck +
                 "  UNION " +
                 "  SELECT m4.menu_name, m4.func FROM my_menu m1 " +
                 "  JOIN my_menu m2 ON m2.pmenu = m1.mno " +
                 "  JOIN my_menu m3 ON m3.pmenu = m2.mno " +
                 "  JOIN my_menu m4 ON m4.pmenu = m3.mno " +
-                "  LEFT JOIN my_powr p ON p.mno = m4.mno " +
-                "  WHERE (m1.menu_name LIKE '%" + searchTerm + "%' OR m1.doc_type LIKE '%" + searchTerm + "%') " +
-                "  AND m4.GATE != 'N' AND m4.func IS NOT NULL AND m4.func <> '' " +
-                "  AND p.roleid = '" + roleId + "' AND (p.add1<>0 OR p.edit<>0 OR p.del<>0 OR p.print<>0 OR p.attach<>0 OR p.excel<>0 OR p.view<>0) " +
+                "  JOIN my_powr p ON p.mno = m4.mno " + rootFilter +
+                "  AND m2.GATE != 'N' AND m3.GATE != 'N' AND m4.GATE != 'N' AND m4.func IS NOT NULL AND m4.func <> '' " + powrCheck +
                 ") all_menus ORDER BY menu_name";
-        
-        rs = stmt.executeQuery(sql);
+
+        pstmt = conn.prepareStatement(sql);
+        for(int i = 0; i < 3; i++) {
+            pstmt.setString(i * 2 + 1, selectedModule);
+            pstmt.setString(i * 2 + 2, roleId);
+        }
+        rs = pstmt.executeQuery();
         while(rs.next()) {
             String title = rs.getString("menu_name");
+            if(title == null) continue;
             String dbLink = rs.getString("func");
             String fullUrl = "#";
             if(dbLink != null && !dbLink.trim().equals("")) {
@@ -97,8 +110,18 @@
             bean.setTxttitle(title); bean.setTxtdescription(fullUrl); bean.setMsg(icon); 
             tileList.add(bean);
         }
-    } catch(Exception e) { e.printStackTrace(); } 
-    finally { if(rs!=null) rs.close(); if(stmt!=null) stmt.close(); if(conn!=null) conn.close(); }
+    } catch(Exception e) { e.printStackTrace(); }
+    finally {
+        try { if(rs!=null) rs.close(); } catch(Exception ignore) {}
+        try { if(pstmt!=null) pstmt.close(); } catch(Exception ignore) {}
+        try { if(conn!=null) conn.close(); } catch(Exception ignore) {}
+    }
+%>
+<%!
+    private static String esc(String s) {
+        if(s == null) return "";
+        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+    }
 %>
 
 <!DOCTYPE html>
@@ -189,7 +212,7 @@
                 <span style="font-size: 10px; margin-left: 8px;">▼</span>
             </button>
             <div class="dropdown-content">
-                <a href="<%= cPath %>/com/dashboard/dashBoardTiles.jsp">
+                <a href="<%= cPath %>/com/dashboard/dashboardtiles.jsp">
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                         <div>
@@ -249,21 +272,21 @@
             </div>
             <div class="tile-nav-container">
                 <div class="tile-nav-links">
-                    <a href="?module=Finance" class="<%= selectedModule.contains("Finance") ? "active" : "" %>">Finance</a>
-                    <a href="?module=Operation" class="<%= selectedModule.contains("Operation") ? "active" : "" %>">Operations</a>
-                    <a href="?module=Fleet" class="<%= selectedModule.contains("Fleet") ? "active" : "" %>">Fleet Mgmt</a>
-                    <a href="?module=Asset" class="<%= selectedModule.contains("Asset") ? "active" : "" %>">Fixed Assets</a>
-                    <a href="?module=Human" class="<%= selectedModule.contains("Human") ? "active" : "" %>">Human Resource</a>
-                    <a href="?module=Control" class="<%= selectedModule.contains("Control") ? "active" : "" %>">Control Centre</a>
+                    <% for(String mod : moduleList) { %>
+                        <a href="?module=<%= URLEncoder.encode(mod, "UTF-8") %>" class="<%= mod.equals(selectedModule) ? "active" : "" %>"><%= esc(mod.trim()) %></a>
+                    <% } %>
                 </div>
             </div>
             <div class="scrollable-content top-scrollable">
                 <div class="dashboard-tile-container">
                     <% for(ClsDashBoardBean t : tileList) { %>
-                        <a href="javascript:void(0);" onclick="openParentMenu('<%= t.getTxttitle() %>')" class="dashboard-tile">
+                        <a href="javascript:void(0);" data-title="<%= esc(t.getTxttitle()) %>" onclick="openParentMenu(this.getAttribute('data-title'))" class="dashboard-tile">
                             <div class="tile-icon-box"><%= t.getMsg() %></div>
-                            <div class="tile-title"><%= t.getTxttitle() %></div>
+                            <div class="tile-title"><%= esc(t.getTxttitle()) %></div>
                         </a>
+                    <% } %>
+                    <% if(tileList.isEmpty()) { %>
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #999; font-size: 13px;">No operations available for this module.</div>
                     <% } %>
                 </div>
             </div>
