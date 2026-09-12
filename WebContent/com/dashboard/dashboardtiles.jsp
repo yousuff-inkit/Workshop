@@ -39,8 +39,11 @@
     String selectedModule = request.getParameter("module");
     String roleId = (session.getAttribute("ROLEID") != null) ? session.getAttribute("ROLEID").toString() : "0";
 
-    String powrCheck = " AND p.roleid = ? AND (p.add1<>0 OR p.edit<>0 OR p.del<>0 OR p.print<>0 OR p.attach<>0 OR p.excel<>0 OR p.view<>0) ";
+    // my_powr has no "view" column - these are the same six flags the top menu checks (ClsLogin.getMenuDetails)
+    String powrCheck = " AND p.roleid = ? AND (p.add1<>0 OR p.edit<>0 OR p.del<>0 OR p.print<>0 OR p.attach<>0 OR p.excel<>0) ";
 
+    // Every module (root menu) and its forms in one pass, so a module with no forms gets no tab
+    Map<String, List<ClsDashBoardBean>> moduleTiles = new LinkedHashMap<String, List<ClsDashBoardBean>>();
     List<String> moduleList = new ArrayList<String>();
     List<ClsDashBoardBean> tileList = new ArrayList<ClsDashBoardBean>();
     Connection conn = null; PreparedStatement pstmt = null; ResultSet rs = null;
@@ -49,54 +52,36 @@
         ClsConnection clsCon = new ClsConnection();
         conn = clsCon.getMyConnection();
 
-        // Module tabs = root menus (pmenu=0) this role can access, same as the top menu bar
-        pstmt = conn.prepareStatement(
-                "SELECT t.mno, t.menu_name FROM my_menu t JOIN my_powr p ON p.mno = t.mno " +
-                "WHERE t.pmenu = 0 AND t.GATE != 'N'" + powrCheck + "ORDER BY t.mno");
-        pstmt.setString(1, roleId);
-        rs = pstmt.executeQuery();
-        while(rs.next()) {
-            String modName = rs.getString("menu_name");
-            if(modName != null && !modName.trim().isEmpty() && !moduleList.contains(modName)) moduleList.add(modName);
-        }
-        rs.close(); pstmt.close();
-
-        if(selectedModule == null || !moduleList.contains(selectedModule)) {
-            selectedModule = moduleList.isEmpty() ? "" : moduleList.get(0);
-        }
-
-        // All actionable forms (up to 3 levels) under the selected root menu
-        String rootFilter = " WHERE m1.pmenu = 0 AND m1.GATE != 'N' AND m1.menu_name = ? ";
+        // Forms (up to 3 levels deep) under every root menu, same tree the top menu bar walks
+        String rootFilter = " WHERE m1.pmenu = 0 AND m1.GATE != 'N' ";
         String sql =
-                "SELECT menu_name, func FROM ( " +
-                "  SELECT m2.menu_name, m2.func FROM my_menu m1 " +
+                "SELECT rootno, root, menu_name, func FROM ( " +
+                "  SELECT m1.mno AS rootno, m1.menu_name AS root, m2.menu_name, m2.func FROM my_menu m1 " +
                 "  JOIN my_menu m2 ON m2.pmenu = m1.mno " +
                 "  JOIN my_powr p ON p.mno = m2.mno " + rootFilter +
                 "  AND m2.GATE != 'N' AND m2.func IS NOT NULL AND m2.func <> '' " + powrCheck +
                 "  UNION " +
-                "  SELECT m3.menu_name, m3.func FROM my_menu m1 " +
+                "  SELECT m1.mno, m1.menu_name, m3.menu_name, m3.func FROM my_menu m1 " +
                 "  JOIN my_menu m2 ON m2.pmenu = m1.mno " +
                 "  JOIN my_menu m3 ON m3.pmenu = m2.mno " +
                 "  JOIN my_powr p ON p.mno = m3.mno " + rootFilter +
                 "  AND m2.GATE != 'N' AND m3.GATE != 'N' AND m3.func IS NOT NULL AND m3.func <> '' " + powrCheck +
                 "  UNION " +
-                "  SELECT m4.menu_name, m4.func FROM my_menu m1 " +
+                "  SELECT m1.mno, m1.menu_name, m4.menu_name, m4.func FROM my_menu m1 " +
                 "  JOIN my_menu m2 ON m2.pmenu = m1.mno " +
                 "  JOIN my_menu m3 ON m3.pmenu = m2.mno " +
                 "  JOIN my_menu m4 ON m4.pmenu = m3.mno " +
                 "  JOIN my_powr p ON p.mno = m4.mno " + rootFilter +
                 "  AND m2.GATE != 'N' AND m3.GATE != 'N' AND m4.GATE != 'N' AND m4.func IS NOT NULL AND m4.func <> '' " + powrCheck +
-                ") all_menus ORDER BY menu_name";
+                ") all_menus ORDER BY rootno, menu_name";
 
         pstmt = conn.prepareStatement(sql);
-        for(int i = 0; i < 3; i++) {
-            pstmt.setString(i * 2 + 1, selectedModule);
-            pstmt.setString(i * 2 + 2, roleId);
-        }
+        for(int i = 0; i < 3; i++) { pstmt.setString(i + 1, roleId); }
         rs = pstmt.executeQuery();
         while(rs.next()) {
+            String root = rs.getString("root");
             String title = rs.getString("menu_name");
-            if(title == null) continue;
+            if(root == null || title == null) continue;
             String dbLink = rs.getString("func");
             String fullUrl = "#";
             if(dbLink != null && !dbLink.trim().equals("")) {
@@ -107,9 +92,17 @@
             String icon = iconMap.get(title.trim());
             if(icon == null) { icon = svgFile; }
             ClsDashBoardBean bean = new ClsDashBoardBean();
-            bean.setTxttitle(title); bean.setTxtdescription(fullUrl); bean.setMsg(icon); 
-            tileList.add(bean);
+            bean.setTxttitle(title); bean.setTxtdescription(fullUrl); bean.setMsg(icon);
+
+            if(!moduleTiles.containsKey(root)) moduleTiles.put(root, new ArrayList<ClsDashBoardBean>());
+            moduleTiles.get(root).add(bean);
         }
+
+        moduleList.addAll(moduleTiles.keySet());
+        if(selectedModule == null || !moduleTiles.containsKey(selectedModule)) {
+            selectedModule = moduleList.isEmpty() ? "" : moduleList.get(0);
+        }
+        if(moduleTiles.containsKey(selectedModule)) tileList = moduleTiles.get(selectedModule);
     } catch(Exception e) { e.printStackTrace(); }
     finally {
         try { if(rs!=null) rs.close(); } catch(Exception ignore) {}
