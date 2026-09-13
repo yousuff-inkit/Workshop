@@ -1,0 +1,12 @@
+# Compiled output (Eclipse builds this from src/)
+/build/
+*.class
+
+# Eclipse / IDE
+.settings/
+.metadata/
+*.launch
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
